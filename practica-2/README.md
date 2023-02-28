@@ -9,6 +9,8 @@
 
 - [Practica-2][liga-practica-2]
 
+Este es el [archivo PKT](files/practica 2.pkt) para esta práctica.
+
 * Topología de red:
 
 
