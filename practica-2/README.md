@@ -1,30 +1,87 @@
-# README
+```
+ Integrantes:
+ Acosta Arzate Rubén
+ Alvarado Torres David Ignacio
+ Bernal Marquez Erick
+ Deloya Andrade Ana Valeria
+ López Miranda Angel Mauricio
+```
 
-Aquí vamos ir poniendo los cambios que cada uno haga ya que es un archivo pkt
+- [Practica-2][liga-practica-2]
 
-Ejemplo
-
-_Erick_ 12/13/2045
-hice la el primer ejercicio, aunque tuve duda en la parte donde pedian los puertos
-
-_Rubén_ 13/53/2350
-agregué los puertos, faltan las redes
-
-_Valeria_ 12/12/1212
-modifiqué las redes
-
-_David_ 01/12/1320
-redes tenia un error, ya lo corregí y agregue la parte extra
-
-_Mau_ 15/54/1200
-acomodé mejor la estrcutura de la red cambiando la topologia
-
-_David_ 56/450/456
-modifiqué los puertos de entrada por otra version
-
-_Rubén_ 51/29/2550
-FIn de la practica, awebo
+* Topología de red:
 
 
 
-Esto por el momento para ver que tal nos funciona para las siguientes practicas o cambiamos de metodología
+* Tabla de los equipos:
+
+```
+Primer Piso
+```
+
+|    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
+|:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
+|    AP-P1-2    |	    |			   	          |
+|  Server-P1-1	| 	    |		                          |
+|    AP-P1-1	| 	    |		                          |
+|   Switch-P1	|  Filos    |		                          |
+|   PC-P1-1	|	    |		                          |	
+|   PC-P1-2     | 	    |		                          |
+|  Printer-P1-1 |           |   				  |
+
+```
+Segundo Piso
+```
+
+|    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
+|:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
+|  Printer-P2-1 |           |   				  |
+|    PC-P2-1    |	    |		  		          |
+|    AP-P2-1	| 	    |		                          |
+|    AP-P2-2	| 	    |		                          |
+|    AP-P2-3	| 	    |		                          |
+|   Tablet 1	|	    |		                          |	
+|   Tablet 2    | 	    |		                          |
+|  Smartphone1  |           |                                     |
+|   Switch-P2   |   Filos   |   				  |
+|    PC-P2-3    |           |   			          |
+|    PC-P2-4    |           |   				  |
+
+```
+Tercer Piso
+```
+
+|    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
+|:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
+|    PC-P3-1    |	    |		  		          |
+|    PC-P3-2	| 	    |		                          |
+|    PC-P3-3	| 	    |		                          |
+|    AP-P3-1	| 	    |		                          |
+|   Switch-P3	|   Filos   |		                          |	
+|    AP-P3-2    | 	    |		                          |
+|    PC-P3-4	|	    |		                          |	
+|    PC-P3-5    | 	    |		                          |
+|    PC-P3-6    | 	    |		                          |
+
+* Edificio Adolfo Sánchez Vázquez:
+
+| ![](img/edificioASV.png)
+|:-------------------------:|
+|   Plano del Edificio
+
+| ![](img/edificioASV1.png)
+|:-----------------------------:|
+| Vista a la entrada principal
+
+| ![](img/edificioASV2.png)
+|:----------------------------------:|
+| Vista a los fachada de los salones
+
+| ![](img/edificioASV3.png)
+|:-----------------------------------------------:|
+| Vista desde otro ángulo a la entrada principal
+
+[Referencia de las fotos](https://es.foursquare.com/v/ffyl-anexo-adolfo-s%C3%A1nchez-v%C3%A1zquez/4e40577faeb73139a19e473f)
+
+
+[liga-practica-2]: https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-2/ 
