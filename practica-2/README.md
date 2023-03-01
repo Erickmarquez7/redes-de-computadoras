@@ -9,25 +9,21 @@
 
 - [Practica-2][liga-practica-2]
 
-```
+
 En el siguiente archivo se encuentra la [práctica](files/practica 2.pkz)
-```
+
 
 ```
 * Topología de red: 
-  La topología utilizada es Estrella
+  La topología utilizada es Estrella como podemos ver en la siguiente imagen
 ```
 
 | ![](img/top.png)
 |:-------------------------:|
 |   Estrella
 
-
 ```
 * Tabla de los equipos:
-```
-
-```
 Primer Piso
 ```
 
