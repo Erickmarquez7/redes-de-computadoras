@@ -25,7 +25,7 @@ en cada piso del edificio que estamos modelando. Los clientes están acomodados 
 sus cableados forman lo que parece ser una sola linea recta, pero en realidad todos están conectados
 por separado al switch, con su propio cable, formando una topología estrella como la de la imagen de arriba.
 
-| ![](img/red_completa.png)
+| ![](img/red_completa.jpeg)
 |:-------------------------:|
 | Red completa en el plano del edificio
 
@@ -33,45 +33,55 @@ por separado al switch, con su propio cable, formando una topología estrella co
 
 ### Primer Piso
 
-|    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
-|:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
-|    AP-P1-2    |  Filos    |		    10.1.1.1              |
-|  Server-P1-1	|  Filos    |		    10.1.1.1              |
-|    AP-P1-1	|  Filos    |		    10.1.1.1              |
-|   Switch-P1	|  Filos    |		    10.1.1.1              | Switch-P2
-|   PC-P1-1	|  Filos    |		    10.1.1.1              |
-|   PC-P1-2     |  Filos    |		    10.1.1.1              |
-|  Printer-P1-1 |  Filos    |		    10.1.1.1              |
+|    Equipo     	| Hostname  |   Dirección IP de la administración | Conexión con otros switches
+|:---------------------:|:---------:|:-----------------------------------:|:----------------------------:|
+|    AP-P1-2    	|  Filos    |		    10.1.1.1              |
+|  Server-P1-1		|  Filos    |		    10.1.1.1              |
+|    AP-P1-1		|  Filos    |		    10.1.1.1              |
+|   Switch-P1		|  Filos    |		    10.1.1.1              | SwitchDistro-P1
+|   PC-P1-1		|  Filos    |		    10.1.1.1              |
+|   PC-P1-2     	|  Filos    |		    10.1.1.1              |
+|  Printer-P1-1 	|  Filos    |		    10.1.1.1              |
+|   SwitchDistro-P1	|  Filos    |		    10.1.1.1              | SwitchCore
 
 ### Segundo Piso
 
-|    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
-|:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
-|  Printer-P2-1 |  Filos    |		    10.1.2.1              |
-|    PC-P2-1    |  Filos    |		    10.1.2.1              |
-|    AP-P2-1	|  Filos    |		    10.1.2.1              |
-|    AP-P2-2	|  Filos    |		    10.1.2.1              |
-|    AP-P2-3	|  Filos    |		    10.1.2.1              |
-|   Tablet 1	|  Filos    |		    10.1.2.1              |
-|   Tablet 2    |  Filos    |		    10.1.2.1              |
-|  Smartphone1  |  Filos    |		    10.1.2.1              | 
-|   Switch-P2   |  Filos    |		    10.1.2.1              | Swicth-P1, Switch-P3
-|    PC-P2-3    |  Filos    |		    10.1.2.1              |
-|    PC-P2-4    |  Filos    |		    10.1.2.1              |
+|    Equipo     	| Hostname  |   Dirección IP de la administración | Conexión con otros switches
+|:---------------------:|:---------:|:-----------------------------------:|:----------------------------:|
+|  Printer-P2-1 	|  Filos    |		    10.1.2.1              |
+|    PC-P2-1    	|  Filos    |		    10.1.2.1              |
+|    AP-P2-1		|  Filos    |		    10.1.2.1              |
+|    AP-P2-2		|  Filos    |		    10.1.2.1              |
+|    AP-P2-3		|  Filos    |		    10.1.2.1              |
+|   Tablet 1		|  Filos    |		    10.1.2.1              |
+|   Tablet 2    	|  Filos    |		    10.1.2.1              |
+|  Smartphone1  	|  Filos    |		    10.1.2.1              | 
+|   Switch-P2   	|  Filos    |		    10.1.2.1              | SwitchDistro-P2
+|    PC-P2-3    	|  Filos    |		    10.1.2.1              |
+|    PC-P2-4    	|  Filos    |		    10.1.2.1              |
+|   SwitchDistro-P2   	|  Filos    |		    10.1.2.1              | SwicthCore
 
 ### Tercer Piso
 
-|    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
-|:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
-|    PC-P3-1    |  Filos    |		    10.1.3.1              |
-|    PC-P3-2	|  Filos    |		    10.1.3.1              |
-|    PC-P3-3	|  Filos    |		    10.1.3.1              |
-|    AP-P3-1	|  Filos    |		    10.1.3.1              |
-|   Switch-P3	|  Filos    |		    10.1.3.1              | Switch-P2
-|    AP-P3-2    |  Filos    |		    10.1.3.1              |
-|    PC-P3-4	|  Filos    |		    10.1.3.1              |
-|    PC-P3-5    |  Filos    |		    10.1.3.1              |
-|    PC-P3-6    |  Filos    |		    10.1.3.1              |
+|    Equipo     	| Hostname  |   Dirección IP de la administración | Conexión con otros switches
+|:---------------------:|:---------:|:-----------------------------------:|:----------------------------:|
+|    PC-P3-1    	|  Filos    |		    10.1.3.1              |
+|    PC-P3-2		|  Filos    |		    10.1.3.1              |
+|    PC-P3-3		|  Filos    |		    10.1.3.1              |
+|    AP-P3-1		|  Filos    |		    10.1.3.1              |
+|   Switch-P3		|  Filos    |		    10.1.3.1              | SwitchDistro-P3
+|    AP-P3-2    	|  Filos    |		    10.1.3.1              |
+|    PC-P3-4		|  Filos    |		    10.1.3.1              |
+|    PC-P3-5    	|  Filos    |		    10.1.3.1              |
+|    PC-P3-6    	|  Filos    |		    10.1.3.1              |
+|   SwitchDistro-P3	|  Filos    |		    10.1.3.1              | SwitchCore
+
+### Exterior
+
+|    Equipo     	| Hostname  |   Dirección IP de la administración | Conexión con otros switches
+|:---------------------:|:---------:|:-----------------------------------:|:----------------------------:|
+|    SwitchCore    	|  Filos    |		    10.1.1.100            | SwitchDistro-P1, SwitchDistro-P2, SwitchDistro-P3 
+
 
 ## Imagenes
 
@@ -121,3 +131,10 @@ que nos muestra todas las configuraciones que les hicimos:
 - [Switch-P1.txt](files/Switch-P1.txt)
 - [Switch-P2.txt](files/Switch-P2.txt)
 - [Switch-P3.txt](files/Switch-P3.txt)
+
+- [SwitchDistro-P1.txt](files/SwitchDistro-P1.txt)
+- [SwitchDistro-P2.txt](files/SwitchDistro-P2.txt)
+- [SwitchDistro-P3.txt](files/SwitchDistro-P3.txt)
+
+- [SwitchCore.txt](files/SwitchCore.txt)
+
