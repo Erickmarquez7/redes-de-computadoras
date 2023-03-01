@@ -8,9 +8,9 @@
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-[Practica-2](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-2/)
+# [Practica-2](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-2/)
 
-En este enlace se encuentra el archivo `.pkz` de la práctica: [practica2.pkz](files/practica\ 2.pkz)
+En este enlace se encuentra el archivo `.pkz` de la práctica: [practica2.pkz](files/practica2.pkz)
 
 ## Topología de red: 
 
@@ -112,3 +112,12 @@ fue exitoso en cada instancia:
 | ![](img/pdu_p3.png)
 |:----------------------------------:|
 | Pruebas de conexión para equipos en el tercer piso.
+
+## Configuración de los switches
+
+En los siguientes archvios tenemos la salida del comando `show startup-config` para cada uno de los switches de nuestra red,
+que nos muestra todas las configuraciones que les hicimos:
+
+- [Switch-P1.txt](files/Switch-P1.txt)
+- [Switch-P2.txt](files/Switch-P2.txt)
+- [Switch-P3.txt](files/Switch-P3.txt)
