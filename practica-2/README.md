@@ -8,9 +8,9 @@
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-[Practica-2][https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-2/ ]
+[Practica-2](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-2/)
 
-En este enlace se encuentra el archivo `.pkz` de la práctica: [practica2.pkz](files/practica 2.pkz)
+En este enlace se encuentra el archivo `.pkz` de la práctica: [practica2.pkz](files/practica\ 2.pkz)
 
 ## Topología de red: 
 
@@ -38,7 +38,7 @@ por separado al switch, con su propio cable, formando una topología estrella co
 |    AP-P1-2    |  Filos    |		    10.1.1.1              |
 |  Server-P1-1	|  Filos    |		    10.1.1.1              |
 |    AP-P1-1	|  Filos    |		    10.1.1.1              |
-|   Switch-P1	|  Filos    |		    10.1.1.1              |
+|   Switch-P1	|  Filos    |		    10.1.1.1              | Switch-P2
 |   PC-P1-1	|  Filos    |		    10.1.1.1              |
 |   PC-P1-2     |  Filos    |		    10.1.1.1              |
 |  Printer-P1-1 |  Filos    |		    10.1.1.1              |
@@ -54,8 +54,8 @@ por separado al switch, con su propio cable, formando una topología estrella co
 |    AP-P2-3	|  Filos    |		    10.1.2.1              |
 |   Tablet 1	|  Filos    |		    10.1.2.1              |
 |   Tablet 2    |  Filos    |		    10.1.2.1              |
-|  Smartphone1  |  Filos    |		    10.1.2.1              |
-|   Switch-P2   |  Filos    |		    10.1.2.1              |
+|  Smartphone1  |  Filos    |		    10.1.2.1              | 
+|   Switch-P2   |  Filos    |		    10.1.2.1              | Swicth-P1, Switch-P3
 |    PC-P2-3    |  Filos    |		    10.1.2.1              |
 |    PC-P2-4    |  Filos    |		    10.1.2.1              |
 
@@ -67,7 +67,7 @@ por separado al switch, con su propio cable, formando una topología estrella co
 |    PC-P3-2	|  Filos    |		    10.1.3.1              |
 |    PC-P3-3	|  Filos    |		    10.1.3.1              |
 |    AP-P3-1	|  Filos    |		    10.1.3.1              |
-|   Switch-P3	|  Filos    |		    10.1.3.1              |	
+|   Switch-P3	|  Filos    |		    10.1.3.1              | Switch-P2
 |    AP-P3-2    |  Filos    |		    10.1.3.1              |
 |    PC-P3-4	|  Filos    |		    10.1.3.1              |
 |    PC-P3-5    |  Filos    |		    10.1.3.1              |
