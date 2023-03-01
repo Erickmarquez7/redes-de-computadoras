@@ -9,11 +9,23 @@
 
 - [Practica-2][liga-practica-2]
 
-* Topología de red:
+```
+En el siguiente archivo se encuentra la [práctica](files/practica 2.pkz)
+```
+
+```
+* Topología de red: 
+  La topología utilizada es Estrella
+```
+
+| ![](img/top.png)
+|:-------------------------:|
+|   Estrella
 
 
-
+```
 * Tabla de los equipos:
+```
 
 ```
 Primer Piso
@@ -21,13 +33,13 @@ Primer Piso
 
 |    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
 |:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
-|    AP-P1-2    |	    |			   	          |
-|  Server-P1-1	| 	    |		                          |
-|    AP-P1-1	| 	    |		                          |
-|   Switch-P1	|  Filos    |		                          |
-|   PC-P1-1	|	    |		                          |	
-|   PC-P1-2     | 	    |		                          |
-|  Printer-P1-1 |           |   				  |
+|    AP-P1-2    |  Filos    |		    10.1.1.1              |
+|  Server-P1-1	|  Filos    |		    10.1.1.1              |
+|    AP-P1-1	|  Filos    |		    10.1.1.1              |
+|   Switch-P1	|  Filos    |		    10.1.1.1              |
+|   PC-P1-1	|  Filos    |		    10.1.1.1              |
+|   PC-P1-2     |  Filos    |		    10.1.1.1              |
+|  Printer-P1-1 |  Filos    |		    10.1.1.1              |
 
 ```
 Segundo Piso
@@ -35,17 +47,17 @@ Segundo Piso
 
 |    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
 |:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
-|  Printer-P2-1 |           |   				  |
-|    PC-P2-1    |	    |		  		          |
-|    AP-P2-1	| 	    |		                          |
-|    AP-P2-2	| 	    |		                          |
-|    AP-P2-3	| 	    |		                          |
-|   Tablet 1	|	    |		                          |	
-|   Tablet 2    | 	    |		                          |
-|  Smartphone1  |           |                                     |
-|   Switch-P2   |   Filos   |   				  |
-|    PC-P2-3    |           |   			          |
-|    PC-P2-4    |           |   				  |
+|  Printer-P2-1 |  Filos    |		    10.1.2.1              |
+|    PC-P2-1    |  Filos    |		    10.1.2.1              |
+|    AP-P2-1	|  Filos    |		    10.1.2.1              |
+|    AP-P2-2	|  Filos    |		    10.1.2.1              |
+|    AP-P2-3	|  Filos    |		    10.1.2.1              |
+|   Tablet 1	|  Filos    |		    10.1.2.1              |
+|   Tablet 2    |  Filos    |		    10.1.2.1              |
+|  Smartphone1  |  Filos    |		    10.1.2.1              |
+|   Switch-P2   |  Filos    |		    10.1.2.1              |
+|    PC-P2-3    |  Filos    |		    10.1.2.1              |
+|    PC-P2-4    |  Filos    |		    10.1.2.1              |
 
 ```
 Tercer Piso
@@ -53,17 +65,19 @@ Tercer Piso
 
 |    Equipo     | Hostname  |   Dirección IP de la administración | Conexión con otros switches
 |:-------------:|:---------:|:-----------------------------------:|:----------------------------:|
-|    PC-P3-1    |	    |		  		          |
-|    PC-P3-2	| 	    |		                          |
-|    PC-P3-3	| 	    |		                          |
-|    AP-P3-1	| 	    |		                          |
-|   Switch-P3	|   Filos   |		                          |	
-|    AP-P3-2    | 	    |		                          |
-|    PC-P3-4	|	    |		                          |	
-|    PC-P3-5    | 	    |		                          |
-|    PC-P3-6    | 	    |		                          |
+|    PC-P3-1    |  Filos    |		    10.1.3.1              |
+|    PC-P3-2	|  Filos    |		    10.1.3.1              |
+|    PC-P3-3	|  Filos    |		    10.1.3.1              |
+|    AP-P3-1	|  Filos    |		    10.1.3.1              |
+|   Switch-P3	|  Filos    |		    10.1.3.1              |	
+|    AP-P3-2    |  Filos    |		    10.1.3.1              |
+|    PC-P3-4	|  Filos    |		    10.1.3.1              |
+|    PC-P3-5    |  Filos    |		    10.1.3.1              |
+|    PC-P3-6    |  Filos    |		    10.1.3.1              |
 
+```
 * Edificio Adolfo Sánchez Vázquez:
+```
 
 | ![](img/edificioASV.png)
 |:-------------------------:|
