@@ -1,5 +1,5 @@
 Filos#show startup-config
-Using 1132 bytes
+Using 1337 bytes
 !
 version 12.1
 no service timestamps log datetime msec
@@ -28,19 +28,34 @@ interface FastEthernet0/1
  speed 100
 !
 interface FastEthernet1/1
+ duplex full
 !
 interface FastEthernet2/1
+ duplex full
 !
 interface FastEthernet3/1
+ duplex full
 !
 interface FastEthernet4/1
+ duplex full
 !
 interface FastEthernet5/1
+ duplex full
 !
-interface GigabitEthernet6/1
+interface FastEthernet6/1
+ duplex full
+!
+interface FastEthernet7/1
+ duplex full
+!
+interface GigabitEthernet8/1
+ duplex full
+!
+interface GigabitEthernet9/1
+ duplex full
 !
 interface Vlan1
- ip address 10.1.2.1 255.0.0.0
+ ip address 10.1.1.10 255.0.0.0
 !
 ip default-gateway 10.1.1.3
 !

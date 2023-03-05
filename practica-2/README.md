@@ -10,9 +10,9 @@
 
 # [Practica-2](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-2/)
 
-En este enlace se encuentra el archivo `.pkz` de la práctica: [practica2.pkz](files/practica2.pkz)
+En este enlace se encuentra el archivo `.pkt` de la práctica: [practica2.pkt](files/practica2.pkt)
 
-## Topología de red: 
+## Topología de red:
 
 La topología utilizada es Estrella como podemos ver en la siguiente imagen
 
@@ -21,7 +21,7 @@ La topología utilizada es Estrella como podemos ver en la siguiente imagen
 | Topología estrella de la red
 
 En la siguiente imágen podemos ver la totalidad de nuestra red, y podemos ver que tenemos un switch
-en cada piso del edificio que estamos modelando. Los clientes están acomodados de tal forma que 
+en cada piso del edificio que estamos modelando. Los clientes están acomodados de tal forma que
 sus cableados forman lo que parece ser una sola linea recta, pero en realidad todos están conectados
 por separado al switch, con su propio cable, formando una topología estrella como la de la imagen de arriba.
 
@@ -55,7 +55,7 @@ por separado al switch, con su propio cable, formando una topología estrella co
 |    AP-P2-3		|  Filos    |		    10.1.2.1              |
 |   Tablet 1		|  Filos    |		    10.1.2.1              |
 |   Tablet 2    	|  Filos    |		    10.1.2.1              |
-|  Smartphone1  	|  Filos    |		    10.1.2.1              | 
+|  Smartphone1  	|  Filos    |		    10.1.2.1              |
 |   Switch-P2   	|  Filos    |		    10.1.2.1              | SwitchDistro-P2
 |    PC-P2-3    	|  Filos    |		    10.1.2.1              |
 |    PC-P2-4    	|  Filos    |		    10.1.2.1              |
@@ -80,7 +80,7 @@ por separado al switch, con su propio cable, formando una topología estrella co
 
 |    Equipo     	| Hostname  |   Dirección IP de la administración | Conexión con otros switches
 |:---------------------:|:---------:|:-----------------------------------:|:----------------------------:|
-|    SwitchCore    	|  Filos    |		    10.1.1.100            | SwitchDistro-P1, SwitchDistro-P2, SwitchDistro-P3 
+|    SwitchCore    	|  Filos    |		    10.1.1.100            | SwitchDistro-P1, SwitchDistro-P2, SwitchDistro-P3
 
 
 ## Imagenes
@@ -91,15 +91,15 @@ El edificio de la dependencia UNAM asignada que elegimos para modelar fue el sig
 |:-------------------------:|
 |   Plano del Edificio Adolfo Sánchez Vázquez de la Facultad de Filosofía y Letras
 
-| ![](img/edificioASV1.png)
+| ![](img/edificioASV1.jpg)
 |:-----------------------------:|
 | Vista a la entrada principal
 
-| ![](img/edificioASV2.png)
+| ![](img/edificioASV2.jpg)
 |:----------------------------------:|
 | Vista a los fachada de los salones
 
-| ![](img/edificioASV3.png)
+| ![](img/edificioASV3.jpg)
 |:-----------------------------------------------:|
 | Vista desde otro ángulo a la entrada principal
 
@@ -137,4 +137,3 @@ que nos muestra todas las configuraciones que les hicimos:
 - [SwitchDistro-P3.txt](files/SwitchDistro-P3.txt)
 
 - [SwitchCore.txt](files/SwitchCore.txt)
-
