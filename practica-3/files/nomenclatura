@@ -1,0 +1,16 @@
+Nomenclatura de los equipos
+
+Todas las ip empiezan con 192.168.X.Y
+
+Donde x indican el numero de la vlan
+
+y Y indica el numero de dispositivo conectado
+
+Las switches tienen la Y del 1 al 10, mientras que los demas equipos de 11 en adelante
+
+La vlan 1 es para lo inalambtico 
+vlan2 para las pc
+vlan3 impresoras
+vlan4 servidores
+
+Todas las submascaras son de tipo 255.255.255.0

@@ -1,0 +1,115 @@
+!
+version 12.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Filos
+!
+enable secret 5 $1$mERr$YsXqIF8306MddLsesE9MP/
+!
+!
+!
+ip ssh version 2
+ip domain-name cisco.com
+!
+username netadmin privilege 1 password 0 netadmin
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface GigabitEthernet0/1
+ switchport mode trunk
+ duplex full
+!
+interface GigabitEthernet1/1
+ switchport mode trunk
+ duplex full
+!
+interface FastEthernet2/1
+ switchport access vlan 4
+ switchport mode access
+ duplex full
+!
+interface FastEthernet3/1
+ switchport access vlan 4
+ switchport mode access
+ duplex full
+!
+interface FastEthernet4/1
+ switchport access vlan 3
+ switchport mode access
+ duplex full
+!
+interface FastEthernet5/1
+ switchport access vlan 3
+ switchport mode access
+ duplex full
+!
+interface FastEthernet6/1
+ switchport access vlan 2
+ switchport mode access
+ duplex full
+!
+interface FastEthernet7/1
+ switchport access vlan 2
+ switchport mode access
+ duplex full
+!
+interface FastEthernet8/1
+ switchport mode access
+ duplex full
+!
+interface FastEthernet9/1
+ switchport mode access
+ duplex full
+!
+interface Vlan1
+ description vlan-1-inalambricos
+ ip address 192.168.1.0 255.255.255.0
+!
+interface Vlan2
+ description vlan-2-pc
+ ip address 192.168.2.10 255.255.255.0
+!
+interface Vlan3
+ description vlan-3-printers
+ ip address 192.168.3.10 255.255.255.0
+!
+interface Vlan4
+ description vlan-4-servers
+ ip address 192.168.4.10 255.255.255.0
+!
+ip default-gateway 10.1.1.3
+!
+banner motd #
+el acceso de este dispositivo esta restringido unicamente a personas autorizadas #
+!
+!
+!
+line con 0
+ password sanjose
+ logging synchronous
+ login
+ history size 100
+!
+line vty 0 4
+ password sanjose
+ logging synchronous
+ login local
+ history size 100
+ transport input ssh
+line vty 5 15
+ password sanjose
+ logging synchronous
+ login local
+ history size 100
+ transport input ssh
+!
+!
+!
+!
+end
+
