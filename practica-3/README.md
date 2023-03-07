@@ -1,30 +1,38 @@
-# README
+# Equipo-AAR-ATDI-BME-DAAV-LMAM
 
-Aquí vamos ir poniendo los cambios que cada uno haga ya que es un archivo pkt
+| Integrantes                    | Número de Cuenta | Usuario de GitLab   |
+|:------------------------------:|:----------------:|:-------------------:|
+| Acosta Arzate Rubén            | 317205776        | `rubenAcostaArzate` |
+| Alvarado Torres David Ignacio  | 316167613        | `ddalt`             |
+| Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     |
+| Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
+| López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-Ejemplo
+# [Practica-3](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-3/)
 
-_Erick_ 12/13/2045
-hice la el primer ejercicio, aunque tuve duda en la parte donde pedian los puertos
+En este enlace se encuentra el archivo `.pkt` de la práctica: [practica3.pkt](files/practica3.pkt)
 
-_Rubén_ 13/53/2350
-agregué los puertos, faltan las redes
+## Topología de red:
 
-_Valeria_ 12/12/1212
-modifiqué las redes
+La topología utilizada es Estrella como podemos ver en la siguiente imagen
 
-_David_ 01/12/1320
-redes tenia un error, ya lo corregí y agregue la parte extra
+| ![](img/top.png)                 $$$$$$$$$$$$$Hay que cambiar la imagen, ya que eliminamos compus
+|:-------------------------:|
+| Topología estrella de la red
 
-_Mau_ 15/54/1200
-acomodé mejor la estrcutura de la red cambiando la topologia
-
-_David_ 56/450/456
-modifiqué los puertos de entrada por otra version
-
-_Rubén_ 51/29/2550
-FIn de la practica, awebo
+En la siguiente imágen podemos ver la totalidad de nuestra red, y podemos ver que tenemos un switch
+en cada piso del edificio que estamos modelando. Los clientes están acomodados de tal forma que
+sus cableados forman lo que parece ser una sola linea recta, pero en realidad todos están conectados
+por separado al switch, con su propio cable, formando una topología estrella como la de la imagen de arriba.
 
 
+## Tabla de los equipos en vLAN:
 
-Esto por el momento para ver que tal nos funciona para las siguientes practicas o cambiamos de metodología
+## Tabla de conexión
+
+## Tabla de ip
+
+## Tabla de ruteo
+
+
+
