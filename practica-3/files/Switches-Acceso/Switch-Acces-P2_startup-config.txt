@@ -1,12 +1,12 @@
-SwitchDistro-P1#show startup-config 
-Using 1979 bytes
+Switch-Access-P2#show startup-config 
+Using 1878 bytes
 !
 version 12.1
 no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname SwitchDistro-P1
+hostname Switch-Access-P2
 !
 enable secret 5 $1$mERr$YsXqIF8306MddLsesE9MP/
 !
@@ -30,65 +30,64 @@ interface GigabitEthernet1/1
  switchport mode trunk
  duplex full
 !
-interface GigabitEthernet2/1
- switchport mode trunk
- duplex full
-!
-interface GigabitEthernet3/1
- switchport mode trunk
- duplex full
-!
-interface GigabitEthernet4/1
- switchport mode trunk
- duplex full
-!
-interface GigabitEthernet5/1
- switchport mode trunk
- duplex full
-!
-interface GigabitEthernet6/1
- switchport mode trunk
- duplex full
-!
-interface GigabitEthernet7/1
- switchport access vlan 100
+interface FastEthernet2/1
+ switchport access vlan 4
  switchport mode access
  duplex full
 !
-interface GigabitEthernet8/1
- switchport access vlan 100
+interface FastEthernet3/1
+ switchport access vlan 4
  switchport mode access
  duplex full
 !
-interface GigabitEthernet9/1
- switchport access vlan 100
+interface FastEthernet4/1
+ switchport access vlan 3
+ switchport mode access
+ duplex full
+!
+interface FastEthernet5/1
+ switchport access vlan 3
+ switchport mode access
+ duplex full
+!
+interface FastEthernet6/1
+ switchport access vlan 2
+ switchport mode access
+ duplex full
+!
+interface FastEthernet7/1
+ switchport access vlan 2
+ switchport mode access
+ duplex full
+!
+interface FastEthernet8/1
+ switchport mode access
+ duplex full
+!
+interface FastEthernet9/1
  switchport mode access
  duplex full
 !
 interface Vlan1
  description vlan-1-inalambricos
- ip address 192.168.1.4 255.255.255.0
+ ip address 192.168.1.2 255.255.255.0
 !
 interface Vlan2
  description vlan-2-pc
- ip address 192.168.2.4 255.255.255.0
+ ip address 192.168.2.2 255.255.255.0
 !
 interface Vlan3
  description vlan-3-printers
- ip address 192.168.3.4 255.255.255.0
+ ip address 192.168.3.2 255.255.255.0
 !
 interface Vlan4
- description vlan-3-servers
- ip address 192.168.4.4 255.255.255.0
-!
-interface Vlan100
- description ip de la adm
- ip address 192.168.100.1 255.255.255.0
+ description vlan-4-servers
+ ip address 192.168.4.2 255.255.255.0
 !
 ip default-gateway 10.1.1.3
 !
 banner motd ^C
-el acceso de este dispositivo esta restringido unicamente a personas autorizadas ^C
+banner motd ^C
 !
 !
 !
