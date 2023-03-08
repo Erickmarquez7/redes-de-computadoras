@@ -250,7 +250,7 @@ Por cada switch utilizado, mostramos a qué switches se conecta directamente a t
 
 Mostramos la salida del comando `show ip route` ejecutado en el Switch Core de la red:
 
-```bash
+```
 Gateway of last resort is not set
 
 C    192.168.2.0/24 is directly connected, Vlan2
@@ -260,6 +260,278 @@ C    192.168.100.0/24 is directly connected, Vlan100
 ```
 
 ## Pruebas de conexión de los equipos en la red
+
+### Para equipos en la vLAN 2
+
+- `PC-P3-6` a `PC-P3-1`
+
+    ```
+    C:\>ping 192.168.2.15
+
+    Pinging 192.168.2.15 with 32 bytes of data:
+
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.15:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+    
+- `PC-P2-3` a `PC-P3-1`
+
+    ```
+    C:\>ping 192.168.2.15
+
+    Pinging 192.168.2.15 with 32 bytes of data:
+
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.15:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P2-4` a `PC-P3-1`
+
+    ```
+    C:\>ping 192.168.2.15
+
+    Pinging 192.168.2.15 with 32 bytes of data:
+
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.15:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P1-1` a `PC-P3-1` 
+
+    ```
+    C:\>ping 192.168.2.15
+
+    Pinging 192.168.2.15 with 32 bytes of data:
+
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.15:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P1-2` a `PC-P3-1` 
+
+    ```
+    C:\>ping 192.168.2.15
+
+    Pinging 192.168.2.15 with 32 bytes of data:
+
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.15: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.15:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P2-3` a `PC-P3-6`
+
+    ```
+    C:\>ping 192.168.2.16
+
+    Pinging 192.168.2.16 with 32 bytes of data:
+
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.16:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P2-4` a `PC-P3-6`
+
+    ```
+    C:\>ping 192.168.2.16
+
+    Pinging 192.168.2.16 with 32 bytes of data:
+
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.16:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P1-1` a `PC-P3-6`
+
+    ```
+    C:\>ping 192.168.2.16
+
+    Pinging 192.168.2.16 with 32 bytes of data:
+
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.16:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P1-2` a `PC-P3-6`
+
+    ```
+    C:\>ping 192.168.2.16
+
+    Pinging 192.168.2.16 with 32 bytes of data:
+
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.16: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.16:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+
+- `PC-P2-4` a `PC-P2-3`
+
+    ```
+    C:\>ping 192.168.2.13
+
+    Pinging 192.168.2.13 with 32 bytes of data:
+
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.13:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```   
+
+- `PC-P1-1` a `PC-P2-3`
+
+    ```
+    C:\>ping 192.168.2.13
+
+    Pinging 192.168.2.13 with 32 bytes of data:
+
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time=16ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time=1ms TTL=128
+
+    Ping statistics for 192.168.2.13:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 16ms, Average = 4ms
+    ```    
+
+- `PC-P1-2` a `PC-P2-3`
+
+    ```
+    C:\>ping 192.168.2.13
+
+    Pinging 192.168.2.13 with 32 bytes of data:
+
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time=1ms TTL=128
+    Reply from 192.168.2.13: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.13:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 1ms, Average = 0ms
+    ```    
+
+- `PC-P1-1` a `PC-P2-4`
+
+    ```
+    C:\>ping 192.168.2.14
+
+    Pinging 192.168.2.14 with 32 bytes of data:
+
+    Reply from 192.168.2.14: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.14: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.14: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.14: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.14:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```    
+    
+- `PC-P1-2` a `PC-P2-4`
+
+    ```
+    C:\>ping 192.168.2.14
+
+    Pinging 192.168.2.14 with 32 bytes of data:
+
+    Reply from 192.168.2.14: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.14: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.14: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.14: bytes=32 time=17ms TTL=128
+
+    Ping statistics for 192.168.2.14:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 17ms, Average = 4ms
+    ```    
+
+- `PC-P1-2` a `PC-P1-1`
+
+    ```
+    C:\>ping 192.168.2.11
+
+    Pinging 192.168.2.11 with 32 bytes of data:
+
+    Reply from 192.168.2.11: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.11: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.11: bytes=32 time<1ms TTL=128
+    Reply from 192.168.2.11: bytes=32 time<1ms TTL=128
+
+    Ping statistics for 192.168.2.11:
+        Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+    Approximate round trip times in milli-seconds:
+        Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
 
 ## Configuración de los switches
 
