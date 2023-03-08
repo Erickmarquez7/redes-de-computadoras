@@ -269,9 +269,9 @@ Listamos las carpetas para cada tipo de switch que tenemos en la red. Por cada c
     * [SwitchCore_startup-config.txt](files/Switch-Core/SwitchCore_startup-config.txt)
 
 2. [Switches-Acceso](files/Switches-Acceso/)
-    * [Switch-Access-P1_startup-config.txt](files/Switches-Acceso/Switch-Acceso-P1_startup-config.txt)
-    * [Switch-Access-P2_startup-config.txt](files/Switches-Acceso/Switch-Acceso-P2_startup-config.txt)
-    * [Switch-Access-P3_startup-config.txt](files/Switches-Acceso/Switch-Acceso-P3_startup-config.txt)
+    * [Switch-Access-P1_startup-config.txt](files/Switches-Acceso/Switch-Access-P1_startup-config.txt)
+    * [Switch-Access-P2_startup-config.txt](files/Switches-Acceso/Switch-Access-P2_startup-config.txt)
+    * [Switch-Access-P3_startup-config.txt](files/Switches-Acceso/Switch-Access-P3_startup-config.txt)
 
 2. [Switches-Distribucion](files/Switches-Distribucion/)
     * [SwitchDistro-P1_startup-config.txt](files/Switches-Distribucion/SwitchDistro-P1_startup-config.txt)
