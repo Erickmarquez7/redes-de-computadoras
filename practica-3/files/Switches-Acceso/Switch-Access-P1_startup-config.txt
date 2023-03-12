@@ -1,10 +1,12 @@
+Switch-Access-P1#show startup-config 
+Using 1947 bytes
 !
 version 12.1
 no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname Filos
+hostname Switch-Access-P1
 !
 enable secret 5 $1$mERr$YsXqIF8306MddLsesE9MP/
 !
@@ -82,10 +84,10 @@ interface Vlan4
  description vlan-4-servers
  ip address 192.168.4.1 255.255.255.0
 !
-ip default-gateway 10.1.1.1
+ip default-gateway 10.1.1.3
 !
-banner motd #
-el acceso de este dispositivo esta restringido unicamente a personas autorizadas #
+banner motd ^C
+el acceso de este dispositivo esta restringido unicamente a personas autorizadas ^C
 !
 !
 !

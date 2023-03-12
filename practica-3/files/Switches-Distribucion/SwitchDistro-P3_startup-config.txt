@@ -1,12 +1,12 @@
-SwitchDistro-P1#show startup-config 
-Using 1979 bytes
+SwitchDistro-P3#show startup-config 
+Using 1910 bytes
 !
 version 12.1
 no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname SwitchDistro-P1
+hostname SwitchDistro-P3
 !
 enable secret 5 $1$mERr$YsXqIF8306MddLsesE9MP/
 !
@@ -67,28 +67,28 @@ interface GigabitEthernet9/1
 !
 interface Vlan1
  description vlan-1-inalambricos
- ip address 192.168.1.4 255.255.255.0
+ ip address 192.168.1.6 255.255.255.0
 !
 interface Vlan2
  description vlan-2-pc
- ip address 192.168.2.4 255.255.255.0
+ ip address 192.168.2.6 255.255.255.0
 !
 interface Vlan3
  description vlan-3-printers
- ip address 192.168.3.4 255.255.255.0
+ ip address 192.168.3.6 255.255.255.0
 !
 interface Vlan4
  description vlan-3-servers
- ip address 192.168.4.4 255.255.255.0
+ ip address 192.168.4.6 255.255.255.0
 !
 interface Vlan100
  description ip de la adm
- ip address 192.168.100.1 255.255.255.0
+ ip address 192.168.100.3 255.255.255.0
 !
 ip default-gateway 10.1.1.3
 !
 banner motd ^C
-el acceso de este dispositivo esta restringido unicamente a personas autorizadas ^C
+banner motd ^C
 !
 !
 !
