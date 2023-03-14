@@ -14,46 +14,34 @@ En este enlace se encuentra el archivo `.pkt` de la práctica: [practica4.pkt](f
 
 ## Topología de red:
 
-La topología de nuestra red es de tipo <b>árbol</b>. Es claro ver que la red cumple con las características de un árbol como los conocemos en teoría de gráficas: una gráfica conexa y acíclica. En la raíz tenemos al Switch Core (nivel 0); después, en el nivel 1 tenemos a los switches de distribución, conectados a su vez a los switches de administración (nivel 2), que se conectan a los clientes de la red, que serían las hojas del árbol.
+La topología de nuestra red es de tipo <b>anillo</b>. Es claro ver que esta es nuestra topología por como están los Routers conectados, cada Router está conectado a otros dos Routers, uno de cada lado, formando así un anillo.
 
 En la siguiente imagen podemos apreciar también las diferentes vLAN configuradas en la red:
 
-| ![](img/red_arbol.png)
-|:-------------------------:|
-| Topología tipo árbol de la red
+| ![](img/red_anillo.png)
+|:--------------------------------:|
+| Topología tipo anillo de la red
 
 
-------- editar esto xd -------------
-
-## Tabla de los equipos en cada vLAN:
-
-
-## Tabla de conexiones de cada switch
-
-
-## Tabla de direcciones IP de clientes por piso
-
-
-## Ruteo del switch multicapa
+## Tabla de los equipos
 
 
 ## Pruebas de conexión de los equipos en la red
 
 
 
-## Configuración de los switches (para esta será de redes xd)
+## Configuración de los switches y routeadores 
 
-Listamos las carpetas para cada tipo de switch que tenemos en la red. Por cada carpeta, listamos los archivos `.txt` que guarda. Cada archivo tiene la salida del comando `show startup-config` para su respectivo switch:
+Listamos los archivos `.txt` que guarda cada uno la salida del comando `show startup-config` para su respectivo switch o router:
 
-1. [Switch-Core](files/Switch-Core/)  
-    * [SwitchCore_startup-config.txt](files/Switch-Core/SwitchCore_startup-config.txt)
+1. Switches:
+    * [Switch-Filos](files/Switch-Filos.txt)
+    * [Switch-Psico](files/Switch-Psico.txt)
+    * [Switch-Economia](files/Switch-Economia.txt)
+    * [Switch-Derecho](files/Switch-Derecho.txt)
 
-2. [Switches-Acceso](files/Switches-Acceso/)
-    * [Switch-Access-P1_startup-config.txt](files/Switches-Acceso/Switch-Access-P1_startup-config.txt)
-    * [Switch-Access-P2_startup-config.txt](files/Switches-Acceso/Switch-Access-P2_startup-config.txt)
-    * [Switch-Access-P3_startup-config.txt](files/Switches-Acceso/Switch-Access-P3_startup-config.txt)
-
-2. [Switches-Distribucion](files/Switches-Distribucion/)
-    * [SwitchDistro-P1_startup-config.txt](files/Switches-Distribucion/SwitchDistro-P1_startup-config.txt)
-    * [SwitchDistro-P2_startup-config.txt](files/Switches-Distribucion/SwitchDistro-P2_startup-config.txt)
-    * [SwitchDistro-P3_startup-config.txt](files/Switches-Distribucion/SwitchDistro-P3_startup-config.txt)
+2. Routers:
+    * [Router-Filos](files/Router-Filos.txt)
+    * [Router-Psico](files/Router-Psico.txt)
+    * [Router-Economia](files/Router-Economia.txt)
+    * [Router-Derecho](files/Router-Derecho.txt)
