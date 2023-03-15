@@ -138,6 +138,223 @@ En la siguiente imagen podemos apreciar también las diferentes vLAN configurada
 	Approximate round trip times in milli-seconds:
 	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
     ```
+### Para equipos a routers 
+
+- `Laptop-Psico` a `Router-Psico GigabitEthernet0/0`
+	
+	```
+	C:\>ping 192.168.20.254
+
+	Pinging 192.168.20.254 with 32 bytes of data:
+
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
+
+	Ping statistics for 192.168.20.254:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Router-Psico GigabitEthernet1/0`
+	
+	```
+	C:\>ping 198.51.100.2
+
+	Pinging 198.51.100.2 with 32 bytes of data:
+
+	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
+
+	Ping statistics for 198.51.100.2:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+- `Laptop-Psico` a `Router-Psico GigabitEthernet2/0`
+	
+	```
+	C:\>ping 198.51.100.13
+
+	Pinging 198.51.100.13 with 32 bytes of data:
+
+	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
+
+	Ping statistics for 198.51.100.13:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Router-Filos GigabitEthernet0/0`
+	
+	```
+	C:\>ping 192.168.10.254
+
+	Pinging 192.168.10.254 with 32 bytes of data:
+
+	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
+
+	Ping statistics for 192.168.10.254:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```	
+
+- `Laptop-Psico` a `Router-Filos GigabitEthernet1/0`
+	
+	```
+	C:\>ping 198.51.100.9
+
+	Pinging 198.51.100.9 with 32 bytes of data:
+
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
+
+	Ping statistics for 198.51.100.9:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Router-Filos GigabitEthernet2/0`
+	
+	```
+	C:\>ping 198.51.100.14
+
+	Pinging 198.51.100.14 with 32 bytes of data:
+
+	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
+
+	Ping statistics for 198.51.100.14:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Router-Economia GigabitEthernet0/0`
+	
+	```
+	C:\>ping 192.168.40.254
+
+	Pinging 192.168.40.254 with 32 bytes of data:
+
+	Reply from 192.168.40.254: bytes=32 time<1ms TTL=254
+	Reply from 192.168.40.254: bytes=32 time<1ms TTL=254
+	Reply from 192.168.40.254: bytes=32 time<1ms TTL=254
+	Reply from 192.168.40.254: bytes=32 time=10ms TTL=254
+
+	Ping statistics for 192.168.40.254:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 10ms, Average = 2ms
+
+	```
+	
+- `Laptop-Psico` a `Router-Economia GigabitEthernet1/0`
+	
+	```
+	C:\>ping 198.51.100.1
+
+	Pinging 198.51.100.1 with 32 bytes of data:
+
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
+
+	Ping statistics for 198.51.100.1:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Router-Economia GigabitEthernet2/0`
+	
+	```
+	C:\>ping 198.51.100.5
+
+	Pinging 198.51.100.5 with 32 bytes of data:
+
+	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
+	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
+	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
+	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
+
+	Ping statistics for 198.51.100.5:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Router-Derecho GigabitEthernet0/0`
+	
+	```
+	C:\> ping 192.168.30.254
+
+	Pinging 192.168.30.254 with 32 bytes of data:
+
+	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
+	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
+	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
+	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
+
+	Ping statistics for 192.168.30.254:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Router-Derecho GigabitEthernet1/0`
+	
+	```
+	C:\>ping 198.51.100.10
+
+	Pinging 198.51.100.10 with 32 bytes of data:
+
+	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
+	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
+	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
+	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
+
+	Ping statistics for 198.51.100.10:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    	```
+    
+- `Laptop-Psico` a `Router-Derecho GigabitEthernet2/0`
+	
+	```
+    	C:\>ping 198.51.100.6
+  
+	Pinging 198.51.100.6 with 32 bytes of data:
+
+	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
+	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
+	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
+	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
+
+	Ping statistics for 198.51.100.6:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```    
 
 
 ## Configuración de los switches y routeadores 
