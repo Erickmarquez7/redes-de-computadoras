@@ -1,0 +1,110 @@
+Router-Derecho#show startup-config
+Using 1456 bytes
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Router-Derecho
+!
+!
+!
+enable secret 5 $1$mERr$YsXqIF8306MddLsesE9MP/
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username netadmin password 0 netadmin
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 2
+ip domain-name cisco.com
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 192.168.30.254 255.255.255.0
+ duplex full
+ speed auto
+!
+interface GigabitEthernet1/0
+ ip address 198.51.100.10 255.255.255.252
+ duplex full
+ speed auto
+!
+interface GigabitEthernet2/0
+ ip address 198.51.100.6 255.255.255.252
+ duplex full
+ speed auto
+!
+interface GigabitEthernet3/0
+ no ip address
+ duplex full
+ speed auto
+!
+interface FastEthernet4/0
+ no ip address
+ duplex full
+ speed auto
+!
+interface FastEthernet5/0
+ no ip address
+ duplex full
+ speed auto
+!
+interface FastEthernet6/0
+ no ip address
+ duplex full
+ speed auto
+!
+ip classless
+ip route 192.168.40.0 255.255.255.0 198.51.100.5 
+ip route 192.168.10.0 255.255.255.0 198.51.100.9 
+ip route 198.51.100.0 255.255.255.252 198.51.100.5 
+ip route 198.51.100.12 255.255.255.252 198.51.100.9 
+ip route 192.168.20.0 255.255.255.0 198.51.100.2 
+ip route 192.168.20.0 255.255.255.0 198.51.100.13 
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^C Solo personal autorizado ^C
+!
+!
+!
+!
+!
+line con 0
+ password sanjose
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password sanjose
+ login local
+ transport input ssh
+!
+!
+!
+end
