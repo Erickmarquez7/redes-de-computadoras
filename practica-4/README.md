@@ -25,16 +25,16 @@ En la siguiente imagen podemos apreciar también las diferentes vLAN configurada
 
 ## Tabla de los equipos
 
-| Equipo          |  Hostname        | IP de administración | Conexión con otros switches y ruteadores  |
-|:---------------:|:----------------:|:--------------------:|:-----------------------------------------:|
-| Switch-Filos    |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                               |
-| Switch-Psico    |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                               |
-| Switch-Derecho  |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                             |
-| Switch-Economia |  Switch-Economia | 192.168.40.253/24    |Router-Economia                            |
-| Router-Filos    |  Router-Filos    | 192.168.10.254/24    |Switch-Filos Router-Psico Router-Derecho   |
-| Router-Psico    |  Router-Psico    | 192.168.20.254/24    |Switch-Psico Router-Filos Router-Economia  |
-| Router-Derecho  |  Router-Derecho  | 192.168.30.254/24    |Switch-Derecho Router-Filos Router-Economia|
-| Router-Economia |  Router-Economia | 192.168.40.254/24    |Switch-Economia Router-Psico Router-Derecho|
+| Equipo          |  Hostname        | IP de administración | Conexión con otros switches y ruteadores    |
+|:---------------:|:----------------:|:--------------------:|:-------------------------------------------:|
+| Switch-Filos    |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
+| Switch-Psico    |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
+| Switch-Derecho  |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
+| Switch-Economia |  Switch-Economia | 192.168.40.253/24    |Router-Economia                              |
+| Router-Filos    |  Router-Filos    | 192.168.10.254/24    |Switch-Filos, Router-Psico, Router-Derecho   |
+| Router-Psico    |  Router-Psico    | 192.168.20.254/24    |Switch-Psico, Router-Filos, Router-Economia  |
+| Router-Derecho  |  Router-Derecho  | 192.168.30.254/24    |Switch-Derecho, Router-Filos, Router-Economia|
+| Router-Economia |  Router-Economia | 192.168.40.254/24    |Switch-Economia, Router-Psico, Router-Derecho|
 
 ### Switch-Filos
 `show cdp neighbors`
