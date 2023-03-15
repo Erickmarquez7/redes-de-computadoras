@@ -28,6 +28,116 @@ En la siguiente imagen podemos apreciar también las diferentes vLAN configurada
 
 ## Pruebas de conexión de los equipos en la red
 
+### Para equipos en la red LAN
+
+- `Laptop-Filos` a `Laptop-Psico`
+
+    ```
+	C:\>ping 192.168.20.1
+
+	Pinging 192.168.20.1 with 32 bytes of data:
+
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+
+	Ping statistics for 192.168.20.1:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+    
+- `Laptop-Economia` a `Laptop-Psico`
+    
+    ```
+	C:\>ping 192.168.20.1
+
+	Pinging 192.168.20.1 with 32 bytes of data:
+
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
+
+	Ping statistics for 192.168.20.1:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    
+    ```
+    
+- `Laptop-Derecho` a `Laptop-Psico`
+
+	```
+	C:\>ping 192.168.20.1
+
+	Pinging 192.168.20.1 with 32 bytes of data:
+
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
+	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
+
+	Ping statistics for 192.168.20.1:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
+    
+- `Laptop-Economia` a `Laptop-Filos`
+
+	```
+	C:\>ping 192.168.10.1
+
+	Pinging 192.168.10.1 with 32 bytes of data:
+
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+
+	Ping statistics for 192.168.10.1:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Derecho` a `Laptop-Filos`
+
+	```
+	C:\>ping 192.168.10.1
+
+	Pinging 192.168.10.1 with 32 bytes of data:
+
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
+
+	Ping statistics for 192.168.10.1:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Derecho` a `Laptop-Economia`
+
+	```
+	C:\>ping 192.168.40.1
+
+	Pinging 192.168.40.1 with 32 bytes of data:
+
+	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
+	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
+
+	Ping statistics for 192.168.40.1:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+    ```
 
 
 ## Configuración de los switches y routeadores 
