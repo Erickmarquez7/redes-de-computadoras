@@ -27,6 +27,10 @@ En la siguiente imagen podemos apreciar también las diferentes vLAN configurada
 
 | Equipo          |  Hostname        | IP de administración | Conexión con otros switches y ruteadores    |
 |:---------------:|:----------------:|:--------------------:|:-------------------------------------------:|
+| Server-Filos    |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
+| Server-Psico    |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
+| Server-Derecho  |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
+| Server-Economia |  Switch-Economia | 192.168.40.253/24    |Router-Economia                              |
 | Switch-Filos    |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
 | Switch-Psico    |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
 | Switch-Derecho  |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
@@ -40,20 +44,21 @@ En la siguiente imagen podemos apreciar también las diferentes vLAN configurada
 `show cdp neighbors`
 
 ```
-Switch-Filos>show cdp neighbors
+Switch-Filos>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
 Router-Filos 
-             Gig 1/1          177            R       PT1000      Gig 0/0
+             Fas 1/1          132            R       PT1000      Fas 4/0
 ```
 
 `show ip arp`
 
 ```
-Switch-Filos>show ip arp
+Switch-Filos>show ip arp 
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.10.253          -   000B.BEE1.8296  ARPA   Vlan1
+Internet  192.168.10.1            -   000B.BEE1.8296  ARPA   Vlan1
+Internet  192.168.10.254          1   00D0.D362.EEA9  ARPA   Vlan1
 ```
 
 `show ip interface brief`
@@ -62,8 +67,8 @@ Internet  192.168.10.253          -   000B.BEE1.8296  ARPA   Vlan1
 Switch-Filos>show ip interface brief
 Interface              IP-Address      OK? Method Status                Protocol 
 FastEthernet0/1        unassigned      YES manual up                    up 
-GigabitEthernet1/1     unassigned      YES manual up                    up 
-Vlan1                  192.168.10.253  YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  192.168.10.1    YES manual up                    up 
 Vlan100                unassigned      YES manual up                    down
 ```
 
@@ -71,20 +76,20 @@ Vlan100                unassigned      YES manual up                    down
 `show cdp neighbors`
 
 ```
-Switch-Psico>show cdp neighbors
+Switch-Psico>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
 Router-Psico 
-             Gig 1/1          140            R       PT1000      Gig 0/0
+             Fas 1/1          148            R       PT1000      Fas 4/0
 ```
 
 `show ip arp`
 
 ```
-Switch-Psico>show ip arp
+Switch-Psico>show ip arp 
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.20.253          -   0002.17D4.5C96  ARPA   Vlan1
+Internet  192.160.20.1            -   0002.17D4.5C96  ARPA   Vlan1
 ```
 
 `show ip interface brief`
@@ -93,8 +98,8 @@ Internet  192.168.20.253          -   0002.17D4.5C96  ARPA   Vlan1
 Switch-Psico>show ip interface brief
 Interface              IP-Address      OK? Method Status                Protocol 
 FastEthernet0/1        unassigned      YES manual up                    up 
-GigabitEthernet1/1     unassigned      YES manual up                    up 
-Vlan1                  192.168.20.253  YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  192.160.20.1    YES manual up                    up 
 Vlan100                unassigned      YES manual up                    down
 ```
 
@@ -102,30 +107,31 @@ Vlan100                unassigned      YES manual up                    down
 `show cdp neighbors`
 
 ```
-Switch-Derecho>show cdp neighbors
+Switch-Derecho>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
 Router-Derecho
-             Gig 1/1          170            R       PT1000      Gig 0/0
+             Fas 1/1          133            R       PT1000      Fas 4/0
 ```
 
 `show ip arp`
 
 ```
-Switch-Derecho>show ip arp
+Switch-Derecho>show ip arp 
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.30.253          -   000B.BEA9.A4B2  ARPA   Vlan1
+Internet  192.168.30.1            -   000B.BEA9.A4B2  ARPA   Vlan1
+Internet  192.168.30.254          14  0002.4AC6.25A2  ARPA   Vlan1
 ```
 
 `show ip interface brief`
 
 ```
-Switch-Derecho>show ip interface brief
+Switch-Derecho>show ip interface brief 
 Interface              IP-Address      OK? Method Status                Protocol 
 FastEthernet0/1        unassigned      YES manual up                    up 
-GigabitEthernet1/1     unassigned      YES manual up                    up 
-Vlan1                  192.168.30.253  YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  192.168.30.1    YES manual up                    up 
 Vlan100                unassigned      YES manual up                    down
 ```
 
@@ -133,30 +139,31 @@ Vlan100                unassigned      YES manual up                    down
 `show cdp neighbors`
 
 ```
-Switch-Economia>show cdp neighbors
+Switch-Economia>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
 Router-Economia
-             Gig 1/1          138            R       PT1000      Gig 0/0
+             Fas 1/1          150            R       PT1000      Fas 4/0
 ```
 
 `show ip arp`
 
 ```
-Switch-Economia>show ip arp
+Switch-Economia>show ip arp 
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.40.253          -   0001.9752.DB01  ARPA   Vlan1
+Internet  192.168.40.1            -   0001.9752.DB01  ARPA   Vlan1
+Internet  192.168.40.254          17  0002.1618.23DB  ARPA   Vlan1
 ```
 
 `show ip interface brief`
 
 ```
-Switch-Economia>show ip interface brief
+Switch-Economia>show ip interface brief 
 Interface              IP-Address      OK? Method Status                Protocol 
 FastEthernet0/1        unassigned      YES manual up                    up 
-GigabitEthernet1/1     unassigned      YES manual up                    up 
-Vlan1                  192.168.40.253  YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  192.168.40.1    YES manual up                    up 
 Vlan100                unassigned      YES manual up                    down
 ```
 
