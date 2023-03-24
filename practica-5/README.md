@@ -893,6 +893,56 @@ internal        1                                   1148
 Total           5           4           576         2172
 ```
 
+`show ip nat statistics`
+
+```
+Router-Economia>enable
+Password: 
+Router-Economia#show ip nat statistics
+Total translations: 2 (2 static, 0 dynamic, 1 extended)
+Outside Interfaces: GigabitEthernet0/0
+Inside Interfaces: FastEthernet4/0 , FastEthernet5/0
+Hits: 0  Misses: 19
+Expired translations: 0
+Dynamic mappings:
+```
+
+`show ip nat translations`
+
+```
+Pro  Inside global     Inside local       Outside local      Outside global
+---  198.51.100.25     10.0.40.1          ---                ---
+tcp 198.51.100.25:80   10.0.40.1:80       ---                ---
+```
+
+`show ip rip database`
+
+```
+
+192.168.10.0/24    auto-summary
+192.168.10.0/24
+    [2] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+192.168.20.0/24    auto-summary
+192.168.20.0/24
+    [2] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+192.168.30.0/24    auto-summary
+192.168.30.0/24
+    [2] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+192.168.40.0/24    auto-summary
+192.168.40.0/24    directly connected, FastEthernet4/0
+198.51.100.0/29    auto-summary
+198.51.100.0/29
+    [1] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+198.51.100.8/29    auto-summary
+198.51.100.8/29
+    [1] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+198.51.100.16/29    auto-summary
+198.51.100.16/29
+    [1] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+198.51.100.24/29    auto-summary
+198.51.100.24/29    directly connected, GigabitEthernet0/0
+```
+
 ## Pruebas de conexión de los equipos en la red
 
 ### Para equipos en la red LAN
