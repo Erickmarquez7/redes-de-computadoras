@@ -1174,3 +1174,9 @@ Listamos los archivos `.txt` que guarda cada uno la salida del comando `show sta
     * [Router-Psico](files/Router-Psico.txt)
     * [Router-Economia](files/Router-Economia.txt)
     * [Router-Derecho](files/Router-Derecho.txt)
+    
+## DNS
+
+| ![](img/dns.png)
+|:--------------------------------:|
+| DNS
