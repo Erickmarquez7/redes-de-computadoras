@@ -167,50 +167,175 @@ Vlan1                  192.168.40.1    YES manual up                    up
 Vlan100                unassigned      YES manual up                    down
 ```
 
-### Router-Filos
+### Switch-Psico-DMZ
 `show cdp neighbors`
 
 ```
-Router-Filos>show cdp neighbors
+Switch-Psico-DMZ>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
-Switch-Filos 
-             Gig 0/0          156            S       PT3000      Gig 1/1
 Router-Psico 
-             Gig 2/0          156            R       PT1000      Gig 2/0
-Router-Derecho
-             Gig 1/0          156            R       PT1000      Gig 1/0
+             Fas 1/1          121            R       PT1000      Fas 5/0
 ```
 
 `show ip arp`
 
 ```
-Router-Filos>show ip arp
+Switch-Psico-DMZ>show ip arp 
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.10.254          -   0005.5EBC.D3D0  ARPA   GigabitEthernet0/0
-Internet  198.51.100.9            -   0090.2B20.73A1  ARPA   GigabitEthernet1/0
-Internet  198.51.100.14           -   0040.0B68.2985  ARPA   GigabitEthernet2/0
+Internet  10.0.20.253             -   0060.47DC.9D4A  ARPA   Vlan1
 ```
 
 `show ip interface brief`
 
 ```
-Router-Filos>show ip interface brief
+Switch-Psico-DMZ>show ip interface brief 
 Interface              IP-Address      OK? Method Status                Protocol 
-GigabitEthernet0/0     192.168.10.254  YES manual up                    up 
-GigabitEthernet1/0     198.51.100.9    YES manual up                    up 
-GigabitEthernet2/0     198.51.100.14   YES manual up                    up 
-GigabitEthernet3/0     unassigned      YES unset  up                    down 
-FastEthernet4/0        unassigned      YES unset  up                    down 
-FastEthernet5/0        unassigned      YES unset  up                    down 
-FastEthernet6/0        unassigned      YES unset  up                    down
+FastEthernet0/1        unassigned      YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  10.0.20.253     YES manual up                    up 
+Vlan100                10.0.20.100     YES manual up                    down
+```
+
+### Switch-Filos-DMZ
+`show cdp neighbors`
+
+```
+Switch-Filos-DMZ>show cdp neighbors 
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Filos 
+             Fas 1/1          173            R       PT1000      Fas 5/0
+```
+
+`show ip arp`
+
+```
+Switch-Filos-DMZ>show ip arp 
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.0.10.253             -   0050.0F2B.A34A  ARPA   Vlan1
+```
+
+`show ip interface brief`
+
+```
+Switch-Filos-DMZ>show ip interface brief 
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/1        unassigned      YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  10.0.10.253     YES manual up                    up 
+Vlan100                10.0.10.100     YES manual up                    down
+```
+
+### Switch-Economia-DMZ
+`show cdp neighbors`
+
+```
+Switch-Economia-DMZ>show cdp neighbors
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Economia
+             Fas 1/1          154            R       PT1000      Fas 5/0
+```
+
+`show ip arp`
+
+```
+Switch-Economia-DMZ>show ip arp 
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.0.40.253             -   00D0.BAA9.6348  ARPA   Vlan1
+```
+
+`show ip interface brief`
+
+```
+Switch-Economia-DMZ>show ip interface brief 
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/1        unassigned      YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  10.0.40.253     YES manual up                    up 
+Vlan100                10.0.40.100     YES manual up                    down
+```
+
+### Switch-Derecho-DMZ
+`show cdp neighbors`
+
+```
+Switch-Derecho-DMZ>show cdp neighbors 
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Derecho
+             Fas 1/1          146            R       PT1000      Fas 5/0
+```
+
+`show ip arp`
+
+```
+Switch-Derecho-DMZ>show ip arp 
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.0.30.253             -   0010.1189.6A33  ARPA   Vlan1
+```
+
+`show ip interface brief`
+
+```
+Switch-Derecho-DMZ>show ip interface brief 
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/1        unassigned      YES manual up                    up 
+FastEthernet1/1        unassigned      YES manual up                    up 
+Vlan1                  10.0.30.253     YES manual up                    up 
+Vlan100                10.0.30.100     YES manual up                    down
+```
+
+### Router-Filos
+`show cdp neighbors`
+
+```
+Router-Filos>show cdp neighbors 
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Central
+             Gig 0/0          126            R       PT1000      Gig 0/0
+Switch-Filos 
+             Fas 4/0          126            S       PT3000      Fas 1/1
+Switch-Filos-DMZ
+             Fas 5/0          126            S       PT3000      Fas 1/1
+```
+
+`show ip arp`
+
+```
+Router-Filos>show ip arp 
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.0.10.254             -   0004.9AD1.A7D8  ARPA   FastEthernet5/0
+Internet  192.168.10.254          -   00D0.D362.EEA9  ARPA   FastEthernet4/0
+Internet  198.51.100.1            -   0005.5EBC.D3D0  ARPA   GigabitEthernet0/0
+Internet  198.51.100.2            29  0090.0CAD.C896  ARPA   GigabitEthernet0/0
+```
+
+`show ip interface brief`
+
+```
+Router-Filos>show ip interface brief 
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     198.51.100.1    YES NVRAM  up                    up 
+GigabitEthernet1/0     unassigned      YES NVRAM  up                    down 
+GigabitEthernet2/0     unassigned      YES NVRAM  up                    down 
+GigabitEthernet3/0     unassigned      YES NVRAM  up                    down 
+FastEthernet4/0        192.168.10.254  YES NVRAM  up                    up 
+FastEthernet5/0        10.0.10.254     YES NVRAM  up                    up 
+FastEthernet6/0        unassigned      YES NVRAM  up                    down
 ```
 
 `show ip route`
 
 ```
-Router-Filos>show ip route
+Router-Filos>show ip route 
 Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
        D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
@@ -221,16 +346,19 @@ Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
 
 Gateway of last resort is not set
 
-C    192.168.10.0/24 is directly connected, GigabitEthernet0/0
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.0.10.0 is directly connected, FastEthernet5/0
+C    192.168.10.0/24 is directly connected, FastEthernet4/0
 S    192.168.20.0/24 [1/0] via 198.51.100.13
 S    192.168.30.0/24 [1/0] via 198.51.100.10
-S    192.168.40.0/24 [1/0] via 198.51.100.1
-                     [1/0] via 198.51.100.5
-     198.51.100.0/30 is subnetted, 4 subnets
-S       198.51.100.0 [1/0] via 198.51.100.13
-S       198.51.100.4 [1/0] via 198.51.100.10
-C       198.51.100.8 is directly connected, GigabitEthernet1/0
-C       198.51.100.12 is directly connected, GigabitEthernet2/0
+S    192.168.40.0/24 [1/0] via 198.51.100.5
+     198.51.100.0/24 is variably subnetted, 6 subnets, 2 masks
+C       198.51.100.0/29 is directly connected, GigabitEthernet0/0
+S       198.51.100.0/30 [1/0] via 198.51.100.13
+S       198.51.100.4/30 [1/0] via 198.51.100.10
+R       198.51.100.8/29 [120/1] via 198.51.100.2, 00:00:23, GigabitEthernet0/0
+R       198.51.100.16/29 [120/1] via 198.51.100.2, 00:00:23, GigabitEthernet0/0
+R       198.51.100.24/29 [120/1] via 198.51.100.2, 00:00:23, GigabitEthernet0/0
 ```
 
 `show ip route summary`
@@ -246,20 +374,190 @@ internal        1                                   1148
 Total           5           4           576         2172
 ```
 
+`show ip nat statistics`
+
+```
+Router-Filos>show ip nat statistics
+Total translations: 6 (5 static, 1 dynamic, 5 extended)
+Outside Interfaces: GigabitEthernet0/0
+Inside Interfaces: FastEthernet4/0 , FastEthernet5/0
+Hits: 51  Misses: 58
+Expired translations: 1
+Dynamic mappings:
+```
+
+`show ip nat translations`
+
+```
+Router-Filos>show ip nat translations
+Pro  Inside global     Inside local       Outside local      Outside global
+udp 192.168.10.254:520 198.51.100.1:520   224.0.0.9:520      224.0.0.9:520
+---  198.51.100.1      10.0.10.254        ---                ---
+tcp 198.51.100.1:80    10.0.10.254:80     ---                ---
+tcp 198.51.100.17:80   10.0.30.254:80     ---                ---
+tcp 198.51.100.25:80   10.0.40.254:80     ---                ---
+tcp 198.51.100.9:80    10.0.20.254:80     ---                ---
+```
+
+`show ip rip database`
+
+```
+Router-Filos>show ip rip database
+192.168.10.0/24    auto-summary
+192.168.10.0/24    directly connected, FastEthernet4/0
+192.168.20.0/24    auto-summary
+192.168.20.0/24
+    [2] via 198.51.100.2, 00:00:05, GigabitEthernet0/0
+192.168.30.0/24    auto-summary
+192.168.30.0/24
+    [2] via 198.51.100.2, 00:00:05, GigabitEthernet0/0
+192.168.40.0/24    auto-summary
+192.168.40.0/24
+    [2] via 198.51.100.2, 00:00:05, GigabitEthernet0/0
+198.51.100.0/29    auto-summary
+198.51.100.0/29    directly connected, GigabitEthernet0/0
+198.51.100.8/29    auto-summary
+198.51.100.8/29
+    [1] via 198.51.100.2, 00:00:05, GigabitEthernet0/0
+198.51.100.16/29    auto-summary
+198.51.100.16/29
+    [1] via 198.51.100.2, 00:00:05, GigabitEthernet0/0
+198.51.100.24/29    auto-summary
+198.51.100.24/29
+    [1] via 198.51.100.2, 00:00:05, GigabitEthernet0/0
+```
+
+### Router-Central
+`show cdp neighbors`
+
+```
+Router-Central>show cdp neighbors 
+Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
+                  S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
+Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Router-Derecho
+             Gig 3/0          149            R       PT1000      Gig 0/0
+Router-Filos 
+             Gig 0/0          149            R       PT1000      Gig 0/0
+Router-Psico 
+             Gig 1/0          149            R       PT1000      Gig 0/0
+Router-Economia
+             Gig 2/0          149            R       PT1000      Gig 0/0
+```
+
+`show ip arp`
+
+```
+Router-Central>show ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  198.51.100.1            48  0005.5EBC.D3D0  ARPA   GigabitEthernet0/0
+Internet  198.51.100.2            -   0090.0CAD.C896  ARPA   GigabitEthernet0/0
+Internet  198.51.100.9            48  000C.853E.A35A  ARPA   GigabitEthernet1/0
+Internet  198.51.100.10           -   0001.C924.759D  ARPA   GigabitEthernet1/0
+Internet  198.51.100.17           48  0090.2170.5060  ARPA   GigabitEthernet3/0
+Internet  198.51.100.18           -   0000.0C4E.61D9  ARPA   GigabitEthernet3/0
+Internet  198.51.100.25           48  0005.5EC1.CC5A  ARPA   GigabitEthernet2/0
+Internet  198.51.100.26           -   0007.EC65.712D  ARPA   GigabitEthernet2/0
+```
+
+`show ip interface brief`
+
+```
+Router-Central>show ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol 
+GigabitEthernet0/0     198.51.100.2    YES manual up                    up 
+GigabitEthernet1/0     198.51.100.10   YES manual up                    up 
+GigabitEthernet2/0     198.51.100.26   YES manual up                    up 
+GigabitEthernet3/0     198.51.100.18   YES manual up                    up 
+GigabitEthernet4/0     unassigned      YES unset  up                    up
+```
+
+`show ip route`
+
+```
+Router-Central>show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+R    192.168.20.0/24 [120/1] via 198.51.100.9, 00:00:15, GigabitEthernet1/0
+R    192.168.30.0/24 [120/1] via 198.51.100.17, 00:00:06, GigabitEthernet3/0
+R    192.168.40.0/24 [120/1] via 198.51.100.25, 00:00:22, GigabitEthernet2/0
+     198.51.100.0/29 is subnetted, 4 subnets
+C       198.51.100.0 is directly connected, GigabitEthernet0/0
+C       198.51.100.8 is directly connected, GigabitEthernet1/0
+C       198.51.100.16 is directly connected, GigabitEthernet3/0
+C       198.51.100.24 is directly connected, GigabitEthernet2/0
+```
+
+`show ip route summary`
+
+```
+Router-Central>show ip route summary 
+IP routing table name is Default-IP-Routing-Table(0)
+IP routing table maximum-paths is 16
+Route Source    Networks    Subnets     Overhead    Memory (bytes)
+connected       0           4           288         512
+static          0           0           0           0
+rip             3           0           216         384
+internal        1                                   1148
+Total           4           4           504         2044
+```
+
+`show ip nat statistics`
+
+```
+```
+
+`show ip nat translations`
+
+```
+```
+
+`show ip rip database`
+
+```
+Router-Central>show ip rip database
+192.168.20.0/24    auto-summary
+192.168.20.0/24
+    [1] via 198.51.100.9, 00:00:19, GigabitEthernet1/0
+192.168.30.0/24    auto-summary
+192.168.30.0/24
+    [1] via 198.51.100.17, 00:00:14, GigabitEthernet3/0
+192.168.40.0/24    auto-summary
+192.168.40.0/24
+    [1] via 198.51.100.25, 00:00:01, GigabitEthernet2/0
+198.51.100.0/29    auto-summary
+198.51.100.0/29    directly connected, GigabitEthernet0/0
+198.51.100.8/29    auto-summary
+198.51.100.8/29    directly connected, GigabitEthernet1/0
+198.51.100.16/29    auto-summary
+198.51.100.16/29    directly connected, GigabitEthernet3/0
+198.51.100.24/29    auto-summary
+198.51.100.24/29    directly connected, GigabitEthernet2/0
+```
+
+
 ### Router-Psico
 `show cdp neighbors`
 
 ```
-Router-Psico>show cdp neighbors
+Router-Psico>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
 Switch-Psico 
-             Gig 0/0          176            S       PT3000      Gig 1/1
-Router-Filos 
-             Gig 2/0          176            R       PT1000      Gig 2/0
-Router-Economia
-             Gig 1/0          176            R       PT1000      Gig 1/0
+             Fas 4/0          147            S       PT3000      Fas 1/1
+Switch-Psico-DMZ
+             Fas 5/0          147            S       PT3000      Fas 1/1
+Router-Central
+             Gig 0/0          147            R       PT1000      Gig 1/0
 ```
 
 `show ip arp`
@@ -267,29 +565,30 @@ Router-Economia
 ```
 Router-Psico>show ip arp
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.20.254          -   000C.853E.A35A  ARPA   GigabitEthernet0/0
-Internet  198.51.100.2            -   000A.F316.7C7B  ARPA   GigabitEthernet1/0
-Internet  198.51.100.13           -   000C.85C1.D61E  ARPA   GigabitEthernet2/0
+Internet  10.0.20.254             -   0090.2B67.83A0  ARPA   FastEthernet5/0
+Internet  192.168.20.254          -   000C.8507.8A08  ARPA   FastEthernet4/0
+Internet  198.51.100.9            -   000C.853E.A35A  ARPA   GigabitEthernet0/0
+Internet  198.51.100.10           1   0001.C924.759D  ARPA   GigabitEthernet0/0
 ```
 
 `show ip interface brief`
 
 ```
-Router-Psico>show ip interface brief
+Router-Psico>show ip interface brief 
 Interface              IP-Address      OK? Method Status                Protocol 
-GigabitEthernet0/0     192.168.20.254  YES manual up                    up 
-GigabitEthernet1/0     198.51.100.2    YES manual up                    up 
-GigabitEthernet2/0     198.51.100.13   YES manual up                    up 
+GigabitEthernet0/0     198.51.100.9    YES manual up                    up 
+GigabitEthernet1/0     unassigned      YES manual up                    down 
+GigabitEthernet2/0     unassigned      YES manual up                    down 
 GigabitEthernet3/0     unassigned      YES unset  up                    down 
-FastEthernet4/0        unassigned      YES unset  up                    down 
-FastEthernet5/0        unassigned      YES unset  up                    down 
+FastEthernet4/0        192.168.20.254  YES manual up                    up 
+FastEthernet5/0        10.0.20.254     YES manual up                    up 
 FastEthernet6/0        unassigned      YES unset  up                    down
 ```
 
 `show ip route`
 
 ```
-Router-Psico>show ip route
+Router-Psico>show ip route 
 Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
        D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
@@ -300,45 +599,99 @@ Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
 
 Gateway of last resort is not set
 
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.0.20.0 is directly connected, FastEthernet5/0
 S    192.168.10.0/24 [1/0] via 198.51.100.14
-C    192.168.20.0/24 is directly connected, GigabitEthernet0/0
-S    192.168.30.0/24 [1/0] via 198.51.100.6
-                     [1/0] via 198.51.100.10
+C    192.168.20.0/24 is directly connected, FastEthernet4/0
+S    192.168.30.0/24 [1/0] via 198.51.100.10
+                     [1/0] via 198.51.100.6
 S    192.168.40.0/24 [1/0] via 198.51.100.1
-     198.51.100.0/30 is subnetted, 4 subnets
-C       198.51.100.0 is directly connected, GigabitEthernet1/0
-S       198.51.100.4 [1/0] via 198.51.100.1
-S       198.51.100.8 [1/0] via 198.51.100.14
-C       198.51.100.12 is directly connected, GigabitEthernet2/0
+     198.51.100.0/24 is variably subnetted, 6 subnets, 2 masks
+R       198.51.100.0/29 [120/1] via 198.51.100.10, 00:00:21, GigabitEthernet0/0
+S       198.51.100.4/30 [1/0] via 198.51.100.1
+C       198.51.100.8/29 is directly connected, GigabitEthernet0/0
+S       198.51.100.8/30 [1/0] via 198.51.100.14
+R       198.51.100.16/29 [120/1] via 198.51.100.10, 00:00:21, GigabitEthernet0/0
+R       198.51.100.24/29 [120/1] via 198.51.100.10, 00:00:21, GigabitEthernet0/0
 ```
 
 `show ip route summary`
 
 ```
-Router-Psico>show ip route summary
+Router-Psico>show ip route summary 
 IP routing table name is Default-IP-Routing-Table(0)
 IP routing table maximum-paths is 16
 Route Source    Networks    Subnets     Overhead    Memory (bytes)
 connected       1           2           216         384
 static          3           2           360         640
-internal        1                                   1148
-Total           5           4           576         2172
+rip             0           3           216         384
+internal        2                                   2296
+Total           6           7           792         3704
+```
+
+`show ip nat statistics`
+
+```
+Router-Psico>show ip nat statistics
+Total translations: 2 (2 static, 0 dynamic, 1 extended)
+Outside Interfaces: GigabitEthernet0/0
+Inside Interfaces: FastEthernet4/0 , FastEthernet5/0
+Hits: 0  Misses: 46
+Expired translations: 0
+Dynamic mappings:
+```
+
+`show ip nat translations`
+
+```
+Router-Psico>show ip nat translations
+Pro  Inside global     Inside local       Outside local      Outside global
+---  198.51.100.9      10.0.20.1          ---                ---
+tcp 198.51.100.9:80    10.0.20.1:80       ---                ---
+```
+
+`show ip rip database`
+
+```
+Router-Psico>show ip rip database
+192.168.10.0/24    auto-summary
+192.168.10.0/24
+    [2] via 198.51.100.10, 00:00:19, GigabitEthernet0/0
+192.168.20.0/24    auto-summary
+192.168.20.0/24    directly connected, FastEthernet4/0
+192.168.30.0/24    auto-summary
+192.168.30.0/24
+    [2] via 198.51.100.10, 00:00:19, GigabitEthernet0/0
+192.168.40.0/24    auto-summary
+192.168.40.0/24
+    [2] via 198.51.100.10, 00:00:19, GigabitEthernet0/0
+198.51.100.0/29    auto-summary
+198.51.100.0/29
+    [1] via 198.51.100.10, 00:00:19, GigabitEthernet0/0
+198.51.100.8/29    auto-summary
+198.51.100.8/29    directly connected, GigabitEthernet0/0
+198.51.100.16/29    auto-summary
+198.51.100.16/29
+    [1] via 198.51.100.10, 00:00:19, GigabitEthernet0/0
+198.51.100.24/29    auto-summary
+198.51.100.24/29
+    [1] via 198.51.100.10, 00:00:19, GigabitEthernet0/0
 ```
 
 ### Router-Derecho
 `show cdp neighbors`
 
 ```
-Router-Derecho>show cdp neighbors
+Router-Derecho>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
-Router-Filos 
-             Gig 1/0          137            R       PT1000      Gig 1/0
-Router-Economia
-             Gig 2/0          137            R       PT1000      Gig 2/0
+Switch-Derecho-DMZ
+             Fas 5/0          120            S       PT3000      Fas 1/1
+Router-Central
+             Gig 0/0          120            R       PT1000      Gig 3/0
 Switch-Derecho
-             Gig 0/0          137            S       PT3000      Gig 1/1
+             Fas 4/0          120            S       PT3000      Fas 1/1
 ```
 
 `show ip arp`
@@ -346,29 +699,30 @@ Switch-Derecho
 ```
 Router-Derecho>show ip arp
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.30.254          -   0090.2170.5060  ARPA   GigabitEthernet0/0
-Internet  198.51.100.6            -   0010.11CB.1BC8  ARPA   GigabitEthernet2/0
-Internet  198.51.100.10           -   0060.4719.A7A7  ARPA   GigabitEthernet1/0
+Internet  10.0.30.254             -   00E0.8FD8.6A2E  ARPA   FastEthernet5/0
+Internet  192.168.30.254          -   0002.4AC6.25A2  ARPA   FastEthernet4/0
+Internet  198.51.100.17           -   0090.2170.5060  ARPA   GigabitEthernet0/0
+Internet  198.51.100.18           12  0000.0C4E.61D9  ARPA   GigabitEthernet0/0
 ```
 
 `show ip interface brief`
 
 ```
-Router-Derecho>show ip interface brief
+Router-Derecho>show ip interface brief 
 Interface              IP-Address      OK? Method Status                Protocol 
-GigabitEthernet0/0     192.168.30.254  YES manual up                    up 
-GigabitEthernet1/0     198.51.100.10   YES manual up                    up 
-GigabitEthernet2/0     198.51.100.6    YES manual up                    up 
-GigabitEthernet3/0     unassigned      YES unset  up                    down 
-FastEthernet4/0        unassigned      YES unset  up                    down 
-FastEthernet5/0        unassigned      YES unset  up                    down 
-FastEthernet6/0        unassigned      YES unset  up                    down
+GigabitEthernet0/0     198.51.100.17   YES NVRAM  up                    up 
+GigabitEthernet1/0     unassigned      YES NVRAM  up                    down 
+GigabitEthernet2/0     unassigned      YES NVRAM  up                    down 
+GigabitEthernet3/0     unassigned      YES NVRAM  up                    down 
+FastEthernet4/0        192.168.30.254  YES NVRAM  up                    up 
+FastEthernet5/0        10.0.30.254     YES NVRAM  up                    up 
+FastEthernet6/0        unassigned      YES NVRAM  up                    down
 ```
 
 `show ip route`
 
 ```
-Router-Derecho>show ip route
+Router-Derecho>show ip route 
 Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
        D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
@@ -379,31 +733,85 @@ Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
 
 Gateway of last resort is not set
 
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.0.30.0 is directly connected, FastEthernet5/0
 S    192.168.10.0/24 [1/0] via 198.51.100.9
-S    192.168.20.0/24 [1/0] via 198.51.100.13
-                     [1/0] via 198.51.100.2
-C    192.168.30.0/24 is directly connected, GigabitEthernet0/0
+S    192.168.20.0/24 [1/0] via 198.51.100.2
+                     [1/0] via 198.51.100.13
+C    192.168.30.0/24 is directly connected, FastEthernet4/0
 S    192.168.40.0/24 [1/0] via 198.51.100.5
-     198.51.100.0/30 is subnetted, 4 subnets
-S       198.51.100.0 [1/0] via 198.51.100.5
-C       198.51.100.4 is directly connected, GigabitEthernet2/0
-C       198.51.100.8 is directly connected, GigabitEthernet1/0
-S       198.51.100.12 [1/0] via 198.51.100.9
-
+     198.51.100.0/24 is variably subnetted, 6 subnets, 2 masks
+R       198.51.100.0/29 [120/1] via 198.51.100.18, 00:00:27, GigabitEthernet0/0
+S       198.51.100.0/30 [1/0] via 198.51.100.5
+R       198.51.100.8/29 [120/1] via 198.51.100.18, 00:00:27, GigabitEthernet0/0
+S       198.51.100.12/30 [1/0] via 198.51.100.9
+C       198.51.100.16/29 is directly connected, GigabitEthernet0/0
+R       198.51.100.24/29 [120/1] via 198.51.100.18, 00:00:27, GigabitEthernet0/0
 ```
 
 `show ip route summary`
 
 ```
-Router-Derecho>show ip route summary
+Router-Derecho>show ip route summary 
 IP routing table name is Default-IP-Routing-Table(0)
 IP routing table maximum-paths is 16
 Route Source    Networks    Subnets     Overhead    Memory (bytes)
 connected       1           2           216         384
 static          3           2           360         640
-internal        1                                   1148
-Total           5           4           576         2172
+rip             0           3           216         384
+internal        2                                   2296
+Total           6           7           792         3704
 ```
+
+`show ip nat statistics`
+
+```
+Router-Derecho>show ip nat statistics
+Total translations: 2 (2 static, 0 dynamic, 1 extended)
+Outside Interfaces: GigabitEthernet0/0
+Inside Interfaces: FastEthernet4/0 , FastEthernet5/0
+Hits: 0  Misses: 20
+Expired translations: 0
+Dynamic mappings:
+```
+
+`show ip nat translations`
+
+```
+Router-Derecho>show ip nat translations
+Pro  Inside global     Inside local       Outside local      Outside global
+---  198.51.100.17     10.0.30.1          ---                ---
+tcp 198.51.100.17:80   10.0.30.1:80       ---                ---
+```
+
+`show ip rip database`
+
+```
+Router-Derecho>show ip rip database
+192.168.10.0/24    auto-summary
+192.168.10.0/24
+    [2] via 198.51.100.18, 00:00:12, GigabitEthernet0/0
+192.168.20.0/24    auto-summary
+192.168.20.0/24
+    [2] via 198.51.100.18, 00:00:12, GigabitEthernet0/0
+192.168.30.0/24    auto-summary
+192.168.30.0/24    directly connected, FastEthernet4/0
+192.168.40.0/24    auto-summary
+192.168.40.0/24
+    [2] via 198.51.100.18, 00:00:12, GigabitEthernet0/0
+198.51.100.0/29    auto-summary
+198.51.100.0/29
+    [1] via 198.51.100.18, 00:00:12, GigabitEthernet0/0
+198.51.100.8/29    auto-summary
+198.51.100.8/29
+    [1] via 198.51.100.18, 00:00:12, GigabitEthernet0/0
+198.51.100.16/29    auto-summary
+198.51.100.16/29    directly connected, GigabitEthernet0/0
+198.51.100.24/29    auto-summary
+198.51.100.24/29
+    [1] via 198.51.100.18, 00:00:12, GigabitEthernet0/0
+```
+
 
 ### Router-Economia
 `show cdp neighbors`
