@@ -14,31 +14,36 @@ En este enlace se encuentra el archivo `.pkt` de la práctica: [practica5.pkt](f
 
 ## Topología de red:
 
-La topología de nuestra red es de tipo <b>anillo</b>. Es claro ver que esta es nuestra topología por como están los Routers conectados, cada Router está conectado a otros dos Routers, uno de cada lado, formando así un anillo.
+La topología de nuestra red es de tipo <b>Estrella</b>. Es claro ver que esta es nuestra topología por como están los Routers conectados, cada Router está conectado directamente a un punto central.
 
 En la siguiente imagen podemos apreciar también las diferentes vLAN configuradas en la red:
 
-| ![](img/red_anillo.png)
+| ![](img/estrella.jpg)
 |:--------------------------------:|
-| Topología tipo anillo de la red
+| Topología tipo estrella de la red
 
 
 ## Tabla de los equipos
 
-| Equipo          |  Hostname        | IP de administración | Conexión con otros switches y ruteadores    |
-|:---------------:|:----------------:|:--------------------:|:-------------------------------------------:|
-| Server-Filos    |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
-| Server-Psico    |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
-| Server-Derecho  |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
-| Server-Economia |  Switch-Economia | 192.168.40.253/24    |Router-Economia                              |
-| Switch-Filos    |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
-| Switch-Psico    |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
-| Switch-Derecho  |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
-| Switch-Economia |  Switch-Economia | 192.168.40.253/24    |Router-Economia                              |
-| Router-Filos    |  Router-Filos    | 192.168.10.254/24    |Switch-Filos, Router-Psico, Router-Derecho   |
-| Router-Psico    |  Router-Psico    | 192.168.20.254/24    |Switch-Psico, Router-Filos, Router-Economia  |
-| Router-Derecho  |  Router-Derecho  | 192.168.30.254/24    |Switch-Derecho, Router-Filos, Router-Economia|
-| Router-Economia |  Router-Economia | 192.168.40.254/24    |Switch-Economia, Router-Psico, Router-Derecho|
+| Equipo             |  Hostname        | IP de administración | Conexión con otros switches y ruteadores    |
+|:------------------:|:----------------:|:--------------------:|:-------------------------------------------:|
+| Server-Filos       |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
+| Server-Psico       |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
+| Server-Derecho     |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
+| Server-Economia    |  Switch-Economia | 192.168.40.253/24    |Router-Economia                              |
+| Server-Central     |  Switch-Central  | 192.168.40.253/24    |Router-Economia                              |
+| Switch-Filos       |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
+| Switch-Psico       |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
+| Switch-Derecho     |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
+| Switch-Filos-DMZ   |  Switch-Filos-DMZ| 192.168.10.253/24    |Router-Filos                                 |
+| Switch-Psico-DMZ   |  Switch-Psico-DMZ| 192.168.20.253/24    |Router-Psico                                 |
+| Switch-Derecho-DMZ |  Switch-Derecho-DMZ | 192.168.30.253/24    |Router-Derecho                            |
+| Switch-Economia-DMZ|  Switch-Economia-DMZ| 192.168.40.253/24    |Router-Economia                           |
+| Router-Filos       |  Router-Filos    | 192.168.10.254/24    |Switch-Filos, Router-Psico, Router-Derecho   |
+| Router-Psico       |  Router-Psico    | 192.168.20.254/24    |Switch-Psico, Router-Filos, Router-Economia  |
+| Router-Derecho     |  Router-Derecho  | 192.168.30.254/24    |Switch-Derecho, Router-Filos, Router-Economia|
+| Router-Economia    |  Router-Economia | 192.168.40.254/24    |Switch-Economia, Router-Psico, Router-Derecho|
+| Router-Central     |  Router-Central  | 192.168.40.253/24    |Router-Economia, Router-Psico, Router_Derecho                                 |
 
 ### Switch-Filos
 `show cdp neighbors`
@@ -1026,246 +1031,82 @@ Router-Economia>show ip rip database
 
 ## Pruebas de conexión de los equipos en la red
 
-### Para equipos en la red LAN
+###Para equipos a servidores
 
-- `Laptop-Filos` a `Laptop-Psico`
-
-    ```
-	C:\>ping 192.168.20.1
-
-	Pinging 192.168.20.1 with 32 bytes of data:
-
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-
-	Ping statistics for 192.168.20.1:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-    ```
-    
-- `Laptop-Economia` a `Laptop-Psico`
-    
-    ```
-	C:\>ping 192.168.20.1
-
-	Pinging 192.168.20.1 with 32 bytes of data:
-
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=126
-
-	Ping statistics for 192.168.20.1:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-    
-    ```
-    
-- `Laptop-Derecho` a `Laptop-Psico`
-
+- `Laptop-Psico` a `Server-Economia`
+	
 	```
-	C:\>ping 192.168.20.1
+	C:\>ping 198.51.100.25
 
-	Pinging 192.168.20.1 with 32 bytes of data:
+	Pinging 198.51.100.25 with 32 bytes of data:
 
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
-	Reply from 192.168.20.1: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.25: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.25: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.25: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.25: bytes=32 time<1ms TTL=125
 
-	Ping statistics for 192.168.20.1:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-    ```
-    
-- `Laptop-Economia` a `Laptop-Filos`
-
-	```
-	C:\>ping 192.168.10.1
-
-	Pinging 192.168.10.1 with 32 bytes of data:
-
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-
-	Ping statistics for 192.168.10.1:
+	Ping statistics for 198.51.100.25:
 	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
 	Approximate round trip times in milli-seconds:
 	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 	```
 	
-- `Laptop-Derecho` a `Laptop-Filos`
-
-	```
-	C:\>ping 192.168.10.1
-
-	Pinging 192.168.10.1 with 32 bytes of data:
-
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.10.1: bytes=32 time<1ms TTL=126
-
-	Ping statistics for 192.168.10.1:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-	
-- `Laptop-Derecho` a `Laptop-Economia`
-
-	```
-	C:\>ping 192.168.40.1
-
-	Pinging 192.168.40.1 with 32 bytes of data:
-
-	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
-	Reply from 192.168.40.1: bytes=32 time<1ms TTL=126
-
-	Ping statistics for 192.168.40.1:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-    ```
-### Para equipos a switch
-
-- `Laptop-Psico` a `Switch-Psico`
+- `Laptop-Psico` a `Server-Psico`
 	
 	```
-	C:\>ping 192.168.20.253
+	C:\>ping 198.51.100.9
 
-	Pinging 192.168.20.253 with 32 bytes of data:
+	Pinging 198.51.100.9 with 32 bytes of data:
 
-	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
-	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
-	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
-	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
+	Reply from 198.51.100.9: bytes=32 time<1ms TTL=255
 
-	Ping statistics for 192.168.20.253:
+	Ping statistics for 198.51.100.9:
 	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
 	Approximate round trip times in milli-seconds:
 	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 	```
 
-- `Laptop-Psico` a `Switch-Psico-DMZ`
+- `Laptop-Psico` a `Server-Derecho`
 	
 	```
-	C:\>ping 10.0.20.253
+	C:\>ping 198.51.100.17
 
-	Pinging 10.0.20.253 with 32 bytes of data:
+	Pinging 198.51.100.17 with 32 bytes of data:
 
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+	Reply from 198.51.100.17: bytes=32 time=1ms TTL=125
+	Reply from 198.51.100.17: bytes=32 time=1ms TTL=125
+	Reply from 198.51.100.17: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.17: bytes=32 time<1ms TTL=125
 
-	Ping statistics for 10.0.20.253:
+	Ping statistics for 198.51.100.17:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 1ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Server-Filos`
+	
+	```
+	C:\>ping 198.51.100.1
+
+	Pinging 198.51.100.1 with 32 bytes of data:
+
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=125
+	Reply from 198.51.100.1: bytes=32 time<1ms TTL=125
+
+	Ping statistics for 198.51.100.1:
 	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
 	Approximate round trip times in milli-seconds:
 	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 	```
-	
-- `Laptop-Psico` a `Switch-Derecho-DMZ`
-	
-	```
-	C:\>ping 10.0.20.253
-
-	Pinging 10.0.20.253 with 32 bytes of data:
-
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
-	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
-
-	Ping statistics for 10.0.20.253:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-
 ### Para equipos a routers 
 
 - `Laptop-Psico` a `Router-Psico GigabitEthernet0/0`
-	
-	```
-	C:\>ping 192.168.20.254
-
-	Pinging 192.168.20.254 with 32 bytes of data:
-
-	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
-	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
-	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
-	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
-
-	Ping statistics for 192.168.20.254:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-	
-- `Laptop-Psico` a `Router-Psico GigabitEthernet1/0`
-	
-	```
-	C:\>ping 198.51.100.2
-
-	Pinging 198.51.100.2 with 32 bytes of data:
-
-	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.2: bytes=32 time<1ms TTL=255
-
-	Ping statistics for 198.51.100.2:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-- `Laptop-Psico` a `Router-Psico GigabitEthernet2/0`
-	
-	```
-	C:\>ping 198.51.100.13
-
-	Pinging 198.51.100.13 with 32 bytes of data:
-
-	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.13: bytes=32 time<1ms TTL=255
-
-	Ping statistics for 198.51.100.13:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-	
-- `Laptop-Psico` a `Router-Filos GigabitEthernet0/0`
-	
-	```
-	C:\>ping 192.168.10.254
-
-	Pinging 192.168.10.254 with 32 bytes of data:
-
-	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
-	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
-	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
-	Reply from 192.168.10.254: bytes=32 time<1ms TTL=255
-
-	Ping statistics for 192.168.10.254:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```	
-
-- `Laptop-Psico` a `Router-Filos GigabitEthernet1/0`
 	
 	```
 	C:\>ping 198.51.100.9
@@ -1283,141 +1124,48 @@ Router-Economia>show ip rip database
 	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 	```
 	
-- `Laptop-Psico` a `Router-Filos GigabitEthernet2/0`
+- `Laptop-Psico` a `Router-Psico GigabitEthernet4/0`
 	
 	```
-	C:\>ping 198.51.100.14
+	C:\>ping 192.168.20.254
 
-	Pinging 198.51.100.14 with 32 bytes of data:
+	Pinging 192.168.20.254 with 32 bytes of data:
 
-	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
-	Reply from 198.51.100.14: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.254: bytes=32 time<1ms TTL=255
 
-	Ping statistics for 198.51.100.14:
+	Ping statistics for 192.168.20.254:
 	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
 	Approximate round trip times in milli-seconds:
 	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
 	```
-	
-- `Laptop-Psico` a `Router-Economia GigabitEthernet0/0`
+- `Laptop-Psico` a `Router-Psico GigabitEthernet5/0`
 	
 	```
-	C:\>ping 192.168.40.254
+	C:\>ping 10.0.20.254
 
-	Pinging 192.168.40.254 with 32 bytes of data:
+	Pinging 10.0.20.254 with 32 bytes of data:
 
-	Reply from 192.168.40.254: bytes=32 time<1ms TTL=254
-	Reply from 192.168.40.254: bytes=32 time<1ms TTL=254
-	Reply from 192.168.40.254: bytes=32 time<1ms TTL=254
-	Reply from 192.168.40.254: bytes=32 time=10ms TTL=254
+	Reply from 10.0.20.254: bytes=32 time<1ms TTL=255
+	Reply from 10.0.20.254: bytes=32 time=1ms TTL=255
+	Reply from 10.0.20.254: bytes=32 time<1ms TTL=255
+	Reply from 10.0.20.254: bytes=32 time=15ms TTL=255
 
-	Ping statistics for 192.168.40.254:
+	Ping statistics for 10.0.20.254:
 	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
 	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 10ms, Average = 2ms
-
+	    Minimum = 0ms, Maximum = 15ms, Average = 4ms
 	```
-	
-- `Laptop-Psico` a `Router-Economia GigabitEthernet1/0`
-	
-	```
-	C:\>ping 198.51.100.1
-
-	Pinging 198.51.100.1 with 32 bytes of data:
-
-	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
-	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
-	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
-	Reply from 198.51.100.1: bytes=32 time<1ms TTL=254
-
-	Ping statistics for 198.51.100.1:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-	
-- `Laptop-Psico` a `Router-Economia GigabitEthernet2/0`
-	
-	```
-	C:\>ping 198.51.100.5
-
-	Pinging 198.51.100.5 with 32 bytes of data:
-
-	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
-	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
-	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
-	Reply from 198.51.100.5: bytes=32 time<1ms TTL=254
-
-	Ping statistics for 198.51.100.5:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-	
-- `Laptop-Psico` a `Router-Derecho GigabitEthernet0/0`
-	
-	```
-	C:\> ping 192.168.30.254
-
-	Pinging 192.168.30.254 with 32 bytes of data:
-
-	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
-	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
-	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
-	Reply from 192.168.30.254: bytes=32 time<1ms TTL=253
-
-	Ping statistics for 192.168.30.254:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```
-	
-- `Laptop-Psico` a `Router-Derecho GigabitEthernet1/0`
-	
-	```
-	C:\>ping 198.51.100.10
-
-	Pinging 198.51.100.10 with 32 bytes of data:
-
-	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
-	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
-	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
-	Reply from 198.51.100.10: bytes=32 time<1ms TTL=253
-
-	Ping statistics for 198.51.100.10:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-    	```
-    
-- `Laptop-Psico` a `Router-Derecho GigabitEthernet2/0`
-	
-	```
-    	C:\>ping 198.51.100.6
-  
-	Pinging 198.51.100.6 with 32 bytes of data:
-
-	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
-	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
-	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
-	Reply from 198.51.100.6: bytes=32 time<1ms TTL=253
-
-	Ping statistics for 198.51.100.6:
-	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-	Approximate round trip times in milli-seconds:
-	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
-	```    
-
 
 ## Configuración de los switches y routeadores 
 
 Listamos los archivos `.txt` que guarda cada uno la salida del comando `show startup-config` para su respectivo switch o router:
 
 1. Switches:
-    * [Switch-Filos](files/Switch-Filos.txt)
-    * [Switch-Psico](files/Switch-Psico.txt)
+    * [Switch-Psico-DMZ](files/Switch-Psico-DMZ_startup-config.txt)
+    * [Switch-Psico](files/Switch-Psico_startup-config.txt)
     * [Switch-Economia](files/Switch-Economia.txt)
     * [Switch-Derecho](files/Switch-Derecho.txt)
 
