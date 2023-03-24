@@ -1164,12 +1164,18 @@ Router-Economia>show ip rip database
 Listamos los archivos `.txt` que guarda cada uno la salida del comando `show startup-config` para su respectivo switch o router:
 
 1. Switches:
-    * [Switch-Psico-DMZ](files/Switch-Psico-DMZ_startup-config.txt)
-    * [Switch-Psico](files/Switch-Psico_startup-config.txt)
-    * [Switch-Economia](files/Switch-Economia.txt)
-    * [Switch-Derecho](files/Switch-Derecho.txt)
+    * [Switch-Filos](files/Switch-Filos-LAN.txt)
+    * [Switch-Psico](files/Switch-Psico-LAN.txt)
+    * [Switch-Economia](files/Switch-Economia-LAN.txt)
+    * [Switch-Derecho](files/Switch-Derecho-LAN.txt)
 
-2. Routers:
+2. Switches DMZ:
+    * [Switch-Filos](files/Switch-Filos-DMZ.txt)
+    * [Switch-Psico](files/Switch-Psico-DMZ.txt)
+    * [Switch-Economia](files/Switch-Economia-DMZ.txt)
+    * [Switch-Derecho](files/Switch-Derecho-DMZ.txt)
+
+3. Routers:
     * [Router-Filos](files/Router-Filos.txt)
     * [Router-Psico](files/Router-Psico.txt)
     * [Router-Economia](files/Router-Economia.txt)
