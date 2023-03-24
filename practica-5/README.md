@@ -374,7 +374,25 @@ internal        1                                   1148
 Total           5           4           576         2172
 ```
 
+`show ip dhcp pool`
+
+```
+Router-Filos>show ip dhcp pool 
+
+Pool ip10 :
+ Utilization mark (high/low)    : 100 / 0
+ Subnet size (first/next)       : 0 / 0 
+ Total addresses                : 254
+ Leased addresses               : 1
+ Excluded addresses             : 0
+ Pending event                  : none
+
+ 1 subnet is currently in the pool
+ Current index        IP address range                    Leased/Excluded/Total
+ 192.168.10.1         192.168.10.1     - 192.168.10.254    1    / 0     / 254
+
 `show ip nat statistics`
+```
 
 ```
 Router-Filos>show ip nat statistics
@@ -510,6 +528,11 @@ internal        1                                   1148
 Total           4           4           504         2044
 ```
 
+`show ip dhcp pool`
+
+```
+```
+
 `show ip nat statistics`
 
 ```
@@ -627,6 +650,24 @@ static          3           2           360         640
 rip             0           3           216         384
 internal        2                                   2296
 Total           6           7           792         3704
+```
+
+`show ip dhcp pool`
+
+```
+Router-Psico>show ip dhcp pool 
+
+Pool ip20 :
+ Utilization mark (high/low)    : 100 / 0
+ Subnet size (first/next)       : 0 / 0 
+ Total addresses                : 254
+ Leased addresses               : 1
+ Excluded addresses             : 0
+ Pending event                  : none
+
+ 1 subnet is currently in the pool
+ Current index        IP address range                    Leased/Excluded/Total
+ 192.168.20.1         192.168.20.1     - 192.168.20.254    1    / 0     / 254
 ```
 
 `show ip nat statistics`
@@ -762,6 +803,24 @@ rip             0           3           216         384
 internal        2                                   2296
 Total           6           7           792         3704
 ```
+`show ip dhcp pool`
+
+```
+
+Router-Derecho>show ip dhcp pool 
+
+Pool ip30 :
+ Utilization mark (high/low)    : 100 / 0
+ Subnet size (first/next)       : 0 / 0 
+ Total addresses                : 254
+ Leased addresses               : 1
+ Excluded addresses             : 0
+ Pending event                  : none
+
+ 1 subnet is currently in the pool
+ Current index        IP address range                    Leased/Excluded/Total
+ 192.168.30.1         192.168.30.1     - 192.168.30.254    1    / 0     / 254
+```
 
 `show ip nat statistics`
 
@@ -817,46 +876,47 @@ Router-Derecho>show ip rip database
 `show cdp neighbors`
 
 ```
-Router-Economia>show cdp neighbors
+Router-Economia>show cdp neighbors 
 Capability Codes: R - Router, T - Trans Bridge, B - Source Route Bridge
                   S - Switch, H - Host, I - IGMP, r - Repeater, P - Phone
 Device ID    Local Intrfce   Holdtme    Capability   Platform    Port ID
+Switch-Economia-DMZ
+             Fas 5/0          142            S       PT3000      Fas 1/1
+Router-Central
+             Gig 0/0          142            R       PT1000      Gig 2/0
 Switch-Economia
-             Gig 0/0          160            S       PT3000      Gig 1/1
-Router-Psico 
-             Gig 1/0          160            R       PT1000      Gig 1/0
-Router-Derecho
-             Gig 2/0          160            R       PT1000      Gig 2/0
+             Fas 4/0          142            S       PT3000      Fas 1/1
 ```
 
 `show ip arp`
 
 ```
-Router-Economia>show ip arp
+Router-Economia>show ip arp 
 Protocol  Address          Age (min)  Hardware Addr   Type   Interface
-Internet  192.168.40.254          -   0005.5EC1.CC5A  ARPA   GigabitEthernet0/0
-Internet  198.51.100.1            -   00D0.D3BE.91D1  ARPA   GigabitEthernet1/0
-Internet  198.51.100.5            -   00D0.FF40.67CE  ARPA   GigabitEthernet2/0
+Internet  10.0.40.254             -   0010.1118.6A76  ARPA   FastEthernet5/0
+Internet  192.168.40.254          -   0002.1618.23DB  ARPA   FastEthernet4/0
+Internet  198.51.100.25           -   0005.5EC1.CC5A  ARPA   GigabitEthernet0/0
+Internet  198.51.100.26           7   0007.EC65.712D  ARPA   GigabitEthernet0/0
 ```
 
 `show ip interface brief`
 
 ```
-Router-Economia>show ip interface brief
+Router-Economia>show ip interface brief 
 Interface              IP-Address      OK? Method Status                Protocol 
-GigabitEthernet0/0     192.168.40.254  YES manual up                    up 
-GigabitEthernet1/0     198.51.100.1    YES manual up                    up 
-GigabitEthernet2/0     198.51.100.5    YES manual up                    up 
+GigabitEthernet0/0     198.51.100.25   YES manual up                    up 
+GigabitEthernet1/0     unassigned      YES manual up                    down 
+GigabitEthernet2/0     unassigned      YES manual up                    down 
 GigabitEthernet3/0     unassigned      YES unset  up                    down 
-FastEthernet4/0        unassigned      YES unset  up                    down 
-FastEthernet5/0        unassigned      YES unset  up                    down 
+FastEthernet4/0        192.168.40.254  YES manual up                    up 
+FastEthernet5/0        10.0.40.254     YES manual up                    up 
 FastEthernet6/0        unassigned      YES unset  up                    down
 ```
 
 `show ip route`
 
 ```
-Router-Economia>show ip route
+Router-Economia>show ip route 
 Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
        D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
@@ -867,42 +927,62 @@ Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
 
 Gateway of last resort is not set
 
+     10.0.0.0/24 is subnetted, 1 subnets
+C       10.0.40.0 is directly connected, FastEthernet5/0
 S    192.168.10.0/24 [1/0] via 198.51.100.2
                      [1/0] via 198.51.100.6
 S    192.168.20.0/24 [1/0] via 198.51.100.2
 S    192.168.30.0/24 [1/0] via 198.51.100.6
-C    192.168.40.0/24 is directly connected, GigabitEthernet0/0
-     198.51.100.0/30 is subnetted, 4 subnets
-C       198.51.100.0 is directly connected, GigabitEthernet1/0
-C       198.51.100.4 is directly connected, GigabitEthernet2/0
-S       198.51.100.8 [1/0] via 198.51.100.6
-S       198.51.100.12 [1/0] via 198.51.100.2
-
+C    192.168.40.0/24 is directly connected, FastEthernet4/0
+     198.51.100.0/24 is variably subnetted, 6 subnets, 2 masks
+R       198.51.100.0/29 [120/1] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
+R       198.51.100.8/29 [120/1] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
+S       198.51.100.8/30 [1/0] via 198.51.100.6
+S       198.51.100.12/30 [1/0] via 198.51.100.2
+R       198.51.100.16/29 [120/1] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
+C       198.51.100.24/29 is directly connected, GigabitEthernet0/0
 ```
 
 `show ip route summary`
 
 ```
-Router-Economia>show ip route summary
+Router-Economia>show ip route summary 
 IP routing table name is Default-IP-Routing-Table(0)
 IP routing table maximum-paths is 16
 Route Source    Networks    Subnets     Overhead    Memory (bytes)
 connected       1           2           216         384
 static          3           2           360         640
-internal        1                                   1148
-Total           5           4           576         2172
+rip             0           3           216         384
+internal        2                                   2296
+Total           6           7           792         3704
+```
+
+`show ip dhcp pool`
+
+```
+Router-Economia>show ip dhcp pool
+
+Pool ip40 :
+ Utilization mark (high/low)    : 100 / 0
+ Subnet size (first/next)       : 0 / 0 
+ Total addresses                : 254
+ Leased addresses               : 1
+ Excluded addresses             : 0
+ Pending event                  : none
+
+ 1 subnet is currently in the pool
+ Current index        IP address range                    Leased/Excluded/Total
+ 192.168.40.1         192.168.40.1     - 192.168.40.254    1    / 0     / 254
 ```
 
 `show ip nat statistics`
 
 ```
-Router-Economia>enable
-Password: 
-Router-Economia#show ip nat statistics
+Router-Economia>show ip nat statistics
 Total translations: 2 (2 static, 0 dynamic, 1 extended)
 Outside Interfaces: GigabitEthernet0/0
 Inside Interfaces: FastEthernet4/0 , FastEthernet5/0
-Hits: 0  Misses: 19
+Hits: 0  Misses: 58
 Expired translations: 0
 Dynamic mappings:
 ```
@@ -910,6 +990,7 @@ Dynamic mappings:
 `show ip nat translations`
 
 ```
+Router-Economia>show ip nat translations
 Pro  Inside global     Inside local       Outside local      Outside global
 ---  198.51.100.25     10.0.40.1          ---                ---
 tcp 198.51.100.25:80   10.0.40.1:80       ---                ---
@@ -918,27 +999,27 @@ tcp 198.51.100.25:80   10.0.40.1:80       ---                ---
 `show ip rip database`
 
 ```
-
+Router-Economia>show ip rip database
 192.168.10.0/24    auto-summary
 192.168.10.0/24
-    [2] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+    [2] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
 192.168.20.0/24    auto-summary
 192.168.20.0/24
-    [2] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+    [2] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
 192.168.30.0/24    auto-summary
 192.168.30.0/24
-    [2] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+    [2] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
 192.168.40.0/24    auto-summary
 192.168.40.0/24    directly connected, FastEthernet4/0
 198.51.100.0/29    auto-summary
 198.51.100.0/29
-    [1] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+    [1] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
 198.51.100.8/29    auto-summary
 198.51.100.8/29
-    [1] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+    [1] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
 198.51.100.16/29    auto-summary
 198.51.100.16/29
-    [1] via 198.51.100.26, 00:00:18, GigabitEthernet0/0
+    [1] via 198.51.100.26, 00:00:26, GigabitEthernet0/0
 198.51.100.24/29    auto-summary
 198.51.100.24/29    directly connected, GigabitEthernet0/0
 ```
@@ -1055,6 +1136,62 @@ tcp 198.51.100.25:80   10.0.40.1:80       ---                ---
 	Approximate round trip times in milli-seconds:
 	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
     ```
+### Para equipos a switch
+
+- `Laptop-Psico` a `Switch-Psico`
+	
+	```
+	C:\>ping 192.168.20.253
+
+	Pinging 192.168.20.253 with 32 bytes of data:
+
+	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
+	Reply from 192.168.20.253: bytes=32 time<1ms TTL=255
+
+	Ping statistics for 192.168.20.253:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+
+- `Laptop-Psico` a `Switch-Psico-DMZ`
+	
+	```
+	C:\>ping 10.0.20.253
+
+	Pinging 10.0.20.253 with 32 bytes of data:
+
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+
+	Ping statistics for 10.0.20.253:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+	
+- `Laptop-Psico` a `Switch-Derecho-DMZ`
+	
+	```
+	C:\>ping 10.0.20.253
+
+	Pinging 10.0.20.253 with 32 bytes of data:
+
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+	Reply from 10.0.20.253: bytes=32 time<1ms TTL=254
+
+	Ping statistics for 10.0.20.253:
+	    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+	Approximate round trip times in milli-seconds:
+	    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+	```
+
 ### Para equipos a routers 
 
 - `Laptop-Psico` a `Router-Psico GigabitEthernet0/0`
