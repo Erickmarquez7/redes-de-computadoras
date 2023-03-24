@@ -27,23 +27,23 @@ En la siguiente imagen podemos apreciar también las diferentes vLAN configurada
 
 | Equipo             |  Hostname        | IP de administración | Conexión con otros switches y ruteadores    |
 |:------------------:|:----------------:|:--------------------:|:-------------------------------------------:|
-| Server-Filos       |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
-| Server-Psico       |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
-| Server-Derecho     |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
-| Server-Economia    |  Switch-Economia | 192.168.40.253/24    |Router-Economia                              |
-| Server-Central     |  Switch-Central  | 192.168.40.253/24    |Router-Economia                              |
-| Switch-Filos       |  Switch-Filos    | 192.168.10.253/24    |Router-Filos                                 |
-| Switch-Psico       |  Switch-Psico    | 192.168.20.253/24    |Router-Psico                                 |
-| Switch-Derecho     |  Switch-Derecho  | 192.168.30.253/24    |Router-Derecho                               |
-| Switch-Filos-DMZ   |  Switch-Filos-DMZ| 192.168.10.253/24    |Router-Filos                                 |
-| Switch-Psico-DMZ   |  Switch-Psico-DMZ| 192.168.20.253/24    |Router-Psico                                 |
-| Switch-Derecho-DMZ |  Switch-Derecho-DMZ | 192.168.30.253/24    |Router-Derecho                            |
-| Switch-Economia-DMZ|  Switch-Economia-DMZ| 192.168.40.253/24    |Router-Economia                           |
-| Router-Filos       |  Router-Filos    | 192.168.10.254/24    |Switch-Filos, Router-Psico, Router-Derecho   |
-| Router-Psico       |  Router-Psico    | 192.168.20.254/24    |Switch-Psico, Router-Filos, Router-Economia  |
-| Router-Derecho     |  Router-Derecho  | 192.168.30.254/24    |Switch-Derecho, Router-Filos, Router-Economia|
-| Router-Economia    |  Router-Economia | 192.168.40.254/24    |Switch-Economia, Router-Psico, Router-Derecho|
-| Router-Central     |  Router-Central  | 192.168.40.253/24    |Router-Economia, Router-Psico, Router_Derecho                                 |
+| Server-Filos       |  Switch-Filos    | 192.168.10.253/24    |Switch-Filos-DMZ                                |
+| Server-Psico       |  Switch-Psico    | 192.168.20.253/24    |Switch-Psico-DMZ                                 |
+| Server-Derecho     |  Switch-Derecho  | 192.168.30.253/24    |Switch-Derecho-DMZ                               |
+| Server-Economia    |  Switch-Economia | 192.168.40.253/24    |Switch-Economia-DMZ                              |
+| Server-Central     |  Switch-Central  | 192.168.40.253/24    |Router-Central                               |
+| Switch-Filos       |  Switch-Filos    | 192.168.10.253/24    |Laptop-Filos                                 |
+| Switch-Psico       |  Switch-Psico    | 192.168.20.253/24    |Laptop-Psico                                 |
+| Switch-Derecho     |  Switch-Derecho  | 192.168.30.253/24    |Laptop-Derecho                               |
+| Switch-Filos-DMZ   |  Switch-Filos-DMZ| 192.168.10.253/24    |Server-Filos                                 |
+| Switch-Psico-DMZ   |  Switch-Psico-DMZ| 192.168.20.253/24    |Server-Psico                                 |
+| Switch-Derecho-DMZ |  Switch-Derecho-DMZ | 192.168.30.253/24    |Server-Derecho                            |
+| Switch-Economia-DMZ|  Switch-Economia-DMZ| 192.168.40.253/24    |Server-Economia                           |
+| Router-Filos       |  Router-Filos    | 192.168.10.254/24    |Switch-Filos, Switch-Filos-DMZ, Router-Central  |
+| Router-Psico       |  Router-Psico    | 192.168.20.254/24    |Switch-Psico, Switch-Psico-DMZ, Router-Central  |
+| Router-Derecho     |  Router-Derecho  | 192.168.30.254/24    |Switch-Derecho, Switch-Derecho-DMZ, Router-Central|
+| Router-Economia    |  Router-Economia | 192.168.40.254/24    |Switch-Economia,Switch-Economia-DMZ, Router-Central|
+| Router-Central     |  Router-Central  | 192.168.40.253/24    |Router-Economia, Router-Psico, Router_Derecho, Router-Filos                                 |
 
 ### Switch-Filos
 `show cdp neighbors`
