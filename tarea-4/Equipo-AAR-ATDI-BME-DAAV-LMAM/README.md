@@ -193,13 +193,6 @@ nslookup -type=A example.com. 1.1.1.1
 nslookup -type=AAAA example.com. 2606:4700:4700::1111
 ```
 
-
-
-
-
-
-
-
 (en conclusión para cada capa
 limpiar tabla ARP
 limpiar Caché DNS
@@ -211,3 +204,12 @@ mostrar tabla ARP
 
 ## Pruebas de conectividad
 
+### Capa 2 - Enlace
+
+
+
+### Capa 3 - Red
+
+### Capa 4 - Transporte
+
+### Capa 7 - Aplicación
