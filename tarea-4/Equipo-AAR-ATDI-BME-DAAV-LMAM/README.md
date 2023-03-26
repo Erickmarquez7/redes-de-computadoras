@@ -114,5 +114,100 @@ Muestra las direcciónes IPv4 y/o IPv6 del servidor DNS para nuestra conexión d
 
 ## Captura de trafico
 
+En cada capa debemos capturar el tráfico de red. Para ello identificamos la interfaz por la cual nos conectamos a intenet ya sea de manera alámbrica o inalámbrica con comandos ya utilizados
+
+```
+ifconfig -a
+```
+
+```
+ip addr
+```
+
+Capturaremos el tráfico con WireShark para verlo de manera más visual
+Seleccionamos nuestra interfaz de red junto con un filtro, haremos una prueba con nuestra dirección IP *net 192.168.0.0/24*
+
+| ![](img/wire-filtro-prueba.png)
+|:-------------------------:|
+| Filtro de prueba
+
+La captura del tráfico
+
+| ![](img/wire-captura-prueba.png)
+|:-------------------------:|
+| Captura de tráfico de prueba
+
+### Limpiar tabla ARP
+
+Para cada captura de tráfico de red debemos limpiar la tabla ARP. Mostraremos cómo hacerlo
+
+```
+ip neighbour flush all
+```
+Vacia los objetos vecinos que establecen enlaces, no se ejecuta cuando no se proporcionan argumentos y que los estados vecinos predeterminados que se vaciarán no incluyen **permanent** ni **noarp**
+
+https://man7.org/linux/man-pages/man8/ip-neighbour.8.html
+
+### Mostrar tabla ARP
+
+Mostramos la tabla ARP de la maquina fisica al finalizar el tráfico con cualquiera de los dos comandos
+
+```
+arp -an
+```
+
+```
+ip neighbour show
+```
+
+Ambos muestra la tabla ARP
+
+### Limpar caché DNS
+
+Para cada captura de tráfico de red debemos limpiar el caché DNS. Mostraremos cómo hacerlo.
+
+```
+systemd-resolve --flush-caches
+```
+
+```
+resolvectl flush-caches
+```
+
+```
+service dnsmasq restart
+```
+Cualquiera de los siguientes comandos limpian el caché DNS
+
+Podemos consultar el servidor DNS con las siguientes sintaxis
+
+```
+dig  [TIPO]  NOMBRE  @SERVIDOR
+dig example.com. @one.one.one.one
+dig AAAA example.com. @1.1.1.1
+dig A example.com. @2606:4700:4700::1111
+
+nslookup  [-type=TIPO]  NOMBRE  SERVIDOR
+nslookup example.com. one.one.one.one
+nslookup -type=A example.com. 1.1.1.1
+nslookup -type=AAAA example.com. 2606:4700:4700::1111
+```
+
+
+
+
+
+
+
+
+(en conclusión para cada capa
+limpiar tabla ARP
+limpiar Caché DNS
+captura de trafico
+mostrar tabla ARP
+)
+
+
+
 ## Pruebas de conectividad
 
