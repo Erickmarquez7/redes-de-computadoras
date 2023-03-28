@@ -192,15 +192,14 @@ nslookup example.com. one.one.one.one
 nslookup -type=A example.com. 1.1.1.1
 nslookup -type=AAAA example.com. 2606:4700:4700::1111
 ```
+Cualquier comando hace la consulta, la diferencia entre ellos es el tipo de registro siendo _A_ para el tipo _A_ y AAAA tipo AAAA 
 
 (en conclusión para cada capa
-limpiar tabla ARP
-limpiar Caché DNS
-captura de trafico
-mostrar tabla ARP
+1. limpiar tabla ARP
+2. limpiar Caché DNS
+3. captura de trafico
+4. mostrar tabla ARP
 )
-
-
 
 ## Pruebas de conectividad
 
@@ -209,7 +208,9 @@ mostrar tabla ARP
 
 
 ### Capa 3 - Red
-ping -c 10 192.168.0.1
+```
+$ ping -c 10 192.168.0.1
+
 PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
 64 bytes from 192.168.0.1: icmp_seq=1 ttl=64 time=1.91 ms
 64 bytes from 192.168.0.1: icmp_seq=2 ttl=64 time=1.54 ms
@@ -221,19 +222,23 @@ PING 192.168.0.1 (192.168.0.1) 56(84) bytes of data.
 64 bytes from 192.168.0.1: icmp_seq=8 ttl=64 time=1.40 ms
 64 bytes from 192.168.0.1: icmp_seq=9 ttl=64 time=2.03 ms
 64 bytes from 192.168.0.1: icmp_seq=10 ttl=64 time=2.05 ms
-
 --- 192.168.0.1 ping statistics ---
-10 packets transmitted, 10 received, 0% packet loss, time 9014ms
-rtt min/avg/max/mdev = 1.402/1.884/2.172/0.234 ms
 
-ping6 -c 10 fe80::bdc6:e097:c0ab:cb5f
+10 packets transmitted, 10 received, 0% packet loss, time 9014ms
+
+rtt min/avg/max/mdev = 1.402/1.884/2.172/0.234 ms
+```
+
+```
+$ ping6 -c 10 fe80::bdc6:e097:c0ab:cb5f
 PING fe80::bdc6:e097:c0ab:cb5f(fe80::bdc6:e097:c0ab:cb5f) 56 data bytes
 
 --- fe80::bdc6:e097:c0ab:cb5f ping statistics ---
 10 packets transmitted, 0 received, 100% packet loss, time 9217ms
+```
 
-
-ping  -c 10 one.one.one.one
+```
+$ ping  -c 10 one.one.one.one
 PING one.one.one.one (1.0.0.1) 56(84) bytes of data.
 64 bytes from one.one.one.one (1.0.0.1): icmp_seq=1 ttl=47 time=37.1 ms
 64 bytes from one.one.one.one (1.0.0.1): icmp_seq=2 ttl=47 time=33.6 ms
@@ -249,8 +254,10 @@ PING one.one.one.one (1.0.0.1) 56(84) bytes of data.
 --- one.one.one.one ping statistics ---
 10 packets transmitted, 10 received, 0% packet loss, time 9013ms
 rtt min/avg/max/mdev = 29.084/35.307/42.252/3.433 ms
+```
 
-ping  -c 10 www.fciencias.unam.mx
+```
+$ ping  -c 10 www.fciencias.unam.mx
 PING pagina.fciencias.unam.mx (132.248.181.220) 56(84) bytes of data.
 64 bytes from pagina.fciencias.unam.mx (132.248.181.220): icmp_seq=1 ttl=47 time=44.8 ms
 64 bytes from pagina.fciencias.unam.mx (132.248.181.220): icmp_seq=2 ttl=47 time=49.6 ms
@@ -266,8 +273,10 @@ PING pagina.fciencias.unam.mx (132.248.181.220) 56(84) bytes of data.
 --- pagina.fciencias.unam.mx ping statistics ---
 10 packets transmitted, 10 received, 0% packet loss, time 9011ms
 rtt min/avg/max/mdev = 35.504/40.266/49.581/3.955 ms
+```
 
-traceroute  -n one.one.one.one
+```
+$ traceroute  -n one.one.one.one
 traceroute to one.one.one.one (1.1.1.1), 30 hops max, 60 byte packets
  1  192.168.0.1  2.531 ms  3.264 ms  3.838 ms
  2  10.221.224.1  22.769 ms  28.063 ms  28.335 ms
@@ -300,7 +309,7 @@ unam.mx.                2127    IN      A       132.248.166.17
 ;; SERVER: 1.1.1.1#53(one.one.one.one) (UDP)
 ;; WHEN: Mon Mar 27 23:43:13 CST 2023
 ;; MSG SIZE  rcvd: 100
-
+```
 
 
 ### Capa 4 - Transporte
