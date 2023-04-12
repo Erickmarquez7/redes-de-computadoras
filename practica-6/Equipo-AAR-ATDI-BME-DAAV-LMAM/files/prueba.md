@@ -62,3 +62,43 @@ io ya lo tengo (y no c pk)
 $ vboxmanage list intnets
 Name:        intnet
 ```
+
+## lo de pfsense
+Si les da error aquí lo solucioné xd 
+https://www.reddit.com/r/PFSENSE/comments/65u4ro/is_the_targz_broken/
+
+después de la instalación se confiuguran las redes en pfSense mediante las interfaces de red
+
+Asiganmos interfaces y después configuramos las IP
+
+Primero la WAN, con dhcp
+
+luego LAN estática, y un rango de dhcp 192.168.42.100 - 192.168.42.199
+Esto nos va porporciona una interfaz web de pfSense que podemos acceder para su configuración
+
+por ultimo la OPT con dirección 172.16.1.254/24. pero no habilitamos el dhcp
+
+### Habilitamos el servicio SSH
+
+na mas le ponemos la opcion 14 xd
+
+después hacemos ping con la opcion 7, escribimos 1.1.1.1, después volvemos a poner la opción 7 pero escribimos example.com
+
+### Nos conetamos a pfSense 
+
+con la dirección  https://192.168.42.254 y hacer toda esa madre
+
+Después verificamos las actualizaciones
+
+Una vez tengamos todo configurado guardamos el archivo en formato xml
+
+Está guardado en carpeta "pfsense1"
+
+
+
+
+
+
+
+
+
