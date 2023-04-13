@@ -107,3 +107,13 @@ Después xd el acceso al servicio de SSH, HHTP, HTTPS en la red DMZ (Port forwar
 Por ultimo establecemos reglas pdel firewall para cada una de las redes WAN, LAN y DMZ
 
 La configuración se encuentra en la carpeta de files/pfsense en el archivo "2config-pfsense-AAR-..."
+
+## Después de eso sigue la instalación de alpine 
+
+ps seguir los pasos tal cual, aunque en mi caso me dio la dirección 10.0.2.5 y no 10.0.2.4
+
+Para la parte de inicio de sessión remoto debe ser en la maquina fisica
+
+Para conectarse es [usuario]@localhost
+
+Y para sudo pues kien sabe la dvd no me aparece el sudo, mas bien doas pero aun así no jala, F.
