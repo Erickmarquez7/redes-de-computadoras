@@ -92,13 +92,18 @@ Después verificamos las actualizaciones
 
 Una vez tengamos todo configurado guardamos el archivo en formato xml
 
-Está guardado en carpeta "pfsense1"
+Está guardado en carpeta "pfsense" y empieza con "1config-pfsense-AAR-..."
 
+### Configuración del pfSense
 
+Todo esto se hace en la pagina de pfSense 
 
+Configuramos las redes para permitir tráfico de redes no homologadas
 
+Luego el serivico DNS y los alias para SSH, HTTP y HTTPS.
 
+Después xd el acceso al servicio de SSH, HHTP, HTTPS en la red DMZ (Port forward)
 
+Por ultimo establecemos reglas pdel firewall para cada una de las redes WAN, LAN y DMZ
 
-
-
+La configuración se encuentra en la carpeta de files/pfsense en el archivo "2config-pfsense-AAR-..."
