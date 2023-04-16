@@ -90,12 +90,12 @@
 			<spoofmac></spoofmac>
 		</wan>
 		<lan>
-			<enable></enable>
 			<if>em1</if>
 			<descr><![CDATA[LAN]]></descr>
+			<spoofmac></spoofmac>
 			<ipaddr>192.168.42.254</ipaddr>
 			<subnet>24</subnet>
-			<spoofmac></spoofmac>
+			<enable></enable>
 		</lan>
 		<opt1>
 			<if>em2</if>
@@ -114,10 +114,101 @@
 		<lan>
 			<enable></enable>
 			<range>
-				<from>192.168.42.10</from>
-				<to>192.168.42.245</to>
+				<from>192.168.42.100</from>
+				<to>192.168.42.199</to>
 			</range>
+			<failover_peerip></failover_peerip>
+			<dhcpleaseinlocaltime></dhcpleaseinlocaltime>
+			<defaultleasetime>300</defaultleasetime>
+			<maxleasetime>600</maxleasetime>
+			<netmask></netmask>
+			<gateway></gateway>
+			<domain></domain>
+			<domainsearchlist></domainsearchlist>
+			<ddnsdomain></ddnsdomain>
+			<ddnsdomainprimary></ddnsdomainprimary>
+			<ddnsdomainsecondary></ddnsdomainsecondary>
+			<ddnsdomainkeyname></ddnsdomainkeyname>
+			<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+			<ddnsdomainkey></ddnsdomainkey>
+			<mac_allow></mac_allow>
+			<mac_deny></mac_deny>
+			<ddnsclientupdates>allow</ddnsclientupdates>
+			<tftp></tftp>
+			<ldap></ldap>
+			<nextserver></nextserver>
+			<filename></filename>
+			<filename32></filename32>
+			<filename64></filename64>
+			<filename32arm></filename32arm>
+			<filename64arm></filename64arm>
+			<uefihttpboot></uefihttpboot>
+			<rootpath></rootpath>
+			<numberoptions></numberoptions>
+			<staticmap>
+				<mac>08:00:27:46:f7:fc</mac>
+				<cid>LAN-Cliente-Debian-11</cid>
+				<ipaddr>192.168.42.10</ipaddr>
+				<hostname>debian-11</hostname>
+				<descr><![CDATA[Cliente Debian 11 en la red LAN]]></descr>
+				<filename></filename>
+				<rootpath></rootpath>
+				<defaultleasetime>600</defaultleasetime>
+				<maxleasetime>900</maxleasetime>
+				<gateway></gateway>
+				<domain></domain>
+				<domainsearchlist></domainsearchlist>
+				<ddnsdomain></ddnsdomain>
+				<ddnsdomainprimary></ddnsdomainprimary>
+				<ddnsdomainsecondary></ddnsdomainsecondary>
+				<ddnsdomainkeyname></ddnsdomainkeyname>
+				<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+				<ddnsdomainkey></ddnsdomainkey>
+				<tftp></tftp>
+				<ldap></ldap>
+				<nextserver></nextserver>
+				<filename32></filename32>
+				<filename64></filename64>
+				<filename32arm></filename32arm>
+				<filename64arm></filename64arm>
+				<uefihttpboot></uefihttpboot>
+				<numberoptions></numberoptions>
+			</staticmap>
 		</lan>
+		<opt1>
+			<range>
+				<from></from>
+				<to></to>
+			</range>
+			<failover_peerip></failover_peerip>
+			<defaultleasetime></defaultleasetime>
+			<maxleasetime></maxleasetime>
+			<netmask></netmask>
+			<gateway></gateway>
+			<domain></domain>
+			<domainsearchlist></domainsearchlist>
+			<ddnsdomain></ddnsdomain>
+			<ddnsdomainprimary></ddnsdomainprimary>
+			<ddnsdomainsecondary></ddnsdomainsecondary>
+			<ddnsdomainkeyname></ddnsdomainkeyname>
+			<ddnsdomainkeyalgorithm>hmac-md5</ddnsdomainkeyalgorithm>
+			<ddnsdomainkey></ddnsdomainkey>
+			<mac_allow></mac_allow>
+			<mac_deny></mac_deny>
+			<ddnsclientupdates>allow</ddnsclientupdates>
+			<tftp></tftp>
+			<ldap></ldap>
+			<nextserver></nextserver>
+			<filename></filename>
+			<filename32></filename32>
+			<filename64></filename64>
+			<filename32arm></filename32arm>
+			<filename64arm></filename64arm>
+			<uefihttpboot></uefihttpboot>
+			<rootpath></rootpath>
+			<numberoptions></numberoptions>
+			<dhcpleaseinlocaltime></dhcpleaseinlocaltime>
+		</opt1>
 	</dhcpd>
 	<dhcpdv6>
 		<lan>
@@ -473,8 +564,7 @@
 			<wan></wan>
 		</separator>
 	</filter>
-	<shaper>
-	</shaper>
+	<shaper></shaper>
 	<ipsec>
 		<client></client>
 	</ipsec>
@@ -603,8 +693,7 @@
 		<period>10</period>
 	</widgets>
 	<openvpn></openvpn>
-	<dnshaper>
-	</dnshaper>
+	<dnshaper></dnshaper>
 	<unbound>
 		<enable></enable>
 		<dnssec></dnssec>
@@ -635,8 +724,8 @@
 		<prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRGpnTWtLN05uR2o1TWQKKzM1ZFN2SmcwdU56RG5IU0t2T2NkaSs4Ny9yZGFYWEFLNUdBVSt3QnBQWlF2VXV5Q2xOcmRZbDkwYmZHRjZDaAovbVduZjBwTXE3WVdJMHAxSHNFN3J1S1dTUnVNZmFnNmV5VG5WSzFKd1RCbStUN3VydE9YZFU3dllIQW9uWHdvCmdjblQvaW9la2FxaS9Wek9IbU8yUmRRWlFwUXpOa2hURVpSbHE5STVVRnBOSGx3bUVnVGl5N3drdlFWT1FXS3QKT2NCVnVBa2xQaFQvUWxJL2g0WkNyOGNLSE9sajZ1eGUzSHdKYWNuVXgzYTNQME5hSUZLMTVuVlQ4eFFGeHJwZwpkYy80dkxvQTE5WVlvM1RJU2k5eDQxcUk3QXdsVFQ0TFExY1dmUFVLdVhJbHpVUjZPTWZwT3pMY0hyQjJWLzBBCkI3VHErWUtiQWdNQkFBRUNnZ0VBRE84dmZ1MkVYQ09oaTV6V3pGc01lTERFdWEvaWpMNWdaMDdZMi9jUTNqRzIKdmh3OEEzM0I5ejMzdXhOb0VGRkIrT1FQMHhWdlMxWGdqaFUybGxWSVZoK1ZGS0VoQkpPaEROR2VsRWpIeGk4Rwp0M3gwMXFvYnlBdXh3c2o4NlBrTGtwcmF5QVZGbXltSSs0eVZldllDVXdhWkd2Y29wWmRZdCs0MFp0TkFOY0VPCjNtUTZwL3U5Ly9VeDZ0Qjl5amM1bVd3QVo3RzJ1eFdiRFNZa3o0Z0dpNG9tWEVPQ1VLUWd6QXFlV3BVR2tvdjAKSC91L3VWRHFIUCt2VUxsU0J2SXg2b1Q3T0c1b2tFQm12eWtZY3NaWXZYVjU0UmtQZXhQYndpYW5XMEZRVkluZwplbXl6S0J3NTczK0swS3l4cnoxVUVNRC80UHFsMjJ1RGY2aTNFWHFFOFFLQmdRRHpNaUVCa3YrRHdFdHl1YzF1CmhIdURIYkFsT0kwdGhiYkMvaTNkTzFSZlFHeW1Pbi9WL1NCTml5UnNBZUJHSCtaM0NPRlY5VUMxWE1RYXgza1AKSmlzcTdDY0FGTm9rNEVobkJsbUN3a05vM0x3OVlGQUExZTRtSUloR2x3dWUzTWFSNk8wd1ZGTExTeHNlQzdpNgpQSnZnT2IvTi96MHoxdzZ4RG1WcUdhQlJod0tCZ1FEdmV5VCtROSt6TjRkUllmVDFJK3hENDhjNjRIK21pT1Z4CnZHNUhCa1VEN2Ridm9pUUNPZjJXK0hGK3JVL3ZBbTkwN1k1V2d5Vm90WE5VTnFLekozQVVvM3hIOE13d2duU2oKV3poL2c4aGMxYUZZTytjaHc2OUFTRUlhUmFjRVQySHB6ODdVSGlMZ2hzUDFSYXgrYllBWW1Va090TnVGUmtrNwp5VGhNQ29wYlRRS0JnRk9xQVRUYmIwL1NEYUt3VFA0aVVhTnZ5VE5rMnh5NERZSFRrOCt5STNxSlhWZHFkS1FYCmFzK0NlTXMzY2dKdDR3azhZdGtCZ0h0a0tJclY2TTNQWWJab2U1cEpraXB4aGpiN05qd0h2TTBNY3kzaVBtT3IKTlR5a29IMDRaV1VIcXNCemszVzI3S3pIYjlMTVVZYXdaeWVpZGx2VjNTWkNhK2w1ZkdZZDNzdHRBb0dCQUp4NwpJODM4L2NQMktiWjB3b0lYNmY3bWJEMDlpa3VBTWlTaVVwQ1lPU3A3RTdIYmlabm0ySnY0VlBqSU9HM2Rjb1M5CjRQOElqTDRocW0xQmtnaHNZYUVxdmorbnlWUjlPY2V3Q0hmUjNXOURyRHlpVDhIUlFzZEhMK0pJMXZ4Sy9waXYKejk3c25pK0YvNjlaeW4rRi8yaVRhSmh5ZHVwYjVlaHA4QjVIMk9ZVkFvR0JBTEpmaHBDME1UVFlmMHc1dy82Rgp5eTdTbDJaVlhPU1hnR3N2ZHljcmM5eTZUQ2wzVWpORkp2NTlDaVBpWVYvT21xMFNaT1R3S29rVjlRMnlQK1JRCjJQMGJJT2pHVllVZjZCWjV2ai9maHc3UzZTbjhxc1F0TnpmeEg5VjhmRHVxRFRtQkJnNmVVMml1eWIyTlBQb2oKZWt4ZWgvbDlleUM0bEZ5Zlp5aE5LRCtVCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K</prv>
 	</cert>
 	<revision>
-		<time>1681418481</time>
-		<description><![CDATA[admin@192.168.42.1 (Local Database): Firewall: Rules - saved/edited a firewall rule.]]></description>
+		<time>1681681850</time>
+		<description><![CDATA[admin@192.168.42.1 (Local Database): DHCP Server settings saved]]></description>
 		<username><![CDATA[admin@192.168.42.1 (Local Database)]]></username>
 	</revision>
 	<ppps></ppps>

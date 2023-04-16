@@ -1,0 +1,5 @@
+*** Welcome to pfSense 2.6.0-RELEASE (amd64) on pfSense-AAR-ATDI-BME-DAAV-LMAM ***
+
+WAN (wan)       -> em0      -> v4/DHCP4:  10.0.2.4/24        
+LAN (lan)       -> em1      -> v4:        192.168.42.254/24   
+OPT1 (opt1)     -> em2      -> v4:        172.16.1.254/24     
