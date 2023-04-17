@@ -1,8 +1,8 @@
+## Verificación de la configuración del cliente LAN (Debian)
 
-## Configuracion red LAN
+1. Configurando el archivo `/etc/network/interfaces` para pedir una dirección IP por medio de DHCP en la red LAN:
 
-### Verificacion del cliente Debian tenga la dirección IP reservada
-
+```
 erickdeb@Debian-11:~$ cat /etc/network/interfaces
 
 ## This file describes the network interfaces available on your system
@@ -26,8 +26,10 @@ iface lo inet loopback
 auto eth1
 allow-hotplug eth1
 iface eth1 inet dhcp
+```
+2. Verificando que el adaptador de red `eth1` conectado a la red LAN tenga una dirección IP del segmento `192.168.42.0/24`:
 
-
+```
 erickdeb@Debian-11:~$ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -45,51 +47,26 @@ erickdeb@Debian-11:~$ ip addr
        valid_lft 557sec preferred_lft 557sec
     inet6 fe80::a00:27ff:fe46:f7fc/64 scope link 
        valid_lft forever preferred_lft forever
+```
 
+3. Verificando que la máquina virtual tenga configurado un _gateway_ para comunicarse con otras redes:
 
+```
 erickdeb@Debian-11:~$ ip route 
 default via 192.168.42.254 dev eth1 
 169.254.0.0/16 dev eth1 scope link metric 1000 
 192.168.42.0/24 dev eth1 proto kernel scope link src 192.168.42.10 
+```
 
+4. Verificando que el archivo `/etc/resolv.conf` tenga configurado el servidor DNS que se obtuvo por DHCP:
 
+```
 erickdeb@Debian-11:~$ cat /etc/resolv.conf 
 domain local
 search local
 nameserver 192.168.42.254
-
-
-erickdeb@Debian-11:~$  dig example.com. 
-
-; <<>> DiG 9.16.37-Debian <<>> example.com.
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 50913
-;; flags: qr rd ra ad; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 1432
-;; QUESTION SECTION:
-;example.com.			IN	A
-
-;; ANSWER SECTION:
-example.com.		16571	IN	A	93.184.216.34
-
-;; Query time: 0 msec
-;; SERVER: 192.168.42.254#53(192.168.42.254)
-;; WHEN: Sun Apr 16 21:54:37 CST 2023
-;; MSG SIZE  rcvd: 56         
-         
-         
-erickdeb@Debian-11:~$ ping -c 4 1.1.1.1
-PING 1.1.1.1 (1.1.1.1) 56(84) bytes of data.
-64 bytes from 1.1.1.1: icmp_seq=1 ttl=43 time=178 ms
-64 bytes from 1.1.1.1: icmp_seq=2 ttl=43 time=100 ms
-64 bytes from 1.1.1.1: icmp_seq=3 ttl=43 time=125 ms
-64 bytes from 1.1.1.1: icmp_seq=4 ttl=43 time=143 ms
-
---- 1.1.1.1 ping statistics ---
-4 packets transmitted, 4 received, 0% packet loss, time 3005ms
-rtt min/avg/max/mdev = 100.264/136.387/177.998/28.359 ms
-
 ```
+
+5. Verificando conectividad a internet:
+
+Las pruebas de conectividad a internet, incluyendo la resolución DNS y la conectividad ICMP, se encuentran en el siguiente archivo: [Pruebas_Conectividad_Debian.md](Pruebas_Conectividad_Debian.md)

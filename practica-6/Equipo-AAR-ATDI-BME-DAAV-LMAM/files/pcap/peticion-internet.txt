@@ -1,0 +1,30 @@
+PING 9.9.9.9 (9.9.9.9): 56 data bytes
+64 bytes from 9.9.9.9: icmp_seq=0 ttl=50 time=40.167 ms
+64 bytes from 9.9.9.9: icmp_seq=1 ttl=50 time=33.761 ms
+64 bytes from 9.9.9.9: icmp_seq=2 ttl=50 time=127.199 ms
+64 bytes from 9.9.9.9: icmp_seq=3 ttl=50 time=45.795 ms
+64 bytes from 9.9.9.9: icmp_seq=4 ttl=50 time=40.780 ms
+64 bytes from 9.9.9.9: icmp_seq=5 ttl=50 time=66.516 ms
+64 bytes from 9.9.9.9: icmp_seq=6 ttl=50 time=38.553 ms
+64 bytes from 9.9.9.9: icmp_seq=7 ttl=50 time=29.652 ms
+64 bytes from 9.9.9.9: icmp_seq=8 ttl=50 time=136.433 ms
+64 bytes from 9.9.9.9: icmp_seq=9 ttl=50 time=42.837 ms
+64 bytes from 9.9.9.9: icmp_seq=10 ttl=50 time=36.043 ms
+64 bytes from 9.9.9.9: icmp_seq=11 ttl=50 time=33.152 ms
+64 bytes from 9.9.9.9: icmp_seq=12 ttl=50 time=41.205 ms
+64 bytes from 9.9.9.9: icmp_seq=13 ttl=50 time=41.532 ms
+64 bytes from 9.9.9.9: icmp_seq=14 ttl=50 time=47.432 ms
+64 bytes from 9.9.9.9: icmp_seq=15 ttl=50 time=68.233 ms
+64 bytes from 9.9.9.9: icmp_seq=16 ttl=50 time=37.489 ms
+64 bytes from 9.9.9.9: icmp_seq=17 ttl=50 time=33.796 ms
+64 bytes from 9.9.9.9: icmp_seq=18 ttl=50 time=43.443 ms
+64 bytes from 9.9.9.9: icmp_seq=19 ttl=50 time=97.612 ms
+64 bytes from 9.9.9.9: icmp_seq=20 ttl=50 time=83.614 ms
+64 bytes from 9.9.9.9: icmp_seq=21 ttl=50 time=45.831 ms
+64 bytes from 9.9.9.9: icmp_seq=22 ttl=50 time=32.799 ms
+64 bytes from 9.9.9.9: icmp_seq=23 ttl=50 time=26.215 ms
+64 bytes from 9.9.9.9: icmp_seq=24 ttl=50 time=31.411 ms
+
+--- 9.9.9.9 ping statistics ---
+25 packets transmitted, 25 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 26.215/52.060/136.433/28.780 ms
