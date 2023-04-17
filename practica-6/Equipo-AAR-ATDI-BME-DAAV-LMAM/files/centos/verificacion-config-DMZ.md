@@ -1,3 +1,9 @@
+
+## Configuracion red DMZ
+
+### Verificacion del servidor CentOS tenga la dirección IP estática
+
+```
 [root@localhost ~]# nmcli connection show 
 NAME      	    UUID                                  TYPE      DEVICE
 eth1-dmz  	    3de1d762-337e-430f-b322-33adc0910b09  ethernet  eth1
@@ -7,11 +13,8 @@ eth1      	    2a51a8ce-619d-3da8-a93e-ed46c3ced639  ethernet  --
 Wired connection 1  ddaba1sa-5f7a-3ba0-8b30-fa7fba4171c4  ethernet  --
 
 
-
-
 [root@localhost ~]# hostname -I
 172.16.1.10
-
 
 
 [root@localhost ~]# ip route
@@ -21,7 +24,6 @@ default via 172.16.1.254 dev eth1 proto static metric 100
 
 [root@localhost ~]# cat /etc/resolv.conf
 nameserver 172.16.1.254
-
 
 
 [root@localhost ~]# ip addr
@@ -42,4 +44,4 @@ nameserver 172.16.1.254
     inet6 fe80::4df6:72b4:4211:8c91/64 scope link noprefixroute
        valid_lft forever preferred_lft forever
 
-
+```

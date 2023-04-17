@@ -1,12 +1,15 @@
+
+## Configuracion red WAN
+
+### Verificacion del cliente alpine tenga la dirección IP del segmento WAN
+
+```
 alpine:~$ cat /etc/network/interfaces
 auto lo
 iface lo inet loopback
 
 auto eth0
 iface eth0 inet dhcp
-
-
-
 
 alpine:~$ ip addr
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN qlen 1000
@@ -23,25 +26,14 @@ alpine:~$ ip addr
        valid_lft forever preferred_lft forever
 
 
-
-
-
 alpine:~$ ip route
 default via 10.0.2.1 dev eth0  metric 202 
 10.0.2.0/24 dev eth0 scope link  src 10.0.2.5 
 
 
-
-
-
 alpine:~$ cat /etc/resolv.conf
 search .
 nameserver 10.0.2.1
-
-
-
-
-
 
 
 alpine:~# dig example.com.
@@ -66,11 +58,6 @@ example.com.		18438	IN	A	93.184.216.34
 ;; MSG SIZE  rcvd: 56
 
 
-
-
-
-
-
 alpine:~# ping -c 4 1.1.1.1
 PING 1.1.1.1 (1.1.1.1): 56 data bytes
 64 bytes from 1.1.1.1: seq=0 ttl=44 time=167.114 ms
@@ -81,4 +68,4 @@ PING 1.1.1.1 (1.1.1.1): 56 data bytes
 --- 1.1.1.1 ping statistics ---
 4 packets transmitted, 4 packets received, 0% packet loss
 round-trip min/avg/max = 85.812/175.535/319.069 ms
-
+```

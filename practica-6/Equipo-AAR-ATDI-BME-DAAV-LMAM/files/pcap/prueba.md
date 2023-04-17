@@ -1,5 +1,5 @@
 
-## cración de redes
+## Creación de redes
 
 ### Primero creamos la red WAN (la berde) NAT
 
@@ -40,7 +40,7 @@ Wireless:        No
 Status:          Up
 VBoxNetworkName: HostInterfaceNetworking-vboxnet0
 ```
-Configuracion del adaptador vboxnet0
+### Configuracion del adaptador vboxnet0
 
 ```
 $ ip addr show dev vboxnet0
