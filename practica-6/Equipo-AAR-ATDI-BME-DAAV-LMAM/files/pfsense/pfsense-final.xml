@@ -6,7 +6,6 @@
 		<optimization>normal</optimization>
 		<hostname>pfSense-AAR-ATDI-BME-DAAV-LMAM</hostname>
 		<domain>local</domain>
-		<dnsallowoverride>on</dnsallowoverride>
 		<group>
 			<name>all</name>
 			<description><![CDATA[All Users]]></description>
@@ -40,6 +39,8 @@
 			<ssl-certref>6435f76b366c8</ssl-certref>
 			<althostnames></althostnames>
 			<dashboardcolumns>2</dashboardcolumns>
+			<webguicss>pfSense.css</webguicss>
+			<logincss>1e3f75;</logincss>
 		</webgui>
 		<disablenatreflection>yes</disablenatreflection>
 		<disablesegmentationoffloading></disablesegmentationoffloading>
@@ -57,6 +58,11 @@
 			<enable>enabled</enable>
 		</ssh>
 		<timezone>America/Mexico_City</timezone>
+		<language>en_US</language>
+		<dnsserver>1.1.1.1</dnsserver>
+		<dnsserver>8.8.8.8</dnsserver>
+		<dnsserver>9.9.9.9</dnsserver>
+		<dnsallowoverride></dnsallowoverride>
 	</system>
 	<interfaces>
 		<wan>
@@ -313,6 +319,40 @@
 	</nat>
 	<filter>
 		<rule>
+			<id></id>
+			<tracker>1681418172</tracker>
+			<type>pass</type>
+			<interface>wan</interface>
+			<ipprotocol>inet</ipprotocol>
+			<tag></tag>
+			<tagged></tagged>
+			<max></max>
+			<max-src-nodes></max-src-nodes>
+			<max-src-conn></max-src-conn>
+			<max-src-states></max-src-states>
+			<statetimeout></statetimeout>
+			<statetype><![CDATA[keep state]]></statetype>
+			<os></os>
+			<protocol>icmp</protocol>
+			<icmptype>any</icmptype>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<network>wanip</network>
+			</destination>
+			<log></log>
+			<descr><![CDATA[Permite ICMP en la interfaz WAN]]></descr>
+			<updated>
+				<time>1681418172</time>
+				<username><![CDATA[admin@192.168.42.1 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1681418172</time>
+				<username><![CDATA[admin@192.168.42.1 (Local Database)]]></username>
+			</created>
+		</rule>
+		<rule>
 			<source>
 				<any></any>
 			</source>
@@ -371,66 +411,6 @@
 		</rule>
 		<rule>
 			<id></id>
-			<tracker>1681418172</tracker>
-			<type>pass</type>
-			<interface>wan</interface>
-			<ipprotocol>inet</ipprotocol>
-			<tag></tag>
-			<tagged></tagged>
-			<max></max>
-			<max-src-nodes></max-src-nodes>
-			<max-src-conn></max-src-conn>
-			<max-src-states></max-src-states>
-			<statetimeout></statetimeout>
-			<statetype><![CDATA[keep state]]></statetype>
-			<os></os>
-			<protocol>icmp</protocol>
-			<icmptype>any</icmptype>
-			<source>
-				<any></any>
-			</source>
-			<destination>
-				<network>wanip</network>
-			</destination>
-			<log></log>
-			<descr><![CDATA[Permite ICMP en la interfaz WAN]]></descr>
-			<updated>
-				<time>1681418172</time>
-				<username><![CDATA[admin@192.168.42.1 (Local Database)]]></username>
-			</updated>
-			<created>
-				<time>1681418172</time>
-				<username><![CDATA[admin@192.168.42.1 (Local Database)]]></username>
-			</created>
-		</rule>
-		<rule>
-			<type>pass</type>
-			<ipprotocol>inet</ipprotocol>
-			<descr><![CDATA[Default allow LAN to any rule]]></descr>
-			<interface>lan</interface>
-			<tracker>0100000101</tracker>
-			<source>
-				<network>lan</network>
-			</source>
-			<destination>
-				<any></any>
-			</destination>
-		</rule>
-		<rule>
-			<type>pass</type>
-			<ipprotocol>inet6</ipprotocol>
-			<descr><![CDATA[Default allow LAN IPv6 to any rule]]></descr>
-			<interface>lan</interface>
-			<tracker>0100000102</tracker>
-			<source>
-				<network>lan</network>
-			</source>
-			<destination>
-				<any></any>
-			</destination>
-		</rule>
-		<rule>
-			<id></id>
 			<tracker>1681418274</tracker>
 			<type>pass</type>
 			<interface>lan</interface>
@@ -462,6 +442,32 @@
 				<time>1681418274</time>
 				<username><![CDATA[admin@192.168.42.1 (Local Database)]]></username>
 			</created>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<ipprotocol>inet</ipprotocol>
+			<descr><![CDATA[Default allow LAN to any rule]]></descr>
+			<interface>lan</interface>
+			<tracker>0100000101</tracker>
+			<source>
+				<network>lan</network>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
+		</rule>
+		<rule>
+			<type>pass</type>
+			<ipprotocol>inet6</ipprotocol>
+			<descr><![CDATA[Default allow LAN IPv6 to any rule]]></descr>
+			<interface>lan</interface>
+			<tracker>0100000102</tracker>
+			<source>
+				<network>lan</network>
+			</source>
+			<destination>
+				<any></any>
+			</destination>
 		</rule>
 		<rule>
 			<id></id>
@@ -562,6 +568,7 @@
 		</rule>
 		<separator>
 			<wan></wan>
+			<lan></lan>
 		</separator>
 	</filter>
 	<shaper></shaper>
@@ -712,8 +719,7 @@
 	</unbound>
 	<vlans></vlans>
 	<qinqs></qinqs>
-	<gateways>
-	</gateways>
+	<gateways></gateways>
 	<dnsmasq></dnsmasq>
 	<ntpd></ntpd>
 	<cert>
@@ -724,8 +730,8 @@
 		<prv>LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JSUV2Z0lCQURBTkJna3Foa2lHOXcwQkFRRUZBQVNDQktnd2dnU2tBZ0VBQW9JQkFRRGpnTWtLN05uR2o1TWQKKzM1ZFN2SmcwdU56RG5IU0t2T2NkaSs4Ny9yZGFYWEFLNUdBVSt3QnBQWlF2VXV5Q2xOcmRZbDkwYmZHRjZDaAovbVduZjBwTXE3WVdJMHAxSHNFN3J1S1dTUnVNZmFnNmV5VG5WSzFKd1RCbStUN3VydE9YZFU3dllIQW9uWHdvCmdjblQvaW9la2FxaS9Wek9IbU8yUmRRWlFwUXpOa2hURVpSbHE5STVVRnBOSGx3bUVnVGl5N3drdlFWT1FXS3QKT2NCVnVBa2xQaFQvUWxJL2g0WkNyOGNLSE9sajZ1eGUzSHdKYWNuVXgzYTNQME5hSUZLMTVuVlQ4eFFGeHJwZwpkYy80dkxvQTE5WVlvM1RJU2k5eDQxcUk3QXdsVFQ0TFExY1dmUFVLdVhJbHpVUjZPTWZwT3pMY0hyQjJWLzBBCkI3VHErWUtiQWdNQkFBRUNnZ0VBRE84dmZ1MkVYQ09oaTV6V3pGc01lTERFdWEvaWpMNWdaMDdZMi9jUTNqRzIKdmh3OEEzM0I5ejMzdXhOb0VGRkIrT1FQMHhWdlMxWGdqaFUybGxWSVZoK1ZGS0VoQkpPaEROR2VsRWpIeGk4Rwp0M3gwMXFvYnlBdXh3c2o4NlBrTGtwcmF5QVZGbXltSSs0eVZldllDVXdhWkd2Y29wWmRZdCs0MFp0TkFOY0VPCjNtUTZwL3U5Ly9VeDZ0Qjl5amM1bVd3QVo3RzJ1eFdiRFNZa3o0Z0dpNG9tWEVPQ1VLUWd6QXFlV3BVR2tvdjAKSC91L3VWRHFIUCt2VUxsU0J2SXg2b1Q3T0c1b2tFQm12eWtZY3NaWXZYVjU0UmtQZXhQYndpYW5XMEZRVkluZwplbXl6S0J3NTczK0swS3l4cnoxVUVNRC80UHFsMjJ1RGY2aTNFWHFFOFFLQmdRRHpNaUVCa3YrRHdFdHl1YzF1CmhIdURIYkFsT0kwdGhiYkMvaTNkTzFSZlFHeW1Pbi9WL1NCTml5UnNBZUJHSCtaM0NPRlY5VUMxWE1RYXgza1AKSmlzcTdDY0FGTm9rNEVobkJsbUN3a05vM0x3OVlGQUExZTRtSUloR2x3dWUzTWFSNk8wd1ZGTExTeHNlQzdpNgpQSnZnT2IvTi96MHoxdzZ4RG1WcUdhQlJod0tCZ1FEdmV5VCtROSt6TjRkUllmVDFJK3hENDhjNjRIK21pT1Z4CnZHNUhCa1VEN2Ridm9pUUNPZjJXK0hGK3JVL3ZBbTkwN1k1V2d5Vm90WE5VTnFLekozQVVvM3hIOE13d2duU2oKV3poL2c4aGMxYUZZTytjaHc2OUFTRUlhUmFjRVQySHB6ODdVSGlMZ2hzUDFSYXgrYllBWW1Va090TnVGUmtrNwp5VGhNQ29wYlRRS0JnRk9xQVRUYmIwL1NEYUt3VFA0aVVhTnZ5VE5rMnh5NERZSFRrOCt5STNxSlhWZHFkS1FYCmFzK0NlTXMzY2dKdDR3azhZdGtCZ0h0a0tJclY2TTNQWWJab2U1cEpraXB4aGpiN05qd0h2TTBNY3kzaVBtT3IKTlR5a29IMDRaV1VIcXNCemszVzI3S3pIYjlMTVVZYXdaeWVpZGx2VjNTWkNhK2w1ZkdZZDNzdHRBb0dCQUp4NwpJODM4L2NQMktiWjB3b0lYNmY3bWJEMDlpa3VBTWlTaVVwQ1lPU3A3RTdIYmlabm0ySnY0VlBqSU9HM2Rjb1M5CjRQOElqTDRocW0xQmtnaHNZYUVxdmorbnlWUjlPY2V3Q0hmUjNXOURyRHlpVDhIUlFzZEhMK0pJMXZ4Sy9waXYKejk3c25pK0YvNjlaeW4rRi8yaVRhSmh5ZHVwYjVlaHA4QjVIMk9ZVkFvR0JBTEpmaHBDME1UVFlmMHc1dy82Rgp5eTdTbDJaVlhPU1hnR3N2ZHljcmM5eTZUQ2wzVWpORkp2NTlDaVBpWVYvT21xMFNaT1R3S29rVjlRMnlQK1JRCjJQMGJJT2pHVllVZjZCWjV2ai9maHc3UzZTbjhxc1F0TnpmeEg5VjhmRHVxRFRtQkJnNmVVMml1eWIyTlBQb2oKZWt4ZWgvbDlleUM0bEZ5Zlp5aE5LRCtVCi0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0K</prv>
 	</cert>
 	<revision>
-		<time>1681681850</time>
-		<description><![CDATA[admin@192.168.42.1 (Local Database): DHCP Server settings saved]]></description>
+		<time>1681700105</time>
+		<description><![CDATA[admin@192.168.42.1 (Local Database): Firewall: Rules - reordered firewall rules.]]></description>
 		<username><![CDATA[admin@192.168.42.1 (Local Database)]]></username>
 	</revision>
 	<ppps></ppps>
