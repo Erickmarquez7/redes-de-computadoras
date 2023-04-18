@@ -16,6 +16,26 @@
 
 ## Procedimiento para reservar una dirección IP en el servidor DHCP
 
+Primero entramos en la configuración del servicio local de DHCP
+
+Configuramos el servicio de DHCP de la red LAN 
+
+En la sección DHCP Static Mappings for this Interface agregamos la dirección IP reservada en DHCP
+
+Llenamos un formulario donde asignamos:
+Direccion MAC, identificador del cliente, direccion IP, nombre del host, una descripcion, nombre del dominio y tiempo default y tiempo maximo
+
+| Elemento            | Valor	                                    | Notas                                                          |
+|:-------------------:|:-------------------------------------------:|:--------------------------------------------------------------:|
+| MAC Address	      | Dirección MAC de la máquina virtual Debian  | (ej. 08:00:27:d9:06:ac)                                        |
+| Client Identifier	  | LAN-Cliente-Debian-11	                    |                                                                |
+| IP Address	      | 192.168.42.10	                            | La dirección IP debe estar FUERA del rango asignado para DHCP  |
+| Hostname	          | debian-11	                                |                                                                |
+| Description	      | Cliente Debian 11 en la red LAN	            |                                                                |
+| Domain name	      | lan	                                        |                                                                |
+| Default lease time  | 600	                                        |                                                                |
+| Maximum lease time  | 900                                         |                                                                |
+
 ## Bitácores generadas
 
 ## Reglas configuradas
