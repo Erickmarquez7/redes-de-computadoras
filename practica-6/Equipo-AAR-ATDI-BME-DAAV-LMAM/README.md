@@ -197,4 +197,4 @@ rdr-anchor "miniupnpd" all
         - [Salida de los comandos de configuración de red](files/centos/verificacion-config-DMZ.md)
         - [Salida de los comandos de resolución DNS y Pruebas de conectividad con PING](files/centos/Pruebas_Conectividad_CentOS.md)
     
-    - Pruebas de conectividad del cliente WAN (Alpine) al servidor DMZ (CentOS) utilizando la redirección de puertos
+4. Pruebas de conectividad del cliente WAN (Alpine) al servidor DMZ (CentOS) utilizando la redirección de puertos
