@@ -191,12 +191,24 @@ rdr-anchor "miniupnpd" all
 ## Carpeta `files`
 
 1. [Capturas de tráfico en formato `PCAP`](files/pcap/)
-    - Petición de pfSense hacia Internet `9.9.9.9` (archivo [peticion-internet.txt](files/pcap/peticion-internet.txt))
+    - Tráfico ARP de las redes LAN, WAN y OPT
+    - Tráfico DHCP de la red LAN 
+    - [Tráfico ICMP entre las redes LAN y OPT](files/pcap/LAN-PING-OPT.pcap)
+    - Petición de los equipos hacia Internet
+        - LAN hacia `1.1.1.1`
+        - [DMZ hacia `8.8.8.8`](files/pcap/OPT-8888.pcap)
+    - [Petición de pfSense hacia Internet `9.9.9.9`](files/pcap/pf-em0-PING9999.pcap)
+    - [Tráfico SSH del cliente LAN a servidor DMZ](files/pcap/LAN-SSH-OPT.pcap)
+    - Tráfico SSH del cliente WAN al servidor DMZ via la redirección de puertos
+    - [Petición HTTP del cliente LAN al servidor DMZ](files/pcap/LAN-HTTP-OPT.pcap)
+    - Petición HTTP del cliente WAN al servidor DMZ via la redirección de puertos
+    - Petición HTTPS del cliente LAN al servidor DMZ
+    - Petición HTTPS del cliente WAN al servidor DMZ via la redirección de puertos  
     
 2. pfSense 
     - Archivos de configuración XML de pfSense ([inicial](files/pfsense/pfsense-inicial.xml) y [final](files/pfsense/pfsense-final.xml))
     - Estados del pfSense donde se indican las conexiones de NAT
-    - [Bitácora de pfSense](files/pfsense/configuracion_pfSense.md)
+    - [Bitácora de pfSense](files/pfsense/configuracion-pfSense.md)
 
 3. Para los equipos en la red...
     - WAN (Alpine)
