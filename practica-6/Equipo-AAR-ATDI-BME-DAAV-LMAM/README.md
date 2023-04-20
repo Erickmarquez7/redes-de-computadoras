@@ -12,6 +12,11 @@
 
 ## Topología de Red 
 
+A nivel físico es Topología de Árbol, siendo la máquina virtual pfSense la raíz del árbol y las ramas de la raíz serían las demás redes como LAN, DMZ y WAN. Mientras que las máquinas virtuales y la máquina física son las hojas del árbol.
+
+Sin embargo a nivel lógico no es tan sencillo decir su topología, ya que en la configuración del pfSense permitimos el tráfico de la red LAN a la red DMZ pero bloqueamos el tráfico de la red DMZ hacia la red LAN. 
+Además de que tenemos una redirección de puertos en la red DMZ con los servicios ssh, http y https que provee el servidor de DMZ (la máquina virtual de CentOS).
+
 ## Procedimiento de configuración de NAT, Alias, Port Forwarding, servicio DHCP y servicio DNS
 
 ## Procedimiento para reservar una dirección IP en el servidor DHCP
@@ -36,9 +41,29 @@ Direccion MAC, identificador del cliente, direccion IP, nombre del host, una des
 | Default lease time  | 600	                                        |                                                                |
 | Maximum lease time  | 900                                         |                                                                |
 
-## Bitácores generadas
+## Bitácoras generadas
+
+
 
 ## Reglas configuradas
+
+- Reglas para la red WAN
+
+| ![](img/regla-WAN.jpeg)
+|:--------------------------------:|
+| 
+
+- Reglas para la red LAN
+
+| ![](img/regla-LAN.jpeg)
+|:--------------------------------:|
+| 
+
+- Reglas para OPT1
+
+| ![](img/regla-OPT.jpeg)
+|:--------------------------------:|
+| 
 
 ## Visualizando la configuración de pfSense al conectarse via SSH
 
@@ -230,3 +255,17 @@ rdr-anchor "miniupnpd" all
         - [Salida de los comandos de resolución DNS y Pruebas de conectividad con PING](files/centos/Pruebas_Conectividad_CentOS.md)
     
 4. Pruebas de conectividad del cliente WAN (Alpine) al servidor DMZ (CentOS) utilizando la redirección de puertos
+
+## Conclusiones
+
+- ¿Qué tipo de política de firewall se utiliza en la práctica: permisiva o restrictiva?
+
+En la práctica se utiliza la política permisiva pues se permite todo el tráfico con excepción al que esté denegado explícitamente.
+
+- ¿Cuál se considera mejor?
+
+La restrictiva en el que todo el tráfico está denegado a excepción del que está permitido explícitamente. Siendo así difícil que sea permitido tráfico peligroso, a diferencia de la política permisiva en la que puede ser posible que no se haya considerado algún caso de tráfico peligroso y por lo tanto puede ocurrir que éste sea permitido.
+
+## Extra
+
+- [Video de la topología de red utilizada 📼](  )
