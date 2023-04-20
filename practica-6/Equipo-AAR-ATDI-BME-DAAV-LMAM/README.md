@@ -215,21 +215,14 @@ rdr-anchor "miniupnpd" all
 ## Carpeta `files`
 
 1. [Capturas de tráfico en formato `PCAP`](files/pcap/)
-    <!-- - Tráfico ARP de las redes LAN, WAN y OPT -->
-    <!-- - Tráfico DHCP de la red LAN -->
     - Tráfico ICMP entre las redes LAN y OPT
         - [PING desde red LAN a red OPT](files/pcap/LAN-PING-OPT.pcap)
         - [PING desde red OPT a red LAN](files/pcap/OPT-PING-LAN.pcap)
     - Petición de los equipos hacia Internet
-        <!-- - LAN hacia `1.1.1.1` -->
         - [DMZ hacia `8.8.8.8`](files/pcap/OPT-8888.pcap)
     - [Petición de pfSense hacia Internet `9.9.9.9`](files/pcap/pf-em0-PING9999.pcap)
     - [Tráfico SSH del cliente LAN a servidor DMZ](files/pcap/LAN-SSH-OPT.pcap)
-    <!-- - Tráfico SSH del cliente WAN al servidor DMZ via la redirección de puertos -->
     - [Petición HTTP del cliente LAN al servidor DMZ](files/pcap/LAN-HTTP-OPT.pcap)
-    <!-- - Petición HTTP del cliente WAN al servidor DMZ via la redirección de puertos
-    - Petición HTTPS del cliente LAN al servidor DMZ
-    - Petición HTTPS del cliente WAN al servidor DMZ via la redirección de puertos -->  
     
 2. pfSense 
     - Archivos de configuración XML de pfSense ([inicial](files/pfsense/pfsense-inicial.xml) y [final](files/pfsense/pfsense-final.xml))
@@ -254,8 +247,6 @@ rdr-anchor "miniupnpd" all
         - [Tabla de Rutas](files/centos/DMZ-tabla-route.txt)
         - [Salida de los comandos de configuración de red](files/centos/verificacion-config-DMZ.md)
         - [Salida de los comandos de resolución DNS y Pruebas de conectividad con PING](files/centos/Pruebas_Conectividad_CentOS.md)
-    
-<!-- 4. Pruebas de conectividad del cliente WAN (Alpine) al servidor DMZ (CentOS) utilizando la redirección de puertos-->
 
 ## Conclusiones
 
