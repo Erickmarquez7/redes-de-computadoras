@@ -2,11 +2,11 @@
 
 1. **Configuración inicial de pfSense en modo texto**
 
-[Liga al archivo de configuracion inicial de pfSense en modo texto](configuracion-inicial-modo-texto.txt)
+    [Liga al archivo de configuracion inicial de pfSense en modo texto](configuracion-inicial-modo-texto.txt)
 
 2. **Configuración inicial de pfSense con la webUI**
 
-![](../../img/configuracion-inicial-webui.png "Configuración Incial con la webUI de pfSense")
+    ![](../../img/configuracion-inicial-webui.png "Configuración Incial con la webUI de pfSense")
 
 3. **Respaldos de la configuración de pfSense**
     - [Liga al archivo de respaldo inicial de pfSense](pfsense-inicial.xml)
@@ -26,11 +26,11 @@
     | :----: |
     | Interfaz de red OPT
 
-    | ![](../../img/NAT.jpeg)
+    | ![](../../img/NAT.png)
     | :----: |
     | NAT hacia internet
 
-    | ![](../../img/alias.jpeg)
+    | ![](../../img/alias.png)
     | :----: |
     | Alias de Puertos y Equipos
 

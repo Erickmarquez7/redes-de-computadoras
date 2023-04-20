@@ -215,7 +215,7 @@ rdr-anchor "miniupnpd" all
 ## Carpeta `files`
 
 1. [Capturas de tráfico en formato `PCAP`](files/pcap/)
-    <!-- - Tráfico ARP de las redes LAN, WAN y OPT --><>
+    <!-- - Tráfico ARP de las redes LAN, WAN y OPT -->
     <!-- - Tráfico DHCP de la red LAN -->
     - Tráfico ICMP entre las redes LAN y OPT
         - [PING desde red LAN a red OPT](files/pcap/LAN-PING-OPT.pcap)
