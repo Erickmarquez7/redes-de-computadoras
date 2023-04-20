@@ -268,4 +268,4 @@ La restrictiva en el que todo el tráfico está denegado a excepción del que es
 
 ## Extra
 
-- [Video de la topología de red utilizada 📼](  )
+- [Video de la topología de red utilizada 📼](https://youtu.be/2BkgqIowfUg)
