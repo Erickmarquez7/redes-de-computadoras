@@ -8,7 +8,7 @@
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-# [Practica-6](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-6/)
+# [Práctica 6](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-6/)
 
 ## Topología de Red 
 
@@ -18,6 +18,15 @@ Sin embargo a nivel lógico no es tan sencillo decir su topología, ya que en la
 Además de que tenemos una redirección de puertos en la red DMZ con los servicios ssh, http y https que provee el servidor de DMZ (la máquina virtual de CentOS).
 
 ## Procedimiento de configuración de NAT, Alias, Port Forwarding, servicio DHCP y servicio DNS
+
+1. Para configurar las interfaces de red: en la sección _Interfaces_ de la GUI de pfSense, entrar a la configuración de las interfaces **WAN**, **LAN** y **DMZ**, verificando que las direcciones IP sean correctas (para el caso de LAN y DMZ, porque WAN obtiene su IP por medio de DHCP) y para cada una, **quitar** la opción que impide a los segmentos no homologados comunicarse.
+
+4. Para crear los alias de los servicios SSH, HTTP y HTTPS, vamos a la pestaña _Firewall -> Aliases -> IP_. Primero creamos un alias para la interfaz DMZ, especificando su dirección IP, y luego, para cada uno de los servicios mencionados, vamos a la pestaña _Firewall -> Aliases -> Ports_ y creamos un alias especificando el puerto en el que corren.
+
+3. Para configurar el Port Forwarding, vamos a la pestaña _Firewall -> NAT_, y comenzamos a agregar reglas para cada uno de los servicios en la red DMZ a los que queremos acceder desde la red WAN. En este caso son SSH, HTTP y HTTPS. Seleccionamos la opción de **Add**, y rellenamos los campos con los valores especificados en la página.
+
+2. Para habitiliar y configurar el servicio de resolución DNS, vamos a la pestaña _Services -> DNS Resolver_, y seleccionamos la opción de _Enable_ y le indicamos que el puerto en el que debe escuchar es el 53. Luego seleccionamos las interfaces que queremos que utilicen DNS, esto permite responder a los queries y solicitudes de los clientes en la red.
+
 
 ## Procedimiento para reservar una dirección IP en el servidor DHCP
 
@@ -41,29 +50,19 @@ Direccion MAC, identificador del cliente, direccion IP, nombre del host, una des
 | Default lease time  | 600	                                        |                                                                |
 | Maximum lease time  | 900                                         |                                                                |
 
-## Bitácoras generadas
-
-
-
 ## Reglas configuradas
 
-- Reglas para la red WAN
-
 | ![](img/regla-WAN.jpeg)
-|:--------------------------------:|
-| 
-
-- Reglas para la red LAN
+| :----: |
+| Reglas para la red WAN
 
 | ![](img/regla-LAN.jpeg)
-|:--------------------------------:|
-| 
-
-- Reglas para OPT1
+| :----: |
+| Reglas para la red LAN
 
 | ![](img/regla-OPT.jpeg)
-|:--------------------------------:|
-| 
+| :----: |
+| Reglas para OPT1
 
 ## Visualizando la configuración de pfSense al conectarse via SSH
 
@@ -216,24 +215,26 @@ rdr-anchor "miniupnpd" all
 ## Carpeta `files`
 
 1. [Capturas de tráfico en formato `PCAP`](files/pcap/)
-    - Tráfico ARP de las redes LAN, WAN y OPT
-    - Tráfico DHCP de la red LAN 
-    - [Tráfico ICMP entre las redes LAN y OPT](files/pcap/LAN-PING-OPT.pcap)
+    <!-- - Tráfico ARP de las redes LAN, WAN y OPT --><>
+    <!-- - Tráfico DHCP de la red LAN -->
+    - Tráfico ICMP entre las redes LAN y OPT
+        - [PING desde red LAN a red OPT](files/pcap/LAN-PING-OPT.pcap)
+        - [PING desde red OPT a red LAN](files/pcap/OPT-PING-LAN.pcap)
     - Petición de los equipos hacia Internet
-        - LAN hacia `1.1.1.1`
+        <!-- - LAN hacia `1.1.1.1` -->
         - [DMZ hacia `8.8.8.8`](files/pcap/OPT-8888.pcap)
     - [Petición de pfSense hacia Internet `9.9.9.9`](files/pcap/pf-em0-PING9999.pcap)
     - [Tráfico SSH del cliente LAN a servidor DMZ](files/pcap/LAN-SSH-OPT.pcap)
-    - Tráfico SSH del cliente WAN al servidor DMZ via la redirección de puertos
+    <!-- - Tráfico SSH del cliente WAN al servidor DMZ via la redirección de puertos -->
     - [Petición HTTP del cliente LAN al servidor DMZ](files/pcap/LAN-HTTP-OPT.pcap)
-    - Petición HTTP del cliente WAN al servidor DMZ via la redirección de puertos
+    <!-- - Petición HTTP del cliente WAN al servidor DMZ via la redirección de puertos
     - Petición HTTPS del cliente LAN al servidor DMZ
-    - Petición HTTPS del cliente WAN al servidor DMZ via la redirección de puertos  
+    - Petición HTTPS del cliente WAN al servidor DMZ via la redirección de puertos -->  
     
 2. pfSense 
     - Archivos de configuración XML de pfSense ([inicial](files/pfsense/pfsense-inicial.xml) y [final](files/pfsense/pfsense-final.xml))
-    - Estados del pfSense donde se indican las conexiones de NAT
-    - [Bitácora de pfSense](files/pfsense/configuracion-pfSense.md)
+    - [Estados del pfSense donde se indican las conexiones de NAT](files/pfsense/pfctl-ss.txt)
+    - [Verificación de Configuración de pfSense](files/pfsense/configuracion-pfSense.md)
 
 3. Para los equipos en la red...
     - WAN (Alpine)
@@ -254,17 +255,17 @@ rdr-anchor "miniupnpd" all
         - [Salida de los comandos de configuración de red](files/centos/verificacion-config-DMZ.md)
         - [Salida de los comandos de resolución DNS y Pruebas de conectividad con PING](files/centos/Pruebas_Conectividad_CentOS.md)
     
-4. Pruebas de conectividad del cliente WAN (Alpine) al servidor DMZ (CentOS) utilizando la redirección de puertos
+<!-- 4. Pruebas de conectividad del cliente WAN (Alpine) al servidor DMZ (CentOS) utilizando la redirección de puertos-->
 
 ## Conclusiones
 
 - ¿Qué tipo de política de firewall se utiliza en la práctica: permisiva o restrictiva?
 
-En la práctica se utiliza la política permisiva pues se permite todo el tráfico con excepción al que esté denegado explícitamente.
+    En la práctica se utiliza la política permisiva pues se permite todo el tráfico con excepción al que esté denegado explícitamente.
 
 - ¿Cuál se considera mejor?
 
-La restrictiva en el que todo el tráfico está denegado a excepción del que está permitido explícitamente. Siendo así difícil que sea permitido tráfico peligroso, a diferencia de la política permisiva en la que puede ser posible que no se haya considerado algún caso de tráfico peligroso y por lo tanto puede ocurrir que éste sea permitido.
+    La restrictiva en el que todo el tráfico está denegado a excepción del que está permitido explícitamente. Siendo así difícil que sea permitido tráfico peligroso, a diferencia de la política permisiva en la que puede ser posible que no se haya considerado algún caso de tráfico peligroso y por lo tanto puede ocurrir que éste sea permitido.
 
 ## Extra
 
