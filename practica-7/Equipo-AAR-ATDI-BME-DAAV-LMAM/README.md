@@ -23,7 +23,7 @@
 root@debian-11:~# apt install nfs-kernel-server
 ```
 
-![](img/instalacion_nfs_debian.png Instalación de NFS en el servidor Debian)
+![](img/instalacion_nfs_debian.png)
 
 2. Creamos la carpeta que queremos compartir utlizando el servicio NFS:
 
@@ -31,7 +31,7 @@ root@debian-11:~# apt install nfs-kernel-server
 root@debian-11:~# mkdir /srv/nfs
 ```
 
-![](img/share_nfs_debian.png Carpeta a exportar)
+![](img/share_nfs_debian.png)
 
 3. Configurar las opciones de exportación de NFS del servidor Debian, en el archivo `/etc/exports`
 
@@ -60,7 +60,7 @@ tenga acceso a dicho directorio compartido, por lo que especificamos que el rang
 Esta línea de código indica que los clientes en el rango `192.168.56.0/24` podrán leer y escribir en el directorio `/srv/nfs`. 
 
 
-![](img/exports_debian.png Archivo `/etc/exports` de la máquina Debian)
+![](img/exports_debian.png)
 
 3. Para que los cambios que hicimos se hagan disponibles a los clientes que se comunicarán al servidor (el cliente CentOS), debemos reiniciar el el servidor NFS:
 
@@ -70,7 +70,7 @@ root@debian-11:~# systemctl restart nfs-kernel-server
 
 Ejecutando el comando `systemctl status nfs-kernel-server` podemos ver que el servicio NFS está ejecutandose correctamente
 
-![](img/nfs-status-debian.png Estatus del servidor NFS en la máquina Debian)
+![](img/nfs-status-debian.png)
 
 4. La salida del comando `showmount -e` nos muestra que el directorio `/srv` efectivamente está exportado en el servidor
 ```
@@ -79,7 +79,7 @@ Export list for debian-11:
 /srv/nfs             192.168.56.0/24
 ```
 
-![](img/showmount-debian.png Salida del comando `showmount -e` en la máquina Debian)
+![](img/showmount-debian.png)
 
 ## CENTOS
 
