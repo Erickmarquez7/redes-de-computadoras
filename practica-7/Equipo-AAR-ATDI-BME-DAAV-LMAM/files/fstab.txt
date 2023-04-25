@@ -1,0 +1,19 @@
+#
+# /etc/fstab
+# Created by anaconda on Wed Feb 22 02:20:11 2023
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
+#
+# After editing this file, run 'systemctl daemon-reload' to update systemd
+# units generated from this file.
+#
+/dev/mapper/cs-root     /                       xfs     defaults        0 0
+UUID=2cc0630c-9d7c-4266-932e-b22ed0289899 /boot                   xfs     defaults        0 0
+/dev/mapper/cs-swap     none                    swap    defaults        0 0
+
+# Motaje del servicio NFS
+192.168.56.4:/srv       /nfs/srv        nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
+
+# Montaje del servicio SMB
+//192.168.56.4/srv      /mnt/smbmount   cifs    user=david,pass=xcx1 0 0
