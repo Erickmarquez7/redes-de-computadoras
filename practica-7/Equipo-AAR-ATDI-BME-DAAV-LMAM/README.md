@@ -132,6 +132,15 @@ Más aún, al reinciar el sistema, podemos ver que en el output del mismo que el
 
 ![](img/mount-in-boot-centos.png)
 
+## WINDOWS
+
+# SMB
+
+## DEBIAN
+
+## CENTOS
+
+## WINDOWS
 
 ## Conclusiones
 
