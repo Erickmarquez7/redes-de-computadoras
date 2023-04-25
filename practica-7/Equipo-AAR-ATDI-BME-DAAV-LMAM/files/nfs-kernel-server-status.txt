@@ -1,0 +1,11 @@
+root@debian-11:~# systemctl status nfs-kernel-server
+● nfs-server.service - NFS server and services
+     Loaded: loaded (/lib/systemd/system/nfs-server.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Tue 2023-04-25 07:44:04 CST; 50s ago
+    Process: 2081 ExecStartPre=/usr/sbin/exportfs -r (code=exited, status=0/SUCCESS)
+    Process: 2082 ExecStart=/usr/sbin/rpc.nfsd $RPCNFSDARGS (code=exited, status=0/SUCCESS)
+   Main PID: 2082 (code=exited, status=0/SUCCESS)
+        CPU: 11ms
+
+Apr 25 07:43:38 debian-11 systemd[1]: Starting NFS server and services...
+Apr 25 07:44:04 debian-11 systemd[1]: Finished NFS server and services.

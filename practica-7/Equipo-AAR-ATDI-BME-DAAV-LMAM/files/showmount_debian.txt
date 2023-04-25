@@ -1,0 +1,3 @@
+root@debian-11:~# showmount -e
+Export list for debian-11:
+/srv/nfs 192.168.56.0/24

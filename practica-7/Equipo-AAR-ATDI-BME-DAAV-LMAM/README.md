@@ -23,17 +23,24 @@
 root@debian-11:~# apt install nfs-kernel-server
 ```
 
-![]
+![](img/instalacion_nfs_debian.png Instalación de NFS en el servidor Debian)
 
-2. Configurar las opciones de exportación de NFS del servidor Debian, en el archivo `/etc/exports`
+2. Creamos la carpeta que queremos compartir utlizando el servicio NFS:
+
+```
+root@debian-11:~# mkdir /srv/nfs
+```
+
+![](img/share_nfs_debian.png Carpeta a exportar)
+
+3. Configurar las opciones de exportación de NFS del servidor Debian, en el archivo `/etc/exports`
 
 ```
 root@debian-11:~# nano /etc/exports
 ```
 
-Agregamos la opciones de exportación para el directorio `/srv`. Queremos que cualquier cliente en el segmento de red de la interaz host-only
-tenga acceso a dicho directorio compartido, por lo que especificamos que el rango de direcciones IP que pueden acceder a `/srv` es 
-`192.168.56.0/24`:
+Agregamos la opciones de exportación para el directorio `/srv/nfs`. Queremos que cualquier cliente en el segmento de red de la interaz host-only
+tenga acceso a dicho directorio compartido, por lo que especificamos que el rango de direcciones IP que pueden acceder a `/srv/nfs` es  `192.168.56.0/24`:
 
 ```
 # /etc/exports: the access control list for filesystems which may be exported
@@ -47,103 +54,84 @@ tenga acceso a dicho directorio compartido, por lo que especificamos que el rang
 # /srv/nfs4/homes  gss/krb5i(rw,sync,no_subtree_check)
 #
 
-/srv             192.168.56.0/24(rw,sync,no_root_squash,no_subtree_check)
+/srv/nfs             192.168.56.0/24(rw,sync,no_subtree_check)
 ```
 
-Esta línea de código indica que los clientes en el rango `192.168.56.0/24` podrá acceder al directorio `/srv` del sevidor Debian
-con privilegios de root y que podrán leer y escribir en él. Las demás opciones --
+Esta línea de código indica que los clientes en el rango `192.168.56.0/24` podrán leer y escribir en el directorio `/srv/nfs`. 
 
-3. Para que los cambios que hicimos se hagan disponibles a los clientes que se comunicarán al servidor (el cliente CentOS), 
-debemos reiniciar el el servidor NFS:
+
+![](img/exports_debian.png Archivo `/etc/exports` de la máquina Debian)
+
+3. Para que los cambios que hicimos se hagan disponibles a los clientes que se comunicarán al servidor (el cliente CentOS), debemos reiniciar el el servidor NFS:
 
 ```
 root@debian-11:~# systemctl restart nfs-kernel-server
 ```
 
+Ejecutando el comando `systemctl status nfs-kernel-server` podemos ver que el servicio NFS está ejecutandose correctamente
+
+![](img/nfs-status-debian.png Estatus del servidor NFS en la máquina Debian)
+
 4. La salida del comando `showmount -e` nos muestra que el directorio `/srv` efectivamente está exportado en el servidor
 ```
 root@debian-11:~# showmount -e
 Export list for debian-11:
-/srv             192.168.56.0/24
-/home            192.168.56.6
-/var/nfs/general 192.168.56.6
+/srv/nfs             192.168.56.0/24
 ```
+
+![](img/showmount-debian.png Salida del comando `showmount -e` en la máquina Debian)
 
 ## CENTOS
 
 1. Instalamos la paqueteria de NFS para poder confifugurar un cliente NFS en la máquina con CentOS:
 
 ```
-[root@centos-9 ~]# yum install nfs-utils
+[root@centos-9 ~]# yum install nfs-common
 ```
 
-2. Verificamos que el sistema de archivos está exportado con el comando `showmount`. La salida del mismo nos indica que el 
-directorio `/srv` de la máquina Debian sí está exportado.
+![](img/instalacion_nfs_centos.png)
+
+2. Verificamos que el sistema de archivos está exportado con el comando `showmount`. La salida del mismo nos indica que el  directorio `/srv/nfs` de la máquina Debian sí está exportado.
 
 ```
 [root@centos-9 ~]# showmount -e 192.168.56.4
 Export list for 192.168.56.4:
-/srv             192.168.56.0/24
-/home            192.168.56.6
-/var/nfs/general 192.168.56.6
+/srv/nfs             192.168.56.0/24
 ```
 
-3. Ahora vamos a crear un directorio en nuestro cliente CentOS para montar el directorio exportado `/srv` de nuestro servidor Debian:
+![](img/showmount-centos.png alida del comando `showmount -e` en la máquina CentOS)
+
+3. Ahora montamos el directorio `/srv/nfs` en la máquina CentOS, en el directorio `/mnt` de la misma:
 
 ```
-[root@centos-9 ~]# mkdir -p /nfs/srv
+[root@centos-9 ~]# mount -t nfs 192.168.56.4:/srv/nfs /mnt
 ```
 
-4. Montamos el directorio compartido `/srv` del servidor Debian en el directorio que acabamos de crear:
+Y comprobamos que efectivamente fue montado
+
+![](img/mounting_nfs_centos.png)
+
+
+4. Montar el directorio `/srv/nfs` de Debian en el cliente CentOS de manera automática cuando este se inicialice: añadimos el directorio `/srv/nfs` del servidor Debian al archivo `/etc/fstab` de CentOS, colocando la siguiente línea al final del mismo:
 
 ```
-[root@centos-9 ~]# mount 192.168.56.4:/srv /nfs/srv
+192.168.56.4:/srv/nfs               /mnt      nfs   default     0 0
 ```
 
-La salida del comando `df -h` nos muestra que nuestro directorio compartido efectivamente fue montado en nuestro cliente CentOS:
+![](img/fstab-centos.png)
 
-```
-[root@centos-9 ~]# df -h
-Filesystem           Size  Used Avail Use% Mounted on
-devtmpfs             4.0M     0  4.0M   0% /dev
-tmpfs                386M     0  386M   0% /dev/shm
-tmpfs                155M  3.8M  151M   3% /run
-/dev/mapper/cs-root  8.0G  2.8G  5.3G  35% /
-/dev/sda1           1014M  216M  799M  22% /boot
-tmpfs                 78M  8.0K   78M   1% /run/user/1000
-192.168.56.4:/srv    8.9G  3.4G  5.1G  40% /nfs/srv
-```
+Con la instrucción `default` aseguramos que el sistema de archivos será montado automáticamente durante el arranque de la máquina con CentOS. 
 
-5. Montar el directorio `/srv` de Debian en el cliente CentOS de manera automática cuando este se inicialice:
+![](img/fstab-centos.png Archivo `/etc/fstab` en la máquina CentOS)
 
-Añadimos el directorio `/srv` del servidor Debian al archivo `/etc/fstab`, colocando la siguiente línea al final del mismo:
+Y podemos comprobar que el montaje será automático cuando el sistema se inicialize, con el comando `mount -va`:
 
-```
-192.168.56.4:/srv               /nfs/srv      nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
-```
+![](img/mount-successful-centos.png)
 
-Con la instrucción `auto` aseguramos que el sistema de archivos será montado automáticamente durante el arranque de la máquina
-con CentOS. 
+Más aún, al reinciar el sistema, podemos ver que en el output del mismo que el montaje en `/mnt` se hace automaticamente:
 
+![](img/mount-in-boot-centos.png)
 
-```
-#
-# /etc/fstab
-# Created by anaconda on Wed Feb 22 02:20:11 2023
-#
-# Accessible filesystems, by reference, are maintained under '/dev/disk/'.
-# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info.
-#
-# After editing this file, run 'systemctl daemon-reload' to update systemd
-# units generated from this file.
-#
-/dev/mapper/cs-root     /                       xfs     defaults        0 0
-UUID=2cc0630c-9d7c-4266-932e-b22ed0289899 /boot                   xfs     defaults        0 0
-/dev/mapper/cs-swap     none                    swap    defaults        0 0
-
-# Motaje del servicio NFS
-192.168.56.4:/srv       /nfs/srv        nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
-```
 
 ## Conclusiones
 

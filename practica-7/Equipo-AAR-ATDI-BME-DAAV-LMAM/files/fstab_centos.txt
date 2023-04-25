@@ -13,7 +13,4 @@ UUID=2cc0630c-9d7c-4266-932e-b22ed0289899 /boot                   xfs     defaul
 /dev/mapper/cs-swap     none                    swap    defaults        0 0
 
 # Motaje del servicio NFS
-192.168.56.4:/srv       /nfs/srv        nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1800 0 0
-
-# Montaje del servicio SMB
-//192.168.56.4/srv      /mnt/smbmount   cifs    user=david,pass=xcx1 0 0
+192.168.56.4:/srv/nfs       /mnt      nfs   default     0 0
