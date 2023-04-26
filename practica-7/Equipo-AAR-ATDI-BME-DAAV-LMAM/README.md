@@ -23,8 +23,6 @@
 root@debian-11:~# apt install nfs-kernel-server
 ```
 
-![](img/instalacion_nfs_debian.jpg)
-
 2. Creamos la carpeta que queremos compartir utilizando el servicio NFS:
 
 ```
@@ -88,8 +86,6 @@ Export list for debian-11:
 [root@centos-9 ~]# yum install nfs-common
 ```
 
-![](img/instalacion_nfs_centos.jpg)
-
 2. Verificamos que el sistema de archivos está exportado con el comando `showmount`. La salida del mismo nos indica que el  directorio `/srv/nfs` de la máquina Debian sí está exportado.
 
 ```
@@ -121,8 +117,6 @@ Y comprobamos que efectivamente fue montado
 
 Con la instrucción `default` aseguramos que el sistema de archivos será montado automáticamente durante el arranque de la máquina con CentOS. 
 
-![](img/fstab-centos.png Archivo `/etc/fstab` en la máquina CentOS)
-
 Y podemos comprobar que el montaje será automático cuando el sistema se inicialice, con el comando `mount -va`:
 
 ![](img/mount-successful-centos.png)
@@ -143,15 +137,12 @@ Más aún, al reiniciar el sistema, podemos ver que en el output del mismo que e
 root@debian-11:~# apt -qy install samba
 ```
 
-![](img/instalacion-samba-debian.jpg)
-
 2. Hacemos un respaldo del archivo de configuración de SAMBA [`/etc/samba/smb.conf`](files/smb.conf), creando una copia del mismo. Lo llamamos `smb0.conf`
 
 ```
 root@debian-11:/etc/samba# cp -v smb.conf smb0.conf
+'smb.conf' -> 'smb0.conf'
 ```
-
-![](img/respaldo-archvio-smbconf-debian.png)
 
 3. Configuramos el share `global` de SAMBA en el archivo [`smb.conf`](files/smb.conf), cambiando el grupo de trabajo a `FCIENCIAS` y el nombre del servidor a `Servidor SAMBA`
 
@@ -167,35 +158,60 @@ Utilizando el comando `testparm`, verificamos que el archivo [`smb.conf`](files/
 
 ```
 root@debian-11:~# mkdir -vp /srv/samba
-root@debian-11:~# touch /srv/samba/inside-share
-root@debian-11:~# ls -la /srv/samba
-```
+mkdir: created directory 'srv/samba'
 
-![](img/creacion-carpeta-share-smb-debian.png)
+root@debian-11:~# touch /srv/samba/inside-share
+
+root@debian-11:~# ls -la /srv/samba
+total 8
+drwxrwsr-x 3 root          root 4096 Apr 25 15:12 .
+drwxr-xr-x 5 root          root  4096 Apr 25 09:33 ..
+-rw-r--r-- 1 root          root     0 Apr 25 09:34 inside-share
+```
 
 6. Cambiamos los permisos del directorio `/srv/samba` para que los usuarios autorizados puedan leer y escribir dentro de él. Los demás usuarios solo podrán leer los contenidos del directorio.
 
 ```
 root@debian-11:~# chmod -c u+rwx,g+rwxs,o+rx,o-w /srv/samba
-```
+mode of '/srv/samba' changed from 0755 (rwxr-xr-x) to 2775 (rwxrwsr-x)
 
-![](img/cambiando-permisos-share-smb-debian.png)
+root@debian-11:~# chown -c root:users /srv/samba
+changed ownership of '/srv/samba' from root:root to root:users
+
+root@debian-11:~# ls -la /srv/samba/
+total 12
+drwxrwsr-x 3 root          users 4096 Apr 25 15:12 .
+drwxr-xr-x 5 root          root  4096 Apr 25 09:33 ..
+-rw-r--r-- 1 root          root     0 Apr 25 09:34 inside-share
+```
 
 Podemos ver que root y los miembros del grupo `users` ahora tienen permisos de lectura y escritura.
 
 7. Agregamos el usuario actual del sistema al grupo de `users`, y lo agregamos también a la base de datos de SAMBA con el comando `smbpasswd`, para que pueda hacer cambios sobre el directorio compartido desde la máquina Debian. Establecemos una contraseña para el usuario.
 
 ```
-root@debian-11:~# adduser davidalvarado users
+root@debian-11:/etc/samba# adduser davidalvarado users
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "en_US:en",
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Adding user 'davidalvarado' to group 'users' ...
+Adding user davidalvarado to group users
+Done.
+
+root@debian-11:/etc/samba# id davidalvarado
+uid=1000(davidalvarado) gid=1000(davidalvarado) groups=1000(davidalvarado),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),100(users),108(netdev),112(bluetooth),998(vboxsf)
 ```
 
-![](img/agregar-usuario-davidalv-grupo-users.png)
-
 ```
-root@debian-11:~# smbpasswd -a davidalvarado
+root@debian-11:/etc/samba# smbpasswd -a davidalvarado
+New SMB password:
+Retype new SMB password:
 ```
-
-![](img/agregando-usuario-davidalvarado-bdd-samba.png)
 
 8. Finalmente, comprobamos que el servidor SAMBA está corriendo de manera adecuada con el siguiente comando
 
@@ -203,9 +219,7 @@ root@debian-11:~# smbpasswd -a davidalvarado
 root@debian-11:~# systemctl status nmbd smbd | cat
 ```
 
-![](img/status-server-samba-debian.jpg)
-
-Y vemos que los servicios SMB y NMB corren correctamente. Esta salida está guardada en el archivo [`status_samba.txt`](files/status_samba.txt)
+Esta salida está guardada en el archivo [`status_samba.txt`](files/status_samba.txt), y ahí podemos ver que los servicios SMB y NMB corren correctamente. 
 
 ## CENTOS
 
@@ -215,15 +229,20 @@ Y vemos que los servicios SMB y NMB corren correctamente. Esta salida está guar
 [root@centos-9 ~]# yum -qy install samba-client
 ```
 
-![](img/instalacion-samba-centos.png)
-
 2. Utilizando el comando `smbclient`, y el usuario `davidalvarado` (que creamos y registramos en la base de datos de SAMBA desde la máquina Debian), preguntamos que recursos fueron exportados desde el servidor Debian con el siguiente comando
 
 ```
 [root@centos-9 ~]# smbclient -L 192.168.56.4 -U davidalvarado
-```
+Password for [SAMBA\davidalvarado]:
 
-![](img/comprobrar-export-de-share-samba.png)
+	Sharename       Type      Comment
+	---------       ----      -------
+	print$          Disk      Printer Drivers
+	share           Disk      SAMBA Share
+	IPC$            IPC       IPC Service (Ejemplo de SAMBA)
+	davidalvarado   Disk      Home Directories
+SMB1 disabled -- no workgroup available
+```
 
 Comprobamos que el recurso compartido `share` es exportado por el servidor Debian.
 
@@ -231,13 +250,25 @@ Comprobamos que el recurso compartido `share` es exportado por el servidor Debia
 
 ```
 [root@centos-9 ~]# mount -t cifs --verbose //192.168.56.4/share /smb -o 'workgroup=FCIENCIAS,username=davidalvarado'
+Password for davidalvarado@//192.168.56.4/share: 
+mount.cifs kernel mount options: ip=192.168.56.4,unc=\\192.168.56.4\share,user=davidalvarado,domain=FCIENCIAS,pass=********
 ```
-
-![](img/montar-share-smb-centos.png)
 
 Introducimos la contraseña del usuario `davidalvarado`, y el directorio compartido de Debain queda montado en nuestro cliente CentOS. Como podemos ver, el archivo `inside-share` creado desde la máquina Debian es visible en la máquina CentOS.
 
+```
+[root@centos-9 ~]# ls -la /smb/
+total 0
+drwxr-xr-x.  2 root root   0 Apr 25 15:12 .
+dr-xr-xr-x. 19 root root 246 Apr 25 10:08 ..
+-rwxr-xr-x.  1 root root   0 Apr 25 09:34 inside-share
+```
+
 4. Para pasarle las credenciales de manera automática al servidor SAMBA, y no tener que escribirlas cada vez que se monte el directorio, creamos un archivo que contenga un username y una contraseña válidos, con los que SAMBA nos permita hacer el montaje. En este caso, el usuario cuyas credenciales vamos a definir es `davidalvarado`. Esto lo ponemos en el archivo [`/etc/samba/smb.creds`](files/smb.creds)
+
+```
+[root@centos-9 ~]# nano /etc/samba/smb.creds
+```
 
 Después, le cambiamos los permisos al archivo, para que solo el usuario root pueda modificarlo.
 
@@ -246,22 +277,46 @@ Después, le cambiamos los permisos al archivo, para que solo el usuario root pu
 [root@centos-9 ~]# chown root:root /etc/samba/smb.creds
 ```
 
-![](img/crear-archivo-smbcreds-centos.png)
-
 Así, podemos pasarle este archivo al comando `mount` para autenticar al usuario.
+
+```
+[root@centos-9 ~]# mount -t cifs --verbose //192.168.56.4/share /smb -o 'workgroup=FCIENCIAS,credentials=/etc/samba/smb.creds'
+mount.cifs kernel mount options: ip=192.168.56.4,unc=\\192.168.56.4\share,user=davidalvarado,domain=FCIENCIAS,pass=********
+
+[root@centos-9 ~]# ls -la /smb/
+total 0
+drwxr-xr-x.  2 root root   0 Apr 25 15:12 .
+dr-xr-xr-x. 19 root root 246 Apr 25 10:08 ..
+-rwxr-xr-x.  1 root root   0 Apr 25 09:34 inside-share
+```
+
 
 5. Probemos ahora que nuestro directorio `/smb` está correctamente montado, creando un archivo y un directorio (ambos vacíos) para comprobar que estos aparecen en el servidor Debian
 
 ```
 [root@centos-9 smb]# touch archivo-creado-desde-centos
 [root@centos-9 smb]# mkdir carpeta-creada-desde-centos  
-```
 
-![](img/crear-elementos-directorio-compartido-centos.png)
+[root@centos-9 ~]# ls -la /smb/
+total 0
+drwxr-xr-x.  2 root root   0 Apr 25 15:12 .
+dr-xr-xr-x. 19 root root 246 Apr 25 10:08 ..
+-rwxr-xr-x.  1 root root   0 Apr 25 15:12 archivo-creado-desde-centos
+drwxr-xr-x.  2 root root   0 Apr 25 15:12 carpeta-creada-desde-centos
+-rwxr-xr-x.  1 root root   0 Apr 25 09:34 inside-share
+```
 
 Ahora, desde Debian, listemos los archivos en el directorio `/srv/samba` (que fue el que montamos en CentOS)
 
-![](img/elementos-creados-desde-centos-en-debian.png)
+```
+root@debian-11:~# ls -la /srv/samba/
+total 12
+drwxrwsr-x 3 root          users 4096 Apr 25 15:12 .
+drwxr-xr-x 5 root          root  4096 Apr 25 09:33 ..
+-rwx------ 1 davidalvarado users    0 Apr 25 15:12 archivo-creado-desde-centos
+drwx--S--- 2 davidalvarado users 4096 Apr 25 15:12 carpeta-creada-desde-centos
+-rw-r--r-- 1 root          root     0 Apr 25 09:34 inside-share
+```
 
 Y vemos que tanto el archivo como el directorio que creamos en CentOS aparecen en nuestro servidor Debian, por lo que el montaje fue exitoso.
 
@@ -271,11 +326,19 @@ Y vemos que tanto el archivo como el directorio que creamos en CentOS aparecen e
 
 Comprobamos que el montaje es exitoso con el comando `mount -va`, y podremos ver que este sí es el caso.
 
-![](img/montaje-correcto-samba-centos.png)
+```
+[root@centos-9 ~]# mount -va
+/                        : ignored
+/boot                    : already mounted
+none                     : ignored
+/mnt                     : already mounted
+mount.cifs kernel mount options: ip=192.168.56.4,unc=\\192.168.56.4\share,user=davidalvarado,domain=FCIENCIAS,pass=********
+/smb                     : successfully mounted
+```
 
 Más aun, si reiniciamos el equipo, mientras este se está booteando y nos aparece output en en la máquina virtual, podemos ver que el directorio `/smb` se monta durante la inicialización
 
-![](img/montaje-correcto-samba-centos.png)
+![](img/montaje-correcto-samba-boot-centos.png)
 
 ## WINDOWS
 
