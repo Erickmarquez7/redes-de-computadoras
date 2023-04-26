@@ -1,0 +1,10 @@
+root@debian-11:~# smbclient -L 192.168.56.4 -U davidalvarado
+Enter FCIENCIAS\davidalvarado's password: 
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	print$          Disk      Printer Drivers
+	share           Disk      SAMBA Share
+	IPC$            IPC       IPC Service (Ejemplo de SAMBA)
+	davidalvarado   Disk      Home Directories
+SMB1 disabled -- no workgroup available

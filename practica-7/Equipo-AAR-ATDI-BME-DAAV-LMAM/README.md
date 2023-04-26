@@ -23,9 +23,9 @@
 root@debian-11:~# apt install nfs-kernel-server
 ```
 
-![](img/instalacion_nfs_debian.png)
+![](img/instalacion_nfs_debian.jpg)
 
-2. Creamos la carpeta que queremos compartir utlizando el servicio NFS:
+2. Creamos la carpeta que queremos compartir utilizando el servicio NFS:
 
 ```
 root@debian-11:~# mkdir /srv/nfs
@@ -33,14 +33,13 @@ root@debian-11:~# mkdir /srv/nfs
 
 ![](img/share_nfs_debian.png)
 
-3. Configurar las opciones de exportación de NFS del servidor Debian, en el archivo `/etc/exports`
+3. Configurar las opciones de exportación de NFS del servidor Debian, en el archivo [`/etc/exports`](files/exports_debian.txt)
 
 ```
 root@debian-11:~# nano /etc/exports
 ```
 
-Agregamos la opciones de exportación para el directorio `/srv/nfs`. Queremos que cualquier cliente en el segmento de red de la interaz host-only
-tenga acceso a dicho directorio compartido, por lo que especificamos que el rango de direcciones IP que pueden acceder a `/srv/nfs` es  `192.168.56.0/24`:
+Agregamos la opciones de exportación para el directorio `/srv/nfs`. Queremos que cualquier cliente en el segmento de red de la interfaz host-only tenga acceso a dicho directorio compartido, por lo que especificamos que el rango de direcciones IP que pueden acceder a `/srv/nfs` es  `192.168.56.0/24`:
 
 ```
 # /etc/exports: the access control list for filesystems which may be exported
@@ -68,7 +67,7 @@ Esta línea de código indica que los clientes en el rango `192.168.56.0/24` pod
 root@debian-11:~# systemctl restart nfs-kernel-server
 ```
 
-Ejecutando el comando `systemctl status nfs-kernel-server` podemos ver que el servicio NFS está ejecutandose correctamente
+Ejecutando el comando `systemctl status nfs-kernel-server` podemos ver que el servicio NFS está ejecutándose correctamente
 
 ![](img/nfs-status-debian.png)
 
@@ -83,13 +82,13 @@ Export list for debian-11:
 
 ## CENTOS
 
-1. Instalamos la paqueteria de NFS para poder confifugurar un cliente NFS en la máquina con CentOS:
+1. Instalamos la paquetería de NFS para poder configurar un cliente NFS en la máquina con CentOS:
 
 ```
 [root@centos-9 ~]# yum install nfs-common
 ```
 
-![](img/instalacion_nfs_centos.png)
+![](img/instalacion_nfs_centos.jpg)
 
 2. Verificamos que el sistema de archivos está exportado con el comando `showmount`. La salida del mismo nos indica que el  directorio `/srv/nfs` de la máquina Debian sí está exportado.
 
@@ -99,7 +98,7 @@ Export list for 192.168.56.4:
 /srv/nfs             192.168.56.0/24
 ```
 
-![](img/showmount-centos.png alida del comando `showmount -e` en la máquina CentOS)
+![](img/showmount-centos.png)
 
 3. Ahora montamos el directorio `/srv/nfs` en la máquina CentOS, en el directorio `/mnt` de la misma:
 
@@ -124,11 +123,11 @@ Con la instrucción `default` aseguramos que el sistema de archivos será montad
 
 ![](img/fstab-centos.png Archivo `/etc/fstab` en la máquina CentOS)
 
-Y podemos comprobar que el montaje será automático cuando el sistema se inicialize, con el comando `mount -va`:
+Y podemos comprobar que el montaje será automático cuando el sistema se inicialice, con el comando `mount -va`:
 
 ![](img/mount-successful-centos.png)
 
-Más aún, al reinciar el sistema, podemos ver que en el output del mismo que el montaje en `/mnt` se hace automaticamente:
+Más aún, al reiniciar el sistema, podemos ver que en el output del mismo que el montaje en `/mnt` se hace automáticamente:
 
 ![](img/mount-in-boot-centos.png)
 
@@ -138,7 +137,145 @@ Más aún, al reinciar el sistema, podemos ver que en el output del mismo que el
 
 ## DEBIAN
 
+1. Instalar los paquetes de SAMBA en el servidor Debian
+
+```
+root@debian-11:~# apt -qy install samba
+```
+
+![](img/instalacion-samba-debian.jpg)
+
+2. Hacemos un respaldo del archivo de configuración de SAMBA [`/etc/samba/smb.conf`](files/smb.conf), creando una copia del mismo. Lo llamamos `smb0.conf`
+
+```
+root@debian-11:/etc/samba# cp -v smb.conf smb0.conf
+```
+
+![](img/respaldo-archvio-smbconf-debian.png)
+
+3. Configuramos el share `global` de SAMBA en el archivo [`smb.conf`](files/smb.conf), cambiando el grupo de trabajo a `FCIENCIAS` y el nombre del servidor a `Servidor SAMBA`
+
+![](img/config-archivo-smbconf-debian.jpg)
+
+Utilizando el comando `testparm`, verificamos que el archivo [`smb.conf`](files/smb.conf) sea sintácticamente correcto. La salida completa del comando se encuentra en el archivo [testparm.txt](files/testparm.txt). Dado que no nos marca ningún error, podemos asumir que todo está correcto.
+
+4. Agregamos una sección en el archivo [`smb.conf`](files/smb.conf) para la configuración de la carpeta compartida del servidor. La vamos a llamar `share`
+
+![](img/seccion-carpeta-share-smbconf.png)
+
+5. Creamos el directorio compartido para el _share_, el cual será `/srv/samba`. Dentro, creamos una archivo vacío que indique que estamos dentro del directorio compartido. Lo llamamos `inside-share`
+
+```
+root@debian-11:~# mkdir -vp /srv/samba
+root@debian-11:~# touch /srv/samba/inside-share
+root@debian-11:~# ls -la /srv/samba
+```
+
+![](img/creacion-carpeta-share-smb-debian.png)
+
+6. Cambiamos los permisos del directorio `/srv/samba` para que los usuarios autorizados puedan leer y escribir dentro de él. Los demás usuarios solo podrán leer los contenidos del directorio.
+
+```
+root@debian-11:~# chmod -c u+rwx,g+rwxs,o+rx,o-w /srv/samba
+```
+
+![](img/cambiando-permisos-share-smb-debian.png)
+
+Podemos ver que root y los miembros del grupo `users` ahora tienen permisos de lectura y escritura.
+
+7. Agregamos el usuario actual del sistema al grupo de `users`, y lo agregamos también a la base de datos de SAMBA con el comando `smbpasswd`, para que pueda hacer cambios sobre el directorio compartido desde la máquina Debian. Establecemos una contraseña para el usuario.
+
+```
+root@debian-11:~# adduser davidalvarado users
+```
+
+![](img/agregar-usuario-davidalv-grupo-users.png)
+
+```
+root@debian-11:~# smbpasswd -a davidalvarado
+```
+
+![](img/agregando-usuario-davidalvarado-bdd-samba.png)
+
+8. Finalmente, comprobamos que el servidor SAMBA está corriendo de manera adecuada con el siguiente comando
+
+```
+root@debian-11:~# systemctl status nmbd smbd | cat
+```
+
+![](img/status-server-samba-debian.jpg)
+
+Y vemos que los servicios SMB y NMB corren correctamente. Esta salida está guardada en el archivo [`status_samba.txt`](files/status_samba.txt)
+
 ## CENTOS
+
+1. Instalamos el cliente de SAMBA en CentOS
+
+```
+[root@centos-9 ~]# yum -qy install samba-client
+```
+
+![](img/instalacion-samba-centos.png)
+
+2. Utilizando el comando `smbclient`, y el usuario `davidalvarado` (que creamos y registramos en la base de datos de SAMBA desde la máquina Debian), preguntamos que recursos fueron exportados desde el servidor Debian con el siguiente comando
+
+```
+[root@centos-9 ~]# smbclient -L 192.168.56.4 -U davidalvarado
+```
+
+![](img/comprobrar-export-de-share-samba.png)
+
+Comprobamos que el recurso compartido `share` es exportado por el servidor Debian.
+
+3. montamos el directorio compartido del servidor Debian en un nuevo directorio `/smb` en el cliente CentOS. Esto porque `/mnt` de CentOS ya está siendo usando para montar el servicio NFS.
+
+```
+[root@centos-9 ~]# mount -t cifs --verbose //192.168.56.4/share /smb -o 'workgroup=FCIENCIAS,username=davidalvarado'
+```
+
+![](img/montar-share-smb-centos.png)
+
+Introducimos la contraseña del usuario `davidalvarado`, y el directorio compartido de Debain queda montado en nuestro cliente CentOS. Como podemos ver, el archivo `inside-share` creado desde la máquina Debian es visible en la máquina CentOS.
+
+4. Para pasarle las credenciales de manera automática al servidor SAMBA, y no tener que escribirlas cada vez que se monte el directorio, creamos un archivo que contenga un username y una contraseña válidos, con los que SAMBA nos permita hacer el montaje. En este caso, el usuario cuyas credenciales vamos a definir es `davidalvarado`. Esto lo ponemos en el archivo [`/etc/samba/smb.creds`](files/smb.creds)
+
+Después, le cambiamos los permisos al archivo, para que solo el usuario root pueda modificarlo.
+
+```
+[root@centos-9 ~]# chmod 0600 /etc/samba/smb.creds
+[root@centos-9 ~]# chown root:root /etc/samba/smb.creds
+```
+
+![](img/crear-archivo-smbcreds-centos.png)
+
+Así, podemos pasarle este archivo al comando `mount` para autenticar al usuario.
+
+5. Probemos ahora que nuestro directorio `/smb` está correctamente montado, creando un archivo y un directorio (ambos vacíos) para comprobar que estos aparecen en el servidor Debian
+
+```
+[root@centos-9 smb]# touch archivo-creado-desde-centos
+[root@centos-9 smb]# mkdir carpeta-creada-desde-centos  
+```
+
+![](img/crear-elementos-directorio-compartido-centos.png)
+
+Ahora, desde Debian, listemos los archivos en el directorio `/srv/samba` (que fue el que montamos en CentOS)
+
+![](img/elementos-creados-desde-centos-en-debian.png)
+
+Y vemos que tanto el archivo como el directorio que creamos en CentOS aparecen en nuestro servidor Debian, por lo que el montaje fue exitoso.
+
+6. Por último, para que el montaje del directorio `/smb` sea persistente, debemos modificar el archivo [`/etc/fstab`](files/fstab_centos.txt) de nuestro cliente CentOS, y agregar la instrucción para que el montaje de `/smb` se haga durante la inicialización del sistema
+
+![](img/archivo-fstab-samba-centos.png)
+
+Comprobamos que el montaje es exitoso con el comando `mount -va`, y podremos ver que este sí es el caso.
+
+![](img/montaje-correcto-samba-centos.png)
+
+Más aun, si reiniciamos el equipo, mientras este se está booteando y nos aparece output en en la máquina virtual, podemos ver que el directorio `/smb` se monta durante la inicialización
+
+![](img/montaje-correcto-samba-centos.png)
 
 ## WINDOWS
 
@@ -168,7 +305,7 @@ Asi bien una "ventaja" sería que algunas maquinas ya tienen **NFS** por defecto
 3. ¿Hay alguna diferencia en los usuarios, grupos y permisos que tienen los archivos y directorios entre un protocolo y otro?
 De manera pretederminada sí, esto viene debido al objetivo para el cual fueron hechos. A primera vista notamos que en **NFS** aunque seamos root no poseamos todos los permisos, incluso en los usuarios, esto es porque el mapeo entre los distintos equipos del id del usuario y grupos pueden ser diferentes, debido a esto cuando cambiamos los permisos con el comando `chown` solemos repetir el usuario en el grupo `user:user` para que se mapee al mismo numero de id. Aunque también podemos modificar esto en el archivo `etc/exports` con las opciones de red.
 
-Para **Samba**, a causa de para lo que fue pensado, lo comparitmos para grupos de trabajo (workgroups) en el archivo `smb.conf` y cambiamos los permisos de las carpetas con `chmod -c 2775` para que puedan ser leidas y escritas por el usuario y grupos, aunque esto genera un problema del lado del cliente ya que cualquier podría entrar. Por lo cual podemos hacer la autenticación con el programa `smbpasswd` ya que tiene su propia base de datos de usuarios y necesitamos darlos de alta en ella, por ello no basta con utilizar los archivos `etc/passwd` y `etc/shadow` ya que necesitamos darlos de alta.
+Para **Samba**, a causa de para lo que fue pensado, lo comparitmos para grupos de trabajo (workgroups) en el archivo [`smb.conf`](files/smb.conf) y cambiamos los permisos de las carpetas con `chmod -c 2775` para que puedan ser leidas y escritas por el usuario y grupos, aunque esto genera un problema del lado del cliente ya que cualquier podría entrar. Por lo cual podemos hacer la autenticación con el programa `smbpasswd` ya que tiene su propia base de datos de usuarios y necesitamos darlos de alta en ella, por ello no basta con utilizar los archivos `etc/passwd` y `etc/shadow` ya que necesitamos darlos de alta.
 
 
 4. Escribir cuales casos de uso se cubren mejor utilizando NFS y cuales utilizando Samba

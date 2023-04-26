@@ -12,5 +12,9 @@
 UUID=2cc0630c-9d7c-4266-932e-b22ed0289899 /boot                   xfs     defaults        0 0
 /dev/mapper/cs-swap     none                    swap    defaults        0 0
 
-# Motaje del servicio NFS
-192.168.56.4:/srv/nfs       /mnt      nfs   default     0 0
+# Montaje persistente del directorio compartido por NFS
+192.168.56.4:/srv/nfs	        /mnt	nfs	default    0 0
+#192.168.56.4:/srv/nfs_anon	/opt	nfs	default    0 0
+
+# Montaje persistente del direcotrio compartido por SAMBA
+//192.168.56.4/share	/smb	cifs	workgroup=FCIENCIAS,credentials=/etc/samba/smb.creds	0 0

@@ -1,0 +1,38 @@
+root@debian-11:/etc/samba# systemctl status nmbd smbd | cat
+● nmbd.service - Samba NMB Daemon
+     Loaded: loaded (/lib/systemd/system/nmbd.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-04-25 09:44:33 CST; 31s ago
+       Docs: man:nmbd(8)
+             man:samba(7)
+             man:smb.conf(5)
+   Main PID: 3994 (nmbd)
+     Status: "nmbd: ready to serve connections..."
+      Tasks: 1 (limit: 1129)
+     Memory: 2.7M
+        CPU: 73ms
+     CGroup: /system.slice/nmbd.service
+             └─3994 /usr/sbin/nmbd --foreground --no-process-group
+
+Apr 25 09:44:33 debian-11 systemd[1]: Starting Samba NMB Daemon...
+Apr 25 09:44:33 debian-11 systemd[1]: Started Samba NMB Daemon.
+
+● smbd.service - Samba SMB Daemon
+     Loaded: loaded (/lib/systemd/system/smbd.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-04-25 09:44:33 CST; 31s ago
+       Docs: man:smbd(8)
+             man:samba(7)
+             man:smb.conf(5)
+    Process: 3995 ExecStartPre=/usr/share/samba/update-apparmor-samba-profile (code=exited, status=0/SUCCESS)
+   Main PID: 4004 (smbd)
+     Status: "smbd: ready to serve connections..."
+      Tasks: 4 (limit: 1129)
+     Memory: 6.5M
+        CPU: 200ms
+     CGroup: /system.slice/smbd.service
+             ├─4004 /usr/sbin/smbd --foreground --no-process-group
+             ├─4006 /usr/sbin/smbd --foreground --no-process-group
+             ├─4007 /usr/sbin/smbd --foreground --no-process-group
+             └─4008 /usr/sbin/smbd --foreground --no-process-group
+
+Apr 25 09:44:33 debian-11 systemd[1]: Starting Samba SMB Daemon...
+Apr 25 09:44:33 debian-11 systemd[1]: Started Samba SMB Daemon.

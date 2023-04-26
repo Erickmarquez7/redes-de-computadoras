@@ -1,0 +1,10 @@
+[root@centos-9 ~]# smbclient -L 192.168.56.4 -U davidalvarado
+Password for [SAMBA\davidalvarado]:
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	print$          Disk      Printer Drivers
+	share           Disk      SAMBA Share
+	IPC$            IPC       IPC Service (Ejemplo de SAMBA)
+	davidalvarado   Disk      Home Directories
+SMB1 disabled -- no workgroup available
