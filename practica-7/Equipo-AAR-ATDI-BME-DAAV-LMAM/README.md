@@ -13,9 +13,9 @@
 # Topología de Red 
 A nivel físico es Topología de Árbol, siendo la máquina física la raíz del árbol a la que se conecta lo demás. Lo mismo ocurre a nivel lógico pues no ponemos ninguna restricción. Otra forma en que podemos ver la Topología es 1 a 1, viéndola de Computadora a Router.
 
-# NFS
+# Configuración de NFS
 
-## DEBIAN
+## Servidor Debian (con IP `192.168.56.4`)
 
 1. Instalar los paquetes de NFS en la máquina Debian:
 
@@ -23,13 +23,13 @@ A nivel físico es Topología de Árbol, siendo la máquina física la raíz del
 root@debian-11:~# apt install nfs-kernel-server
 ```
 
-2. Creamos la carpeta que queremos compartir utilizando el servicio NFS:
+2. Creamos la carpeta que queremos compartir utilizando el servicio NFS, junto con un archivo vacío que indique que se está dentro de la carpeta compartida por NFS.
 
 ```
 root@debian-11:~# mkdir /srv/nfs
+mkdir: created directory `/srv/nfs`
+root@debian-11:~# touch /srv/nfs/dentro-de-nfs
 ```
-
-![](img/share_nfs_debian.png)
 
 3. Configurar las opciones de exportación de NFS del servidor Debian, en el archivo [`/etc/exports`](files/exports_debian.txt)
 
@@ -62,23 +62,29 @@ Esta línea de código indica que los clientes en el rango `192.168.56.0/24` pod
 3. Para que los cambios que hicimos se hagan disponibles a los clientes que se comunicarán al servidor (el cliente CentOS), debemos reiniciar el el servidor NFS:
 
 ```
-root@debian-11:~# systemctl restart nfs-kernel-server
+root@debian-11:~# systemctl status nfs-kernel-server
+● nfs-server.service - NFS server and services
+     Loaded: loaded (/lib/systemd/system/nfs-server.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Wed 2023-04-26 21:34:22 CST; 20min ago
+    Process: 733 ExecStartPre=/usr/sbin/exportfs -r (code=exited, status=0/SUCCESS)
+    Process: 734 ExecStart=/usr/sbin/rpc.nfsd $RPCNFSDARGS (code=exited, status=0/SUCCESS)
+   Main PID: 734 (code=exited, status=0/SUCCESS)
+        CPU: 10ms
+
+Apr 26 21:34:20 debian-11 systemd[1]: Starting NFS server and services...
+Apr 26 21:34:22 debian-11 systemd[1]: Finished NFS server and services.
 ```
 
 Ejecutando el comando `systemctl status nfs-kernel-server` podemos ver que el servicio NFS está ejecutándose correctamente
-
-![](img/nfs-status-debian.png)
 
 4. La salida del comando `showmount -e` nos muestra que el directorio `/srv` efectivamente está exportado en el servidor
 ```
 root@debian-11:~# showmount -e
 Export list for debian-11:
-/srv/nfs             192.168.56.0/24
+/srv/nfs 192.168.56.0/24
 ```
 
-![](img/showmount-debian.png)
-
-## CENTOS
+## Cliente CentOS (con IP `192.168.56.6`)
 
 1. Instalamos la paquetería de NFS para poder configurar un cliente NFS en la máquina con CentOS:
 
@@ -91,10 +97,8 @@ Export list for debian-11:
 ```
 [root@centos-9 ~]# showmount -e 192.168.56.4
 Export list for 192.168.56.4:
-/srv/nfs             192.168.56.0/24
+/srv/nfs 192.168.56.0/24
 ```
-
-![](img/showmount-centos.png)
 
 3. Ahora montamos el directorio `/srv/nfs` en la máquina CentOS, en el directorio `/mnt` de la misma:
 
@@ -104,7 +108,10 @@ Export list for 192.168.56.4:
 
 Y comprobamos que efectivamente fue montado
 
-![](img/mounting_nfs_centos.png)
+```
+[root@centos-9 ~]# mount | grep /mnt
+192.168.56.4:/srv/nfs on /mnt type nfs4 (rw,relatime,vers=4.2,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.56.6,local_lock=none,addr=192.168.56.4)
+```
 
 
 4. Montar el directorio `/srv/nfs` de Debian en el cliente CentOS de manera automática cuando este se inicialice: añadimos el directorio `/srv/nfs` del servidor Debian al archivo `/etc/fstab` de CentOS, colocando la siguiente línea al final del mismo:
@@ -119,7 +126,16 @@ Con la instrucción `default` aseguramos que el sistema de archivos será montad
 
 Y podemos comprobar que el montaje será automático cuando el sistema se inicialice, con el comando `mount -va`:
 
-![](img/mount-successful-centos.png)
+```
+[root@centos-9 ~]# mount -va
+/                        : ignored
+/boot                    : already mounted
+none                     : ignored
+mount.nfs: timeout set for Wed Apr 26 21:59:51 2023
+mount.nfs: trying text-based options 'vers=4.2,addr=192.168.56.4,clientaddr=192.168.56.6'
+/mnt                     : successfully mounted
+/smb                     : already mounted
+```
 
 Más aún, al reiniciar el sistema, podemos ver que en el output del mismo que el montaje en `/mnt` se hace automáticamente:
 
@@ -354,36 +370,66 @@ Es una implementación libre del protocolo Server Message Block (SMB) de Microso
 
 
 1. Comparar las ventajas y desventajas de utilizar NFS y Samba en equipos con diferente sistema operativo (GNU/Linux y Windows)
-Tanto **NFS** como **Samba** requieren de un cuidado proceso de configuración del lado del cliente y servidor además de que necesitamos instalar los paquetes necesarios en linux, mientras que en windows ya los tiene por defecto, solo hay que habilitarlos y la conexión de estos es más sencilla porque es más visual que hacerlo por consola, en lo personal se nos facilitó más la configuración de **Samba**. 
 
-Así que realmente no hay muchas ventajas o desventaja en el envío de mensajes, lectura y escritura de archivos entre diferentes sistemas operativos, ya que los protocolos son independientes del SO. Sino más bien al momento de la configuración y administración, o bien entre los protocolos cuales veremos en el punto 4 que es al momento de elegir el mejor protocolo que se adapte a nuestras necesidades.
+	Tanto **NFS** como **Samba** requieren de un cuidado proceso de configuración del lado del cliente y servidor además de que necesitamos instalar los paquetes necesarios en linux, mientras que en windows ya los tiene por defecto, solo hay que habilitarlos y la conexión de estos es más sencilla porque es más visual que hacerlo por consola, en lo personal se nos facilitó más la configuración de **Samba**. 
 
-Asi bien una "ventaja" sería que algunas maquinas ya tienen **NFS** por defecto lo que ocasiona una "desventaja" al configurarlo para Windows, y al revés.
-**Samba** viene incluido en Windows y habrá que instalarlo para Linux.
+	Así que realmente no hay muchas ventajas o desventaja en el envío de mensajes, lectura y escritura de archivos entre diferentes sistemas operativos, ya que los protocolos son independientes del SO. Sino más bien al momento de la configuración y administración, o bien entre los protocolos cuales veremos en el punto 4 que es al momento de elegir el mejor protocolo que se adapte a nuestras necesidades.
+
+	Asi bien una "ventaja" sería que algunas maquinas ya tienen **NFS** por defecto lo que ocasiona una "desventaja" al configurarlo para Windows, y al revés.
+	**Samba** viene incluido en Windows y habrá que instalarlo para Linux.
 
 
-2. ¿Hay alguna diferencia en la velocidad de transferencia utilizando NFS y Samba?
+2. Copiar un archivo de 1GB almacenado en el servidor a cada uno de los clientes utilizando NFS y Samba. ¿Hay alguna diferencia en la velocidad de transferencia utilizando NFS y Samba?
+
+	Creamos un archivo de tamaño 1G en el servidor Debian con el comando `fallocate`
+
+	```
+	root@debian-11:~# fallocate -l 1G largefile
+	root@debian-11:~# du -sh largefile
+	1.1G	largefile
+	```
 
 
 3. ¿Hay alguna diferencia en los usuarios, grupos y permisos que tienen los archivos y directorios entre un protocolo y otro?
-De manera pretederminada sí, esto viene debido al objetivo para el cual fueron hechos. A primera vista notamos que en **NFS** aunque seamos root no poseamos todos los permisos, incluso en los usuarios, esto es porque el mapeo entre los distintos equipos del id del usuario y grupos pueden ser diferentes, debido a esto cuando cambiamos los permisos con el comando `chown` solemos repetir el usuario en el grupo `user:user` para que se mapee al mismo numero de id. Aunque también podemos modificar esto en el archivo `etc/exports` con las opciones de red.
 
-Para **Samba**, a causa de para lo que fue pensado, lo comparitmos para grupos de trabajo (workgroups) en el archivo [`smb.conf`](files/smb.conf) y cambiamos los permisos de las carpetas con `chmod -c 2775` para que puedan ser leidas y escritas por el usuario y grupos, aunque esto genera un problema del lado del cliente ya que cualquier podría entrar. Por lo cual podemos hacer la autenticación con el programa `smbpasswd` ya que tiene su propia base de datos de usuarios y necesitamos darlos de alta en ella, por ello no basta con utilizar los archivos `etc/passwd` y `etc/shadow` ya que necesitamos darlos de alta.
+	De manera pretederminada sí, esto viene debido al objetivo para el cual fueron hechos. A primera vista notamos que en **NFS** aunque seamos root no poseamos todos los permisos, incluso en los usuarios, esto es porque el mapeo entre los distintos equipos del id del usuario y grupos pueden ser diferentes, debido a esto cuando cambiamos los permisos con el comando `chown` solemos repetir el usuario en el grupo `user:user` para que se mapee al mismo numero de id. Aunque también podemos modificar esto en el archivo `etc/exports` con las opciones de red.
 
+	Para **Samba**, a causa de para lo que fue pensado, lo comparitmos para grupos de trabajo (workgroups) en el archivo [`smb.conf`](files/smb.conf) y cambiamos los permisos de las carpetas con `chmod -c 2775` para que puedan ser leidas y escritas por el usuario y grupos, aunque esto genera un problema del lado del cliente ya que cualquier podría entrar. Por lo cual podemos hacer la autenticación con el programa `smbpasswd` ya que tiene su propia base de datos de usuarios y necesitamos darlos de alta en ella, por ello no basta con utilizar los archivos `etc/passwd` y `etc/shadow` ya que necesitamos darlos de alta.
 
 4. Escribir cuales casos de uso se cubren mejor utilizando NFS y cuales utilizando Samba
-No es sencillo decir que si se cumple A entonces la mejor opción es B, ya que requiere tomar muchos parametros en cuenta, por ejemplo el *para qué*, *por qué*, *seguridad*, *usuarios*, *velocidad*, *peso*, etc. Ciertamente nos podemos guiar por nuestras prioridades pero siempre serán diferentes para cada persona.
 
-Por ejemplo **NFS** se suele utilizar para compartir archivos entre servidores con un protocolo cliente-servidor, mientras que **Samba** para transeferir archivos desde el lugar donde el usuario necesita siguiendo un protocolo de archivos compartidos.
+	No es sencillo decir que si se cumple A entonces la mejor opción es B, ya que requiere tomar muchos parametros en cuenta, por ejemplo el *para qué*, *por qué*, *seguridad*, *usuarios*, *velocidad*, *peso*, etc. Ciertamente nos podemos guiar por nuestras prioridades pero siempre serán diferentes para cada persona.
 
-Si tenemos un servidor grande puede ser de gran utilidad buscar archivos, una desventaja de **NFS** es que no soporta la busqueda de estos, mientras que **Samba** sí lo hace.
+	Por ejemplo **NFS** se suele utilizar para compartir archivos entre servidores con un protocolo cliente-servidor, mientras que **Samba** para transeferir archivos desde el lugar donde el usuario necesita siguiendo un protocolo de archivos compartidos.
 
-De la misma manera si queremos hacer transiciones de lectura y escritura son mas lentas en **NFS** y en **Samba** más rápidas.
+	Si tenemos un servidor grande puede ser de gran utilidad buscar archivos, una desventaja de **NFS** es que no soporta la busqueda de estos, mientras que **Samba** sí lo hace.
 
-En **NFS** podemos cambiar el nombre a los archivos, en **Samba** esto no es posible.
+	De la misma manera si queremos hacer transiciones de lectura y escritura son mas lentas en **NFS** y en **Samba** más rápidas.
 
-**NFS** tiene un mejor rendimiento en archivo pequeños o medianos, en archivos grandes el mejor rendimiento lo tiene **Samba**.
+	En **NFS** podemos cambiar el nombre a los archivos, en **Samba** esto no es posible.
 
+	**NFS** tiene un mejor rendimiento en archivo pequeños o medianos, en archivos grandes el mejor rendimiento lo tiene **Samba**.
+
+# Carpeta [`files`](files/)
+
+1. Archivos de configuración
+	- Para NFS: archivo [`/etc/exports`](files/exports_debian.txt) en Debian.
+	- Para SAMBA: archivo [`/etc/samba/smb.conf`](files/smb.conf) en Debian.
+
+2. Bitácora de conexión de SAMBA: archivo [`/var/log/samba/log.smbd`](files/log.smbd) en Debian.
+
+3. Configuración de las redes en Virtual Box: [Salida del comando `VBoxManage list hostonlyifs`](files/hostonlyifs.txt)
+
+4. Configuración de todas las máquinas virtuales: salida del comando `VBoxManage showvminfo "<NAME>|<UUID>" --machinereadable` 
+	- Para la máquina Debian: [`VBoxManage showvminfo "Debian 11 CLI" --machinereadable`](files/showvminfo_debian.txt)
+
+	- Para la máquina CentOS: [`VBoxManage showvminfo "CentOS Stream 9 CLI" --machinereadable`](files/showvminfo_debian.txt)
+
+5. Salida de los comandos `showmount` y `smbclient` para listar los recursos compartidos
+	- Desde Debian: [`showmount`](files/showmount_debian.txt) y [`smbclient`](files/smbclient_debian.txt)
+	- Desde CentOS: [`showmount`](files/showmount_centos.txt) y [`smbclient`](files/smbclient_centos.txt)
+
+6. Archivo [`/etc/fstab`](files/fstab_centos.txt) con la configuración de montaje persistente de NFS y Samba.
 
 
 # Referencias
