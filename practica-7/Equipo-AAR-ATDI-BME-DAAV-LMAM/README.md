@@ -141,9 +141,34 @@ Más aún, al reiniciar el sistema, podemos ver que en el output del mismo que e
 
 ![](img/mount-in-boot-centos.png)
 
-## WINDOWS
+## Cliente Windows (con IP 192.168.56.100)
+
+
+1. Habilitamos las caracteristicas de:
+
+```
+-Servicios de NFS
+-Herramientas Administrativas
+-Cliente de NFS
+
+```
+
+2. Verificamos que el sistema de archivos esté exportado con el comando 
+
+```
+C:\Users\ruben> showmount -e 192.168.56.4
+```
+
+3. instalamos el punto de montaje del sistema de archivos compartido con el comando mount
+
+```
+C:\Users\ruben> mount -t nfs 192.168.56.4:/srv/nfs
+```
+
+4. Reiniciamos el equipo para verificar que el sistema de archivos se monta correctamente de manera automática al iniciar el sistema
 
 # SMB
+
 
 ## DEBIAN
 
@@ -357,6 +382,15 @@ Más aun, si reiniciamos el equipo, mientras este se está booteando y nos apare
 ![](img/montaje-correcto-samba-boot-centos.png)
 
 ## WINDOWS
+
+1. Verificamos que el cliente Windows tenga instalado y habilitado el soporte de Samba 
+
+2. Verificamos que el servidor tenga el recurso compartido utilizando la línea de comandos y el Explorador de Windows
+
+3. Montamos el recurso compartido desde el Explorador de Windows y marcamos la casilla que indica que esta configuración se aplicará de manera persistente.
+
+4. Reiniciamos el equipo para verificar que el sistema de archivos se monta correctamente de manera automática al iniciar el sistema
+
 
 # Conclusiones
 
