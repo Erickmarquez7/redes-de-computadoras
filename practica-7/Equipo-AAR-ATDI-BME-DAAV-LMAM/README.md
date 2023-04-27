@@ -11,7 +11,7 @@
 # [Práctica 7](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-7/)
 
 # Topología de Red 
-
+A nivel físico es Topología de Árbol, siendo la máquina física la raíz del árbol a la que se conecta lo demás. Lo mismo ocurre a nivel lógico pues no ponemos ninguna restricción. Otra forma en que podemos ver la Topología es 1 a 1, viéndola de Computadora a Router.
 
 # NFS
 
@@ -395,7 +395,3 @@ https://youtu.be/AcKG6UsAO-Y
 https://youtu.be/hl0sC5gPdzw
 
 https://youtu.be/Cbq-FxLNfxc
-
-# Extra
-
-- [Video de la topología de red utilizada 📼](https://youtu.be/)
