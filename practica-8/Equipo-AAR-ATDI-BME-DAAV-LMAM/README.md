@@ -338,5 +338,5 @@ Swap:              0           0           0
     - Los archivos contenidos en el directorio [`/var/log/unattended-upgrades`](files/unattended-upgrades/)
 
 - Archivos de datos
-    - Los archivos contenidos en el directorio [`/var/lib/dhcp`]
-    - Los archivos contenidos en el directorio [`/var/lib/cloud`]
+    - Los archivos contenidos en el directorio [`/var/lib/dhcp`](files/dhcp/)
+    - Los archivos contenidos en el directorio [`/var/lib/cloud`](files/cloud/)
