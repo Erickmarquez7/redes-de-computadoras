@@ -1,0 +1,120 @@
+May  1 22:38:06 Debian-Redes kernel: [    0.005423] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+May  1 22:38:06 Debian-Redes kernel: [    0.005426] e820: remove [mem 0x000a0000-0x000fffff] usable
+May  1 22:38:06 Debian-Redes kernel: [    0.008133] MTRR default type: uncachable
+May  1 22:38:06 Debian-Redes kernel: [    0.008135] MTRR fixed ranges enabled:
+May  1 22:38:06 Debian-Redes kernel: [    0.008136]   00000-9FFFF write-back
+May  1 22:38:06 Debian-Redes kernel: [    0.008137]   A0000-FFFFF uncachable
+May  1 22:38:06 Debian-Redes kernel: [    0.008138] MTRR variable ranges enabled:
+May  1 22:38:06 Debian-Redes kernel: [    0.008139]   0 base 000000000000 mask 3FFFC0000000 write-back
+May  1 22:38:06 Debian-Redes kernel: [    0.008140]   1 disabled
+May  1 22:38:06 Debian-Redes kernel: [    0.008140]   2 disabled
+May  1 22:38:06 Debian-Redes kernel: [    0.008141]   3 disabled
+May  1 22:38:06 Debian-Redes kernel: [    0.008141]   4 disabled
+May  1 22:38:06 Debian-Redes kernel: [    0.008142]   5 disabled
+May  1 22:38:06 Debian-Redes kernel: [    0.008142]   6 disabled
+May  1 22:38:06 Debian-Redes kernel: [    0.008143]   7 disabled
+May  1 22:38:06 Debian-Redes kernel: [    0.104827] ACPI: Local APIC address 0xfee00000
+May  1 22:38:06 Debian-Redes kernel: [    0.167105] On node 0 totalpages: 261857
+May  1 22:38:06 Debian-Redes kernel: [    0.167107]   DMA zone: 64 pages used for memmap
+May  1 22:38:06 Debian-Redes kernel: [    0.167108]   DMA zone: 1345 pages reserved
+May  1 22:38:06 Debian-Redes kernel: [    0.167108]   DMA zone: 3999 pages, LIFO batch:0
+May  1 22:38:06 Debian-Redes kernel: [    0.167110]   DMA32 zone: 4032 pages used for memmap
+May  1 22:38:06 Debian-Redes kernel: [    0.167111]   DMA32 zone: 257858 pages, LIFO batch:63
+May  1 22:38:06 Debian-Redes kernel: [    0.179119] ACPI: Local APIC address 0xfee00000
+May  1 22:38:06 Debian-Redes kernel: [    0.189387] ACPI: IRQ9 used by override.
+May  1 22:38:06 Debian-Redes kernel: [    0.251128] pcpu-alloc: s221184 r8192 d28672 u2097152 alloc=1*2097152
+May  1 22:38:06 Debian-Redes kernel: [    0.251129] pcpu-alloc: [0] 0 
+May  1 22:38:06 Debian-Redes kernel: [    0.647771] pnp 00:00: Plug and Play ACPI device, IDs PNP0501 (active)
+May  1 22:38:06 Debian-Redes kernel: [    0.647787] pnp 00:01: Plug and Play ACPI device, IDs PNP0501 (active)
+May  1 22:38:06 Debian-Redes kernel: [    0.647801] pnp 00:02: Plug and Play ACPI device, IDs PNP0b00 (active)
+May  1 22:38:06 Debian-Redes kernel: [    1.082694]   with arguments:
+May  1 22:38:06 Debian-Redes kernel: [    1.082694]     /init
+May  1 22:38:06 Debian-Redes kernel: [    1.082695]   with environment:
+May  1 22:38:06 Debian-Redes kernel: [    1.082695]     HOME=/
+May  1 22:38:06 Debian-Redes kernel: [    1.082696]     TERM=linux
+May  1 22:38:06 Debian-Redes kernel: [    1.082696]     BOOT_IMAGE=/boot/vmlinuz-5.10.0-22-cloud-amd64
+May  1 22:38:06 Debian-Redes kernel: [    1.268942] sr 0:0:0:2: Attached scsi CD-ROM sr0
+May  1 22:38:06 Debian-Redes kernel: [    1.273027] sd 0:0:0:1: [sdb] Mode Sense: 0f 00 10 00
+May  1 22:38:06 Debian-Redes kernel: [    1.278552] sd 0:0:0:0: [sda] Mode Sense: 0f 00 10 00
+May  1 22:38:06 Debian-Redes kernel: [    3.582343] checking generic (40000000 300000) vs hw (40000000 300000)
+May  1 22:38:06 Debian-Redes cloud-ifupdown-helper: Generated configuration for eth0
+May  1 22:57:12 waningnew kernel: [    0.006849] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+May  1 22:57:12 waningnew kernel: [    0.006852] e820: remove [mem 0x000a0000-0x000fffff] usable
+May  1 22:57:12 waningnew kernel: [    0.009708] MTRR default type: uncachable
+May  1 22:57:12 waningnew kernel: [    0.009709] MTRR fixed ranges enabled:
+May  1 22:57:12 waningnew kernel: [    0.009710]   00000-9FFFF write-back
+May  1 22:57:12 waningnew kernel: [    0.009711]   A0000-FFFFF uncachable
+May  1 22:57:12 waningnew kernel: [    0.009712] MTRR variable ranges enabled:
+May  1 22:57:12 waningnew kernel: [    0.009713]   0 base 000000000000 mask 3FFFC0000000 write-back
+May  1 22:57:12 waningnew kernel: [    0.009714]   1 disabled
+May  1 22:57:12 waningnew kernel: [    0.009715]   2 disabled
+May  1 22:57:12 waningnew kernel: [    0.009715]   3 disabled
+May  1 22:57:12 waningnew kernel: [    0.009716]   4 disabled
+May  1 22:57:12 waningnew kernel: [    0.009716]   5 disabled
+May  1 22:57:12 waningnew kernel: [    0.009717]   6 disabled
+May  1 22:57:12 waningnew kernel: [    0.009718]   7 disabled
+May  1 22:57:12 waningnew kernel: [    0.113309] ACPI: Local APIC address 0xfee00000
+May  1 22:57:12 waningnew kernel: [    0.181383] On node 0 totalpages: 261857
+May  1 22:57:12 waningnew kernel: [    0.181385]   DMA zone: 64 pages used for memmap
+May  1 22:57:12 waningnew kernel: [    0.181386]   DMA zone: 1345 pages reserved
+May  1 22:57:12 waningnew kernel: [    0.181387]   DMA zone: 3999 pages, LIFO batch:0
+May  1 22:57:12 waningnew kernel: [    0.181388]   DMA32 zone: 4032 pages used for memmap
+May  1 22:57:12 waningnew kernel: [    0.181389]   DMA32 zone: 257858 pages, LIFO batch:63
+May  1 22:57:12 waningnew kernel: [    0.193833] ACPI: Local APIC address 0xfee00000
+May  1 22:57:12 waningnew kernel: [    0.204162] ACPI: IRQ9 used by override.
+May  1 22:57:12 waningnew kernel: [    0.268670] pcpu-alloc: s221184 r8192 d28672 u2097152 alloc=1*2097152
+May  1 22:57:12 waningnew kernel: [    0.268672] pcpu-alloc: [0] 0 
+May  1 22:57:12 waningnew kernel: [    0.673997] pnp 00:00: Plug and Play ACPI device, IDs PNP0501 (active)
+May  1 22:57:12 waningnew kernel: [    0.674014] pnp 00:01: Plug and Play ACPI device, IDs PNP0501 (active)
+May  1 22:57:12 waningnew kernel: [    0.674027] pnp 00:02: Plug and Play ACPI device, IDs PNP0b00 (active)
+May  1 22:57:12 waningnew kernel: [    1.114108]   with arguments:
+May  1 22:57:12 waningnew kernel: [    1.114108]     /init
+May  1 22:57:12 waningnew kernel: [    1.114109]   with environment:
+May  1 22:57:12 waningnew kernel: [    1.114109]     HOME=/
+May  1 22:57:12 waningnew kernel: [    1.114110]     TERM=linux
+May  1 22:57:12 waningnew kernel: [    1.114110]     BOOT_IMAGE=/boot/vmlinuz-5.10.0-22-cloud-amd64
+May  1 22:57:12 waningnew kernel: [    1.301605] sd 0:0:0:1: [sdb] Mode Sense: 0f 00 10 00
+May  1 22:57:12 waningnew kernel: [    1.305050] sd 0:0:0:0: [sda] Mode Sense: 0f 00 10 00
+May  1 22:57:12 waningnew kernel: [    1.367256] sr 0:0:0:2: Attached scsi CD-ROM sr0
+May  1 22:57:12 waningnew kernel: [    3.642399] checking generic (40000000 300000) vs hw (40000000 300000)
+May  1 22:57:12 waningnew cloud-ifupdown-helper: Generated configuration for eth0
+May  2 02:43:42 waningnew kernel: [    0.005289] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+May  2 02:43:42 waningnew kernel: [    0.005293] e820: remove [mem 0x000a0000-0x000fffff] usable
+May  2 02:43:42 waningnew kernel: [    0.008099] MTRR default type: uncachable
+May  2 02:43:42 waningnew kernel: [    0.008100] MTRR fixed ranges enabled:
+May  2 02:43:42 waningnew kernel: [    0.008102]   00000-9FFFF write-back
+May  2 02:43:42 waningnew kernel: [    0.008103]   A0000-FFFFF uncachable
+May  2 02:43:42 waningnew kernel: [    0.008103] MTRR variable ranges enabled:
+May  2 02:43:42 waningnew kernel: [    0.008105]   0 base 000000000000 mask 3FFFC0000000 write-back
+May  2 02:43:42 waningnew kernel: [    0.008106]   1 disabled
+May  2 02:43:42 waningnew kernel: [    0.008106]   2 disabled
+May  2 02:43:42 waningnew kernel: [    0.008107]   3 disabled
+May  2 02:43:42 waningnew kernel: [    0.008107]   4 disabled
+May  2 02:43:42 waningnew kernel: [    0.008108]   5 disabled
+May  2 02:43:42 waningnew kernel: [    0.008108]   6 disabled
+May  2 02:43:42 waningnew kernel: [    0.008109]   7 disabled
+May  2 02:43:42 waningnew kernel: [    0.104291] ACPI: Local APIC address 0xfee00000
+May  2 02:43:42 waningnew kernel: [    0.164948] On node 0 totalpages: 261857
+May  2 02:43:42 waningnew kernel: [    0.164949]   DMA zone: 64 pages used for memmap
+May  2 02:43:42 waningnew kernel: [    0.164950]   DMA zone: 1345 pages reserved
+May  2 02:43:42 waningnew kernel: [    0.164951]   DMA zone: 3999 pages, LIFO batch:0
+May  2 02:43:42 waningnew kernel: [    0.164952]   DMA32 zone: 4032 pages used for memmap
+May  2 02:43:42 waningnew kernel: [    0.164953]   DMA32 zone: 257858 pages, LIFO batch:63
+May  2 02:43:42 waningnew kernel: [    0.177606] ACPI: Local APIC address 0xfee00000
+May  2 02:43:42 waningnew kernel: [    0.187359] ACPI: IRQ9 used by override.
+May  2 02:43:42 waningnew kernel: [    0.245217] pcpu-alloc: s221184 r8192 d28672 u2097152 alloc=1*2097152
+May  2 02:43:42 waningnew kernel: [    0.245218] pcpu-alloc: [0] 0 
+May  2 02:43:42 waningnew kernel: [    0.636084] pnp 00:00: Plug and Play ACPI device, IDs PNP0501 (active)
+May  2 02:43:42 waningnew kernel: [    0.636099] pnp 00:01: Plug and Play ACPI device, IDs PNP0501 (active)
+May  2 02:43:42 waningnew kernel: [    0.636113] pnp 00:02: Plug and Play ACPI device, IDs PNP0b00 (active)
+May  2 02:43:42 waningnew kernel: [    1.069611]   with arguments:
+May  2 02:43:42 waningnew kernel: [    1.069611]     /init
+May  2 02:43:42 waningnew kernel: [    1.069612]   with environment:
+May  2 02:43:42 waningnew kernel: [    1.069612]     HOME=/
+May  2 02:43:42 waningnew kernel: [    1.069613]     TERM=linux
+May  2 02:43:42 waningnew kernel: [    1.069613]     BOOT_IMAGE=/boot/vmlinuz-5.10.0-22-cloud-amd64
+May  2 02:43:42 waningnew kernel: [    1.257092] sd 0:0:0:0: [sda] Mode Sense: 0f 00 10 00
+May  2 02:43:42 waningnew kernel: [    1.260334] sd 0:0:0:1: [sdb] Mode Sense: 0f 00 10 00
+May  2 02:43:42 waningnew kernel: [    1.265759] sr 0:0:0:2: Attached scsi CD-ROM sr0
+May  2 02:43:42 waningnew kernel: [    3.550234] checking generic (40000000 300000) vs hw (40000000 300000)
+May  2 02:43:42 waningnew cloud-ifupdown-helper: Generated configuration for eth0

@@ -1,0 +1,13 @@
+
+Start-Date: 2023-05-02  02:48:17
+Commandline: apt -qy install tree tcpdump nmap netcat-openbsd ngrep dsniff wget curl whois dnsutils net-tools iproute2 iptables tsocks inetutils-ping inetutils-traceroute inetutils-tools ethtool
+Requested-By: redes (1000)
+Install: nmap-common:amd64 (7.91+dfsg1+really7.80+dfsg1-2, automatic), libblas3:amd64 (3.9.0-3, automatic), x11-common:amd64 (1:7.7+22, automatic), inetutils-tools:amd64 (2:2.0-1+deb11u1), ngrep:amd64 (1.47+ds1-2), liblua5.3-0:amd64 (5.3.3-1.1+b1, automatic), inetutils-traceroute:amd64 (2:2.0-1+deb11u1), libxau6:amd64 (1:1.0.9-1, automatic), libxcb1:amd64 (1.14-3, automatic), libxmu6:amd64 (2:1.1.2-2+b3, automatic), lua-lpeg:amd64 (1.0.2-1, automatic), libx11-data:amd64 (2:1.7.2-1, automatic), inetutils-ping:amd64 (2:2.0-1+deb11u1), libnet1:amd64 (1.1.6+dfsg-3.1, automatic), bind9-dnsutils:amd64 (1:9.16.37-1~deb11u1, automatic), libice6:amd64 (2:1.0.10-1, automatic), libnids1.21:amd64 (1.25-1, automatic), whois:amd64 (5.5.10), dsniff:amd64 (2.4b1+debian-30), libxext6:amd64 (2:1.3.3-1.1, automatic), nmap:amd64 (7.91+dfsg1+really7.80+dfsg1-2), libx11-6:amd64 (2:1.7.2-1, automatic), tsocks:amd64 (1.8beta5+ds1-1+b1), tree:amd64 (1.8.0-1+b1), liblinear4:amd64 (2.3.0+dfsg-5, automatic), libsm6:amd64 (2:1.2.3-1, automatic), dnsutils:amd64 (1:9.16.37-1~deb11u1), netcat-openbsd:amd64 (1.217-3), libxdmcp6:amd64 (1:1.1.2-3, automatic), libxt6:amd64 (1:1.2.0-1, automatic)
+Remove: iputils-ping:amd64 (3:20210202-1)
+End-Date: 2023-05-02  02:48:26
+
+Start-Date: 2023-05-02  15:18:59
+Commandline: apt install nfs-kernel-server
+Requested-By: redes (1000)
+Install: nfs-common:amd64 (1:1.3.4-6, automatic), nfs-kernel-server:amd64 (1:1.3.4-6), keyutils:amd64 (1.6.1-2, automatic), rpcbind:amd64 (1.2.5-9, automatic), libevent-2.1-7:amd64 (2.1.12-stable-1, automatic), libnfsidmap2:amd64 (0.25-6, automatic)
+End-Date: 2023-05-02  15:19:07

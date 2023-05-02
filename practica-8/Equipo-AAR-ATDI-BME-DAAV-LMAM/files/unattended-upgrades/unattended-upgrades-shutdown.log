@@ -1,0 +1,8 @@
+2023-05-01 22:38:07,058 WARNING - Unable to monitor PrepareForShutdown() signal, polling instead.
+2023-05-01 22:38:07,058 WARNING - To enable monitoring the PrepareForShutdown() signal instead of polling please install the python3-gi package
+2023-05-02 04:56:43,822 WARNING - SIGTERM or SIGHUP received, stopping unattended-upgrades only if it is running
+2023-05-01 22:57:12,956 WARNING - Unable to monitor PrepareForShutdown() signal, polling instead.
+2023-05-01 22:57:12,958 WARNING - To enable monitoring the PrepareForShutdown() signal instead of polling please install the python3-gi package
+2023-05-02 02:43:15,739 WARNING - SIGTERM or SIGHUP received, stopping unattended-upgrades only if it is running
+2023-05-02 02:43:43,033 WARNING - Unable to monitor PrepareForShutdown() signal, polling instead.
+2023-05-02 02:43:43,034 WARNING - To enable monitoring the PrepareForShutdown() signal instead of polling please install the python3-gi package

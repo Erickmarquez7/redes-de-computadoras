@@ -1,0 +1,4 @@
+2023-04-27T21:37:41.595697Z INFO ExtHandler [Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141] Remove extension handler directory: /var/lib/waagent/Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141
+2023-05-01T22:38:16.224724Z INFO ExtHandler [Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141] Remove extension handler directory: /var/lib/waagent/Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141
+2023-05-02T04:57:22.060679Z INFO ExtHandler [Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141] Remove extension handler directory: /var/lib/waagent/Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141
+2023-05-02T08:43:52.299369Z INFO ExtHandler [Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141] Remove extension handler directory: /var/lib/waagent/Microsoft.Azure.Diagnostics.LinuxDiagnostic-3.0.141

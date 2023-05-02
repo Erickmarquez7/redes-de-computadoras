@@ -1,0 +1,39 @@
+default-duid "\000\001\000\001+\335\247\215\000\"H\223\270#";
+lease {
+  interface "eth0";
+  fixed-address 10.0.0.4;
+  server-name "SYD271070318045";
+  option subnet-mask 255.255.255.0;
+  option dhcp-lease-time 4294967295;
+  option routers 10.0.0.1;
+  option dhcp-message-type 5;
+  option dhcp-server-identifier 168.63.129.16;
+  option domain-name-servers 168.63.129.16;
+  option dhcp-renewal-time 4294967295;
+  option rfc3442-classless-static-routes 0,10,0,0,1,32,168,63,129,16,10,0,0,1,32,169,254,169,254,10,0,0,1;
+  option unknown-245 a8:3f:81:10;
+  option dhcp-rebinding-time 4294967295;
+  option domain-name "mi5mu4euhqxetpmmdeojw2ws1f.px.internal.cloudapp.net";
+  renew 2 2023/05/02 08:43:17;
+  rebind 2 2023/05/02 08:43:17;
+  expire 2 2023/05/02 08:43:17;
+}
+lease {
+  interface "eth0";
+  fixed-address 10.0.0.4;
+  server-name "SYD271070318045";
+  option subnet-mask 255.255.255.0;
+  option dhcp-lease-time 4294967295;
+  option routers 10.0.0.1;
+  option dhcp-message-type 5;
+  option dhcp-server-identifier 168.63.129.16;
+  option domain-name-servers 168.63.129.16;
+  option dhcp-renewal-time 4294967295;
+  option rfc3442-classless-static-routes 0,10,0,0,1,32,168,63,129,16,10,0,0,1,32,169,254,169,254,10,0,0,1;
+  option unknown-245 a8:3f:81:10;
+  option dhcp-rebinding-time 4294967295;
+  option domain-name "mi5mu4euhqxetpmmdeojw2ws1f.px.internal.cloudapp.net";
+  renew 5 2159/06/08 15:11:43;
+  rebind 5 2159/06/08 15:11:43;
+  expire 5 2159/06/08 15:11:43;
+}

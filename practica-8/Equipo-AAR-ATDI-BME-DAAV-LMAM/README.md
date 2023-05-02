@@ -125,6 +125,7 @@ ff02::2		ip6-allrouters
 ```
 
 - cat /etc/resolv.conf
+
 ```
 domain mi5mu4euhqxetpmmdeojw2ws1f.px.internal.cloudapp.net
 search mi5mu4euhqxetpmmdeojw2ws1f.px.internal.cloudapp.net
@@ -132,6 +133,7 @@ nameserver 168.63.129.16
 ```
 
 - ls -la ~root/.ssh ~redes/.ssh
+
 ```
 /home/redes/.ssh:
 total 16
@@ -152,6 +154,7 @@ drwx------ 4 root root 4096 may  2 02:24 ..
 ```
 
 - lsattr ~root/.ssh/authorized_keys* ~redes/.ssh/authorized_keys*
+
 ```
 --------------e------- /root/.ssh/authorized_keys
 ----i---------e------- /root/.ssh/authorized_keys2
@@ -161,6 +164,7 @@ drwx------ 4 root root 4096 may  2 02:24 ..
 ```
 
 - lastlog
+
 ```
 Nombre           Puerto   De               Último
 root                                       **Nunca ha accedido**
@@ -216,6 +220,7 @@ wtmp begins Thu Apr 27 15:15:35 2023
 ```
 
 - free -m
+
 ```
                total        used        free      shared  buff/cache   available
 Mem:             914         135         334           0         444         639
@@ -223,6 +228,7 @@ Swap:              0           0           0
 ```
 
 - ps afx
+
 ```
     PID TTY      STAT   TIME COMMAND
       2 ?        S      0:00 [kthreadd]
@@ -311,3 +317,26 @@ Swap:              0           0           0
     732 ?        Ss     0:00 /lib/systemd/systemd --user
     733 ?        S      0:00  \_ (sd-pam)
 ```
+
+# Carpeta files
+
+- Copia de la llave SSH pública que el equipo utilizó para conectarse a la máquina virtual
+- Archivos de configuración
+    - [`/etc/ssh/sshd_config`](files/sshd_config.txt)
+    - [`/etc/sudoers`](files/sudoers.txt)
+    - Los archivos contenidos en el directorio [`/etc/sudoers.d`](files/sudoers.d/)
+
+- Archivos de bitácora
+    - [`/var/log/wtmp`](files/wtmp) y [`/var/log/btmp`](files/btmp)
+    - [`/var/log/messages`](files/messages.txt) y [`/var/log/kern.log`](files/kern.log.txt)
+    - [`/var/log/user.log`](files/user.log.txt) y [`/var/log/auth.log`](files/auth.log.txt)
+    - [`/var/log/dpkg.log`](files/dpkg.log.txt)
+    - [`/var/log/debug`](files/debug.txt)
+    - [`/var/log/cloud-init.log`](files/cloud-init.log.txt) y [`/var/log/cloud-init-output.log`](files/cloud-init-output.log.txt)
+    - Los archivos contenidos en el directorio [`/var/log/apt`](files/apt/)
+    - Los archivos contenidos en el directorio [`/var/log/azure`](files/azure/)
+    - Los archivos contenidos en el directorio [`/var/log/unattended-upgrades`](files/unattended-upgrades/)
+
+- Archivos de datos
+    - Los archivos contenidos en el directorio [`/var/lib/dhcp`]
+    - Los archivos contenidos en el directorio [`/var/lib/cloud`]

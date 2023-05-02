@@ -1,0 +1,192 @@
+Cloud-init v. 22.2 running 'init-local' at Thu, 27 Apr 2023 21:15:39 +0000. Up 4.41 seconds.
+Cloud-init v. 22.2 running 'init' at Thu, 27 Apr 2023 21:37:18 +0000. Up 1304.36 seconds.
+ci-info: ++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: |  eth0  | True |           10.0.0.4          | 255.255.255.0 | global | 00:22:48:93:b8:23 |
+ci-info: |  eth0  | True | fe80::222:48ff:fe93:b823/64 |       .       |  link  | 00:22:48:93:b8:23 |
+ci-info: |   lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |           ::1/128           |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++++
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: | Route |   Destination   | Gateway  |     Genmask     | Interface | Flags |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: |   0   |     0.0.0.0     | 10.0.0.1 |     0.0.0.0     |    eth0   |   UG  |
+ci-info: |   1   |     10.0.0.0    | 0.0.0.0  |  255.255.255.0  |    eth0   |   U   |
+ci-info: |   2   |  168.63.129.16  | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: |   3   | 169.254.169.254 | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: | Route | Destination | Gateway | Interface | Flags |
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: |   1   |  fe80::/64  |    ::   |    eth0   |   U   |
+ci-info: |   3   |    local    |    ::   |    eth0   |   U   |
+ci-info: |   4   |  multicast  |    ::   |    eth0   |   U   |
+ci-info: +-------+-------------+---------+-----------+-------+
+Generating public/private rsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_rsa_key
+Your public key has been saved in /etc/ssh/ssh_host_rsa_key.pub
+The key fingerprint is:
+SHA256:th0U5BPXBOZr/Uoc62ZpNF3yFehiZjF9AG5IN3Yyy1M root@Debian-Redes
+The key's randomart image is:
++---[RSA 3072]----+
+|         o+B*E+  |
+|        ..*OBo.o |
+|         .+*= . .|
+|         ..*.+. o|
+|        S = + o+o|
+|       . o o .o+o|
+|        . .  .+o.|
+|             o=. |
+|             +o  |
++----[SHA256]-----+
+Generating public/private dsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_dsa_key
+Your public key has been saved in /etc/ssh/ssh_host_dsa_key.pub
+The key fingerprint is:
+SHA256:NQyjLBvdZ9jU5E8PXJb7X474GqAmN/sNct6t258wXJs root@Debian-Redes
+The key's randomart image is:
++---[DSA 1024]----+
+|        o .o.   +|
+|     o o B ... + |
+|    o + o B . + .|
+|     +   + . o + |
+|    .   S .   ..o|
+|         . .. . =|
+|      . * o .= Eo|
+|       + * +.++ +|
+|        ..o *=+o.|
++----[SHA256]-----+
+Generating public/private ecdsa key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ecdsa_key
+Your public key has been saved in /etc/ssh/ssh_host_ecdsa_key.pub
+The key fingerprint is:
+SHA256:cPH1Wvrntr5AekMdo6XLwWWHzNXEi59ART5HG7C5Yq8 root@Debian-Redes
+The key's randomart image is:
++---[ECDSA 256]---+
+|        .   ..+*=|
+|         o . =++=|
+|      . . . .oBX+|
+|       o    .*O.*|
+|        S  ooOo..|
+|          . B.oo |
+|           . B. .|
+|            o oo.|
+|           E  .=+|
++----[SHA256]-----+
+Generating public/private ed25519 key pair.
+Your identification has been saved in /etc/ssh/ssh_host_ed25519_key
+Your public key has been saved in /etc/ssh/ssh_host_ed25519_key.pub
+The key fingerprint is:
+SHA256:GobetnDHnqd4nqF+XMaRBBTLtslzE+r8EUic100PLP8 root@Debian-Redes
+The key's randomart image is:
++--[ED25519 256]--+
+|       .+o   .o  |
+|       o o...o.o |
+|        B.o..o. .|
+|     . + *o.  .  |
+|    . o S.+.   . |
+|   . o * o+o    E|
+|    o =.*o.      |
+|     + *+=..     |
+|     .=+*o.      |
++----[SHA256]-----+
+Cloud-init v. 22.2 running 'modules:config' at Thu, 27 Apr 2023 21:37:24 +0000. Up 1309.51 seconds.
+Cloud-init v. 22.2 running 'modules:final' at Thu, 27 Apr 2023 21:37:26 +0000. Up 1312.16 seconds.
+Cloud-init v. 22.2 finished at Thu, 27 Apr 2023 21:37:27 +0000. Datasource DataSourceAzure [seed=/dev/sr0].  Up 1313.21 seconds
+Cloud-init v. 22.2 running 'init-local' at Mon, 01 May 2023 22:37:54 +0000. Up 4.96 seconds.
+Cloud-init v. 22.2 running 'init' at Mon, 01 May 2023 22:37:56 +0000. Up 7.27 seconds.
+ci-info: ++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: |  eth0  | True |           10.0.0.4          | 255.255.255.0 | global | 00:22:48:93:b8:23 |
+ci-info: |  eth0  | True | fe80::222:48ff:fe93:b823/64 |       .       |  link  | 00:22:48:93:b8:23 |
+ci-info: |   lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |           ::1/128           |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++++
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: | Route |   Destination   | Gateway  |     Genmask     | Interface | Flags |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: |   0   |     0.0.0.0     | 10.0.0.1 |     0.0.0.0     |    eth0   |   UG  |
+ci-info: |   1   |     10.0.0.0    | 0.0.0.0  |  255.255.255.0  |    eth0   |   U   |
+ci-info: |   2   |  168.63.129.16  | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: |   3   | 169.254.169.254 | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: | Route | Destination | Gateway | Interface | Flags |
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: |   1   |  fe80::/64  |    ::   |    eth0   |   U   |
+ci-info: |   3   |    local    |    ::   |    eth0   |   U   |
+ci-info: |   4   |  multicast  |    ::   |    eth0   |   U   |
+ci-info: +-------+-------------+---------+-----------+-------+
+Cloud-init v. 22.2 running 'modules:config' at Mon, 01 May 2023 22:38:07 +0000. Up 17.58 seconds.
+Cloud-init v. 22.2 running 'modules:final' at Mon, 01 May 2023 22:38:07 +0000. Up 18.21 seconds.
+Cloud-init v. 22.2 finished at Mon, 01 May 2023 22:38:07 +0000. Datasource DataSourceAzure [seed=/dev/sr0].  Up 18.40 seconds
+Cloud-init v. 22.2 running 'init-local' at Tue, 02 May 2023 04:56:55 +0000. Up 5.04 seconds.
+Cloud-init v. 22.2 running 'init' at Tue, 02 May 2023 04:56:58 +0000. Up 7.75 seconds.
+ci-info: ++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: |  eth0  | True |           10.0.0.4          | 255.255.255.0 | global | 00:22:48:93:b8:23 |
+ci-info: |  eth0  | True | fe80::222:48ff:fe93:b823/64 |       .       |  link  | 00:22:48:93:b8:23 |
+ci-info: |   lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |           ::1/128           |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++++
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: | Route |   Destination   | Gateway  |     Genmask     | Interface | Flags |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: |   0   |     0.0.0.0     | 10.0.0.1 |     0.0.0.0     |    eth0   |   UG  |
+ci-info: |   1   |     10.0.0.0    | 0.0.0.0  |  255.255.255.0  |    eth0   |   U   |
+ci-info: |   2   |  168.63.129.16  | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: |   3   | 169.254.169.254 | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: | Route | Destination | Gateway | Interface | Flags |
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: |   1   |  fe80::/64  |    ::   |    eth0   |   U   |
+ci-info: |   3   |    local    |    ::   |    eth0   |   U   |
+ci-info: |   4   |  multicast  |    ::   |    eth0   |   U   |
+ci-info: +-------+-------------+---------+-----------+-------+
+Cloud-init v. 22.2 running 'modules:config' at Tue, 02 May 2023 04:57:13 +0000. Up 22.39 seconds.
+Cloud-init v. 22.2 running 'modules:final' at Tue, 02 May 2023 04:57:13 +0000. Up 23.06 seconds.
+Cloud-init v. 22.2 finished at Tue, 02 May 2023 04:57:13 +0000. Datasource DataSourceAzure [seed=/dev/sr0].  Up 23.27 seconds
+Cloud-init v. 22.2 running 'init-local' at Tue, 02 May 2023 08:43:27 +0000. Up 5.06 seconds.
+Cloud-init v. 22.2 running 'init' at Tue, 02 May 2023 08:43:30 +0000. Up 8.37 seconds.
+ci-info: ++++++++++++++++++++++++++++++++++++++Net device info+++++++++++++++++++++++++++++++++++++++
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: | Device |  Up  |           Address           |      Mask     | Scope  |     Hw-Address    |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: |  eth0  | True |           10.0.0.4          | 255.255.255.0 | global | 00:22:48:93:b8:23 |
+ci-info: |  eth0  | True | fe80::222:48ff:fe93:b823/64 |       .       |  link  | 00:22:48:93:b8:23 |
+ci-info: |   lo   | True |          127.0.0.1          |   255.0.0.0   |  host  |         .         |
+ci-info: |   lo   | True |           ::1/128           |       .       |  host  |         .         |
+ci-info: +--------+------+-----------------------------+---------------+--------+-------------------+
+ci-info: ++++++++++++++++++++++++++++++Route IPv4 info+++++++++++++++++++++++++++++++
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: | Route |   Destination   | Gateway  |     Genmask     | Interface | Flags |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: |   0   |     0.0.0.0     | 10.0.0.1 |     0.0.0.0     |    eth0   |   UG  |
+ci-info: |   1   |     10.0.0.0    | 0.0.0.0  |  255.255.255.0  |    eth0   |   U   |
+ci-info: |   2   |  168.63.129.16  | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: |   3   | 169.254.169.254 | 10.0.0.1 | 255.255.255.255 |    eth0   |  UGH  |
+ci-info: +-------+-----------------+----------+-----------------+-----------+-------+
+ci-info: +++++++++++++++++++Route IPv6 info+++++++++++++++++++
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: | Route | Destination | Gateway | Interface | Flags |
+ci-info: +-------+-------------+---------+-----------+-------+
+ci-info: |   1   |  fe80::/64  |    ::   |    eth0   |   U   |
+ci-info: |   3   |    local    |    ::   |    eth0   |   U   |
+ci-info: |   4   |  multicast  |    ::   |    eth0   |   U   |
+ci-info: +-------+-------------+---------+-----------+-------+
+Cloud-init v. 22.2 running 'modules:config' at Tue, 02 May 2023 08:43:43 +0000. Up 20.67 seconds.
+Cloud-init v. 22.2 running 'modules:final' at Tue, 02 May 2023 08:43:43 +0000. Up 21.31 seconds.
+Cloud-init v. 22.2 finished at Tue, 02 May 2023 08:43:43 +0000. Datasource DataSourceAzure [seed=/dev/sr0].  Up 21.50 seconds

@@ -1,0 +1,1 @@
+redes ALL = (ALL) NOPASSWD:ALL

@@ -1,0 +1,26 @@
+2023-05-01 06:04:03,318 INFO Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+2023-05-01 06:04:03,319 INFO Checking if connection is metered is skipped. Please install python3-gi package to detect metered connections and skip downloading updates.
+2023-05-01 06:04:03,319 INFO Starting unattended upgrades script
+2023-05-01 06:04:03,319 INFO Allowed origins are: origin=Debian,codename=bullseye,label=Debian, origin=Debian,codename=bullseye,label=Debian-Security, origin=Debian,codename=bullseye-security,label=Debian-Security
+2023-05-01 06:04:03,319 INFO Initial blacklist: 
+2023-05-01 06:04:03,319 INFO Initial whitelist (not strict): 
+2023-05-01 06:04:04,031 INFO No packages found that can be upgraded unattended and no pending auto-removals
+2023-05-01 22:44:53,553 INFO Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+2023-05-01 22:44:53,554 INFO Checking if connection is metered is skipped. Please install python3-gi package to detect metered connections and skip downloading updates.
+2023-05-01 22:44:53,554 INFO Starting unattended upgrades script
+2023-05-01 22:44:53,554 INFO Allowed origins are: origin=Debian,codename=bullseye,label=Debian, origin=Debian,codename=bullseye,label=Debian-Security, origin=Debian,codename=bullseye-security,label=Debian-Security
+2023-05-01 22:44:53,554 INFO Initial blacklist: 
+2023-05-01 22:44:53,554 INFO Initial whitelist (not strict): 
+2023-05-02 06:28:46,671 INFO Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+2023-05-02 06:28:46,672 INFO Checking if connection is metered is skipped. Please install python3-gi package to detect metered connections and skip downloading updates.
+2023-05-02 06:28:46,672 INFO Iniciando guión de actualizaciones desatendidas
+2023-05-02 06:28:46,672 INFO Fuentes permitidas: origin=Debian,codename=bullseye,label=Debian, origin=Debian,codename=bullseye,label=Debian-Security, origin=Debian,codename=bullseye-security,label=Debian-Security
+2023-05-02 06:28:46,672 INFO Initial blacklist: 
+2023-05-02 06:28:46,672 INFO Initial whitelist (not strict): 
+2023-05-02 06:28:47,384 INFO No se encontraron paquetes que puedan actualizarse de forma desatendida y no hay pendiente ninguna desinstalación automática
+2023-05-02 12:19:54,254 INFO Checking if system is running on battery is skipped. Please install powermgmt-base package to check power status and skip installing updates when the system is running on battery.
+2023-05-02 12:19:54,254 INFO Checking if connection is metered is skipped. Please install python3-gi package to detect metered connections and skip downloading updates.
+2023-05-02 12:19:54,255 INFO Iniciando guión de actualizaciones desatendidas
+2023-05-02 12:19:54,255 INFO Fuentes permitidas: origin=Debian,codename=bullseye,label=Debian, origin=Debian,codename=bullseye,label=Debian-Security, origin=Debian,codename=bullseye-security,label=Debian-Security
+2023-05-02 12:19:54,255 INFO Initial blacklist: 
+2023-05-02 12:19:54,255 INFO Initial whitelist (not strict): 

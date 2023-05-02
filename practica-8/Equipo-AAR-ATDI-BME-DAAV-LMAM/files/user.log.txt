@@ -1,0 +1,331 @@
+Apr 30 06:39:02 Debian-Redes KVP: KVP starting; pid is:47430
+Apr 30 06:39:02 Debian-Redes KVP: KVP LIC Version: 3.1
+Apr 30 06:39:43 Debian-Redes waagent[51771]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 06:39:43 Debian-Redes waagent[806]: 2023-04-30T06:39:43.419352Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 06:39:43 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 06:39:43 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 06:39:43 Debian-Redes waagent[806]: ]
+Apr 30 06:39:43 Debian-Redes waagent[806]: 2023-04-30T06:39:43.447390Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 07:09:44 Debian-Redes waagent[54921]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 07:09:44 Debian-Redes waagent[806]: 2023-04-30T07:09:44.223241Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 07:09:44 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 07:09:44 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 07:09:44 Debian-Redes waagent[806]: ]
+Apr 30 07:09:44 Debian-Redes waagent[806]: 2023-04-30T07:09:44.235952Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 07:39:44 Debian-Redes waagent[55200]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 07:39:44 Debian-Redes waagent[806]: 2023-04-30T07:39:44.813029Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 07:39:44 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 07:39:44 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 07:39:44 Debian-Redes waagent[806]: ]
+Apr 30 07:39:44 Debian-Redes waagent[806]: 2023-04-30T07:39:44.825365Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 08:09:45 Debian-Redes waagent[55426]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 08:09:45 Debian-Redes waagent[806]: 2023-04-30T08:09:45.339115Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 08:09:45 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 08:09:45 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 08:09:45 Debian-Redes waagent[806]: ]
+Apr 30 08:09:45 Debian-Redes waagent[806]: 2023-04-30T08:09:45.351566Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 08:39:48 Debian-Redes waagent[55743]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 08:39:48 Debian-Redes waagent[806]: 2023-04-30T08:39:48.220697Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 08:39:48 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 08:39:48 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 08:39:48 Debian-Redes waagent[806]: ]
+Apr 30 08:39:48 Debian-Redes waagent[806]: 2023-04-30T08:39:48.234478Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 09:09:49 Debian-Redes waagent[56011]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 09:09:49 Debian-Redes waagent[806]: 2023-04-30T09:09:49.007188Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 09:09:49 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 09:09:49 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 09:09:49 Debian-Redes waagent[806]: ]
+Apr 30 09:09:49 Debian-Redes waagent[806]: 2023-04-30T09:09:49.020896Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 09:39:49 Debian-Redes waagent[56454]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 09:39:49 Debian-Redes waagent[806]: 2023-04-30T09:39:49.497190Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 09:39:49 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 09:39:49 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 09:39:49 Debian-Redes waagent[806]: ]
+Apr 30 09:39:49 Debian-Redes waagent[806]: 2023-04-30T09:39:49.509429Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 10:09:50 Debian-Redes waagent[56886]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 10:09:50 Debian-Redes waagent[806]: 2023-04-30T10:09:50.601843Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 10:09:50 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 10:09:50 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 10:09:50 Debian-Redes waagent[806]: ]
+Apr 30 10:09:50 Debian-Redes waagent[806]: 2023-04-30T10:09:50.615843Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 10:39:51 Debian-Redes waagent[57268]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 10:39:51 Debian-Redes waagent[806]: 2023-04-30T10:39:51.578373Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 10:39:51 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 10:39:51 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 10:39:51 Debian-Redes waagent[806]: ]
+Apr 30 10:39:51 Debian-Redes waagent[806]: 2023-04-30T10:39:51.591281Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 11:09:52 Debian-Redes waagent[57636]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 11:09:52 Debian-Redes waagent[806]: 2023-04-30T11:09:52.725494Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 11:09:52 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 11:09:52 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 11:09:52 Debian-Redes waagent[806]: ]
+Apr 30 11:09:52 Debian-Redes waagent[806]: 2023-04-30T11:09:52.738518Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 11:39:53 Debian-Redes waagent[57906]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 11:39:53 Debian-Redes waagent[806]: 2023-04-30T11:39:53.198809Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 11:39:53 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 11:39:53 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 11:39:53 Debian-Redes waagent[806]: ]
+Apr 30 11:39:53 Debian-Redes waagent[806]: 2023-04-30T11:39:53.211785Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 12:09:54 Debian-Redes waagent[58391]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 12:09:54 Debian-Redes waagent[806]: 2023-04-30T12:09:54.951811Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 12:09:54 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 12:09:54 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 12:09:54 Debian-Redes waagent[806]: ]
+Apr 30 12:09:54 Debian-Redes waagent[806]: 2023-04-30T12:09:54.964916Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 12:39:57 Debian-Redes waagent[58784]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 12:39:57 Debian-Redes waagent[806]: 2023-04-30T12:39:57.402849Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 12:39:57 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 12:39:57 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 12:39:57 Debian-Redes waagent[806]: ]
+Apr 30 12:39:57 Debian-Redes waagent[806]: 2023-04-30T12:39:57.416351Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 13:09:59 Debian-Redes waagent[59233]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 13:09:59 Debian-Redes waagent[806]: 2023-04-30T13:09:59.558236Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 13:09:59 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 13:09:59 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 13:09:59 Debian-Redes waagent[806]: ]
+Apr 30 13:09:59 Debian-Redes waagent[806]: 2023-04-30T13:09:59.570592Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 13:40:00 Debian-Redes waagent[59602]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 13:40:00 Debian-Redes waagent[806]: 2023-04-30T13:40:00.163320Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 13:40:00 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 13:40:00 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 13:40:00 Debian-Redes waagent[806]: ]
+Apr 30 13:40:00 Debian-Redes waagent[806]: 2023-04-30T13:40:00.175064Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 14:10:00 Debian-Redes waagent[59938]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 14:10:00 Debian-Redes waagent[806]: 2023-04-30T14:10:00.563325Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 14:10:00 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 14:10:00 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 14:10:00 Debian-Redes waagent[806]: ]
+Apr 30 14:10:00 Debian-Redes waagent[806]: 2023-04-30T14:10:00.576390Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 14:40:01 Debian-Redes waagent[60212]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 14:40:01 Debian-Redes waagent[806]: 2023-04-30T14:40:01.100211Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 14:40:01 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 14:40:01 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 14:40:01 Debian-Redes waagent[806]: ]
+Apr 30 14:40:01 Debian-Redes waagent[806]: 2023-04-30T14:40:01.113394Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 15:10:01 Debian-Redes waagent[60487]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 15:10:01 Debian-Redes waagent[806]: 2023-04-30T15:10:01.774562Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 15:10:01 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 15:10:01 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 15:10:01 Debian-Redes waagent[806]: ]
+Apr 30 15:10:01 Debian-Redes waagent[806]: 2023-04-30T15:10:01.787762Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 15:40:04 Debian-Redes waagent[60769]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 15:40:04 Debian-Redes waagent[806]: 2023-04-30T15:40:04.680635Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 15:40:04 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 15:40:04 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 15:40:04 Debian-Redes waagent[806]: ]
+Apr 30 15:40:04 Debian-Redes waagent[806]: 2023-04-30T15:40:04.693942Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 16:10:06 Debian-Redes waagent[61020]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 16:10:06 Debian-Redes waagent[806]: 2023-04-30T16:10:06.983589Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 16:10:06 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 16:10:06 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 16:10:06 Debian-Redes waagent[806]: ]
+Apr 30 16:10:06 Debian-Redes waagent[806]: 2023-04-30T16:10:06.996922Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 16:40:09 Debian-Redes waagent[61444]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 16:40:09 Debian-Redes waagent[806]: 2023-04-30T16:40:09.865091Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 16:40:09 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 16:40:09 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 16:40:09 Debian-Redes waagent[806]: ]
+Apr 30 16:40:09 Debian-Redes waagent[806]: 2023-04-30T16:40:09.878280Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 17:10:09 Debian-Redes waagent[61774]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 17:10:09 Debian-Redes waagent[806]: 2023-04-30T17:10:09.930353Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 17:10:09 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 17:10:09 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 17:10:09 Debian-Redes waagent[806]: ]
+Apr 30 17:10:09 Debian-Redes waagent[806]: 2023-04-30T17:10:09.944336Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 17:40:10 Debian-Redes waagent[61978]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 17:40:10 Debian-Redes waagent[806]: 2023-04-30T17:40:10.053530Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 17:40:10 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 17:40:10 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 17:40:10 Debian-Redes waagent[806]: ]
+Apr 30 17:40:10 Debian-Redes waagent[806]: 2023-04-30T17:40:10.066079Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 18:10:10 Debian-Redes waagent[62266]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 18:10:10 Debian-Redes waagent[806]: 2023-04-30T18:10:10.954721Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 18:10:10 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 18:10:10 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 18:10:10 Debian-Redes waagent[806]: ]
+Apr 30 18:10:10 Debian-Redes waagent[806]: 2023-04-30T18:10:10.967466Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 18:40:11 Debian-Redes waagent[62473]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 18:40:11 Debian-Redes waagent[806]: 2023-04-30T18:40:11.071679Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 18:40:11 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 18:40:11 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 18:40:11 Debian-Redes waagent[806]: ]
+Apr 30 18:40:11 Debian-Redes waagent[806]: 2023-04-30T18:40:11.086742Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 19:10:11 Debian-Redes waagent[62728]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 19:10:11 Debian-Redes waagent[806]: 2023-04-30T19:10:11.146035Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 19:10:11 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 19:10:11 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 19:10:11 Debian-Redes waagent[806]: ]
+Apr 30 19:10:11 Debian-Redes waagent[806]: 2023-04-30T19:10:11.159661Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 19:40:13 Debian-Redes waagent[62939]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 19:40:13 Debian-Redes waagent[806]: 2023-04-30T19:40:13.955190Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 19:40:13 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 19:40:13 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 19:40:13 Debian-Redes waagent[806]: ]
+Apr 30 19:40:13 Debian-Redes waagent[806]: 2023-04-30T19:40:13.970130Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 20:10:14 Debian-Redes waagent[63330]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 20:10:14 Debian-Redes waagent[806]: 2023-04-30T20:10:14.457466Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 20:10:14 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 20:10:14 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 20:10:14 Debian-Redes waagent[806]: ]
+Apr 30 20:10:14 Debian-Redes waagent[806]: 2023-04-30T20:10:14.470125Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 20:40:17 Debian-Redes waagent[63535]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 20:40:17 Debian-Redes waagent[806]: 2023-04-30T20:40:17.391605Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 20:40:17 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 20:40:17 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 20:40:17 Debian-Redes waagent[806]: ]
+Apr 30 20:40:17 Debian-Redes waagent[806]: 2023-04-30T20:40:17.404377Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 21:10:17 Debian-Redes waagent[63847]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 21:10:17 Debian-Redes waagent[806]: 2023-04-30T21:10:17.883512Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 21:10:17 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 21:10:17 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 21:10:17 Debian-Redes waagent[806]: ]
+Apr 30 21:10:17 Debian-Redes waagent[806]: 2023-04-30T21:10:17.895759Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 21:40:18 Debian-Redes waagent[64195]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 21:40:18 Debian-Redes waagent[806]: 2023-04-30T21:40:18.350757Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 21:40:18 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 21:40:18 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 21:40:18 Debian-Redes waagent[806]: ]
+Apr 30 21:40:18 Debian-Redes waagent[806]: 2023-04-30T21:40:18.364187Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 22:10:19 Debian-Redes waagent[64457]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 22:10:19 Debian-Redes waagent[806]: 2023-04-30T22:10:19.295769Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 22:10:19 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 22:10:19 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 22:10:19 Debian-Redes waagent[806]: ]
+Apr 30 22:10:19 Debian-Redes waagent[806]: 2023-04-30T22:10:19.309258Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 22:40:21 Debian-Redes waagent[64734]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 22:40:21 Debian-Redes waagent[806]: 2023-04-30T22:40:21.744352Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 22:40:21 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 22:40:21 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 22:40:21 Debian-Redes waagent[806]: ]
+Apr 30 22:40:21 Debian-Redes waagent[806]: 2023-04-30T22:40:21.757590Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 23:10:24 Debian-Redes waagent[64999]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 23:10:24 Debian-Redes waagent[806]: 2023-04-30T23:10:24.571473Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 23:10:24 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 23:10:24 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 23:10:24 Debian-Redes waagent[806]: ]
+Apr 30 23:10:24 Debian-Redes waagent[806]: 2023-04-30T23:10:24.584293Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+Apr 30 23:40:26 Debian-Redes waagent[65284]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+Apr 30 23:40:26 Debian-Redes waagent[806]: 2023-04-30T23:40:26.812267Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+Apr 30 23:40:26 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+Apr 30 23:40:26 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+Apr 30 23:40:26 Debian-Redes waagent[806]: ]
+Apr 30 23:40:26 Debian-Redes waagent[806]: 2023-04-30T23:40:26.825736Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 00:10:28 Debian-Redes waagent[65575]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 00:10:28 Debian-Redes waagent[806]: 2023-05-01T00:10:28.272056Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 00:10:28 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 00:10:28 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 00:10:28 Debian-Redes waagent[806]: ]
+May  1 00:10:28 Debian-Redes waagent[806]: 2023-05-01T00:10:28.286681Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 00:40:29 Debian-Redes waagent[65855]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 00:40:29 Debian-Redes waagent[806]: 2023-05-01T00:40:29.949072Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 00:40:29 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 00:40:29 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 00:40:29 Debian-Redes waagent[806]: ]
+May  1 00:40:29 Debian-Redes waagent[806]: 2023-05-01T00:40:29.963916Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 01:10:31 Debian-Redes waagent[66184]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 01:10:31 Debian-Redes waagent[806]: 2023-05-01T01:10:31.840636Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 01:10:31 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 01:10:31 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 01:10:31 Debian-Redes waagent[806]: ]
+May  1 01:10:31 Debian-Redes waagent[806]: 2023-05-01T01:10:31.855423Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 01:40:33 Debian-Redes waagent[66455]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 01:40:33 Debian-Redes waagent[806]: 2023-05-01T01:40:33.009111Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 01:40:33 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 01:40:33 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 01:40:33 Debian-Redes waagent[806]: ]
+May  1 01:40:33 Debian-Redes waagent[806]: 2023-05-01T01:40:33.023075Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 02:10:34 Debian-Redes waagent[66712]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 02:10:34 Debian-Redes waagent[806]: 2023-05-01T02:10:34.178421Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 02:10:34 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 02:10:34 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 02:10:34 Debian-Redes waagent[806]: ]
+May  1 02:10:34 Debian-Redes waagent[806]: 2023-05-01T02:10:34.192226Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 02:40:35 Debian-Redes waagent[66986]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 02:40:35 Debian-Redes waagent[806]: 2023-05-01T02:40:35.368110Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 02:40:35 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 02:40:35 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 02:40:35 Debian-Redes waagent[806]: ]
+May  1 02:40:35 Debian-Redes waagent[806]: 2023-05-01T02:40:35.381156Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 03:10:37 Debian-Redes waagent[67265]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 03:10:37 Debian-Redes waagent[806]: 2023-05-01T03:10:37.197219Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 03:10:37 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 03:10:37 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 03:10:37 Debian-Redes waagent[806]: ]
+May  1 03:10:37 Debian-Redes waagent[806]: 2023-05-01T03:10:37.208161Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 03:40:38 Debian-Redes waagent[67551]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 03:40:38 Debian-Redes waagent[806]: 2023-05-01T03:40:38.812164Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 03:40:38 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 03:40:38 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 03:40:38 Debian-Redes waagent[806]: ]
+May  1 03:40:38 Debian-Redes waagent[806]: 2023-05-01T03:40:38.825533Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 04:10:40 Debian-Redes waagent[67804]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 04:10:40 Debian-Redes waagent[806]: 2023-05-01T04:10:40.471643Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 04:10:40 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 04:10:40 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 04:10:40 Debian-Redes waagent[806]: ]
+May  1 04:10:40 Debian-Redes waagent[806]: 2023-05-01T04:10:40.484333Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 04:40:42 Debian-Redes waagent[68059]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 04:40:42 Debian-Redes waagent[806]: 2023-05-01T04:40:42.294791Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 04:40:42 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 04:40:42 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 04:40:42 Debian-Redes waagent[806]: ]
+May  1 04:40:42 Debian-Redes waagent[806]: 2023-05-01T04:40:42.309610Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 05:10:43 Debian-Redes waagent[68338]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 05:10:43 Debian-Redes waagent[806]: 2023-05-01T05:10:43.799949Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 05:10:43 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 05:10:43 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 05:10:43 Debian-Redes waagent[806]: ]
+May  1 05:10:43 Debian-Redes waagent[806]: 2023-05-01T05:10:43.813188Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 05:40:44 Debian-Redes waagent[68581]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 05:40:44 Debian-Redes waagent[806]: 2023-05-01T05:40:44.910936Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 05:40:44 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 05:40:44 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 05:40:44 Debian-Redes waagent[806]: ]
+May  1 05:40:44 Debian-Redes waagent[806]: 2023-05-01T05:40:44.927885Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 06:10:46 Debian-Redes waagent[68855]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 06:10:46 Debian-Redes waagent[806]: 2023-05-01T06:10:46.471254Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 06:10:46 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 06:10:46 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 06:10:46 Debian-Redes waagent[806]: ]
+May  1 06:10:46 Debian-Redes waagent[806]: 2023-05-01T06:10:46.485370Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 06:40:48 Debian-Redes waagent[69138]: iptables v1.8.7 (nf_tables):  CHAIN_ZERO failed (No such file or directory): chain OUTPUT
+May  1 06:40:48 Debian-Redes waagent[806]: 2023-05-01T06:40:48.118211Z ERROR ExtHandler ExtHandler Command: [iptables -w -t security -L OUTPUT --zero OUTPUT -nxv], return code: [4], result: [Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+May  1 06:40:48 Debian-Redes waagent[806]:     pkts      bytes target     prot opt in     out     source               destination
+May  1 06:40:48 Debian-Redes waagent[806]: Zeroing chain `OUTPUT'
+May  1 06:40:48 Debian-Redes waagent[806]: ]
+May  1 06:40:48 Debian-Redes waagent[806]: 2023-05-01T06:40:48.131005Z INFO ExtHandler ExtHandler [HEARTBEAT] Agent WALinuxAgent-2.2.47 is running as the goal state agent
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.054017Z INFO Daemon Daemon Azure Linux Agent Version:2.2.47
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.057464Z INFO Daemon Daemon OS: debian 11
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.059915Z INFO Daemon Daemon Python: 3.9.2
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.062638Z INFO Daemon Daemon Run daemon
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.064932Z INFO Daemon Daemon No RDMA handler exists for distro='Debian GNU/Linux' version='11'
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.074339Z INFO Daemon Daemon cloud-init is enabled: True
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.077392Z INFO Daemon Daemon Using cloud-init for provisioning
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.085688Z INFO Daemon Daemon cloud-init is enabled: True
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.088679Z INFO Daemon Daemon Using cloud-init for provisioning
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.091873Z INFO Daemon Daemon Clean protocol and wireserver endpoint
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.109223Z INFO Daemon Daemon Provisioning already completed, skipping.
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.117638Z INFO Daemon Daemon Detect protocol endpoints
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.125011Z INFO Daemon Daemon Clean protocol and wireserver endpoint
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.133022Z INFO Daemon Daemon WireServer endpoint is not found. Rerun dhcp handler
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.141113Z INFO Daemon Daemon Test for route to 168.63.129.16
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.161129Z INFO Daemon Daemon Route to 168.63.129.16 exists
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.169269Z INFO Daemon Daemon Wire server endpoint:168.63.129.16
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.194414Z INFO Daemon Daemon Fabric preferred wire protocol version:2015-04-05
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.202747Z INFO Daemon Daemon Wire protocol version:2012-11-30
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.207490Z INFO Daemon Daemon Server preferred version:2015-04-05
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.450457Z INFO Daemon Daemon Initializing goal state during protocol detection
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.463652Z INFO Daemon Daemon Fetching new goal state [incarnation 1 (force update)]
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.483018Z INFO Daemon Daemon Fetch goal state completed
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.524435Z WARNING Daemon Daemon Could not mount cgroups: [Errno 1] Operation not permitted: '/sys/fs/cgroup/cpu,cpuacct' -> '/sys/fs/cgroup/cpu'
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.537118Z INFO Daemon Daemon CGroups Status: [Errno 1] Operation not permitted: '/sys/fs/cgroup/cpu,cpuacct' -> '/sys/fs/cgroup/cpu'
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.546502Z INFO Daemon Daemon RDMA capabilities are not enabled, skipping
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:37:26.557112Z INFO Daemon Daemon Installed Agent WALinuxAgent-2.2.47 is the most current agent
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-04-27T21:52:26.803683Z INFO Daemon Daemon Agent WALinuxAgent-2.2.47 launched with command 'python3 -u /usr/sbin/waagent -run-exthandlers' is successfully running
+May  1 07:01:06 Debian-Redes waagent[734]: 2023-05-01T07:01:06.422207Z INFO Daemon Daemon Agent WALinuxAgent-2.2.47 forwarding signal 15 to WALinuxAgent-2.2.47
+May  1 22:38:06 Debian-Redes KVP: KVP starting; pid is:244
+May  1 22:38:06 Debian-Redes KVP: KVP LIC Version: 3.1
+May  1 22:57:12 waningnew KVP: KVP starting; pid is:315
+May  1 22:57:12 waningnew KVP: KVP LIC Version: 3.1
+May  2 02:43:42 waningnew KVP: KVP starting; pid is:299
+May  2 02:43:42 waningnew KVP: KVP LIC Version: 3.1

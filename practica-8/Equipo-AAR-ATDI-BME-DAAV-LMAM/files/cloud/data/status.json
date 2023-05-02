@@ -1,0 +1,31 @@
+{
+ "v1": {
+  "datasource": "DataSourceAzure [seed=/dev/sr0]",
+  "init": {
+   "errors": [],
+   "finished": 1683017022.452785,
+   "start": 1683017010.7718859
+  },
+  "init-local": {
+   "errors": [],
+   "finished": 1683017008.4324498,
+   "start": 1683017007.4602559
+  },
+  "modules-config": {
+   "errors": [],
+   "finished": 1683017023.3113174,
+   "start": 1683017023.1221395
+  },
+  "modules-final": {
+   "errors": [],
+   "finished": 1683017023.968647,
+   "start": 1683017023.7581148
+  },
+  "modules-init": {
+   "errors": [],
+   "finished": null,
+   "start": null
+  },
+  "stage": null
+ }
+}
