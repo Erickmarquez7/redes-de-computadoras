@@ -18,19 +18,57 @@ http://waningnew.me/
 
 ## Explicación del procedimiento que se siguió para crear los recursos en Azure
 
-Se creó una máquina virtual en el portal de Azure con los datos necesarios para el proyecto como el grupo de recursos Recursos-Redes, la imagen del SO, la región del servidor,y el tamaño de la máquina. Terminado este proceso se continuó con la creación del mecanismo de acceso, el cual es mediante una contraseña fuere un usuario llamado redes; posteriormente se establecieron las reglas de acceso en el cual habilitamos los puertos 22, 80 y 443 para las conexiones entrantes. En el apartado de redes (networking) se crea una nueva en la sección de IP Publica con el nombre Debian-Redes-IP-Publica, se debe tener cuidado con el acceso a ICMP y a los puertos previamente para las conexiones entrantes, i.e, 22, 80 y 443, en el apartado de configuraciones avanzadas se deja en predeterminado. Pasamos con la configuracion de administracion, se debe desmarcar la casilla Enable basic plan for free, seleccionar Enable with custom storage account en la opción boot diagnostics; por otro lado en la opción Diagnostics storage account creamos una nueva con el nombre redesdiag01, en tipo de cuenta usamos Storage (general purpose v1), Standard en la opción de rendimiento y para finalizar usamos Locally Redundant Storage (LRS) en la opción de replicación. Se termina la creación de la máquina con las etiquetas Materia: Redes 2023-2 y Equipo: Equipo-AAR-ATDI-BME-DAAV-LMAM. Terminada la máquina virtual se crean las reglas de acceso, para esto es necesario abrir el grupo de seguridad Debian-Redes-nsg, en esta pestaña se revisa si en la sección Inbound security rules están presentes las reglas para las conexiones ICMP, SSH, HTTP y HTTPS, de no estarlo se agragan. Abrimos la máquina virtual Debian-Redes y obtenemos la dirección IP pública asociada la máquina virtual.
+Se creó una máquina virtual en el portal de Azure con los datos necesarios para el proyecto como el grupo de recursos Recursos-Redes, la imagen del SO, la región del servidos, monitoreo de la maquina, tags necesarios y el tamaño de la máquina. Todo esta configuración puede variar mucho dependiendo las necesidades que ocupemos en nuestras maquinas.
+
+![](img/recursos1.png)
+
+Posteriormente se establecieron las reglas de acceso en el cual habilitamos los puertos 22, 80 y 443 para las conexiones entrantes. En el apartado de redes (networking) se crea una nueva en la sección de IP Publica con el nombre Debian-Redes-IP-Publica, se debe tener cuidado con el acceso a ICMP y a los puertos previamente para las conexiones entrantes, i.e, 22, 80 y 443.
+
+![](img/recursos2.png)
+
+
+Pasamos con la configuración de administración, se debe desmarcar la casilla Enable basic plan for free, seleccionar Enable with custom storage account en la opción boot diagnostics; luego en la siguiente sección (Monitoreo) en la opción Diagnostics storage account creamos una nueva con el nombre redesdiag01, en tipo de cuenta usamos Storage (general purpose v1), Standard en la opción de rendimiento y para finalizar usamos Locally Redundant Storage (LRS) en la opción de replicación. 
+
+![](img/recursos3.png)
+
+Se termina la creación de la máquina con las etiquetas Materia: Redes 2023-2 y Equipo: Equipo-AAR-ATDI-BME-DAAV-LMAM. 
+
+![](img/recursos4.png)
+
+Terminada la máquina virtual se crean las reglas de acceso, para esto es necesario abrir el grupo de seguridad Debian-Redes-nsg, en esta pestaña se revisa si en la sección Inbound security rules están presentes las reglas para las conexiones ICMP, SSH, HTTP y HTTPS, de no estarlo se agragan. Abrimos la máquina virtual Debian-Redes y obtenemos la dirección IP pública asociada la máquina virtual.
+
+![](img/recursos5.jpeg)
+
 
 ![](img/rec_azure1.jpeg)
 
-![](img/rec_azure2.jpeg)
-
 ## Explicación del procedimiento que se siguió para registrar el nombre de dominio y asociarlo a la zona DNS en Azure
 
-(es solo la imagen, falta k Mau ponga la explicacion)
+(esto le toka a dabid)
 
 ![](img/dominio.jpg)
 
+Para el dominio DNS en Azure nos vamos a *DNS zones* 
+
+Ponemos el grupo de *Recursos-Redes* y nuestro nombre de dominio
+
+![](img/recursos6.png)
+
+Y ponemos las mismas etiquetas anteriormente vistas
+
+![](img/recursos7.png)
+
+![](img/rec_azure2.jpeg)
+
 ## Explicación de los comandos utilizados para inicializar la máquina virtual en Azure
+
+Para conectarnos a la maquina virtual primero la debemos encender en Azure, muchas veces ya viene inicializada. Luego nos podemos conetar mediante ssh con el siguiente comando
+
+```
+ssh redes@[ip]
+```
+
+Que en este caso la IP es 68.218.33.216
 
 ## Salida de las consultas DNS para los registros SOA, NS, A y CNAME
 
