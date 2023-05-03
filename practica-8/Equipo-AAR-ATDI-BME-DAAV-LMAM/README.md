@@ -44,21 +44,41 @@ Terminada la máquina virtual se crean las reglas de acceso, para esto es necesa
 
 ## Explicación del procedimiento que se siguió para registrar el nombre de dominio y asociarlo a la zona DNS en Azure
 
-(esto le toka a dabid)
+Entramos a la página [Namecheap for education](https://nc.me/), donde podemos registrar un dominio `.me` por ser estudiantes y vincular la cuenta de GitHub. Elegimos el nombre que queramos para nuestro dominio, y si está disponible, lo podemos adquirir gratis:
+
+![](img/domain_search.png)
+
+Después de seleccionar el botón **ADD** seguido de **Complete Order**, vamos a tener que introducir algunos datos para vincular la cuenta de GitHub y poder adquirir el dominio de manera gratuita por un año:
+
+![](img/domain_finishup.png)
+
+Hacemos click en el botón **Finish Up**, y ya se nos mostrará un mensaje de que nuestra cuenta de GitHub fue vinculada exitosamente y el dominio está siendo registrado:
+
+![](img/domain_registered.jpeg)
+
+En la página _Dashboard_ de Namecheap ya podremos ver nuestro dominio registrado, y podemos hacer modificaciones sobre él:
 
 ![](img/dominio.jpg)
 
 Para el dominio DNS en Azure nos vamos a *DNS zones* 
 
-Ponemos el grupo de *Recursos-Redes* y nuestro nombre de dominio
+Ponemos el grupo de *Recursos-Redes* y nuestro nombre de dominio:
 
 ![](img/recursos6.png)
 
-Y ponemos las mismas etiquetas anteriormente vistas
+Y ponemos las mismas etiquetas anteriormente vistas:
 
 ![](img/recursos7.png)
 
 ![](img/rec_azure2.jpeg)
+
+Ya que tenemos los Name Servers 1 a 4, podemos agregarlos al dominio. En Namecheap, entramos a la página para administrar a nuestro dominio, y en la sección **NAMESERVERS** seleccionamos la opción _Custom DNS_ en el menú desplegable
+
+![](img/domain_nameservers.png)
+
+Finalmente, agregamos todos los nameservers generados en Azure:
+
+![](img/domain_added_nameservers.png)
 
 ## Explicación de los comandos utilizados para inicializar la máquina virtual en Azure
 
@@ -72,7 +92,7 @@ Que en este caso la IP es 68.218.33.216
 
 ## Salida de las consultas DNS para los registros SOA, NS, A y CNAME
 
-- Salida dig SOA azure.waningnew.me
+- Salida dig `SOA azure.waningnew.me`
 
 ```
 :~$ dig SOA azure.waningnew.me
@@ -98,7 +118,7 @@ waningnew.me.		3599	IN	SOA	ns1-07.azure-dns.com. azuredns-hostmaster.microsoft.c
 ;; MSG SIZE  rcvd: 147
 ```
 
-- Salida dig NS azure.waningnew.me
+- Salida `dig NS azure.waningnew.me`
 
 ```
 :~$ dig NS azure.waningnew.me
@@ -127,7 +147,8 @@ waningnew.me.		86153	IN	NS	ns1-07.azure-dns.com.
 ;; MSG SIZE  rcvd: 198
 
 ```
-- Salida dig A azure.waningnew.me
+
+- Salida `dig A azure.waningnew.me`
 
 
 ```
@@ -153,7 +174,7 @@ waningnew.me.		299	IN	A	68.218.33.216
 ;; WHEN: mié may 03 15:00:58 CST 2023
 ;; MSG SIZE  rcvd: 77
 ```
-- Salida dig CNAME azure.waningnew.me
+- Salida `dig CNAME azure.waningnew.me`
 
 
 ```
@@ -182,27 +203,27 @@ azure.waningnew.me.	161	IN	CNAME	waningnew.me.
 
 ## Salida de los siguientes comandos en la máquina virtual como el usuario root
 
-- uname -a
+- `uname -a`
 ```
 Linux waningnew.me 5.10.0-22-cloud-amd64 #1 SMP Debian 5.10.178-3 (2023-04-22) x86_64 GNU/Linux
 ```
 
-- cat /proc/cmdline 
+- `cat /proc/cmdline`
 ```
 BOOT_IMAGE=/boot/vmlinuz-5.10.0-22-cloud-amd64 root=UUID=d54d130a-3be4-4d55-8045-2c312dadce3a ro console=tty0 console=ttyS0,115200 earlyprintk=ttyS0,115200 consoleblank=0
 ```
 
-- id redes
+- `id redes`
 ```
 uid=1000(redes) gid=1000(redes) grupos=1000(redes),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),113(netdev)
 ```
 
-- groups redes
+- `groups redes`
 ```
 redes : redes adm dialout cdrom floppy sudo audio dip video plugdev netdev
 ```
 
-- sudo -l -U redes
+- `sudo -l -U redes`
 ```
 Matching Defaults entries for redes on waningnew:
     env_reset, mail_badpass,
@@ -214,7 +235,7 @@ User redes may run the following commands on waningnew:
     (ALL) NOPASSWD: ALL
 ```
 
-- timedatectl
+- `timedatectl`
 ```
                Local time: mar 2023-05-02 14:02:32 CST
            Universal time: mar 2023-05-02 20:02:32 UTC
@@ -225,7 +246,7 @@ System clock synchronized: yes
           RTC in local TZ: no
 ```
 
-- hostnamectl
+- `hostnamectl`
 ```
     Static hostname: waningnew.me
          Icon name: computer-vm
@@ -238,12 +259,12 @@ System clock synchronized: yes
       Architecture: x86-64
 ```
 
-- hostname -f
+- `hostname -f`
 ```
 waningnew.me
 ```
 
-- ip addr
+- `ip addr`
 ```
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -259,7 +280,7 @@ waningnew.me
        valid_lft forever preferred_lft forever
 ```
 
-- ip route
+- `ip route`
 ```
 default via 10.0.0.1 dev eth0 
 10.0.0.0/24 dev eth0 proto kernel scope link src 10.0.0.4 
@@ -267,7 +288,7 @@ default via 10.0.0.1 dev eth0
 169.254.169.254 via 10.0.0.1 dev eth0 
 ```
 
-- cat /etc/hostname
+- `cat /etc/hostname`
 ```
 waningnew.meroot@waningnew:~# 
 ```
@@ -282,7 +303,7 @@ ff02::2		ip6-allrouters
 20.213.120.169 waningnew.me
 ```
 
-- cat /etc/resolv.conf
+- `cat /etc/resolv.conf`
 
 ```
 domain mi5mu4euhqxetpmmdeojw2ws1f.px.internal.cloudapp.net
@@ -290,7 +311,7 @@ search mi5mu4euhqxetpmmdeojw2ws1f.px.internal.cloudapp.net
 nameserver 168.63.129.16
 ```
 
-- ls -la ~root/.ssh ~redes/.ssh
+- `ls -la ~root/.ssh ~redes/.ssh`
 
 ```
 /home/redes/.ssh:
@@ -311,7 +332,7 @@ drwx------ 4 root root 4096 may  2 02:24 ..
 
 ```
 
-- lsattr ~root/.ssh/authorized_keys* ~redes/.ssh/authorized_keys*
+- `lsattr ~root/.ssh/authorized_keys* ~redes/.ssh/authorized_keys*`
 
 ```
 --------------e------- /root/.ssh/authorized_keys
@@ -321,7 +342,7 @@ drwx------ 4 root root 4096 may  2 02:24 ..
 
 ```
 
-- lastlog
+- `lastlog`
 
 ```
 Nombre           Puerto   De               Último
@@ -357,7 +378,7 @@ redes            pts/1    189.217.192.20   mar may  2 13:38:11 -0600 2023
 
 ```
 
-- last
+- `last`
 ```
 redes    pts/1        189.217.192.20   Tue May  2 13:38   still logged in
 redes    pts/0        201.141.106.115  Tue May  2 02:44   still logged in
@@ -377,7 +398,7 @@ wtmp begins Thu Apr 27 15:15:35 2023
 
 ```
 
-- free -m
+- `free -m`
 
 ```
                total        used        free      shared  buff/cache   available
@@ -385,7 +406,7 @@ Mem:             914         135         334           0         444         639
 Swap:              0           0           0
 ```
 
-- ps afx
+- `ps afx`
 
 ```
     PID TTY      STAT   TIME COMMAND
@@ -478,7 +499,7 @@ Swap:              0           0           0
 
 # Carpeta files
 
-- Copia de la llave SSH pública que el equipo utilizó para conectarse a la máquina virtual
+- [Copia de la llave SSH pública que el equipo utilizó para conectarse a la máquina virtual](files/llave_ssh.txt)
 - Archivos de configuración
     - [`/etc/ssh/sshd_config`](files/sshd_config.txt)
     - [`/etc/sudoers`](files/sudoers.txt)
