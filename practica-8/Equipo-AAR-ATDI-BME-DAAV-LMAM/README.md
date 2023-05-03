@@ -72,6 +72,114 @@ Que en este caso la IP es 68.218.33.216
 
 ## Salida de las consultas DNS para los registros SOA, NS, A y CNAME
 
+- Salida dig SOA azure.waningnew.me
+
+```
+:~$ dig SOA azure.waningnew.me
+
+; <<>> DiG 9.16.1-Ubuntu <<>> SOA azure.waningnew.me
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 58188
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;azure.waningnew.me.		IN	SOA
+
+;; ANSWER SECTION:
+azure.waningnew.me.	300	IN	CNAME	waningnew.me.
+waningnew.me.		3599	IN	SOA	ns1-07.azure-dns.com. azuredns-hostmaster.microsoft.com. 1 3600 300 2419200 300
+
+;; Query time: 251 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: mié may 03 14:55:21 CST 2023
+;; MSG SIZE  rcvd: 147
+```
+
+- Salida dig NS azure.waningnew.me
+
+```
+:~$ dig NS azure.waningnew.me
+
+; <<>> DiG 9.16.1-Ubuntu <<>> NS azure.waningnew.me
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 22948
+;; flags: qr rd ra; QUERY: 1, ANSWER: 5, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;azure.waningnew.me.		IN	NS
+
+;; ANSWER SECTION:
+azure.waningnew.me.	53	IN	CNAME	waningnew.me.
+waningnew.me.		86153	IN	NS	ns4-07.azure-dns.info.
+waningnew.me.		86153	IN	NS	ns2-07.azure-dns.net.
+waningnew.me.		86153	IN	NS	ns3-07.azure-dns.org.
+waningnew.me.		86153	IN	NS	ns1-07.azure-dns.com.
+
+;; Query time: 171 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: mié may 03 14:59:28 CST 2023
+;; MSG SIZE  rcvd: 198
+
+```
+- Salida dig A azure.waningnew.me
+
+
+```
+:~$ dig A azure.waningnew.me
+
+; <<>> DiG 9.16.1-Ubuntu <<>> A azure.waningnew.me
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 15702
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;azure.waningnew.me.		IN	A
+
+;; ANSWER SECTION:
+azure.waningnew.me.	300	IN	CNAME	waningnew.me.
+waningnew.me.		299	IN	A	68.218.33.216
+
+;; Query time: 87 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: mié may 03 15:00:58 CST 2023
+;; MSG SIZE  rcvd: 77
+```
+- Salida dig CNAME azure.waningnew.me
+
+
+```
+:~$ dig CNAME azure.waningnew.me
+
+; <<>> DiG 9.16.1-Ubuntu <<>> CNAME azure.waningnew.me
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 51967
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;azure.waningnew.me.		IN	CNAME
+
+;; ANSWER SECTION:
+azure.waningnew.me.	161	IN	CNAME	waningnew.me.
+
+;; Query time: 0 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: mié may 03 15:03:16 CST 2023
+;; MSG SIZE  rcvd: 61
+
+```
+
 ## Salida de los siguientes comandos en la máquina virtual como el usuario root
 
 - uname -a
