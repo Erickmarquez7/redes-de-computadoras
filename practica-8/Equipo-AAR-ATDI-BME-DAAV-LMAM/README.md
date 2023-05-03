@@ -14,9 +14,17 @@
 
 ## Explicación del procedimiento que se siguió para crear los recursos en Azure
 
+(son solo las imagenes, falta k Mau ponga la explicacion)
 
-## Explicación del procedimiento que se siguió para registrar el nombre de dominio en FreeNom y asociarlo a la zona DNS en Azure
+![](img/rec_azure1.jpeg)
 
+![](img/rec_azure2.jpeg)
+
+## Explicación del procedimiento que se siguió para registrar el nombre de dominio y asociarlo a la zona DNS en Azure
+
+(es solo la imagen, falta k Mau ponga la explicacion)
+
+![](img/dominio.jpg)
 
 ## Explicación de los comandos utilizados para inicializar la máquina virtual en Azure
 
