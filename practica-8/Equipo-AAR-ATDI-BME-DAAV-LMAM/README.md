@@ -12,7 +12,13 @@
 
 ## Nombre de dominio que se registró y la dirección IP pública de la máquina virtual
 
+http://waningnew.me/ 
+
+68.218.33.216
+
 ## Explicación del procedimiento que se siguió para crear los recursos en Azure
+
+Se creo una maquina virtual en el portal de Azure con los datos necesarios para el proyecto como el grupo de recursos Recursos-Redes, la imagen del SO, la region del servidor,y el tamaño de la máquina, terminado este proceso se continuo con la creacion del mecanismo de acceso, el cual es mediante una contraseña fuere un un usuario llamado redes, posteriormente se establecieron las reglas de acceso en el cual habilitamos los puertos 22, 80 y 443 para las conexiones entrantes, en el apartado de redes (networking) se crea una nueva en la seccion de IP Publica con el nombre Debian-Redes-IP-Publica, se debe tener cuidado con el acceso a ICMP y a los puertos previamente para las conexiones entrantes, i.e, 22, 80 y 443, en el apartado de configuraciones avanzadas se deja en predeterminado y pasamos con la configuracion de administracion, se debe desmarcar la casilla Enable basic plan for free, seleccionar Enable with custom storage account en la opcion boot diagnostics, por otro lado en la opcion Diagnostics storage account creamos una nueva con el nombre redesdiag01, en tipo de cuenta usamos Storage (general purpose v1), Standard en la opcion de rendimiento, para finalizar usamos Locally Redundant Storage (LRS) en la opcion de replicacion, Se termina la creacion de la maquina con las etiquetas Materia: Redes 2023-2 y Equipo: Equipo-AAR-ATDI-BME-DAAV-LMAM. Terminada la maquina virtual se crean las reglas de acceso para esto es necesario abrir el grupo de seguridad Debian-Redes-nsg, en esta pestaña se revisa si en la seccion Inbound security rules estan presentes las reglas para las conexiones ICMP, SSH, HTTP y HTTPS, de no estarlo se agragan. Abrimos la maquina virtual Debian-Redes y obtenemos la dirección IP pública asociada la máquina virtual.
 
 (son solo las imagenes, falta k Mau ponga la explicacion)
 
