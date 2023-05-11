@@ -20,15 +20,15 @@ http://waningnew.me/
 
 Iniciamos sesión en Azure, y damos click en *zonas DNS*
 
-![](img/dns1.png)
+![](img/dns1.jpg)
 
 Luego damos click en *waningnew.me*
 
-![](img/dns2.png)
+![](img/dns2.jpg)
 
 Seleccionamos la opción *Conjunto de registros*. Nos va a aparecer una pestaña del lado derecho con el nombre *Agregar conjunto de registros*, donde ponemos los datos de: nombre, tipo, dirección IP, etc.
 
-![](img/dns3.png)
+![](img/dns3.jpg)
 
 ## Explicación de los comandos utilizados para instalar el servicio de Apache HTTPD y tramitar el certificado SSL
 
