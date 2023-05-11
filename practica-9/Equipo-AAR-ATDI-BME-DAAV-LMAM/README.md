@@ -26,7 +26,7 @@ Luego damos click en *waningnew.me*
 
 ![](img/dns2.jpg)
 
-Seleccionamos la opción *Conjunto de registros*. Nos va a aparecer una pestaña del lado derecho con el nombre *Agregar conjunto de registros*, donde ponemos los datos de: nombre, tipo, dirección IP, etc.
+Seleccionamos la opción *Conjunto de registros*. Nos va a aparecer una pestaña del lado derecho con el nombre *Agregar conjunto de registros*, donde ponemos los datos de: nombre, tipo, algún valor de acuerdo al tipo de registro, etc.
 
 ![](img/dns3.jpg)
 
@@ -160,13 +160,13 @@ Para generar el certificado con nuestro dominio
 root@example:~# certbot --authenticator manual --installer apache --domain 'example.com' --domain '*.example.com'
 ```
 
-Pedirá un registro *DNS* y nos dará un valor que es el valor del *TXT*
+Pedirá que creemos un registro *DNS* y nos dará un valor para poner en el registro de tipo *TXT*
 
 ```
 usuario@laptop ~ % dig TXT _acme-challenge.example.com.
 ```
 
-Para crear un archivo y en ese archivo meter una cadena que va a tener esta dirección /var/www/html/.well-known/acme-challenge
+Luego no pedirá crear un archivo con cierto nombre en especifico bajo la ruta */var/www/html/.well-known/acme-challenge* y nos dirá que pongamos una cadena que el mismo certbot nos da. Para verificar hacemos curl
 
 ```
 usuario@laptop ~ % curl -v http://example.com/.well-known/acme-challenge/NOMBRE_DEL_ARCHIVO_PARA_VALIDACIÓN
