@@ -32,6 +32,47 @@ Seleccionamos la opción *Conjunto de registros*. Nos va a aparecer una pestaña
 
 ## Explicación de los comandos utilizados para instalar el servicio de Apache HTTPD y tramitar el certificado SSL
 
+* Apache HTTPD
+
+```
+root@example:~# apt -qy update
+root@example:~# apt -qy install apache2
+```
+
+```
+root@example:~# systemctl status apache2
+```
+
+```
+root@example:~# netstat -ntulp | grep apache2
+```
+
+```
+root@example:~# apachectl -S
+```
+
+```
+root@example:~# a2enconf servername
+root@example:~# apachectl -t
+root@example:~# systemctl reload apache2
+```
+
+```
+root@example:~# cd /etc/apache2
+root@example:/etc/apache2# vim conf-available/security.conf
+```
+
+```
+root@example:/etc/apache2# a2enconf security
+root@example:/etc/apache2# apachectl -t
+root@example:/etc/apache2# systemctl reload apache2
+root@example:/etc/apache2# apachectl -S
+```
+
+```
+root@example:~# reboot
+```
+
 -- aqui va la explicacion xd, es explicar esto
 https://redes-ciencias-unam.gitlab.io/laboratorio/practica-9/apache-httpd/
 
