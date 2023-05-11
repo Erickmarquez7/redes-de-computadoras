@@ -225,11 +225,14 @@ ServerTokens determina lo que pondrá Apache en la cabecera de la respuesta HTTP
 ServerSignature aparece en la parte inferior de las páginas generadas por Apache 
 Con la linea TraceEnable Off desactiva el metodo trace, el método se diseñó para la depuración a través del servidor devolviendo la misma solicitud originalmente enviada por el cliente. Debido a que la cookie de la sesión del navegador se envía al servidor, se enviará de regreso nuevamente. Sin embargo, un individuo malintencionado podría interceptar esto y luego redirigir la conexión de un navegador a un sitio bajo su control y no al servidor original.
 
-
-
 ## Explicación la función de los scripts consulta-dns.sh, consulta-http.sh y consulta-ssl.sh
 
 -- los podemos encontrar aqui, hasta abajo https://redes-ciencias-unam.gitlab.io/laboratorio/practica-9/#entregables
+
+El script consulta-ssl.sh revisa los certificados que regresa cada VirtualHost
+Consulta registros de VirtualHosts
+
+consulta-dns.sh  
 
 ## Salida de las consultas DNS para los registros TXT, A y CNAME
 (la salida txt puede cambiar porque es para el certificado SSL)
