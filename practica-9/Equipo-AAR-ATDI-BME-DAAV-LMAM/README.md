@@ -194,11 +194,37 @@ root@example:~# reboot
 
 ### Explica en tu reporte qué es lo que hace este bloque DirectoryMatch
 
--- aqui va la explicacion de esta madre https://redes-ciencias-unam.gitlab.io/laboratorio/practica-9/apache-httpd/#configuracion-de-seguridad-para-apache-httpd
+Lo que hace el DirectoryMatch es permite que los administradores definan un conjunto de opciones de configuración para una clase de directorios
+En el caso de el bloque 
+
+```
+<DirectoryMatch "/\.git">
+   Require all denied
+</DirectoryMatch>
+```
+
+Es denegar el acceso a los archivos de configuracion de git, esto ya que para no tener conflictos con nuestro repositorio pues es donde respaldamos 
+todos los archivos
 
 ### Explica en tu reporte por qué se recomienda establecer esos valores en las directivas
 
--- -- aqui va la explicacion de esta madre https://redes-ciencias-unam.gitlab.io/laboratorio/practica-9/apache-httpd/#configuracion-de-seguridad-para-apache-httpd
+Se recomienda establecer las siguientes directivas
+
+```
+ServerTokens ProductOnly
+ServerSignature Off
+TraceEnable Off
+```
+
+Por seguridad para no dar información que los usuarios maliciosos pueden usar para atacar nuestro servidor servidor.
+
+Los servidores web de Apache envian cabeceras HTTP con algo de informacion sobre la version de tu servidor, el sistema operativo y modulos instalados.
+Por lo que desactivamos estas
+
+ServerTokens determina lo que pondrá Apache en la cabecera de la respuesta HTTP del servidor, con la linea ProductOnly hará que solo se muestre que este es un servidor web de Apache 
+ServerSignature aparece en la parte inferior de las páginas generadas por Apache 
+Con la linea TraceEnable Off desactiva el metodo trace, el método se diseñó para la depuración a través del servidor devolviendo la misma solicitud originalmente enviada por el cliente. Debido a que la cookie de la sesión del navegador se envía al servidor, se enviará de regreso nuevamente. Sin embargo, un individuo malintencionado podría interceptar esto y luego redirigir la conexión de un navegador a un sitio bajo su control y no al servidor original.
+
 
 
 ## Explicación la función de los scripts consulta-dns.sh, consulta-http.sh y consulta-ssl.sh
