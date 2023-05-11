@@ -34,34 +34,49 @@ Seleccionamos la opción *Conjunto de registros*. Nos va a aparecer una pestaña
 
 * Apache HTTPD
 
+Instalación del paquete apache2 
 ```
 root@example:~# apt -qy update
 root@example:~# apt -qy install apache2
 ```
 
+Para la verificación del estado del servicio
 ```
 root@example:~# systemctl status apache2
 ```
-
+Escucha puertos. En este caso de la práctica revisa que se escuche Apache el puerto 80
 ```
 root@example:~# netstat -ntulp | grep apache2
 ```
-
+Verifica la sintaxis
 ```
 root@example:~# apachectl -S
 ```
-
+Para habilitar la configuración extra
 ```
 root@example:~# a2enconf servername
+```
+
+Verificar la sintaxis
+```
 root@example:~# apachectl -t
+```
+
+Recargar el servicio
+```
 root@example:~# systemctl reload apache2
 ```
 
+Para cambiar de directorio a */etc/apache2*
 ```
 root@example:~# cd /etc/apache2
+``` 
+
+Para entrar al editor de texto vim
 root@example:/etc/apache2# vim conf-available/security.conf
 ```
 
+Nuevamente los comandos para habilitar la configuración, verificar la sintaxis y recargar el servicio
 ```
 root@example:/etc/apache2# a2enconf security
 root@example:/etc/apache2# apachectl -t
@@ -69,13 +84,82 @@ root@example:/etc/apache2# systemctl reload apache2
 root@example:/etc/apache2# apachectl -S
 ```
 
+Para reiniciar el equipo y así verificar que se hayan guardado los cambios
 ```
 root@example:~# reboot
 ```
 
--- aqui va la explicacion xd, es explicar esto
-https://redes-ciencias-unam.gitlab.io/laboratorio/practica-9/apache-httpd/
+- Certificado SSL
 
+Para habilitar el módulo que es SSL es el certificado. Y habilitar el VirtualHost del certificado
+```
+root@example:~# a2enmod ssl
+
+root@example:~# a2ensite default-ssl
+```
+Para verificar que esté correcta la configuración 
+```
+root@example:~# apachectl -t
+```
+
+Para reiniciar el servicio Apache HTTPD
+```
+root@example:~# systemctl restart apache2
+```
+
+Para revisar los archivos habilitados de VirtualHosts
+```
+root@example:~# ls -la /etc/apache2/sites-enabled
+```
+
+Escucha puertos. En este caso que Apache escuche en los puertos 80 y 443
+```
+root@example:~# netstat -ntulp | grep apache2
+root@example:~# apachectl -S
+```
+Para recarga el servicio Apache HTTPD
+```
+root@example:~# systemctl reload apache2
+```
+Para revisar la ruta de la raíz del sitio web en los VirtualHost
+```
+root@example:~# grep 'DocumentRoot' /etc/apache2/sites-enabled/*.conf
+```
+Para instalar *certbot*
+```
+root@example:~# apt -qy install certbot python3-certbot-apache
+```
+
+Para generar el certificado con nuestro dominio
+```
+root@example:~# certbot --authenticator manual --installer apache --domain 'example.com' --domain '*.example.com'
+```
+
+Pedirá un registro *DNS* y nos dará un valor que es el valor del *TXT*
+```
+usuario@laptop ~ % dig TXT _acme-challenge.example.com.
+```
+
+Para crear un archivo y en ese archivo meter una cadena que va a tener esta dirección /var/www/html/.well-known/acme-challenge
+```
+usuario@laptop ~ % curl -v http://example.com/.well-known/acme-challenge/NOMBRE_DEL_ARCHIVO_PARA_VALIDACIÓN
+```
+
+Para que los documentos se vean como árbol los documentos, por eso *tree*
+```
+root@example:~# apt -qqy install tree
+root@example:~# tree /etc/letsencrypt/archive
+root@example:~# tree /etc/letsencrypt/live
+```
+
+Para verificar que se utiliceb los certificados de Let's Encrypt en la VirtualHost de HTTPS
+```
+root@example:~# egrep -i '^\s*SSLCertificate(Key)?File' /etc/apache2/sites-enabled/*.conf
+```
+Para reiniciar el equipo y así verificar que se hayan guardado los cambios
+```
+root@example:~# reboot
+```
 ### Explica en tu reporte qué es lo que hace este bloque DirectoryMatch
 
 -- aqui va la explicacion de esta madre https://redes-ciencias-unam.gitlab.io/laboratorio/practica-9/apache-httpd/#configuracion-de-seguridad-para-apache-httpd
