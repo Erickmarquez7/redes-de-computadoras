@@ -18,7 +18,17 @@ http://waningnew.me/
 
 ## Explicación del procedimiento que se siguió para crear los nombres DNS en Azure
 
--- aqui va la explicacion xd, es el mismo paso que los registros DNS de la practica 8
+Iniciamos sesión en Azure, y damos click en *zonas DNS*
+
+![](img/dns1.png)
+
+Luego damos click en *waningnew.me*
+
+![](img/dns2.png)
+
+Seleccionamos la opción *Conjunto de registros*. Nos va a aparecer una pestaña del lado derecho con el nombre *Agregar conjunto de registros*, donde ponemos los datos de: nombre, tipo, dirección IP, etc.
+
+![](img/dns3.png)
 
 ## Explicación de los comandos utilizados para instalar el servicio de Apache HTTPD y tramitar el certificado SSL
 
