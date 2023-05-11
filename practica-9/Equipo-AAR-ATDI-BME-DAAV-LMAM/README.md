@@ -237,7 +237,28 @@ Consulta registros de VirtualHosts
 consulta-dns.sh  
 
 ## Salida de las consultas DNS para los registros TXT, A y CNAME
-(la salida txt puede cambiar porque es para el certificado SSL)
+```
+~$ dig TXT _acme-challenge.waningnew.me
+
+; <<>> DiG 9.18.1-1ubuntu1.2-Ubuntu <<>> TXT _acme-challenge.waningnew.me
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 56663
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;_acme-challenge.waningnew.me.	IN	TXT
+
+;; ANSWER SECTION:
+_acme-challenge.waningnew.me. 300 IN	TXT	"FCydvVfnoWeF3FMn_nxWXY5u-ifr1POS0FMXQv807ig"
+
+;; Query time: 64 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Thu May 11 15:59:25 CST 2023
+;; MSG SIZE  rcvd: 113
+```
 
 ```
 :~$ dig A waningnew.me
@@ -312,3 +333,14 @@ sitio.waningnew.me.	300	IN	CNAME	waningnew.me.
 
 ## Salida de las consultas SSL para los sitios hospedados en el equipo
 
+## Recursos de azure
+![](img/recursos-azure.png)
+
+## Sitios hospedados 
+#### kernel.waningnew.me
+
+#### docs.waningnew.me
+
+#### sitio.waningnew.me
+
+#### tareas.waningnew.me
