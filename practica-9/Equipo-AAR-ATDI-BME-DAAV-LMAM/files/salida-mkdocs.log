@@ -1,0 +1,151 @@
+[34mDEBUG    -  [0mLoading configuration file: /srv/repositorio/mkdocs.yml
+[34mDEBUG    -  [0mLoaded theme configuration for 'mkdocs' from '/home/redes/.local/lib/python3.9/site-packages/mkdocs/themes/mkdocs/mkdocs_theme.yml': {'static_templates': ['404.html'], 'locale': 'en', 'include_search_page': False, 'search_index_only': False, 'highlightjs': True, 'hljs_languages': [], 'hljs_style': 'github', 'navigation_depth': 2, 'nav_style': 'primary', 'analytics': {'gtag': None}, 'shortcuts': {'help': 191, 'next': 78, 'previous': 80, 'search': 83}}
+[34mDEBUG    -  [0mConfig value 'config_file_path' = '/srv/repositorio/mkdocs.yml'
+[34mDEBUG    -  [0mConfig value 'site_name' = 'Redes - Tareas 2023-2'
+[34mDEBUG    -  [0mConfig value 'nav' = None
+[34mDEBUG    -  [0mConfig value 'pages' = None
+[34mDEBUG    -  [0mConfig value 'site_url' = 'https://Redes-Ciencias-UNAM.gitlab.io/2023-2/tareas-redes/'
+[34mDEBUG    -  [0mConfig value 'site_description' = 'Facultad de Ciencias - UNAM'
+[34mDEBUG    -  [0mConfig value 'site_author' = 'Redes de Computadoras'
+[34mDEBUG    -  [0mConfig value 'theme' = Theme(name='mkdocs', dirs=['/home/redes/.local/lib/python3.9/site-packages/mkdocs/themes/mkdocs', '/home/redes/.local/lib/python3.9/site-packages/mkdocs/templates'], static_templates=['sitemap.xml', '404.html'], name='mkdocs', locale=Locale('es'), include_search_page=False, search_index_only=False, highlightjs=True, hljs_languages=[], hljs_style='github', navigation_depth=4, nav_style='primary', analytics={'gtag': 'G-CYE5VJNLW4'}, shortcuts={'help': 191, 'next': 78, 'previous': 80, 'search': 83}, collapse_navigation=True, titles_only=True, use_directory_urls=True, palette={'primary': 'green'})
+[34mDEBUG    -  [0mConfig value 'docs_dir' = '/srv/repositorio/docs'
+[34mDEBUG    -  [0mConfig value 'site_dir' = '/srv/repositorio/public'
+[34mDEBUG    -  [0mConfig value 'copyright' = 'CC-BY-SA-4.0'
+[34mDEBUG    -  [0mConfig value 'google_analytics' = None
+[34mDEBUG    -  [0mConfig value 'dev_addr' = _IpAddressValue(host='localhost', port=1414)
+[34mDEBUG    -  [0mConfig value 'use_directory_urls' = True
+[34mDEBUG    -  [0mConfig value 'repo_url' = 'https://gitlab.com/Redes-Ciencias-UNAM/2023-2/tareas-redes'
+[34mDEBUG    -  [0mConfig value 'repo_name' = 'tareas-redes'
+[34mDEBUG    -  [0mConfig value 'edit_uri_template' = None
+[34mDEBUG    -  [0mConfig value 'edit_uri' = '-/tree/entregados/docs/'
+[34mDEBUG    -  [0mConfig value 'extra_css' = ['css/extra.css']
+[34mDEBUG    -  [0mConfig value 'extra_javascript' = ['js/extra.js']
+[34mDEBUG    -  [0mConfig value 'extra_templates' = []
+[34mDEBUG    -  [0mConfig value 'markdown_extensions' = ['toc', 'tables', 'fenced_code', 'admonition', 'attr_list', 'def_list', 'extra', 'pymdownx.details']
+[34mDEBUG    -  [0mConfig value 'mdx_configs' = {'toc': {'permalink': '#', 'separator': '-'}}
+[34mDEBUG    -  [0mConfig value 'strict' = True
+[34mDEBUG    -  [0mConfig value 'remote_branch' = 'gh-pages'
+[34mDEBUG    -  [0mConfig value 'remote_name' = 'origin'
+[34mDEBUG    -  [0mConfig value 'extra' = {}
+[34mDEBUG    -  [0mConfig value 'plugins' = {'exclude': <mkdocs_exclude.plugin.Exclude object at 0x7fb2783accd0>}
+[34mDEBUG    -  [0mConfig value 'hooks' = {}
+[34mDEBUG    -  [0mConfig value 'watch' = []
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory: /srv/repositorio/public
+[34mDEBUG    -  [0mLooking for translations for locale 'es'
+[34mDEBUG    -  [0mNo translations found here: '/home/redes/.local/lib/python3.9/site-packages/mkdocs/templates/locales'
+[34mDEBUG    -  [0mTranslations found here: '/home/redes/.local/lib/python3.9/site-packages/mkdocs/themes/mkdocs/locales'
+[34mDEBUG    -  [0mRunning 1 `files` events
+[34mDEBUG    -  [0mReading markdown pages.
+[34mDEBUG    -  [0mReading: README.md
+[34mDEBUG    -  [0mReading: practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/README.md
+[34mDEBUG    -  [0mCopying static assets.
+[34mDEBUG    -  [0mCopying media file: 'css/extra.css'
+[34mDEBUG    -  [0mCopying media file: 'js/extra.js'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/auth.log.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/btmp'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud-init-output.log.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud-init.log.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/debug.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/dpkg.log.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/kern.log.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/llave_ssh.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/messages.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/sshd_config.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/sudoers.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/user.log.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/wtmp'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/apt/eipp.log.xz'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/apt/history.log'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/apt/history.log.1.gz'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/apt/term.log'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/apt/term.log.1.gz'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/azure/Microsoft.Azure.Diagnostics.LinuxDiagnostic/CommandExecution.log'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/instance-id'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/previous-datasource'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/previous-hostname'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/previous-instance-id'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/python-version'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/result.json'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/set-hostname'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/data/status.json'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/boot-finished'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/datasource'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_apt_configure'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_apt_pipelining'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_byobu'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_ca_certs'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_disk_setup'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_grub_dpkg'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_keys_to_console'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_locale'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_mcollective'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_mounts'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_ntp'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_package_update_upgrade_install'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_phone_home'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_power_state_change'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_puppet'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_rightscale_userdata'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_rsyslog'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_runcmd'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_salt_minion'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_scripts_per_instance'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_scripts_user'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_scripts_vendor'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_seed_random'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_set_passwords'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_ssh'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_ssh_authkey_fingerprints'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_ssh_import_id'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_timezone'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_users_groups'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/config_write_files'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/instances/b5479fea-1860-47ef-87d8-097eea6af1ab/sem/consume_data'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/cloud/sem/config_scripts_per_once.once'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/dhcp/dhclient.eth0.leases'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/dhcp/dhclient6.eth0.leases'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/sudoers.d/README.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/sudoers.d/90-cloud-init-sudoers.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/sudoers.d/waagent.txt'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/unattended-upgrades/unattended-upgrades-dpkg.log'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/unattended-upgrades/unattended-upgrades-dpkg.log.1.gz'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/unattended-upgrades/unattended-upgrades-shutdown.log'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/unattended-upgrades/unattended-upgrades-shutdown.log.1.gz'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/unattended-upgrades/unattended-upgrades.log'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/files/unattended-upgrades/unattended-upgrades.log.1.gz'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/domain_added_nameservers.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/domain_finishup.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/domain_nameservers.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/domain_registered.jpeg'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/domain_search.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/dominio.jpg'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/rec_azure1.jpeg'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/rec_azure2.jpeg'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/recursos1.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/recursos2.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/recursos3.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/recursos4.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/recursos5.jpeg'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/recursos6.png'
+[34mDEBUG    -  [0mCopying media file: 'practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/img/recursos7.png'
+[34mDEBUG    -  [0mCopying media file: 'css/base.css'
+[34mDEBUG    -  [0mCopying media file: 'css/bootstrap.min.css'
+[34mDEBUG    -  [0mCopying media file: 'css/font-awesome.min.css'
+[34mDEBUG    -  [0mCopying media file: 'fonts/fontawesome-webfont.eot'
+[34mDEBUG    -  [0mCopying media file: 'fonts/fontawesome-webfont.svg'
+[34mDEBUG    -  [0mCopying media file: 'fonts/fontawesome-webfont.ttf'
+[34mDEBUG    -  [0mCopying media file: 'fonts/fontawesome-webfont.woff'
+[34mDEBUG    -  [0mCopying media file: 'fonts/fontawesome-webfont.woff2'
+[34mDEBUG    -  [0mCopying media file: 'img/favicon.ico'
+[34mDEBUG    -  [0mCopying media file: 'img/grid.png'
+[34mDEBUG    -  [0mCopying media file: 'js/base.js'
+[34mDEBUG    -  [0mCopying media file: 'js/bootstrap.min.js'
+[34mDEBUG    -  [0mCopying media file: 'js/jquery-1.10.2.min.js'
+[34mDEBUG    -  [0mBuilding theme template: sitemap.xml
+[34mDEBUG    -  [0mGzipping template: sitemap.xml
+[34mDEBUG    -  [0mBuilding theme template: 404.html
+[34mDEBUG    -  [0mBuilding markdown pages.
+[34mDEBUG    -  [0mBuilding page README.md
+[34mDEBUG    -  [0mBuilding page practicas/practica-8/Equipo-AAR-ATDI-BME-DAAV-LMAM/README.md
+INFO     -  Documentation built in 0.14 seconds

@@ -1,0 +1,141 @@
+
+	==> _acme-challenge.waningnew.me. (TXT) <==
+
+
+; <<>> DiG 9.10.6 <<>> TXT _acme-challenge.waningnew.me.
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 1950
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;_acme-challenge.waningnew.me.	IN	TXT
+
+;; ANSWER SECTION:
+_acme-challenge.waningnew.me. 300 IN	TXT	"FCydvVfnoWeF3FMn_nxWXY5u-ifr1POS0FMXQv807ig"
+
+;; Query time: 77 msec
+;; SERVER: 10.2.9.84#53(10.2.9.84)
+;; WHEN: Thu May 11 19:42:56 CST 2023
+;; MSG SIZE  rcvd: 113
+
+
+	==> waningnew.me. (A) <==
+
+
+; <<>> DiG 9.10.6 <<>> A waningnew.me.
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 12849
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;waningnew.me.			IN	A
+
+;; ANSWER SECTION:
+waningnew.me.		300	IN	A	68.218.33.216
+
+;; Query time: 76 msec
+;; SERVER: 10.2.9.84#53(10.2.9.84)
+;; WHEN: Thu May 11 19:42:56 CST 2023
+;; MSG SIZE  rcvd: 57
+
+
+	==> docs.waningnew.me. (A) <==
+
+
+; <<>> DiG 9.10.6 <<>> A docs.waningnew.me.
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 40082
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;docs.waningnew.me.		IN	A
+
+;; ANSWER SECTION:
+docs.waningnew.me.	300	IN	A	68.218.33.216
+
+;; Query time: 75 msec
+;; SERVER: 10.2.9.84#53(10.2.9.84)
+;; WHEN: Thu May 11 19:42:56 CST 2023
+;; MSG SIZE  rcvd: 62
+
+
+	==> kernel.waningnew.me. (A) <==
+
+
+; <<>> DiG 9.10.6 <<>> A kernel.waningnew.me.
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5297
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;kernel.waningnew.me.		IN	A
+
+;; ANSWER SECTION:
+kernel.waningnew.me.	300	IN	A	68.218.33.216
+
+;; Query time: 61 msec
+;; SERVER: 10.2.9.84#53(10.2.9.84)
+;; WHEN: Thu May 11 19:42:56 CST 2023
+;; MSG SIZE  rcvd: 64
+
+
+	==> sitio.waningnew.me. (A) <==
+
+
+; <<>> DiG 9.10.6 <<>> A sitio.waningnew.me.
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 519
+;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;sitio.waningnew.me.		IN	A
+
+;; ANSWER SECTION:
+sitio.waningnew.me.	300	IN	CNAME	waningnew.me.
+waningnew.me.		300	IN	A	68.218.33.216
+
+;; Query time: 75 msec
+;; SERVER: 10.2.9.84#53(10.2.9.84)
+;; WHEN: Thu May 11 19:42:56 CST 2023
+;; MSG SIZE  rcvd: 77
+
+
+	==> tareas.waningnew.me. (A) <==
+
+
+; <<>> DiG 9.10.6 <<>> A tareas.waningnew.me.
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 14828
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;tareas.waningnew.me.		IN	A
+
+;; ANSWER SECTION:
+tareas.waningnew.me.	300	IN	CNAME	sitio.waningnew.me.
+sitio.waningnew.me.	300	IN	CNAME	waningnew.me.
+waningnew.me.		300	IN	A	68.218.33.216
+
+;; Query time: 73 msec
+;; SERVER: 10.2.9.84#53(10.2.9.84)
+;; WHEN: Thu May 11 19:42:56 CST 2023
+;; MSG SIZE  rcvd: 98
+
