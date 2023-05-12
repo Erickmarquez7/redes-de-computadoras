@@ -225,7 +225,7 @@ ServerTokens determina lo que pondrá Apache en la cabecera de la respuesta HTTP
 
 ServerSignature aparece en la parte inferior de las páginas generadas por Apache 
 
-Con la linea TraceEnable Off desactiva el metodo trace, el método se diseñó para la depuración a través del servidor devolviendo la misma solicitud originalmente enviada por el cliente. Debido a que la cookie de la sesión del navegador se envía al servidor, se enviará de regreso nuevamente. Sin embargo, un individuo malintencionado podría interceptar esto y luego redirigir la conexión de un navegador a un sitio bajo su control y no al servidor original.
+Con la linea TraceEnable Off desactiva el método trace, el método se diseñó para la depuración a través del servidor devolviendo la misma solicitud originalmente enviada por el cliente. Debido a que la cookie de la sesión del navegador se envía al servidor, se enviará de regreso nuevamente. Sin embargo, un individuo malintencionado podría interceptar esto y luego redirigir la conexión de un navegador a un sitio bajo su control y no al servidor original.
 
 ## Explicación la función de los scripts consulta-dns.sh, consulta-http.sh y consulta-ssl.sh
 
@@ -233,7 +233,7 @@ Por cada una de las consultas realizadas (DNS, HTTP, SSL), vamos a explicar el f
 
 ### Salida de las consultas DNS para los registros TXT, A y CNAME
 
-El script `consulta-dns.sh` ejecuta el comando `dig TXT _acme_challenge.waningnew.me`, junto con el comando `dig A`, el cual es ejecutado para cada uno de los subdominios creados en esta práctica, con prefijos: `docs.`, `kernel.`, `sitio.`, `tareas.`; así como para el dominio principal y su dirección IP.
+El script `consulta-dns.sh` ejecuta el comando `dig TXT _acme_challenge.waningnew.me`, junto con el comando `dig A`, el cual es ejecutado para cada uno de los virtual hosts creados en esta práctica, con prefijos: `docs.`, `kernel.`, `sitio.`, `tareas.`; así como para el dominio principal y su dirección IP.
 
 El comando `dig` sirve para hacer consultas DNS a servidores, y despliegas las respuestas que dicho servidor le dió. Las salidas de estas consultas DNS se colocan en el archivo [`registros-dns.txt`](files/registros-dns.txt), y son las siguientes:
 
@@ -331,7 +331,7 @@ sitio.waningnew.me.	300	IN	CNAME	waningnew.me.
 
 ### Salida de las consultas HTTP para los sitios hospedados en el equipo
 
-El script `consulta-http.sh` toma el nombre de nuestro dominio, [waningnew.me](https://waningnew.me), y ejecuta los comandos `curl -vk# "http://dominio.me" 2>&1` y `curl -vk# "https://dominio.me" 2>&1` para cada uno de los subdominios creados en esta práctica, con prefijos: `docs.`, `kernel.`, `sitio.`, `tareas.`; así como para el dominio principal y su dirección IP. 
+El script `consulta-http.sh` toma el nombre de nuestro dominio, [waningnew.me](https://waningnew.me), y ejecuta los comandos `curl -vk# "http://dominio.me" 2>&1` y `curl -vk# "https://dominio.me" 2>&1` para cada uno de los virtual hosts creados en esta práctica, con prefijos: `docs.`, `kernel.`, `sitio.`, `tareas.`; así como para el dominio principal y su dirección IP. 
 
 Con el comando `curl -vk#` estamos obteniendo toda la información del dominio respectivo (su código HTML) junto con una serie de datos que nos dan características del dominio, tales como el servidor en el que corre, en que dirección de internet se localiza, la longitud del contenido que tiene el dominio, entre otras cosas. 
 
@@ -453,7 +453,7 @@ Que corresponden a ejecutar los comandos `curl -vk# http://68.218.33.216` y `cur
 
 ### Salida de las consultas SSL para los sitios hospedados en el equipo
 
-El script `consulta-ssl.sh` toma el nombre de nuestro dominio, [waningnew.me](https://waningnew.me), y ejecuta el comando `openssl s_client -showcerts -x509_strict -connect ${NAME}:443 < /dev/null 2>&1" 2>&1`, reemplazando `NAME` con cada uno de los subdominios creados en esta práctica, con prefijos: `docs.`, `kernel.`, `sitio.`, `tareas.`; así como para el dominio principal y su dirección IP. 
+El script `consulta-ssl.sh` toma el nombre de nuestro dominio, [waningnew.me](https://waningnew.me), y ejecuta el comando `openssl s_client -showcerts -x509_strict -connect ${NAME}:443 < /dev/null 2>&1" 2>&1`, reemplazando `NAME` con cada uno de los virtual hosts creados en esta práctica, con prefijos: `docs.`, `kernel.`, `sitio.`, `tareas.`; así como para el dominio principal y su dirección IP. 
 
 El comando usado implementa un cliente SSL/TSL genérico, que que es conectado a nuestros dominios usando SSL/TSL, y nos muestra los certificados con los que cuenta. 
 
