@@ -338,9 +338,13 @@ sitio.waningnew.me.	300	IN	CNAME	waningnew.me.
 
 ## Sitios hospedados 
 #### kernel.waningnew.me
+![](img/host1.jpg)
 
 #### docs.waningnew.me
+![](img/host2.jpg)
 
 #### sitio.waningnew.me
+![](img/host3.jpg)
 
 #### tareas.waningnew.me
+![](img/host4.jpg)
