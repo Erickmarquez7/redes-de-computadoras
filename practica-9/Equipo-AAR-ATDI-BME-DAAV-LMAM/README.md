@@ -598,6 +598,8 @@ DONE
 
 Que corresponde a todos los certificados con los que cuenta el dominio `68.218.33.216`.
 
+# Imágenes
+
 ## Recursos de azure
 ![](img/recursos-azure.png)
 
@@ -613,3 +615,17 @@ Que corresponde a todos los certificados con los que cuenta el dominio `68.218.3
 
 #### tareas.waningnew.me
 ![](img/host4.jpg)
+
+# Carpeta [`files`](files/)
+- **Archivos de configuración**
+  - Copia de seguridad de la configuración de Apache HTTPD en el directorio `/etc/apache2`: [`apache2.tar`](files/apache2.tar)
+  - Archivo [`/etc/apache2/conf-available/security.conf`](files/security.conf) con comentarios que expliquen la funcionalidad de las directivas utilizadas.
+
+- **Archivos de bitácora**
+  - Archivo [`salida-mkdocs.log`](files/salida-mkdocs.log) obtenido al convertir los archivos Markdown a HTML con `mkdocs`.
+  - Copia de seguridad de las bitácoras de Apache HTTPD: [`apache2-logs.tar.gz`](files/apache2-logs.tar.gz)
+
+- **Archivos de datos**
+  - Archivo [`virtualhosts.txt`](files/virtualhosts.txt) con el listado de VirtualHosts en la configuración de Apache HTTPD.
+  - Copia de seguridad del directorio `/var/www`: [www.tar](files/www.tar)
+  - Copia de seguridad de los datos generados por `certbot`: [`letsencrypt.tar`](files/letsencrypt.tar)
