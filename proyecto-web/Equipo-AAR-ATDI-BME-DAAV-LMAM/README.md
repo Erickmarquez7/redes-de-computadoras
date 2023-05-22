@@ -21,19 +21,10 @@ En nuestros servicios de nube buscamos las que diga _zonas DNS_, en nuestro caso
 
 ### VirtualHost de Apache HTTPD
 
-(aki Vale)
+Para poder hacer la creación del VirtualHost redireccionamos http a https en el archivo proyecto.conf
 
-Para revisar los archivos habilitados de VirtualHosts
+Mientras que el el archivo aplicacion.conf se realiza la configuración de https, para el puerto ponemos el nombre del servidor y el alias. Además de agregar DocumentRoot y Directory ya que éstos se encuentran fuera de la carpeta var-www
 
-```
-root@example:~# ls -la /etc/apache2/sites-enabled
-```
-
-Para revisar la ruta de la raíz del sitio web en los VirtualHost
-
-```
-root@example:~# grep 'DocumentRoot' /etc/apache2/sites-enabled/*.conf
-```
 ### Instalación y configuración de PHP
 
 (esta parte david pk el lo hizo xd)
@@ -47,7 +38,7 @@ root@example:~# grep 'DocumentRoot' /etc/apache2/sites-enabled/*.conf
 
 ### Multi-sitio 
 
-(aki Vale)
+(aki Vale) (ei)
 
 ### Autenticación digest para wp-admin
 
