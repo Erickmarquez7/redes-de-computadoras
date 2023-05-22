@@ -38,7 +38,17 @@ Mientras que el el archivo aplicacion.conf se realiza la configuración de https
 
 ### Multi-sitio 
 
-(aki Vale) (ei)
+Definimos el multisitio en el archivo wp-config.php agregando:  
+/* Multisite */
+define( 'WP_ALLOW_MULTISITE', true ); 
+
+Esto para poder habilitar el menú de configuración de red. Luego nos vamos a donde dice: Administración > Herramientas > Configuración de red 
+
+Después tenemos la opción de elegir entre subdominios y subdirectorios, en nuestro caso utilizamos subdirectorios. Verificamos los detalles de la red y presionamos el botón Instalar.
+
+![](img/multisitios1.jpeg)
+
+![](img/multisitios2.jpeg)
 
 ### Autenticación digest para wp-admin
 
