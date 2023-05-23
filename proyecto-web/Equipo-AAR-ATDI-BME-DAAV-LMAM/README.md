@@ -89,6 +89,26 @@ Después realizamos la autenticación a la ruta, en el archivo ``` aplicacion.co
 
 ### Correo AWS SES
 
+En la GUI de WordPress, hacemos click la sección de Plugins en el menú de navegación en la izquierda de la pantalla. En la Esquina superior izquierda, hacemos click en el botón **Añadir Nuevo**. En esta nueva pantalla, podemos buscar diferentes plugins por nombre o funcionalidad, así que buscamos SMTP para encontrar alguno que nos permita utilizar dicho protocolo. En este caso, el plugin utilizado es _WP Mail SMTP_ de WPForms. Hacemos click en **Instalar ahora**, y después en **Activar**, y lo tendremos listo para configurar y posteriormente utilizar. Podemos ver como el plugin aparece en el menú de navegación:
+
+![](img/wp_mail.png)
+
+Hacemos click en el plugin para configurarlo. Primero definimos la dirección de email que será la remitente de los correos enviados desde nuestro servidor, en este caso el correo será `davidalv@ciencias.unam.mx`. También establecemos el nombre que aparecerá como remitente en los correos; aquí pusimos el identificador de nuestro equipo `Equipo-AAR-ATDI-BME-DAAV-LMAM`:
+
+![](img/remitente.png)
+
+Luego, para utilizar el servicio de AWS SES, seleccionamos **Otro** en el apartado _Cliente de correo_:
+
+![](img/cliente_correo.png)
+
+Ahora, introducimos los datos de la instancia de Amazon AWS que nos permitirá utilizar el servicio AWS SES, definiendo el servidor SMTP como `mail-smtp.us-east-2.amazonaws.com`, utilizando cifrado TLS y corriendo en el puerto `587`. Finalmente, para poder tener acceso a dicho servicio, introducimos las credenciales que nos fueron dadas:
+
+![](img/config_smtp.png)
+
+Así, el protocolo SMTP de nuestro aplicación WordPress está configurado, y es posible enviar correos desde esta:
+
+![](img/correo_exitoso.png)
+
 ## Archivos adjuntos
 
 En esta ocasión los archivos adjuntos se enviarán a través de Google Drive por medio de una carpeta compartida.
