@@ -21,9 +21,11 @@ En nuestros servicios de nube buscamos las que diga _zonas DNS_, en nuestro caso
 
 ### VirtualHost de Apache HTTPD
 
-Para poder hacer la creación del VirtualHost redireccionamos http a https en el archivo proyecto.conf
+Para poder hacer la creación del VirtualHost primero redireccionamos http a https del dominio _proyecto.midominio.com_ a _aplicacion.midominio.com_, esto puede ser configurado de distintas maneras.
 
-Mientras que el el archivo aplicacion.conf se realiza la configuración de https, para el puerto ponemos el nombre del servidor y el alias. Además de agregar DocumentRoot y Directory ya que éstos se encuentran fuera de la carpeta var-www
+Luego realizamos la configuración de https, ponemos el nombre del servidor y el alias, además agregamos _DocumentRoot_ para localizar el sitio de wordpress y _Directory_ ya que éstos se encuentran fuera de la carpeta _var/www_, también agregamos las bitácoras para los errores y accesos.
+
+Por último, como confuración digest, agregamos _Location_ y lo llenamos con el tipo de autenticación, los dominios que van a estar autenticados y el directorio que tiene las credenciales.
 
 ### Instalación y configuración de PHP
 
@@ -38,19 +40,23 @@ Mientras que el el archivo aplicacion.conf se realiza la configuración de https
 
 ### Multi-sitio 
 
-Definimos el multisitio en el archivo wp-config.php agregando:  
+Habilitamos el multisitio en el archivo wp-config.php agregando lo siguiente antes de la linea
+_/* That's all, stop editing! Happy publishing. */_
+
+```
 /* Multisite */
 define( 'WP_ALLOW_MULTISITE', true ); 
+```
 
 Esto para poder habilitar el menú de configuración de red. Luego nos vamos a donde dice: Administración > Herramientas > Configuración de red 
 
 Después tenemos la opción de elegir entre subdominios y subdirectorios, en nuestro caso utilizamos subdirectorios. Verificamos los detalles de la red y presionamos el botón Instalar.
 
-Ahora habilitaremos la red siguiendo los pasos que muestra la imagen a continuación: 
+Ahora habilitaremos la red siguiendo los pasos que nos muestra la pagina siguiente, que en escencia es la siguiente: 
 
 ![](img/multisitios1.jpg)
 
-Una vez hecho esto, iniciamos sesión nuevamente utilizando dando click en el enlace que nos proporcionan. 
+Una vez hecho esto, iniciamos sesión nuevamente dando click en el enlace que nos proporcionan. 
 
 Y ahora nos aparece "Mis sitios" en la parte superior izquierda: 
 
