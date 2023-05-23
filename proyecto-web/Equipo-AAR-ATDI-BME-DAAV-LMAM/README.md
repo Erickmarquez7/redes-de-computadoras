@@ -46,9 +46,17 @@ Esto para poder habilitar el menú de configuración de red. Luego nos vamos a d
 
 Después tenemos la opción de elegir entre subdominios y subdirectorios, en nuestro caso utilizamos subdirectorios. Verificamos los detalles de la red y presionamos el botón Instalar.
 
+Ahora habilitaremos la red siguiendo los pasos que muestra la imagen a continuación: 
+
 ![](img/multisitios1.jpg)
 
+Una vez hecho esto, iniciamos sesión nuevamente utilizando dando click en el enlace que nos proporcionan. 
+
+Y ahora nos aparece "mis sitios" en la parte superior izquierda: 
+
 ![](img/multisitios2.jpg)
+
+![](img/multisitios3.jpeg)
 
 ### Autenticación digest para wp-admin
 
