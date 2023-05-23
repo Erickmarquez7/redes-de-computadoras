@@ -68,7 +68,7 @@ Habilitamos un módulo usando ``` a2enmod auth_digest ``` seguido del siguiente 
 
 Una vez hecho esto, nos posicionamos en la carpeta de configuración de apache en donde vamos a crear un fichero de accesos con el siguiente comando ``` htdigest -c accesos.txt waningnew web``` 
 
-Después realizamos la autenticación a la ruta, en el archivo ``` aplicacion.com ``` a la que agregamos la directiva ``` Location ``` junto con la dirección, tipo de autenticación, nombre y los dominios.
+Después realizamos la autenticación a la ruta, en el archivo ``` aplicacion.conf ``` a la que agregamos la directiva ``` Location ``` junto con la dirección, tipo de autenticación, nombre y los dominios.
 
 ```
 #sitio que tiene la autenticación
