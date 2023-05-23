@@ -64,6 +64,10 @@ Y ahora nos aparece "Mis sitios" en la parte superior izquierda:
 
 ### Autenticación digest para wp-admin
 
+Habilitamos un módulo usando ``` a2enmod auth_digest ``` seguido del siguiente comando para cargar el módulo en la memoria ``` service apache2 restart ```.
+
+Una vez hecho esto, nos posicionamos en la carpeta de configuración de apache en donde vamos a crear un fichero de accesos con el siguiente comando ``` htdigest -c accesos.txt waningnew web``` 
+
 ### Correo AWS SES
 
 ## Archivos adjuntos
