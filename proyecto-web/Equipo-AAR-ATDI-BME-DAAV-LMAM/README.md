@@ -54,8 +54,6 @@ Una vez hecho esto, iniciamos sesión nuevamente utilizando dando click en el en
 
 Y ahora nos aparece "mis sitios" en la parte superior izquierda: 
 
-![](img/multisitios2.jpg)
-
 ![](img/multisitios3.jpeg)
 
 ### Autenticación digest para wp-admin
