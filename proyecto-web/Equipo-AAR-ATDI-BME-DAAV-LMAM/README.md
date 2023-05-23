@@ -52,7 +52,7 @@ Ahora habilitaremos la red siguiendo los pasos que muestra la imagen a continuac
 
 Una vez hecho esto, iniciamos sesión nuevamente utilizando dando click en el enlace que nos proporcionan. 
 
-Y ahora nos aparece "mis sitios" en la parte superior izquierda: 
+Y ahora nos aparece "Mis sitios" en la parte superior izquierda: 
 
 ![](img/multisitios3.jpeg)
 
