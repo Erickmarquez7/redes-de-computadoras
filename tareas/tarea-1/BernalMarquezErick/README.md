@@ -4,7 +4,7 @@
 - Usuario de GitLab: `@Erickmarquez7`
 - [Tarea-1][liga-tarea-1]
 
-Hola, estas son las caracteristicas de mi computadora:
+Estas son las caracteristicas de mi computadora:
 
 | Elemento          | Valor
 |:-----------------:|:-----:|
@@ -33,4 +33,4 @@ Capturas de pantalla:
 
 - ¿Consideras que esta actividad te será útil en tu vida profesional?
 
-    Probablemente, si es que me quiero dedicar a esto.
+    Muy probablemente, el uso de controladores de versiones es una herramientas bastante útil al momento de desarrollar software tanto para versiones estables, de prueba, trabajo en equipo, etc.

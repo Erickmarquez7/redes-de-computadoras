@@ -22,7 +22,7 @@
 |:----------------------:|
 | Plano de la casa que habito y ubicación aproximada de los dispositivos.
 
-Se muestra la topología física y lógica de los dispositivos. Debido a que los celulares no tienen lugar fijo decidí colocarlos en la sala, que es donde más tiempo solemos estar.
+Se muestra la topología física y lógica entre los dispositivos de una red casera LAN. Debido a que los celulares no tienen lugar fijo decidí colocarlos en la sala, que es donde más tiempo solemos estar.
 
 También podemos notar que es un toplogía en forma de estrella, o más bien dos estrellas donde el centro de una de ellas es el _switch-PT_ y la otra el _AccessPonit-PT_
 
