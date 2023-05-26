@@ -8,8 +8,6 @@
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-# [Práctica 9](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-9/)
-
 ## Nombre de dominio que se registró y la dirección IP pública de la máquina virtual
 
 http://waningnew.me/ 

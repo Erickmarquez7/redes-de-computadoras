@@ -8,8 +8,6 @@
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-# [Practica-2](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-2/)
-
 En este enlace se encuentra el archivo `.pkt` de la práctica: [practica2.pkt](files/practica2.pkt)
 
 ## Topología de red:

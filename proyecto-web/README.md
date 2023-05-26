@@ -8,9 +8,6 @@
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-# [Examen 3](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/examen-3/)
-
-
 ## Explicación breve de la instalación del stack web en la máquina virtual de la nube
 
 ### Registros DNS

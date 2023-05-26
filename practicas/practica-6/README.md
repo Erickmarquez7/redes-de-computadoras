@@ -8,8 +8,6 @@
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
-# [Práctica 6](https://redes-ciencias-unam.gitlab.io/2023-2/laboratorio/practica-6/)
-
 ## Topología de Red 
 
 A nivel físico es Topología de Árbol, siendo la máquina virtual pfSense la raíz del árbol y las ramas de la raíz serían las demás redes como LAN, DMZ y WAN. Mientras que las máquinas virtuales y la máquina física son las hojas del árbol.
