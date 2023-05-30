@@ -1,0 +1,226 @@
+#1 [internal] load .dockerignore
+#1 sha256:816058b1f163eab4ed7f11acd0ea64c99968fea52964731584bb239eaf691096
+#1 transferring context: 2B done
+#1 ...
+
+#2 [internal] load build definition from Dockerfile
+#2 sha256:a00c6954c6595cbe71aafe55b955c53649fafc269cda5f90d00b68e9f4a96df6
+#2 transferring dockerfile: 1.05kB 0.0s done
+#2 DONE 0.4s
+
+#1 [internal] load .dockerignore
+#1 sha256:816058b1f163eab4ed7f11acd0ea64c99968fea52964731584bb239eaf691096
+#1 DONE 0.5s
+
+#3 resolve image config for docker.io/docker/dockerfile:1.4
+#3 sha256:4c6393aa7d63350bb37611567d30ae32494404c0b27cf79a51e51112ce252eca
+#3 DONE 1.1s
+
+#4 docker-image://docker.io/docker/dockerfile:1.4@sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc
+#4 sha256:f8ced039b92255abe2a5d9b1b282755057c6783a74e367c16ca94e7b53ed923b
+#4 CACHED
+
+#5 [internal] load metadata for docker.io/library/nginx:1.23-alpine
+#5 sha256:50ece92f20ea041541e2825eee78bfdb0b6142d03922cf210e0dcf20a723fcf3
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/library/python:3.11-alpine
+#6 sha256:8dcc1f1a926b4737e2595112cab17d76e100c8bd934bb54cd42e3c56611a8544
+#6 DONE 5.0s
+
+#7 [app 1/2] FROM docker.io/library/nginx:1.23-alpine
+#7 sha256:e231d5b346885b0ebb5f482c8b36572760b056245bb4235c591045a5cdcdae1c
+#7 CACHED
+
+#8 [python 1/3] FROM docker.io/library/python:3.11-alpine@sha256:4e8e9a59bf1b3ca8e030244bc5f801f23e41e37971907371da21191312087a07
+#8 sha256:784f7ffc1c9747b14318d17cffa268e8cc70daf88f9e0b49b677fe0854427a80
+#8 resolve docker.io/library/python:3.11-alpine@sha256:4e8e9a59bf1b3ca8e030244bc5f801f23e41e37971907371da21191312087a07
+#8 resolve docker.io/library/python:3.11-alpine@sha256:4e8e9a59bf1b3ca8e030244bc5f801f23e41e37971907371da21191312087a07 0.4s done
+#8 sha256:b6b068cda0cf592463549591ed736c4e87a6c5404335c09e01ba5b3eb0e9970b 6.26kB / 6.26kB done
+#8 sha256:4e8e9a59bf1b3ca8e030244bc5f801f23e41e37971907371da21191312087a07 1.65kB / 1.65kB done
+#8 sha256:caafba876f841774905f73df0fcaf7fe3f55aaf9cb48a9e369a41077f860d4a7 1.37kB / 1.37kB done
+#8 sha256:8a49fdb3b6a5ff2bd8ec6a86c05b2922a0f7454579ecc07637e94dfd1d0639b6 0B / 3.40MB 0.3s
+#8 sha256:0357922e53aa8671e175f58d46bfd245908047b81e66370f634863785fe0c70e 0B / 622.30kB 0.6s
+#8 sha256:8a49fdb3b6a5ff2bd8ec6a86c05b2922a0f7454579ecc07637e94dfd1d0639b6 1.05MB / 3.40MB 0.7s
+#8 sha256:8a49fdb3b6a5ff2bd8ec6a86c05b2922a0f7454579ecc07637e94dfd1d0639b6 2.10MB / 3.40MB 0.9s
+#8 sha256:8a49fdb3b6a5ff2bd8ec6a86c05b2922a0f7454579ecc07637e94dfd1d0639b6 3.40MB / 3.40MB 1.2s
+#8 sha256:0357922e53aa8671e175f58d46bfd245908047b81e66370f634863785fe0c70e 622.30kB / 622.30kB 1.4s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 0B / 12.41MB 1.9s
+#8 sha256:8a49fdb3b6a5ff2bd8ec6a86c05b2922a0f7454579ecc07637e94dfd1d0639b6 3.40MB / 3.40MB 2.3s done
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 1.05MB / 12.41MB 2.5s
+#8 extracting sha256:8a49fdb3b6a5ff2bd8ec6a86c05b2922a0f7454579ecc07637e94dfd1d0639b6
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 2.10MB / 12.41MB 2.6s
+#8 sha256:0357922e53aa8671e175f58d46bfd245908047b81e66370f634863785fe0c70e 622.30kB / 622.30kB 2.6s done
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 3.15MB / 12.41MB 2.9s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 4.19MB / 12.41MB 3.0s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 5.24MB / 12.41MB 3.3s
+#8 sha256:877a053836a345f533aac43cc4b44f348d74b0c32ad3778147d4c4a143b5ce68 0B / 3.08MB 3.3s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 6.29MB / 12.41MB 3.6s
+#8 sha256:ddbd03ee105940853f5ee34fdb441c4f187fa26476dfa7107560e172deb6c371 0B / 240B 3.7s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 7.34MB / 12.41MB 3.9s
+#8 sha256:877a053836a345f533aac43cc4b44f348d74b0c32ad3778147d4c4a143b5ce68 1.05MB / 3.08MB 3.9s
+#8 sha256:877a053836a345f533aac43cc4b44f348d74b0c32ad3778147d4c4a143b5ce68 2.10MB / 3.08MB 4.3s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 8.39MB / 12.41MB 4.4s
+#8 extracting sha256:8a49fdb3b6a5ff2bd8ec6a86c05b2922a0f7454579ecc07637e94dfd1d0639b6 2.2s done
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 9.44MB / 12.41MB 4.7s
+#8 sha256:877a053836a345f533aac43cc4b44f348d74b0c32ad3778147d4c4a143b5ce68 3.08MB / 3.08MB 4.7s
+#8 sha256:ddbd03ee105940853f5ee34fdb441c4f187fa26476dfa7107560e172deb6c371 240B / 240B 4.7s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 10.49MB / 12.41MB 4.9s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 11.53MB / 12.41MB 5.1s
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 12.41MB / 12.41MB 5.6s
+#8 sha256:877a053836a345f533aac43cc4b44f348d74b0c32ad3778147d4c4a143b5ce68 3.08MB / 3.08MB 4.8s done
+#8 sha256:ddbd03ee105940853f5ee34fdb441c4f187fa26476dfa7107560e172deb6c371 240B / 240B 6.0s done
+#8 sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 12.41MB / 12.41MB 6.7s done
+#8 extracting sha256:0357922e53aa8671e175f58d46bfd245908047b81e66370f634863785fe0c70e
+#8 extracting sha256:0357922e53aa8671e175f58d46bfd245908047b81e66370f634863785fe0c70e 0.2s done
+#8 extracting sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd
+#8 extracting sha256:9676b6d4b9645b8d9a67d1ec16c5d2c72ce8406a9cc72fd4fc9e7d5c1b5916cd 0.5s done
+#8 extracting sha256:ddbd03ee105940853f5ee34fdb441c4f187fa26476dfa7107560e172deb6c371 done
+#8 extracting sha256:877a053836a345f533aac43cc4b44f348d74b0c32ad3778147d4c4a143b5ce68
+#8 extracting sha256:877a053836a345f533aac43cc4b44f348d74b0c32ad3778147d4c4a143b5ce68 0.3s done
+#8 DONE 22.6s
+
+#9 [python 2/3] WORKDIR /SRV
+#9 sha256:d949c397a88fa7017bc4704d9d840bf7ff5d9ff02ef02a1dfbfe20fba66363d5
+#9 DONE 1.6s
+
+#10 [python 3/3] RUN    WGET -c -q -O tareas-redes.tar.gz https://gitlab.com/Erickmarquez7/tareas-redes/-/archive/entregas/tareas-redes-entregas.tar.gz && ls -l tareas-redes.tar.gz &&     tar -xvzf tareas-redes.tar.gz --strip 1 &&      rm -v tareas-redes.tar.gz &&    pip3 config --global set global.progress_bar off &&         pip3 install --upgrade pip &&   pip3 install --requirement requirements.txt &&  which mkdocs &&         mkdocs build --strict &&        ls -la .
+#10 sha256:45994b0346fe897e2eafaac71697bf03513ab4b24c7f3e3df5b041c692d6e642
+#10 2.138 -rw-r--r--    1 root     root          4787 May 30 07:20 tareas-redes.tar.gz
+#10 2.142 tareas-redes-entregas/
+#10 2.146 tareas-redes-entregas/.gitignore
+#10 2.146 tareas-redes-entregas/.gitlab-ci.yml
+#10 2.146 tareas-redes-entregas/.pre-commit-config.yaml
+#10 2.146 tareas-redes-entregas/Makefile
+#10 2.146 tareas-redes-entregas/README.md
+#10 2.146 tareas-redes-entregas/docs/
+#10 2.146 tareas-redes-entregas/docs/README.md
+#10 2.146 tareas-redes-entregas/docs/css/
+#10 2.146 tareas-redes-entregas/docs/css/extra.css
+#10 2.146 tareas-redes-entregas/docs/js/
+#10 2.146 tareas-redes-entregas/docs/js/extra.js
+#10 2.146 tareas-redes-entregas/mkdocs.yml
+#10 2.146 tareas-redes-entregas/requirements.txt
+#10 2.149 removed 'tareas-redes.tar.gz'
+#10 4.146 Writing to /etc/pip.conf
+#10 5.156 Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (22.3.1)
+#10 7.632 Collecting pip
+#10 8.150   Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)
+#10 9.622 Installing collected packages: pip
+#10 9.622   Attempting uninstall: pip
+#10 9.626     Found existing installation: pip 22.3.1
+#10 9.758     Uninstalling pip-22.3.1:
+#10 10.23       Successfully uninstalled pip-22.3.1
+#10 13.23 Successfully installed pip-23.1.2
+#10 13.23 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#10 15.38 Collecting mkdocs>=1.1.2 (from -r requirements.txt (line 2))
+#10 15.69   Downloading mkdocs-1.4.3-py3-none-any.whl (3.7 MB)
+#10 18.45 Collecting mkdocs-exclude>=1.0.2 (from -r requirements.txt (line 12))
+#10 18.54   Downloading mkdocs-exclude-1.0.2.tar.gz (6.8 kB)
+#10 18.83   Preparing metadata (setup.py): started
+#10 19.68   Preparing metadata (setup.py): finished with status 'done'
+#10 20.09 Collecting mkdocs-pymdownx-material-extras (from -r requirements.txt (line 14))
+#10 20.17   Downloading mkdocs_pymdownx_material_extras-2.4.3-py3-none-any.whl (25 kB)
+#10 21.37 Collecting click>=7.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 21.54   Downloading click-8.1.3-py3-none-any.whl (96 kB)
+#10 22.09 Collecting ghp-import>=1.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 22.15   Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
+#10 22.80 Collecting jinja2>=2.11.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 22.86   Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+#10 23.45 Collecting markdown<3.4,>=3.2.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 23.51   Downloading Markdown-3.3.7-py3-none-any.whl (97 kB)
+#10 25.00 Collecting mergedeep>=1.3.4 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 25.07   Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+#10 25.56 Collecting packaging>=20.5 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 25.64   Downloading packaging-23.1-py3-none-any.whl (48 kB)
+#10 26.15 Collecting pyyaml-env-tag>=0.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 26.23   Downloading pyyaml_env_tag-0.1-py3-none-any.whl (3.9 kB)
+#10 27.33 Collecting pyyaml>=5.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 27.40   Downloading PyYAML-6.0.tar.gz (124 kB)
+#10 27.83   Installing build dependencies: started
+#10 41.16   Installing build dependencies: finished with status 'done'
+#10 41.16   Getting requirements to build wheel: started
+#10 42.37   Getting requirements to build wheel: finished with status 'done'
+#10 42.37   Preparing metadata (pyproject.toml): started
+#10 42.69   Preparing metadata (pyproject.toml): finished with status 'done'
+#10 43.65 Collecting watchdog>=2.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 43.72   Downloading watchdog-3.0.0.tar.gz (124 kB)
+#10 44.01   Preparing metadata (setup.py): started
+#10 44.41   Preparing metadata (setup.py): finished with status 'done'
+#10 44.67 Collecting babel>=2.9.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 44.74   Downloading Babel-2.12.1-py3-none-any.whl (10.1 MB)
+#10 47.57 Collecting mkdocs-material>=8.3.3 (from mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 47.64   Downloading mkdocs_material-9.1.15-py3-none-any.whl (7.8 MB)
+#10 50.51 Collecting python-dateutil>=2.8.1 (from ghp-import>=1.0->mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 50.58   Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+#10 51.67 Collecting MarkupSafe>=2.0 (from jinja2>=2.11.1->mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 51.73   Downloading MarkupSafe-2.1.2-cp311-cp311-musllinux_1_1_x86_64.whl (33 kB)
+#10 52.40 Collecting colorama>=0.4 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 52.46   Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+#10 52.76 Collecting mkdocs-material-extensions>=1.1 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 52.82   Downloading mkdocs_material_extensions-1.1.1-py3-none-any.whl (7.9 kB)
+#10 53.15 Collecting pygments>=2.14 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 53.22   Downloading Pygments-2.15.1-py3-none-any.whl (1.1 MB)
+#10 53.84 Collecting pymdown-extensions>=9.9.1 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 53.90   Downloading pymdown_extensions-10.0.1-py3-none-any.whl (240 kB)
+#10 55.33 Collecting regex>=2022.4.24 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 55.41   Downloading regex-2023.5.5-cp311-cp311-musllinux_1_1_x86_64.whl (750 kB)
+#10 57.06 Collecting requests>=2.26 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 57.13   Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+#10 58.01 Collecting six>=1.5 (from python-dateutil>=2.8.1->ghp-import>=1.0->mkdocs>=1.1.2->-r requirements.txt (line 2))
+#10 58.08   Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+#10 59.34 Collecting charset-normalizer<4,>=2 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 59.41   Downloading charset_normalizer-3.1.0-cp311-cp311-musllinux_1_1_x86_64.whl (190 kB)
+#10 61.01 Collecting idna<4,>=2.5 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 61.08   Downloading idna-3.4-py3-none-any.whl (61 kB)
+#10 61.49 Collecting urllib3<3,>=1.21.1 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 61.55   Downloading urllib3-2.0.2-py3-none-any.whl (123 kB)
+#10 61.97 Collecting certifi>=2017.4.17 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+#10 62.03   Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)
+#10 63.02 Building wheels for collected packages: mkdocs-exclude, pyyaml, watchdog
+#10 63.02   Building wheel for mkdocs-exclude (setup.py): started
+#10 63.57   Building wheel for mkdocs-exclude (setup.py): finished with status 'done'
+#10 63.57   Created wheel for mkdocs-exclude: filename=mkdocs_exclude-1.0.2-py3-none-any.whl size=7354 sha256=2f8352d274e9da1d13a8f2bd67eba2870681652e10fe99056492089982f39e17
+#10 63.57   Stored in directory: /root/.cache/pip/wheels/77/c7/ae/c60381b13d6326a19bad15a76deb2d55510d6a5418c7c51288
+#10 63.58   Building wheel for pyyaml (pyproject.toml): started
+#10 63.96   Building wheel for pyyaml (pyproject.toml): finished with status 'done'
+#10 63.97   Created wheel for pyyaml: filename=PyYAML-6.0-cp311-cp311-linux_x86_64.whl size=45331 sha256=c43a239935bda8082f04907d92a3acc9ef464d2271bb4399ff9449e3326ad1fc
+#10 63.97   Stored in directory: /root/.cache/pip/wheels/3c/de/35/2cbb99955fa449eeddb2b433b4369035ee5bdf0fc121035ffe
+#10 63.97   Building wheel for watchdog (setup.py): started
+#10 64.45   Building wheel for watchdog (setup.py): finished with status 'done'
+#10 64.45   Created wheel for watchdog: filename=watchdog-3.0.0-py3-none-any.whl size=82036 sha256=95d6cdedf39c40de93e70c046456e31722cfbafc08f4a52ccdd837dad2ba8790
+#10 64.45   Stored in directory: /root/.cache/pip/wheels/4d/58/44/2c9a2be09adb640c344be9970d37f88a4a78239b760bed8c55
+#10 64.47 Successfully built mkdocs-exclude pyyaml watchdog
+#10 64.80 Installing collected packages: watchdog, urllib3, six, regex, pyyaml, pygments, packaging, mkdocs-material-extensions, mergedeep, MarkupSafe, markdown, idna, colorama, click, charset-normalizer, certifi, babel, requests, pyyaml-env-tag, python-dateutil, pymdown-extensions, jinja2, ghp-import, mkdocs, mkdocs-material, mkdocs-exclude, mkdocs-pymdownx-material-extras
+#10 87.51 Successfully installed MarkupSafe-2.1.2 babel-2.12.1 certifi-2023.5.7 charset-normalizer-3.1.0 click-8.1.3 colorama-0.4.6 ghp-import-2.1.0 idna-3.4 jinja2-3.1.2 markdown-3.3.7 mergedeep-1.3.4 mkdocs-1.4.3 mkdocs-exclude-1.0.2 mkdocs-material-9.1.15 mkdocs-material-extensions-1.1.1 mkdocs-pymdownx-material-extras-2.4.3 packaging-23.1 pygments-2.15.1 pymdown-extensions-10.0.1 python-dateutil-2.8.2 pyyaml-6.0 pyyaml-env-tag-0.1 regex-2023.5.5 requests-2.31.0 six-1.16.0 urllib3-2.0.2 watchdog-3.0.0
+#10 87.51 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#10 87.93 /usr/local/bin/mkdocs
+#10 88.25 INFO     -  Cleaning site directory
+#10 88.25 INFO     -  Building documentation to directory: /srv/public
+#10 88.33 INFO     -  Documentation built in 0.08 seconds
+#10 88.40 total 40
+#10 88.40 drwxr-xr-x    1 root     root          4096 May 30 07:21 .
+#10 88.40 drwxr-xr-x    1 root     root          4096 May 30 07:20 ..
+#10 88.40 -rw-rw-r--    1 root     root           760 Feb  1 02:19 .gitignore
+#10 88.40 -rw-rw-r--    1 root     root          1004 Feb  1 02:19 .gitlab-ci.yml
+#10 88.40 -rw-rw-r--    1 root     root           664 Feb  1 02:19 .pre-commit-config.yaml
+#10 88.40 -rwxrwxr-x    1 root     root           263 Feb  1 02:19 Makefile
+#10 88.40 lrwxrwxrwx    1 root     root            14 May 30 07:20 README.md -> docs/README.md
+#10 88.40 drwxrwxr-x    4 root     root          4096 May 30 07:20 docs
+#10 88.40 -rw-rw-r--    1 root     root           961 Feb  1 02:19 mkdocs.yml
+#10 88.40 drwxr-xr-x    6 root     root          4096 May 30 07:21 public
+#10 88.40 -rw-rw-r--    1 root     root           340 Feb  1 02:19 requirements.txt
+#10 DONE 90.5s
+
+#11 [app 2/2] COPY      --FROM=PYTHON /srv/public /usr/share/nginx/html
+#11 sha256:9ed7160353d341b243294928f33fcae446ea270d1f7e539444ea215d39e84a25
+#11 DONE 1.6s
+
+#12 exporting to image
+#12 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#12 exporting layers
+#12 exporting layers 0.7s done
+#12 writing image sha256:0a2a75ae2891e2b8715540390ace347494c9628f215580da05fe3f3a7bb070e0 0.1s done
+#12 naming to docker.io/ruben/linux-doc
+#12 naming to docker.io/ruben/linux-doc 0.2s done
+#12 DONE 0.9s
