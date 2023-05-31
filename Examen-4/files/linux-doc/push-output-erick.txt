@@ -1,0 +1,11 @@
+Using default tag: latest
+The push refers to repository [docker.io/erick954/linux-doc]
+178ae31f8b7e: Pushed 
+31531248c7cb: Mounted from library/nginx 
+f9cb3f1f1d3d: Mounted from library/nginx 
+f0fb842dea41: Mounted from library/nginx 
+c1cd5c8c68ef: Mounted from library/nginx 
+1d54586a1706: Mounted from library/nginx 
+1003ff723696: Mounted from library/nginx 
+f1417ff83b31: Mounted from library/nginx 
+latest: digest: sha256:27258f1564c13eb682e925d711101d2d4052e953901f8f883c8ec83cc65e89ac size: 1993

@@ -11,20 +11,23 @@ ENV	DEBIAN_FRONTEND=noninteractive
 # Opción A:
 #   Copiar un archivo existente en el directorio a una ruta en el contenedor
 #   Esta opción es compatible con **cualquier versión** de Docker
-# COPY	apt-conf-99-local.conf  /etc/apt/apt.conf.d/99-local
+
+# Optamos por esta opción para que no haya problemas entre distintas versiones de los integrantes del equipo
+# el archivo apt-conf-99-local.conf fue proporcionado y contiene lo mismo que la opción B, solo que es un archivo diferente. Se encarga de copiar los datos al segundo archivo
+COPY	apt-conf-99-local.conf  /etc/apt/apt.conf.d/99-local
 
 # Opción B:
 #   Utilizar la nueva sintaxis _HereDoc_ para especificar el contenido del archivo en el Dockerfile
 #   Esta opción es compatible con **versiones recientes** de Docker
-COPY	<<EOF  /etc/apt/apt.conf.d/99-local
-quiet "2";
-APT::Get::Assume-Yes "1";
-APT::Install-Recommends "0";
-APT::Install-Suggests "0";
-APT::Color "0";
-Dpkg::Progress "0";
-Dpkg::Progress-Fancy "0";
-EOF
+#COPY	<<EOF  /etc/apt/apt.conf.d/99-local
+#quiet "2";
+#APT::Get::Assume-Yes "1";
+#APT::Install-Recommends "0";
+#APT::Install-Suggests "0";
+#APT::Color "0";
+#Dpkg::Progress "0";
+#Dpkg::Progress-Fancy "0";
+#EOF
 
 RUN	apt update && \
 	apt install linux-doc
