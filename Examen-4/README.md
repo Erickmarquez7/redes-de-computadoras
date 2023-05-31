@@ -18,7 +18,7 @@ usuario@laptop:~$ docker run -it hello-world
 ```
 No debería mostrar error alguno
 
-Una vez que nos hayamos asegurado de la correcta instalación iniciamos sessión con 
+Una vez que nos hayamos asegurado de la correcta instalación iniciamos sesión con 
 
 ```
 usuario@laptop:~$ docker login docker.io
@@ -69,11 +69,11 @@ usuario@laptop:~$ TAG=[usuario]/[contenedor]
 usuario@laptop:~$ docker push "${TAG}"
 ```
 
-Y notamos que en nuestra sessión de docker se muestran las imagenes
+Y notamos que en nuestra sesión de docker se muestran las imagenes
 
 | ![](img/docker-imagen.png)
 |:-------------------------:|
-| Sessión con la imagen correspondiente
+| Sesión con la imagen correspondiente
 
 ## Explicación del proceso de instalación de k3s en Debian 11
 
@@ -227,11 +227,13 @@ el modo de '/etc/rancher/k3s/k3s.yaml' cambia de 0600 (rw-------) a 0440 (r--r--
 Hacemos liga simbólica a _3ks.yaml_
 
 ```
-root@waningnew:~# mkdir -vp ~/.kube
+root@example:~# mkdir -vp ~/.kube
 mkdir: se ha creado el directorio '/root/.kube'
-root@waningnew:~# ln -vsf /etc/rancher/k3s/k3s.yaml ~/.kube/config
+
+root@example:~# ln -vsf /etc/rancher/k3s/k3s.yaml ~/.kube/config
 '/root/.kube/config' -> '/etc/rancher/k3s/k3s.yaml'
-root@waningnew:~# ls -la ~/.kube
+
+root@example:~# ls -la ~/.kube
 total 8
 drwxr-xr-x  2 root root 4096 may 31 13:40 .
 drwx------ 10 root root 4096 may 31 13:40 ..
@@ -281,6 +283,196 @@ Abrimos el puerto 6443 en azure en el grupo de seguridad con el nombre de _kube-
 | ![](img/azure-puerto.jpg)
 |:-------------------------:|
 | Portal de Azure
+
+Instalamos __kubectl__ tanto en la maquina local como la virtual para crear los recursos en el cluster de kubernetes, descargamos el binario.
+
+```
+usuario@laptop:~$ KUBECTL_VERSION=v1.26.4
+usuario@laptop:~$ curl -fsSLO https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
+
+usuario@laptop:~$ chmod -c +x kubectl
+mode of 'kubectl' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+```
+
+Lo instalamos
+
+```
+usuario@laptop:~$ sudo install --verbose -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+'kubectl' -> '/usr/local/bin/kubectl'
+
+usuario@laptop:~$ rm -v ~/kubectl
+removed '/home/usuario/kubectl'
+
+usuario@laptop:~$ ls -la /usr/local/bin/kubectl
+-rwxr-xr-x 1 root root 48037888 May 22 13:18 /usr/local/bin/kubectl
+```
+
+Instalamos __krew__ en el equipo local para manejar los _plugins_ de __kubectl__, para esto crearemos un directorio temporal
+
+```
+redes@example:~$ KREW_VERSION=v0.4.3
+redes@example:~$ KREW_TMP_DIR=/tmp/krew
+
+redes@example:~$ mkdir -vp ${KREW_TMP_DIR}
+mkdir: created directory '/tmp/krew'
+
+redes@example:~$ wget -c -nv -O "${KREW_TMP_DIR}/krew-${KREW_VERSION}.tar.gz" \
+  "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew-linux_amd64.tar.gz"
+
+redes@example:~$ ls -la "${KREW_TMP_DIR}/krew-${KREW_VERSION}.tar.gz"
+-rw-r--r-- 1 redes users 4128657 Feb  4  2022 /tmp/krew/krew-v0.4.3.tar.gz
+```
+
+Extraemos el archivo _tar.gz_ de _krew_ en el directorio temporal e instalamos 
+
+```
+redes@example:~$ tar -xvvzf ${KREW_TMP_DIR}/krew-${KREW_VERSION}.tar.gz -C ${KREW_TMP_DIR}
+-rw-r--r-- runner/docker    11358 1999-12-31 18:00 ./LICENSE
+-rwxr-xr-x runner/docker 11836580 1999-12-31 18:00 ./krew-linux_amd64
+
+redes@example:~$ ls -la ${KREW_TMP_DIR}/krew-linux_amd64
+-rwxr-xr-x 1 redes users 11836580 Dec 31  1999 /tmp/krew/krew-linux_amd64
+
+redes@example:~$ ${KREW_TMP_DIR}/krew-linux_amd64 install krew
+WARNING: To be able to run kubectl plugins, you need to add
+the following to your ~/.bash_profile or ~/.bashrc:
+
+    export PATH="${PATH}:${HOME}/.krew/bin"
+
+and restart your shell.
+
+Adding "default" plugin index from https://github.com/kubernetes-sigs/krew-index.git.
+Updated the local copy of plugin index.
+Installing plugin: krew
+Installed plugin: krew
+\
+ | Use this plugin:
+ |  kubectl krew
+ | Documentation:
+ |  https://krew.sigs.k8s.io/
+ | Caveats:
+ | \
+ |  | krew is now installed! To start using kubectl plugins, you need to add
+ |  | krew's installation directory to your PATH:
+ |  |
+ |  |   * macOS/Linux:
+ |  |     - Add the following to your ~/.bashrc or ~/.zshrc:
+ |  |         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+ |  |     - Restart your shell.
+ |  |
+ |  |   * Windows: Add %USERPROFILE%\.krew\bin to your PATH environment variable
+ |  |
+ |  | To list krew commands and to get help, run:
+ |  |   $ kubectl krew
+ |  | For a full list of available plugins, run:
+ |  |   $ kubectl krew search
+ |  |
+ |  | You can find documentation at
+ |  |   https://krew.sigs.k8s.io/docs/user-guide/quickstart/.
+ | /
+/
+```
+
+Borramos el directorio temporal
+
+```
+redes@example:~$ rm -vrf ${KREW_TMP_DIR}
+removed '/tmp/krew/krew-v0.4.3.tar.gz'
+removed '/tmp/krew/krew-linux_amd64'
+removed '/tmp/krew/LICENSE'
+removed directory '/tmp/krew'
+```
+
+Añadimos la siguiente linea al final del archivo _~/.bashrc_
+
+```
+export PATH="${PATH}:${HOME}/.krew/bin"
+```
+
+Cerramos y volvemos a iniciar sesión para que shell guarde los cambios, verificamos que __~/.krew/bin__ aparezca en el __path__
+
+```
+redes@example:~$ echo ${PATH}
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/redes/.krew/bin
+```
+
+Una vez hayamos inciado sesión verificamos que _shell_ puede ubicar el programa y entonces lo ejecutamos
+
+```
+redes@example:~$ which kubectl-krew
+/home/redes/.krew/bin/kubectl-krew
+
+redes@example:~$ kubectl krew version
+OPTION            VALUE
+GitTag            v0.4.3
+GitCommit         dbfefa5
+IndexURI          https://github.com/kubernetes-sigs/krew-index.git
+BasePath          /home/redes/.krew
+IndexPath         /home/redes/.krew/index/default
+InstallPath       /home/redes/.krew/store
+BinPath           /home/redes/.krew/bin
+DetectedPlatform  linux/amd64
+```
+
+Actualizamos la lista de _plugins_ de __krew__ e instalamos _neat_
+
+```
+redes@example:~$ kubectl krew update
+Updated the local copy of plugin index.
+
+redes@example:~$ kubectl krew install neat
+Updated the local copy of plugin index.
+Installing plugin: neat
+Installed plugin: neat
+\
+ | Use this plugin:
+ |  kubectl neat
+ | Documentation:
+ |  https://github.com/itaysk/kubectl-neat
+/
+WARNING: You installed plugin "neat" from the krew-index plugin repository.
+   These plugins are not audited for security by the Krew maintainers.
+   Run them at your own risk.
+```
+
+Por último configuramos el archivo _~/.kube/config_ en el equipo local
+
+Para esto "sacamos" el archivo hacia la maquina física (puede ser por medio de scp). El archivo debe llamarse _redes-kube-config.yaml_  lo editamos poniendo el nombre DNS de la maquina virtual
+
+```
+usuario@laptop:~# sed -i'' -e 's/127.0.0.1/k3s.[example.com]/g' ~/Downloads/redes-kube-config.yaml
+```
+
+Creamos el directorio _~/.kube_ y copiamos el archivo _.yaml_
+
+```
+usuario@laptop:~# mkdir -vp --mode 0700 ~/.kube
+mkdir: created directory '/home/usuario/.kube'
+
+usuario@laptop:~# install --verbose --owner "$(id -u)" --group "$(id -g)" --mode 0640 ~/Downloads/redes-kube-config.yaml ~/.kube/config
+'/home/usuario/Downloads/redes-kube-config.yaml' -> '/home/usuario/.kube/config'
+```
+
+Nos conectamos al cluster desde el equipo local
+
+```
+usuario@laptop:~# nc -vz k3s.[dominio.me] 6443
+Connection to k3s.waningnew.me (68.218.33.216) 6443 port [tcp/*] succeeded!
+```
+
+Para verificar y listar los nodos
+
+```
+usuario@lapotop:~$ kubectl version --short --insecure-skip-tls-verify=false
+Flag --short has been deprecated, and will be removed in the future. The --short output will become the default.
+Client Version: v1.26.4
+Kustomize Version: v4.5.7
+Server Version: v1.26.5+k3s1
+
+usuario@lapotop:~$ kubectl get nodes
+NAME           STATUS   ROLES                  AGE     VERSION
+waningnew.me   Ready    control-plane,master   3h15m   v1.26.5+k3s1
+```
 
 ## Explicación del proceso de instalación del ingress controller en el cluster
 
