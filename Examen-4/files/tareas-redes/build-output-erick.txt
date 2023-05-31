@@ -1,0 +1,162 @@
+erickmain@erickmain:~$ docker build --progress plain -t "${TAG}" ./
+Sending build context to Docker daemon    4.1GB
+Step 1/8 : FROM	docker.io/library/python:3.11-alpine AS python
+3.11-alpine: Pulling from library/python
+8a49fdb3b6a5: Pull complete 
+0357922e53aa: Pull complete 
+9676b6d4b964: Pull complete 
+ddbd03ee1059: Pull complete 
+877a053836a3: Pull complete 
+Digest: sha256:4e8e9a59bf1b3ca8e030244bc5f801f23e41e37971907371da21191312087a07
+Status: Downloaded newer image for python:3.11-alpine
+ ---> b6b068cda0cf
+Step 2/8 : WORKDIR	/srv
+ ---> Running in 8696d9adf55e
+Removing intermediate container 8696d9adf55e
+ ---> 82dec646a8f8
+Step 3/8 : ENV	GIT_PROJECT=Erickmarquez7	GIT_REPO=tareas-redes 	GIT_BRANCH=entregas
+ ---> Running in d27f1724138d
+Removing intermediate container d27f1724138d
+ ---> 828bd389d6c8
+Step 4/8 : ENV	ARCHIVE_FILE=${GIT_REPO}.tar.gz 	GITLAB_URL="https://gitlab.com/${GIT_PROJECT}/${GIT_REPO}/-/archive/${GIT_BRANCH}/${GIT_REPO}-${GIT_BRANCH}.tar.gz"
+ ---> Running in fd2342084ffd
+Removing intermediate container fd2342084ffd
+ ---> b6b62eca0cc7
+Step 5/8 : RUN	wget -c -q -O ${ARCHIVE_FILE} ${GITLAB_URL} && 	ls -l ${ARCHIVE_FILE} && 	tar -xvzf ${ARCHIVE_FILE} --strip 1 && 	rm -v ${ARCHIVE_FILE} && 	pip3 config --global set global.progress_bar off && 	pip3 install --upgrade pip && 	pip3 install --requirement requirements.txt && 	which mkdocs && 	mkdocs build --strict && 	ls -la .
+ ---> Running in a27a968272ba
+-rw-r--r--    1 root     root          4787 May 31 18:47 tareas-redes.tar.gz
+tareas-redes-entregas/
+tareas-redes-entregas/.gitignore
+tareas-redes-entregas/.gitlab-ci.yml
+tareas-redes-entregas/.pre-commit-config.yaml
+tareas-redes-entregas/Makefile
+tareas-redes-entregas/README.md
+tareas-redes-entregas/docs/
+tareas-redes-entregas/docs/README.md
+tareas-redes-entregas/docs/css/
+tareas-redes-entregas/docs/css/extra.css
+tareas-redes-entregas/docs/js/
+tareas-redes-entregas/docs/js/extra.js
+tareas-redes-entregas/mkdocs.yml
+tareas-redes-entregas/requirements.txt
+removed 'tareas-redes.tar.gz'
+Writing to /etc/pip.conf
+Requirement already satisfied: pip in /usr/local/lib/python3.11/site-packages (22.3.1)
+Collecting pip
+  Downloading pip-23.1.2-py3-none-any.whl (2.1 MB)
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.3.1
+    Uninstalling pip-22.3.1:
+      Successfully uninstalled pip-22.3.1
+Successfully installed pip-23.1.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Collecting mkdocs>=1.1.2 (from -r requirements.txt (line 2))
+  Downloading mkdocs-1.4.3-py3-none-any.whl (3.7 MB)
+Collecting mkdocs-exclude>=1.0.2 (from -r requirements.txt (line 12))
+  Downloading mkdocs-exclude-1.0.2.tar.gz (6.8 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting mkdocs-pymdownx-material-extras (from -r requirements.txt (line 14))
+  Downloading mkdocs_pymdownx_material_extras-2.4.3-py3-none-any.whl (25 kB)
+Collecting click>=7.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading click-8.1.3-py3-none-any.whl (96 kB)
+Collecting ghp-import>=1.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
+Collecting jinja2>=2.11.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading Jinja2-3.1.2-py3-none-any.whl (133 kB)
+Collecting markdown<3.4,>=3.2.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading Markdown-3.3.7-py3-none-any.whl (97 kB)
+Collecting mergedeep>=1.3.4 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+Collecting packaging>=20.5 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading packaging-23.1-py3-none-any.whl (48 kB)
+Collecting pyyaml-env-tag>=0.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading pyyaml_env_tag-0.1-py3-none-any.whl (3.9 kB)
+Collecting pyyaml>=5.1 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading PyYAML-6.0.tar.gz (124 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting watchdog>=2.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading watchdog-3.0.0.tar.gz (124 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting babel>=2.9.0 (from mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading Babel-2.12.1-py3-none-any.whl (10.1 MB)
+Collecting mkdocs-material>=8.3.3 (from mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading mkdocs_material-9.1.15-py3-none-any.whl (7.8 MB)
+Collecting python-dateutil>=2.8.1 (from ghp-import>=1.0->mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=2.11.1->mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading MarkupSafe-2.1.2-cp311-cp311-musllinux_1_1_x86_64.whl (33 kB)
+Collecting colorama>=0.4 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Collecting mkdocs-material-extensions>=1.1 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading mkdocs_material_extensions-1.1.1-py3-none-any.whl (7.9 kB)
+Collecting pygments>=2.14 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading Pygments-2.15.1-py3-none-any.whl (1.1 MB)
+Collecting pymdown-extensions>=9.9.1 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading pymdown_extensions-10.0.1-py3-none-any.whl (240 kB)
+Collecting regex>=2022.4.24 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading regex-2023.5.5-cp311-cp311-musllinux_1_1_x86_64.whl (750 kB)
+Collecting requests>=2.26 (from mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.1->ghp-import>=1.0->mkdocs>=1.1.2->-r requirements.txt (line 2))
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting charset-normalizer<4,>=2 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading charset_normalizer-3.1.0-cp311-cp311-musllinux_1_1_x86_64.whl (190 kB)
+Collecting idna<4,>=2.5 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading idna-3.4-py3-none-any.whl (61 kB)
+Collecting urllib3<3,>=1.21.1 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading urllib3-2.0.2-py3-none-any.whl (123 kB)
+Collecting certifi>=2017.4.17 (from requests>=2.26->mkdocs-material>=8.3.3->mkdocs-pymdownx-material-extras->-r requirements.txt (line 14))
+  Downloading certifi-2023.5.7-py3-none-any.whl (156 kB)
+Building wheels for collected packages: mkdocs-exclude, pyyaml, watchdog
+  Building wheel for mkdocs-exclude (setup.py): started
+  Building wheel for mkdocs-exclude (setup.py): finished with status 'done'
+  Created wheel for mkdocs-exclude: filename=mkdocs_exclude-1.0.2-py3-none-any.whl size=7354 sha256=b46ad0cabd7cbca6317507cf3d2a857cfa0f2439f6b57a28e2e41886c3ecfe3f
+  Stored in directory: /root/.cache/pip/wheels/77/c7/ae/c60381b13d6326a19bad15a76deb2d55510d6a5418c7c51288
+  Building wheel for pyyaml (pyproject.toml): started
+  Building wheel for pyyaml (pyproject.toml): finished with status 'done'
+  Created wheel for pyyaml: filename=PyYAML-6.0-cp311-cp311-linux_x86_64.whl size=45331 sha256=78477aa3ffeb1b92f985c242ceec434e36b66ce71505a489bc90642bfdc2cb53
+  Stored in directory: /root/.cache/pip/wheels/3c/de/35/2cbb99955fa449eeddb2b433b4369035ee5bdf0fc121035ffe
+  Building wheel for watchdog (setup.py): started
+  Building wheel for watchdog (setup.py): finished with status 'done'
+  Created wheel for watchdog: filename=watchdog-3.0.0-py3-none-any.whl size=82036 sha256=5a951918bf89a617c1d4a5673b0c70b2a39aa0b28d0110801f6ac503829a6bfd
+  Stored in directory: /root/.cache/pip/wheels/4d/58/44/2c9a2be09adb640c344be9970d37f88a4a78239b760bed8c55
+Successfully built mkdocs-exclude pyyaml watchdog
+Installing collected packages: watchdog, urllib3, six, regex, pyyaml, pygments, packaging, mkdocs-material-extensions, mergedeep, MarkupSafe, markdown, idna, colorama, click, charset-normalizer, certifi, babel, requests, pyyaml-env-tag, python-dateutil, pymdown-extensions, jinja2, ghp-import, mkdocs, mkdocs-material, mkdocs-exclude, mkdocs-pymdownx-material-extras
+Successfully installed MarkupSafe-2.1.2 babel-2.12.1 certifi-2023.5.7 charset-normalizer-3.1.0 click-8.1.3 colorama-0.4.6 ghp-import-2.1.0 idna-3.4 jinja2-3.1.2 markdown-3.3.7 mergedeep-1.3.4 mkdocs-1.4.3 mkdocs-exclude-1.0.2 mkdocs-material-9.1.15 mkdocs-material-extensions-1.1.1 mkdocs-pymdownx-material-extras-2.4.3 packaging-23.1 pygments-2.15.1 pymdown-extensions-10.0.1 python-dateutil-2.8.2 pyyaml-6.0 pyyaml-env-tag-0.1 regex-2023.5.5 requests-2.31.0 six-1.16.0 urllib3-2.0.2 watchdog-3.0.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+/usr/local/bin/mkdocs
+INFO     -  Cleaning site directory
+INFO     -  Building documentation to directory: /srv/public
+INFO     -  Documentation built in 0.10 seconds
+total 40
+drwxr-xr-x    1 root     root          4096 May 31 18:48 .
+drwxr-xr-x    1 root     root          4096 May 31 18:47 ..
+-rw-rw-r--    1 root     root           760 Feb  1 02:19 .gitignore
+-rw-rw-r--    1 root     root          1004 Feb  1 02:19 .gitlab-ci.yml
+-rw-rw-r--    1 root     root           664 Feb  1 02:19 .pre-commit-config.yaml
+-rwxrwxr-x    1 root     root           263 Feb  1 02:19 Makefile
+lrwxrwxrwx    1 root     root            14 May 31 18:47 README.md -> docs/README.md
+drwxrwxr-x    4 root     root          4096 May 31 18:47 docs
+-rw-rw-r--    1 root     root           961 Feb  1 02:19 mkdocs.yml
+drwxr-xr-x    6 root     root          4096 May 31 18:48 public
+-rw-rw-r--    1 root     root           340 Feb  1 02:19 requirements.txt
+Removing intermediate container a27a968272ba
+ ---> d1fc4606f272
+Step 6/8 : FROM	docker.io/library/nginx:1.23-alpine AS app
+ ---> 8e75cbc5b25c
+Step 7/8 : ENV	NGINX_ROOT=/usr/share/nginx/html 	MKDOCS_ROOT=/srv/public
+ ---> Running in c25657ae7180
+Removing intermediate container c25657ae7180
+ ---> 595006ee642b
+Step 8/8 : COPY	--from=python ${MKDOCS_ROOT} ${NGINX_ROOT}
+ ---> 276e2ac24bf2
+Successfully built 276e2ac24bf2
+Successfully tagged erick954/tareas-redes:latest

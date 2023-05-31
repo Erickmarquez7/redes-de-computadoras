@@ -1,0 +1,11 @@
+Using default tag: latest
+The push refers to repository [docker.io/erick954/tareas-redes]
+21f15fc31b4a: Pushed 
+31531248c7cb: Mounted from erick954/linux-doc 
+f9cb3f1f1d3d: Mounted from erick954/linux-doc 
+f0fb842dea41: Mounted from erick954/linux-doc 
+c1cd5c8c68ef: Mounted from erick954/linux-doc 
+1d54586a1706: Mounted from erick954/linux-doc 
+1003ff723696: Mounted from erick954/linux-doc 
+f1417ff83b31: Mounted from erick954/linux-doc 
+latest: digest: sha256:02b3c97465883420514e3ed3536e28e1db3e5b06d08c4dd9ebfd8ad1cef30b2f size: 1991
