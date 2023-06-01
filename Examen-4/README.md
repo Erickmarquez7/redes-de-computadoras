@@ -3,7 +3,7 @@
 | Integrante                     | Número de Cuenta | Usuario de GitLab   | Usuario de Docker
 |:------------------------------:|:----------------:|:-------------------:|:----------:|
 | Acosta Arzate Rubén            | 317205776        | `rubenAcostaArzate` | rubencompu
-| Alvarado Torres David Ignacio  | 316167613        | `ddalt`             | 
+| Alvarado Torres David Ignacio  | 316167613        | `ddalt`             | wetdawgs
 | Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     | erick954
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        | valeriadeloya13
 | López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  | 
@@ -946,8 +946,8 @@ Bitácoras utilizando [HTTP y HTTPS](http-https.txt)
 ## Archivos
 
 * Archivos de configuración
-  - [Archivo tar.gz del contenido del directorio /etc/letsencrypt](files/configuracion/letsencrypt.tar)
-  - [Archivo tar.gz del contenido del directorio /etc/rancher](files/configuracion/rancher.tar)
+  - [Archivo tar.gz del contenido del directorio /etc/letsencrypt](files/configuracion/letsencrypt.tar.gz)
+  - [Archivo tar.gz del contenido del directorio /etc/rancher](files/configuracion/rancher.tar.gz)
 
 * Archivos de bitácora
   - [Preparación de la máqina virtual de Azure (reducción de uso de CPU y RAM)](files/bitacoras/preparacion.txt)
@@ -964,7 +964,7 @@ Bitácoras utilizando [HTTP y HTTPS](http-https.txt)
   - [linux-doc/docker](files/datos/linux-doc/Dockerfile)
   - [tareas-redes/docker](files/datos/tareas-redes/Dockerfile)
   - [Archivo tar.gz el contenido del directorio /var/www/html de la máquina virual de Azure](files/datos/html.tar.gz)
-  - [Archivo cert.txt](files/bitacoras/cert.txt)
+  - [Archivo cert.txt](files/datos/cert.txt)
 
 * Recursos kubernetes
   - [recursos-ingress](files/kubernetes/recurso-ingress.yaml)

@@ -1,0 +1,30 @@
+apiVersion: v1
+data:
+  index.html: |
+    <!DOCTYPE HTML>
+    <html>
+      <head>
+        <meta charset="UTF-8">
+        <title>Examen 4 - Redes 2023-2</title>
+        <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+      </head>
+      <body>
+        <h1>Hola</h1>
+        <div>
+          <p>Esta es la página del <code>Equipo-AAR-ATDI-BME-DAAV-LMAM</code></p>
+          <p>Nuestro dominio DNS es <code>waningnew.me</code></p>
+          <ul>
+            <li><em>Esta página se está sirviendo desde el cluster de <b>Kubernetes</b> en <code>k3s.example.com</code></em></li>
+          </ul>
+        </div>
+        <hr/>
+        <code>Redes de Computadoras</code>
+      </body>
+    </html>
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-06-01T00:55:02Z"
+  name: index-equipo-aar-atdi-bme-daav-lmam
+  namespace: default
+  resourceVersion: "6788"
+  uid: 0350929c-b1dd-4fde-8d16-86bbb1cc8d9b

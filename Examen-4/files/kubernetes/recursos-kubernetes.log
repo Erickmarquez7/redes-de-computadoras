@@ -1,0 +1,43 @@
+NAMESPACE       NAME                                           READY   STATUS      RESTARTS      AGE
+kube-system     pod/coredns-59b4f5bbd5-7n82k                   1/1     Running     1 (22h ago)   25h
+kube-system     pod/local-path-provisioner-76d776f6f9-sbqpl    1/1     Running     2 (22h ago)   25h
+ingress-nginx   pod/ingress-nginx-admission-create-b54qw       0/1     Completed   0             21h
+ingress-nginx   pod/ingress-nginx-admission-patch-q26fq        0/1     Completed   1             21h
+default         pod/linux-doc-55845bc798-jhrw6                 1/1     Running     0             19h
+default         pod/tareas-redes-54856f9d4c-r69nt              1/1     Running     0             19h
+default         pod/root-nginx-5d659695fb-jhn69                1/1     Running     0             18h
+ingress-nginx   pod/ingress-nginx-controller-5b54c7d8c-kng6h   1/1     Running     0             89m
+
+NAMESPACE       NAME                                         TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+default         service/kubernetes                           ClusterIP      10.43.0.1       <none>        443/TCP                      25h
+kube-system     service/kube-dns                             ClusterIP      10.43.0.10      <none>        53/UDP,53/TCP,9153/TCP       25h
+ingress-nginx   service/ingress-nginx-controller             LoadBalancer   10.43.123.93    <pending>     80:30016/TCP,443:32441/TCP   21h
+ingress-nginx   service/ingress-nginx-controller-admission   ClusterIP      10.43.83.154    <none>        443/TCP                      21h
+default         service/root-nginx                           ClusterIP      10.43.90.9      <none>        80/TCP                       19h
+default         service/linux-doc                            ClusterIP      10.43.73.199    <none>        80/TCP                       19h
+default         service/tareas-redes                         ClusterIP      10.43.251.214   <none>        80/TCP                       19h
+
+NAMESPACE       NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
+kube-system     deployment.apps/coredns                    1/1     1            1           25h
+kube-system     deployment.apps/local-path-provisioner     1/1     1            1           25h
+default         deployment.apps/linux-doc                  1/1     1            1           19h
+default         deployment.apps/tareas-redes               1/1     1            1           19h
+default         deployment.apps/root-nginx                 1/1     1            1           20h
+ingress-nginx   deployment.apps/ingress-nginx-controller   1/1     1            1           21h
+
+NAMESPACE       NAME                                                  DESIRED   CURRENT   READY   AGE
+kube-system     replicaset.apps/coredns-59b4f5bbd5                    1         1         1       25h
+kube-system     replicaset.apps/local-path-provisioner-76d776f6f9     1         1         1       25h
+ingress-nginx   replicaset.apps/ingress-nginx-controller-c69664497    0         0         0       21h
+default         replicaset.apps/root-nginx-7b6b9d5b79                 0         0         0       20h
+default         replicaset.apps/root-nginx-7779768864                 0         0         0       20h
+default         replicaset.apps/linux-doc-55845bc798                  1         1         1       19h
+default         replicaset.apps/tareas-redes-54856f9d4c               1         1         1       19h
+default         replicaset.apps/root-nginx-5d659695fb                 1         1         1       18h
+default         replicaset.apps/root-nginx-5cdf4b58db                 0         0         0       19h
+ingress-nginx   replicaset.apps/ingress-nginx-controller-6b557cfc48   0         0         0       20h
+ingress-nginx   replicaset.apps/ingress-nginx-controller-5b54c7d8c    1         1         1       111m
+
+NAMESPACE       NAME                                       COMPLETIONS   DURATION   AGE
+ingress-nginx   job.batch/ingress-nginx-admission-create   1/1           25s        21h
+ingress-nginx   job.batch/ingress-nginx-admission-patch    1/1           26s        21h

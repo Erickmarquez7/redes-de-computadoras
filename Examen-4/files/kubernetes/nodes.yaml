@@ -1,0 +1,126 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      flannel.alpha.coreos.com/backend-data: '{"VNI":1,"VtepMAC":"6a:a5:08:ed:8b:c9"}'
+      flannel.alpha.coreos.com/backend-type: vxlan
+      flannel.alpha.coreos.com/kube-subnet-manager: "true"
+      flannel.alpha.coreos.com/public-ip: 10.0.0.4
+      k3s.io/node-args: '["server","--tls-san","k3s.waningnew.me","--tls-san","68.218.33.216","--disable-cloud-controller","--disable","metrics-server","--disable","servicelb","--disable","traefik"]'
+      k3s.io/node-config-hash: KXWT4IENQULUOSAPBHNTPDXPE3ZZD2NEANXYU6T6F2QKW5RLT73A====
+      k3s.io/node-env: '{"K3S_DATA_DIR":"/var/lib/rancher/k3s/data/163665c44bcc8e97514aeb518069c3c55e5ad6226d4ebf3c6d89cbd4057b6809"}'
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: "2023-05-31T19:27:00Z"
+    finalizers:
+    - wrangler.cattle.io/node
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: waningnew.me
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/control-plane: "true"
+      node-role.kubernetes.io/master: "true"
+    name: waningnew.me
+    resourceVersion: "38926"
+    uid: bca9c994-54a7-47d3-9a29-f6f2fe923b5f
+  spec:
+    podCIDR: 10.42.0.0/24
+    podCIDRs:
+    - 10.42.0.0/24
+  status:
+    addresses:
+    - address: 10.0.0.4
+      type: InternalIP
+    - address: waningnew.me
+      type: Hostname
+    allocatable:
+      cpu: "1"
+      ephemeral-storage: "29824545974"
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 935968Ki
+      pods: "110"
+    capacity:
+      cpu: "1"
+      ephemeral-storage: 30658456Ki
+      hugepages-1Gi: "0"
+      hugepages-2Mi: "0"
+      memory: 935968Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: "2023-06-01T21:25:10Z"
+      lastTransitionTime: "2023-05-31T19:27:00Z"
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: "2023-06-01T21:25:10Z"
+      lastTransitionTime: "2023-05-31T19:27:00Z"
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: "2023-06-01T21:25:10Z"
+      lastTransitionTime: "2023-05-31T19:27:00Z"
+      message: kubelet has sufficient PID available
+      reason: KubeletHasSufficientPID
+      status: "False"
+      type: PIDPressure
+    - lastHeartbeatTime: "2023-06-01T21:25:10Z"
+      lastTransitionTime: "2023-05-31T22:53:34Z"
+      message: kubelet is posting ready status. AppArmor enabled
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - registry.k8s.io/ingress-nginx/controller@sha256:15be4666c53052484dd2992efacf2f50ea77a78ae8aa21ccd91af6baaa7ea22f
+      sizeBytes: 113831923
+    - names:
+      - docker.io/library/nginx@sha256:af296b188c7b7df99ba960ca614439c99cb7cf252ed7bbc23e90cfda59092305
+      - docker.io/library/nginx:latest
+      sizeBytes: 57191452
+    - names:
+      - docker.io/erick954/linux-doc@sha256:27258f1564c13eb682e925d711101d2d4052e953901f8f883c8ec83cc65e89ac
+      - docker.io/erick954/linux-doc:latest
+      sizeBytes: 44339281
+    - names:
+      - registry.k8s.io/ingress-nginx/kube-webhook-certgen@sha256:39c5b2e3310dc4264d638ad28d9d1d96c4cbb2b2dcfb52368fe4e3c63f61e10f
+      sizeBytes: 19670592
+    - names:
+      - docker.io/erick954/tareas-redes@sha256:02b3c97465883420514e3ed3536e28e1db3e5b06d08c4dd9ebfd8ad1cef30b2f
+      - docker.io/erick954/tareas-redes:latest
+      sizeBytes: 17400436
+    - names:
+      - docker.io/rancher/mirrored-coredns-coredns@sha256:a11fafae1f8037cbbd66c5afa40ba2423936b72b4fd50a7034a7e8b955163594
+      - docker.io/rancher/mirrored-coredns-coredns:1.10.1
+      sizeBytes: 16190137
+    - names:
+      - docker.io/rancher/local-path-provisioner@sha256:5bb33992a4ec3034c28b5e0b3c4c2ac35d3613b25b79455eb4b1a95adc82cdc0
+      - docker.io/rancher/local-path-provisioner:v0.0.24
+      sizeBytes: 14887612
+    - names:
+      - docker.io/rancher/mirrored-pause@sha256:74c4244427b7312c5b901fe0f67cbc53683d06f4f24c6faee65d4182bf0fa893
+      - docker.io/rancher/mirrored-pause:3.6
+      sizeBytes: 301463
+    nodeInfo:
+      architecture: amd64
+      bootID: 7733c488-ed91-4176-9abd-472d076d6c97
+      containerRuntimeVersion: containerd://1.7.1-k3s1
+      kernelVersion: 5.10.0-23-cloud-amd64
+      kubeProxyVersion: v1.26.5+k3s1
+      kubeletVersion: v1.26.5+k3s1
+      machineID: e8e7f53fed65473594dd03d144ca0a27
+      operatingSystem: linux
+      osImage: Debian GNU/Linux 11 (bullseye)
+      systemUUID: b5479fea-1860-47ef-87d8-097eea6af1ab
+kind: List
+metadata:
+  resourceVersion: ""
