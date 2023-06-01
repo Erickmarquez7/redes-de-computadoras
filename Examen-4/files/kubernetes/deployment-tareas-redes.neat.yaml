@@ -3,14 +3,10 @@ kind: Deployment
 metadata:
   annotations:
     deployment.kubernetes.io/revision: "1"
-  creationTimestamp: "2023-06-01T02:06:23Z"
-  generation: 1
   labels:
     app: tareas-redes
   name: tareas-redes
   namespace: default
-  resourceVersion: "8818"
-  uid: de7a64b7-9d71-4d7b-9f50-eeb440040e94
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -36,30 +32,10 @@ spec:
         ports:
         - containerPort: 80
           protocol: TCP
-        resources: {}
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
-      securityContext: {}
       terminationGracePeriodSeconds: 30
-status:
-  availableReplicas: 1
-  conditions:
-  - lastTransitionTime: "2023-06-01T02:06:30Z"
-    lastUpdateTime: "2023-06-01T02:06:30Z"
-    message: Deployment has minimum availability.
-    reason: MinimumReplicasAvailable
-    status: "True"
-    type: Available
-  - lastTransitionTime: "2023-06-01T02:06:23Z"
-    lastUpdateTime: "2023-06-01T02:06:30Z"
-    message: ReplicaSet "tareas-redes-54856f9d4c" has successfully progressed.
-    reason: NewReplicaSetAvailable
-    status: "True"
-    type: Progressing
-  observedGeneration: 1
-  readyReplicas: 1
-  replicas: 1
-  updatedReplicas: 1
+#Se eliminaron el TimeStamp, la versión y el uid, además del status

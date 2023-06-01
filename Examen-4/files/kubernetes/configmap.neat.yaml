@@ -23,8 +23,6 @@ data:
     </html>
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2023-06-01T00:55:02Z"
   name: index-equipo-aar-atdi-bme-daav-lmam
   namespace: default
-  resourceVersion: "6788"
-  uid: 0350929c-b1dd-4fde-8d16-86bbb1cc8d9b
+#Se eliminaron el TimeStamp, la versión y el uid

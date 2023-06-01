@@ -1,0 +1,33 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      flannel.alpha.coreos.com/backend-data: '{"VNI":1,"VtepMAC":"6a:a5:08:ed:8b:c9"}'
+      flannel.alpha.coreos.com/backend-type: vxlan
+      flannel.alpha.coreos.com/kube-subnet-manager: "true"
+      flannel.alpha.coreos.com/public-ip: 10.0.0.4
+      k3s.io/node-args: '["server","--tls-san","k3s.waningnew.me","--tls-san","68.218.33.216","--disable-cloud-controller","--disable","metrics-server","--disable","servicelb","--disable","traefik"]'
+      k3s.io/node-config-hash: KXWT4IENQULUOSAPBHNTPDXPE3ZZD2NEANXYU6T6F2QKW5RLT73A====
+      k3s.io/node-env: '{"K3S_DATA_DIR":"/var/lib/rancher/k3s/data/163665c44bcc8e97514aeb518069c3c55e5ad6226d4ebf3c6d89cbd4057b6809"}'
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/arch: amd64
+      kubernetes.io/hostname: waningnew.me
+      kubernetes.io/os: linux
+      node-role.kubernetes.io/control-plane: "true"
+      node-role.kubernetes.io/master: "true"
+    name: waningnew.me
+  spec:
+    podCIDR: 10.42.0.0/24
+    podCIDRs:
+    - 10.42.0.0/24
+kind: List
+metadata:
+  resourceVersion: ""
+# Se eliminaron aproximadamente 90 lineas de código
+# Ninguna de ellas con recursos tipo deployment, configmap, secret o ingress

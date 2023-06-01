@@ -1,0 +1,50 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+    # Se eliminó kubectl.kubernetes.io/last-applied-configuration:
+    # Ademas de el TimeStamp, la versión y el uid
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: ingress-nginx
+  namespace: default
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: root-nginx
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  - host: kernel.waningnew.me
+    http:
+      paths:
+      - backend:
+          service:
+            name: linux-doc
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  - host: tareas.waningnew.me
+    http:
+      paths:
+      - backend:
+          service:
+            name: tareas-redes
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - '*.waningnew.me'
+    - kernel.waningnew.me
+    - tareas.waningnew.me
+    secretName: nginx-ingress-tls
+# Se eliminó el status
