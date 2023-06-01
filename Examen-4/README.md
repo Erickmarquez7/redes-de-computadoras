@@ -476,6 +476,105 @@ waningnew.me   Ready    control-plane,master   3h15m   v1.26.5+k3s1
 
 ## Explicación del proceso de instalación del ingress controller en el cluster
 
+Descargamos el archivo YAML que contiene la definición de los recursos de Kubernetes para instalar el ingress controller en el cluster y lo instalamos
+
+```
+usuario@lapotop:~$ INGRESS_NGINX_VERSION=v1.6.4
+
+usuario@lapotop:~$ wget -c -nv -O ingress-nginx-${INGRESS_NGINX_VERSION}.yaml  https://github.com/kubernetes/ingress-nginx/raw/controller-${INGRESS_NGINX_VERSION}/deploy/static/provider/cloud/deploy.yaml
+
+usuario@lapotop:~$ file ingress-nginx-${INGRESS_NGINX_VERSION}.yaml
+
+usuario@lapotop:~$ kubectl apply -f ingress-nginx-${INGRESS_NGINX_VERSION}.yaml
+```
+
+Espereamos a que el _pod_ de _ingress controller_ esté listo
+
+```
+usuario@lapotop:~$ kubectl get pods --selector=app.kubernetes.io/component=controller --namespace ingress-nginx
+NAME                                       READY   STATUS    RESTARTS   AGE
+ingress-nginx-controller-c69664497-cwp5b   1/1     Running   0          97s
+```
+
+Como el _ingress controller_ no abre de manera predeterminada los puertos 80 y 443 aplicamos un parche al recurso deployment del _ingress controller_
+
+```
+usuario@laptop:~$  kubectl patch deployment/ingress-nginx-controller -n ingress-nginx --patch '{"spec":{"template":{"spec":{"hostNetwork":true}}}}'
+deployment.apps/ingress-nginx-controller patched
+```
+
+Ejecutamos el siguiente comando para esperar a que el pod del ingress controller esté listo para recibir conexiones
+
+```
+usuario@laptop:~$ kubectl wait --for=condition=ready pod -n ingress-nginx  -l=app.kubernetes.io/component=controller  --timeout=180s
+pod/ingress-nginx-controller-c69664497-cwp5b condition met
+pod/ingress-nginx-controller-6b557cfc48-4frvv condition met
+```
+
+Revisamos que el nuevo pod esté en ejecución
+
+```
+usuario@laptop:~$ kubectl get pods -l=app.kubernetes.io/component=controller -n ingress-nginx
+NAME                                        READY   STATUS        RESTARTS   AGE
+ingress-nginx-controller-6b557cfc48-4frvv   1/1     Running       0          48s
+ingress-nginx-controller-c69664497-cwp5b    1/1     Terminating   0          2m50s
+```
+
+Nos vamos al equipo remoto y verificamos que _ingress-nginx_ esté activo
+
+```
+root@waningnew:~# netstat -ntulp | egrep -w '80|443'
+tcp     0      0 0.0.0.0:443       0.0.0.0:*           LISTEN      6810/nginx: master  
+tcp     0      0 0.0.0.0:80        0.0.0.0:*           LISTEN      6810/nginx: master  
+tcp6    0      0 :::443            :::*                LISTEN      6810/nginx: master  
+tcp6    0      0 :::80             :::*                LISTEN      6810/nginx: master  
+```
+
+Revisamos que el deployment se encuentre con estado _READY 1/1_
+
+```
+usuario@laptop:~$ kubectl get deployments -n ingress-nginx
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE
+ingress-nginx-controller   1/1     1            1           4m3s
+```
+
+Revisamos que el estado del pod sea _Running_
+
+```
+usuario@laptop:~$ kubectl get pods -n ingress-nginx --field-selector=status.phase==Running
+NAME                                        READY   STATUS    RESTARTS   AGE
+ingress-nginx-controller-6b557cfc48-4frvv   1/1     Running   0          2m18s
+```
+
+Revisamos que el servicio _ingress-nginx-controller_ se encuentre activo
+
+```
+usuario@laptop:~$ kubectl get service ingress-nginx-controller -n ingress-nginx
+NAME                     TYPE         CLUSTER-IP   EXTERNAL-IP PORT(S)                      AGE
+ingress-nginx-controller LoadBalancer 10.43.123.93 <pending>   80:30016/TCP,443:32441/TCP   4m31s
+```
+
+Revisamos que mos podamos conectar a los puertos 80 y 443 del servidor con netcat
+
+```
+usuario@laptop:~$ nc -vz waningnew.me 80
+Connection to waningnew.me (68.218.33.216) 80 port [tcp/http] succeeded!
+
+usuario@laptop:~$ nc -vz waningnew.me 443 
+Connection to waningnew.me (68.218.33.216) 443 port [tcp/https] succeeded!
+```
+
+Revisamos nuestra pagina para verificar la petición
+
+| ![](img/waningnew-404.png)
+|:-------------------------:|
+| Pagina waningnew.me
+
+
 ## Explicación del proceso de despliegue de los sitios web en el cluster de Kubernetes
+
+Craremos un sitio web por default para manejar todo el trafico
+
+
 
 ## Explicación de la configuración de SSL/TLS en el ingress controlle
