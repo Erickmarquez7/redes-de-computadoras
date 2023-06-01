@@ -1,151 +1,46 @@
-#1 [internal] load build definition from Dockerfile
-#1 sha256:4f4c87a8af7b4ce61f885b95a65bfede2479dd808e711d014f239d45429e5509
-#1 transferring dockerfile: 1.19kB done
-#1 ...
+Sending build context to Docker daemon  4.017GB
+Step 1/7 : FROM	docker.io/library/debian:11 AS debian
+ ---> 1ac99357ef21
+Step 2/7 : ENV	DEBIAN_FRONTEND=noninteractive
+ ---> Using cache
+ ---> fe0ed06ad369
+Step 3/7 : COPY	apt-conf-99-local.conf  /etc/apt/apt.conf.d/99-local
+ ---> c8bf33e255d3
+Step 4/7 : RUN	apt update && 	apt install linux-doc
+ ---> Running in 056bdd937e59
 
-#2 [internal] load .dockerignore
-#2 sha256:8d7ac5da6000832bf508edc239b065e1fba3f1e1f8f127c4b8561159fbaf4b12
-#2 transferring context: 2B 0.0s done
-#2 DONE 0.3s
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-#1 [internal] load build definition from Dockerfile
-#1 sha256:4f4c87a8af7b4ce61f885b95a65bfede2479dd808e711d014f239d45429e5509
-#1 DONE 0.5s
+1 package can be upgraded. Run 'apt list --upgradable' to see it.
 
-#3 resolve image config for docker.io/docker/dockerfile:1.4
-#3 sha256:4c6393aa7d63350bb37611567d30ae32494404c0b27cf79a51e51112ce252eca
-#3 DONE 4.8s
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
 
-#4 docker-image://docker.io/docker/dockerfile:1.4@sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc
-#4 sha256:f8ced039b92255abe2a5d9b1b282755057c6783a74e367c16ca94e7b53ed923b
-#4 resolve docker.io/docker/dockerfile:1.4@sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc
-#4 resolve docker.io/docker/dockerfile:1.4@sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc 1.3s done
-#4 sha256:9ba7531bd80fb0a858632727cf7a112fbfd19b17e94c4e84ced81e24ef1a0dbc 2.00kB / 2.00kB done
-#4 sha256:ad87fb03593d1b71f9a1cfc1406c4aafcb253b1dabebf569768d6e6166836f34 528B / 528B done
-#4 sha256:1e8a16826fd1c80a63fa6817a9c7284c94e40cded14a9b0d0d3722356efa47bd 2.37kB / 2.37kB done
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 0B / 9.94MB 1.0s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 1.05MB / 9.94MB 1.8s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 2.10MB / 9.94MB 1.9s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 3.15MB / 9.94MB 2.2s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 4.19MB / 9.94MB 2.4s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 5.24MB / 9.94MB 2.6s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 6.29MB / 9.94MB 2.8s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 7.34MB / 9.94MB 3.1s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 8.39MB / 9.94MB 3.2s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 9.44MB / 9.94MB 3.4s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 9.94MB / 9.94MB 3.5s
-#4 sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 9.94MB / 9.94MB 4.2s done
-#4 extracting sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 0.1s
-#4 extracting sha256:1328b32c40fca9bcf9d70d8eccb72eb873d1124d72dadce04db8badbe7b08546 0.2s done
-#4 DONE 9.7s
-
-#5 [internal] load metadata for docker.io/library/nginx:1.23-alpine
-#5 sha256:50ece92f20ea041541e2825eee78bfdb0b6142d03922cf210e0dcf20a723fcf3
-#5 DONE 0.0s
-
-#6 [internal] load metadata for docker.io/library/debian:11
-#6 sha256:b037bde4559b1b41e623e1a26f1831a526e95f96feca7ab049a8fc9144d77cd7
-#6 DONE 9.8s
-
-#9 [internal] preparing inline document
-#9 sha256:8e5307c234ac82567285832a65ca1ecb8cd0f7d17b32ae6b93dad9ba1e4da2a4
-#9 DONE 0.0s
-
-#8 [debian 1/3] FROM docker.io/library/debian:11@sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070
-#8 sha256:455e71157fcfb5fa766a7a1a34d483c19ff09ecd6b3c9386207353a39afa87a0
-#8 resolve docker.io/library/debian:11@sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070
-#8 resolve docker.io/library/debian:11@sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070 2.5s done
-#8 sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070 1.85kB / 1.85kB done
-#8 sha256:1bf0e24813ee8306c3fba1fe074793eb91c15ee580b61fff7f3f41662bc0031d 529B / 529B done
-#8 sha256:1ac99357ef2152701f790e2d0112f4295367906a349f2d85cbcd43b8a1c74a88 1.46kB / 1.46kB done
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 0B / 55.05MB 0.4s
-#8 ...
-
-#9 [internal] preparing inline document
-#9 sha256:8e5307c234ac82567285832a65ca1ecb8cd0f7d17b32ae6b93dad9ba1e4da2a4
-#9 DONE 2.9s
-
-#8 [debian 1/3] FROM docker.io/library/debian:11@sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070
-#8 sha256:455e71157fcfb5fa766a7a1a34d483c19ff09ecd6b3c9386207353a39afa87a0
-#8 ...
-
-#7 [app 1/2] FROM docker.io/library/nginx:1.23-alpine
-#7 sha256:e231d5b346885b0ebb5f482c8b36572760b056245bb4235c591045a5cdcdae1c
-#7 ...
-
-#8 [debian 1/3] FROM docker.io/library/debian:11@sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070
-#8 sha256:455e71157fcfb5fa766a7a1a34d483c19ff09ecd6b3c9386207353a39afa87a0
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 3.15MB / 55.05MB 1.5s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 6.29MB / 55.05MB 2.2s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 9.44MB / 55.05MB 2.7s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 12.58MB / 55.05MB 3.3s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 15.73MB / 55.05MB 4.0s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 18.87MB / 55.05MB 4.7s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 22.02MB / 55.05MB 5.2s
-#8 ...
-
-#7 [app 1/2] FROM docker.io/library/nginx:1.23-alpine
-#7 sha256:e231d5b346885b0ebb5f482c8b36572760b056245bb4235c591045a5cdcdae1c
-#7 DONE 9.7s
-
-#8 [debian 1/3] FROM docker.io/library/debian:11@sha256:432f545c6ba13b79e2681f4cc4858788b0ab099fc1cca799cc0fae4687c69070
-#8 sha256:455e71157fcfb5fa766a7a1a34d483c19ff09ecd6b3c9386207353a39afa87a0
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 25.17MB / 55.05MB 5.9s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 28.31MB / 55.05MB 6.5s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 31.46MB / 55.05MB 7.1s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 34.60MB / 55.05MB 7.7s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 37.75MB / 55.05MB 8.4s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 40.89MB / 55.05MB 9.1s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 44.04MB / 55.05MB 9.7s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 47.19MB / 55.05MB 10.4s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 50.33MB / 55.05MB 10.9s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 53.48MB / 55.05MB 11.8s
-#8 sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 55.05MB / 55.05MB 12.9s done
-#8 extracting sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474
-#8 extracting sha256:bd73737482dd5575526c7207872963479808d979ab2741c321706b8553918474 1.9s done
-#8 DONE 20.6s
-
-#10 [debian 2/3] COPY   <<EOF  /etc/apt/apt.conf.d/99-local
-#10 sha256:94839686d1b1aafbf95e9bf27c9f56bdda2f39b3337ba87382046e81c56d1392
-#10 DONE 2.2s
-
-#11 [debian 3/3] RUN    APT update &&   apt install linux-doc
-#11 sha256:61404279ca0b06a3f8c5631e70a9dbdadc8789503e2482ea52fa47d93b4c23cb
-#11 2.793 
-#11 2.793 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-#11 2.793 
-#11 7.237 All packages are up to date.
-#11 7.257 
-#11 7.257 WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-#11 7.257 
-#11 8.368 The following additional packages will be installed:
-#11 8.369   linux-doc-5.10
-#11 8.403 The following NEW packages will be installed:
-#11 8.404   linux-doc linux-doc-5.10
-#11 15.80 debconf: delaying package configuration, since apt-utils is not installed
-#11 15.84 0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
-#11 15.84 Need to get 30.4 MB of archives.
-#11 15.84 After this operation, 167 MB of additional disk space will be used.
-#11 16.01 Selecting previously unselected package linux-doc-5.10.
+The following additional packages will be installed:
+  linux-doc-5.10
+The following NEW packages will be installed:
+  linux-doc linux-doc-5.10
+debconf: delaying package configuration, since apt-utils is not installed
+0 upgraded, 2 newly installed, 0 to remove and 1 not upgraded.
+Need to get 30.4 MB of archives.
+After this operation, 167 MB of additional disk space will be used.
+Selecting previously unselected package linux-doc-5.10.
 (Reading database ... 6664 files and directories currently installed.)
-#11 16.02 Preparing to unpack .../linux-doc-5.10_5.10.179-1_all.deb ...
-#11 16.11 Unpacking linux-doc-5.10 (5.10.179-1) ...
-#11 27.45 Selecting previously unselected package linux-doc.
-#11 27.47 Preparing to unpack .../linux-doc_5.10.179-1_all.deb ...
-#11 27.82 Unpacking linux-doc (5.10.179-1) ...
-#11 30.74 Setting up linux-doc-5.10 (5.10.179-1) ...
-#11 32.44 Setting up linux-doc (5.10.179-1) ...
-#11 DONE 36.4s
-
-#12 [app 2/2] COPY      --FROM=DEBIAN /usr/share/doc/linux-doc/html /usr/share/nginx/html
-#12 sha256:e5350eab8846a26b09381040a390982d027ec9732823bdf2003d0f5d835c506d
-#12 DONE 5.9s
-
-#13 exporting to image
-#13 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
-#13 exporting layers
-#13 exporting layers 4.9s done
-#13 writing image sha256:74493e9c699d21630c07c1a3c422d9725e44d48ba1af4b4806be8594a106f06b 0.1s done
-#13 naming to docker.io/ruben/linux-doc
-#13 naming to docker.io/ruben/linux-doc 0.2s done
-#13 DONE 5.1s
+Preparing to unpack .../linux-doc-5.10_5.10.179-1_all.deb ...
+Unpacking linux-doc-5.10 (5.10.179-1) ...
+Selecting previously unselected package linux-doc.
+Preparing to unpack .../linux-doc_5.10.179-1_all.deb ...
+Unpacking linux-doc (5.10.179-1) ...
+Setting up linux-doc-5.10 (5.10.179-1) ...
+Setting up linux-doc (5.10.179-1) ...
+Removing intermediate container 056bdd937e59
+ ---> 22d977107aa1
+Step 5/7 : FROM	docker.io/library/nginx:1.23-alpine AS app
+ ---> 8e75cbc5b25c
+Step 6/7 : ENV	NGINX_ROOT=/usr/share/nginx/html 	LINUX_DOC_ROOT=/usr/share/doc/linux-doc/html
+ ---> Running in b20475cc6075
+Removing intermediate container b20475cc6075
+ ---> 74325b02102b
+Step 7/7 : COPY	--from=debian ${LINUX_DOC_ROOT} ${NGINX_ROOT}
+ ---> 98a60d1391f0
+Successfully built 98a60d1391f0
+Successfully tagged erick954/linux-doc:latest
