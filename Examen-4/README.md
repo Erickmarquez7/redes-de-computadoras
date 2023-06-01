@@ -736,8 +736,213 @@ La configuración _SSL_, entre otras cosas, nos permite hacer un redireccionamie
 |:-------------------------:|
 | Pagina de tareas
 
-#### Continuar aki xd
+Para la configuración creamos un archivo _index.html_ en la MV de azure, este será el mismo de la practica 9
 
+```
+root@example:~# echo "Move along" > /var/www/html/.well-known/acme-challenge/index.html
+```
+
+Editamos el __deployment__ del _host default_ de nuestra maquina local
+
+```
+usuario@laptop ~ % kubectl edit deployment root-nginx
+
+---
+apiVersion: apps/v1
+kind: Deployment
+  name: root-nginx
+  namespace: default
+...
+spec:
+...
+  template:
+...
+    spec:
+...
+      containers:
+      - name: nginx
+...
+        volumeMounts:  # Agrega el punto de montaje "acme-challenge"
+        - name: acme-challenge
+          mountPath: /usr/share/nginx/html/.well-known
+        - name: index-equipo-aar-atdi-bme-daav-lmam  # el nombre de nuestro equipo en minusculas
+          mountPath: /usr/share/nginx/html/index.html
+          subPath: index.html
+...
+      volumes:  # Agrega el volumen hostPath "acme-challenge"
+      - name: acme-challenge
+        hostPath:
+          path: /var/www/html/.well-known
+      - name: index-equipo-aar-atdi-bme-daav-lmam
+        configMap:
+          name: index-equipo-aar-atdi-bme-daav-lmam
+          defaultMode: 420
+...
+```
+
+Revisamos que haya un _pod_ que pertenece al _deployment_ de __root-nginx__ con estado __Runnin__
+
+```
+usuario@laptop ~ % kubectl get pods -l app=root-nginx
+NAME                         READY   STATUS    RESTARTS    AGE
+root-nginx-f66db75b4-7pl8z   1/1     Running   0           50s
+```
+
+Veamos que la pagina funcione
+
+| ![](img/move-along.png)
+|:-------------------------:|
+| Pagina con extensión /.well-know
+
+Revisamos la validez de nuestro certificado emitido por __Let's Encrypt__ de la práctica 9, dicha validez las tenemos en nuestras bitácoras
+
+- [openssl x509 -in waningnew.me/cert.pem -noout -text](files/bitacoras/cert.txt)
+- [openssl x509 -in waningnew.me/cert.pem -noout -issuer -subject -dates -ext subjectAltName](files/bitacoras/opensslx509.txt)
+- [ openssl verify -show_chain -CApath /etc/ssl/certs -untrusted waningnew.me/chain.pem waningnew.me/cert.pem](files/bitacoras/opensslverify.txt)
+
+Copiamos el directorio _/etc/letsencrypt/live_ de nuestra maquina virtual a nuestra maquina física, esto puede ser a varias maneras así que lo dejaremos a elección del usuario.
+
+Agregamos el certificado SSL y la llave privada en un recurso __secret tls__
+
+```
+usuario@laptop ~ % cd ~/Downloads/letsencrypt
+usuario@laptop letsencrypt % kubectl create secret tls nginx-ingress-tls --cert fullchain.pem --key privkey.pem
+secret/nginx-ingress-tls created
+```
+
+Verificamos los recursos __secret__ creados
+
+```
+usuario@laptop ~ % kubectl get secret nginx-ingress-tls
+NAME                TYPE                DATA   AGE
+nginx-ingress-tls   kubernetes.io/tls   2      40s
+
+usuario@laptop ~ % kubectl describe secret nginx-ingress-tls
+Name:         nginx-ingress-tls
+Namespace:    default
+Labels:       <none>
+Annotations:  <none>
+
+Type:  kubernetes.io/tls
+
+Data
+====
+tls.crt:  5599 bytes
+tls.key:  1704 bytes
+```
+
+Editamos el archivo _recursos-ingress-yaml_ que define el tipo __ingress__ para agregar el recurso de tipo __secret__ y los __DNS__
+
+```
+---
+#Archivo _recursos-ingress-yaml_
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-nginx
+  namespace: default
+...
+spec:  # Agrega la sección "tls" después de "spec"
+  tls:
+  - secretName: nginx-ingress-tls
+    hosts:
+    - '*.waningnew.me'
+    - kernel.waningnew.me
+    - tareas.waningnew.me
+  ingressClassName: nginx  # Ya deberías tener esta parte
+  rules:
+...
+```
+
+Aplicamos los cambios
+
+```
+usuario@laptop ~ % kubectl apply -f recurso-ingress.yaml
+ingress.networking.k8s.io/ingress-nginx configured
+```
+
+Cambiamos el certificado __SSL__ en el _ingress controller_, para esto editamos el deployment
+
+```
+usuario@laptop ~ % kubectl edit deployment/ingress-nginx-controller -n ingress-nginx
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ingress-nginx-controller
+  namespace: ingress-nginx
+...
+spec:
+...
+  template:
+...
+    spec:
+      containers:
+      - args:
+        - /nginx-ingress-controller
+        - --publish-service=$(POD_NAMESPACE)/ingress-nginx-controller
+        - --election-id=ingress-nginx-leader
+        - --controller-class=k8s.io/ingress-nginx
+        - --ingress-class=nginx
+        - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
+        - --validating-webhook=:8443
+        - --validating-webhook-certificate=/usr/local/certificates/cert
+        - --validating-webhook-key=/usr/local/certificates/key
+        # Especificamos que utilizamos el certificado SSL importado de Let's Encrypt
+        - --default-ssl-certificate=default/nginx-ingress-tls
+```
+
+Reiniciamos el controlador de _ingress_
+
+```
+usuario@laptop:~$ kubectl get deployments,pods -n ingress-nginx -l app.kubernetes.io/component=controller
+NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/ingress-nginx-controller   1/1     1            1           19h
+
+NAME                                            READY   STATUS    RESTARTS   AGE
+pod/ingress-nginx-controller-6b557cfc48-4frvv   1/1     Running   0          19h
+pod/ingress-nginx-controller-5b54c7d8c-27wsz    0/1     Pending   0          69s
+```
+
+Forzamos la detención y reinicio del proceso al hacer un escalamiento a __cero pods__ y después a __un pod__ para el _deployment_ __ingress-nginx-controller__ en el _namespace_ __ingress-nginx__
+
+```
+usuario@laptop:~$ kubectl scale deployment ingress-nginx-controller -n ingress-nginx --replicas 0
+```
+
+Esperamos un momento para que el pod anterior termine de ejecutarse
+
+```
+usuario@laptop:~$ kubectl scale deployment ingress-nginx-controller -n ingress-nginx --replicas 1
+deployment.apps/ingress-nginx-controller scaled
+```
+
+Listamos de nuevo el _deployment_ y pod del _ingress controller_ instalado en el cluster en el _namespace_ __ingress-nginx__
+
+```
+usuario@laptop:~$ kubectl get deployments,pods -n ingress-nginx -l app.kubernetes.io/component=controller
+NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/ingress-nginx-controller   1/1     1            1           19h
+
+NAME                                           READY   STATUS    RESTARTS   AGE
+pod/ingress-nginx-controller-5b54c7d8c-kng6h   1/1     Running   0          16s
+```
+
+Verificamos la conectividad a los sitios web
+
+```
+usuario@laptop:~$ nc -vz waningnew.me 80
+Connection to waningnew.me (68.218.33.216) 80 port [tcp/http] succeeded!
+usuario@laptop:~$ nc -vz waningnew.me 443
+Connection to waningnew.me (68.218.33.216) 443 port [tcp/https] succeeded!
+```
+
+Revisamos la conectividad al servidor ejecutando __open s_client__ en el equipo local, dicha revisión se encuentra en la bitácora de [open s_client](files/bitacoras/open-ssl.txt)
+
+Del mismo modo en el siguiente archivo se muestran capturas que comprueban la [validez del certificado SSl](bitacora-ssl.md)
+
+Bitácoras utilizando [HTTP y HTTPS](http-https.txt)
 ## Archivos
 
 * Archivos de configuración
@@ -748,9 +953,9 @@ La configuración _SSL_, entre otras cosas, nos permite hacer un redireccionamie
   - [Instalación de __kubectl__ y __krew__ en el equipo local](files/bitacoras/instalacion-kubectl-krew-local.txt)
   - [Instalación de __krew__ en el equipo remoto](files/bitacoras/instalacion-krew-remoto.txt)
   - [Bitácora de conexión a los puertos __80__ y __443__ del cluster de Kubernetes](files/bitacoras/conexion-80-443.txt)
-  - [Bitácora de conexión al puerto 443 utilizando __openssl s_client__] (falta)
-  - [Bitácora de comprobación de la validez del certificado SSL emitido por Let's Encrypt] (falta)
-  - [Bitácira de conexión a los sitios web hospedados utilizando HTTP y HTTPS] (falta)
+  - [Bitácora de conexión al puerto 443 utilizando __openssl s_client__](files/bitacoras/open-ssl.txt)
+  - [Bitácora de comprobación de la validez del certificado SSL emitido por Let's Encrypt](bitacora-ssl.md)
+  - [Bitácira de conexión a los sitios web hospedados utilizando HTTP y HTTPS](http-https.txt)
 
 * Archivos de datos
   - [linux-doc/docker](files/datos/linux-doc/Dockerfile)
