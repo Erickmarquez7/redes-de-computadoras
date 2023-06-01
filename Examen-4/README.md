@@ -28,7 +28,7 @@ Nos pedirá usuario y contraseña
 
 Ahora sí, para la creación de la imagen hacemos un __dockerfile__ como se muestra en el siguiente archivo
 
-[dockerfile](files/linux-doc/Dockerfile)
+[dockerfile](files/datos/linux-doc/Dockerfile)
 
 La explicación de lo qué hace viene en el mismo archivo
 
@@ -736,3 +736,16 @@ La configuración _SSL_, entre otras cosas, nos permite hacer un redireccionamie
 |:-------------------------:|
 | Pagina de tareas
 
+#### Continuar aki xd
+
+## Archivos
+
+* Archivos de configuración
+
+* Archivos de bitácora
+
+* Archivos de datos
+
+  - [cert.txt](files/bitacoras/cert.txt)
+
+* Recursos kubernetes

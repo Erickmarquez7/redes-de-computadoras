@@ -1,0 +1,7 @@
+root@waningnew:/etc/letsencrypt/live# openssl x509 -in waningnew.me/cert.pem -noout -issuer -subject -dates -ext subjectAltName
+issuer=C = US, O = Let's Encrypt, CN = R3
+subject=CN = waningnew.me
+notBefore=May 11 19:58:21 2023 GMT
+notAfter=Aug  9 19:58:20 2023 GMT
+X509v3 Subject Alternative Name: 
+    DNS:*.waningnew.me, DNS:waningnew.me

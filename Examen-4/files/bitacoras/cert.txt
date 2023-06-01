@@ -1,0 +1,99 @@
+root@waningnew:/etc/letsencrypt/live# openssl x509 -in waningnew.me/cert.pem -noout -text > waningnew.me/cert.txt
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            04:c5:65:c3:f0:57:54:4b:bd:94:e2:38:32:09:ed:07:43:90
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C = US, O = Let's Encrypt, CN = R3
+        Validity
+            Not Before: May 11 19:58:21 2023 GMT
+            Not After : Aug  9 19:58:20 2023 GMT
+        Subject: CN = waningnew.me
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:da:39:65:81:10:23:2a:92:64:cb:8b:96:c5:d5:
+                    1f:84:2e:c5:93:11:2a:01:af:15:91:25:d1:c4:37:
+                    89:d0:f4:55:3c:9a:f5:c9:e0:21:5d:9e:38:6d:70:
+                    b7:c2:3f:90:9d:92:c5:86:f5:2e:a2:ad:33:3d:01:
+                    b0:8d:8a:56:fa:54:d7:ae:b3:de:9e:50:70:8d:4c:
+                    37:c8:10:59:b0:54:07:ad:4d:8e:33:d6:50:d6:33:
+                    1e:9a:57:49:ab:cc:4e:21:69:d8:9e:00:ba:28:d7:
+                    0c:ec:c2:51:4f:3c:3e:66:41:36:e8:73:ac:43:ad:
+                    8b:02:ee:74:0c:0a:b8:83:c8:6a:0e:68:11:3c:9a:
+                    fb:f2:2f:b6:43:4f:55:c9:d3:89:11:9d:94:fb:57:
+                    38:f4:81:f9:d9:e3:d7:18:52:e0:04:95:61:b7:61:
+                    40:81:93:06:18:c5:53:0f:44:f7:38:33:4c:d9:c0:
+                    8e:8e:41:0e:cd:d5:98:d5:b4:da:4e:7c:1b:25:a1:
+                    e4:92:bd:33:bf:5f:9a:7f:c7:2d:50:ed:35:81:fe:
+                    e6:07:0e:10:08:a6:33:39:d4:5f:22:6f:15:5a:8e:
+                    d4:ed:e1:a4:65:88:36:fc:52:1b:5a:49:9b:01:b0:
+                    25:16:c2:8d:72:58:44:77:a3:72:da:46:30:ac:f8:
+                    27:c3
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication, TLS Web Client Authentication
+            X509v3 Basic Constraints: critical
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                58:2D:29:D1:EC:52:C7:BD:82:AE:E3:FF:27:57:41:66:26:DB:E9:69
+            X509v3 Authority Key Identifier: 
+                keyid:14:2E:B3:17:B7:58:56:CB:AE:50:09:40:E6:1F:AF:9D:8B:14:C2:C6
+
+            Authority Information Access: 
+                OCSP - URI:http://r3.o.lencr.org
+                CA Issuers - URI:http://r3.i.lencr.org/
+
+            X509v3 Subject Alternative Name: 
+                DNS:*.waningnew.me, DNS:waningnew.me
+            X509v3 Certificate Policies: 
+                Policy: 2.23.140.1.2.1
+                Policy: 1.3.6.1.4.1.44947.1.1.1
+                  CPS: http://cps.letsencrypt.org
+
+            CT Precertificate SCTs: 
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : E8:3E:D0:DA:3E:F5:06:35:32:E7:57:28:BC:89:6B:C9:
+                                03:D3:CB:D1:11:6B:EC:EB:69:E1:77:7D:6D:06:BD:6E
+                    Timestamp : May 11 20:58:21.838 2023 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:20:1F:18:A7:2B:03:F3:5A:8A:D5:90:D6:58:
+                                1D:6A:ED:BF:91:48:56:2D:66:FE:8A:BF:B6:DF:C0:E0:
+                                55:85:24:7C:02:21:00:89:56:7D:9B:29:AE:BF:33:02:
+                                03:25:B4:48:F5:E6:29:44:13:8E:E4:CD:F9:60:3B:2A:
+                                ED:7D:A7:D9:B3:A6:76
+                Signed Certificate Timestamp:
+                    Version   : v1 (0x0)
+                    Log ID    : 7A:32:8C:54:D8:B7:2D:B6:20:EA:38:E0:52:1E:E9:84:
+                                16:70:32:13:85:4D:3B:D2:2B:C1:3A:57:A3:52:EB:52
+                    Timestamp : May 11 20:58:21.877 2023 GMT
+                    Extensions: none
+                    Signature : ecdsa-with-SHA256
+                                30:45:02:21:00:E0:BB:A7:85:E7:6B:0A:D6:E3:C6:3C:
+                                9B:13:31:32:8B:DC:0C:92:B5:59:BE:63:72:9D:CD:3C:
+                                D4:40:62:DB:02:02:20:67:FA:30:AB:93:20:B2:DA:F5:
+                                F9:A8:A5:98:5B:EB:35:4B:21:29:3A:58:F1:03:43:C8:
+                                50:90:12:DE:53:9E:16
+    Signature Algorithm: sha256WithRSAEncryption
+         b0:d7:76:06:7b:f1:d9:ca:9e:bb:10:e2:e6:84:66:8e:6d:d1:
+         d7:bc:e1:24:a9:c1:af:de:06:15:d5:92:6e:7e:55:f5:0d:79:
+         5a:bc:1b:cc:02:65:f9:4b:a5:46:cb:c0:fe:db:35:13:fd:39:
+         71:b9:bb:69:3f:6b:ed:fd:79:7e:2e:d8:50:68:2d:a7:ee:f5:
+         46:e3:64:28:8a:b2:26:c8:97:b2:eb:ca:b5:99:11:a6:56:9a:
+         5a:2d:52:1f:6a:cf:73:cc:d3:22:89:e4:a8:b7:61:b9:ff:6d:
+         fc:2e:79:70:78:41:8f:7a:bc:73:27:d4:64:4f:44:9f:03:1f:
+         8c:3e:27:fd:2e:ce:8d:71:e0:79:2f:c7:54:3e:0d:67:09:86:
+         a1:cd:ee:30:3f:9b:76:b8:f3:58:56:a3:d7:eb:5e:43:21:25:
+         0d:ee:01:01:27:d1:a9:4a:e4:e2:1e:6c:82:35:05:a8:8a:4e:
+         c9:3a:a9:f1:3e:fa:f1:0c:66:7b:da:7d:e8:c2:f0:fc:9a:b3:
+         ee:15:b2:4e:46:6f:0b:9a:a6:1d:aa:df:4e:1e:7e:b4:4b:89:
+         25:d6:ba:25:d3:b1:92:b6:87:aa:20:d7:e3:08:f5:17:74:da:
+         57:22:2c:2f:95:9d:b0:39:55:bf:fb:65:5b:86:fe:b6:d4:76:
+         a9:ed:e7:f7

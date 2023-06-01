@@ -1,0 +1,6 @@
+root@waningnew:/etc/letsencrypt/live# openssl verify -show_chain -CApath /etc/ssl/certs -untrusted waningnew.me/chain.pem waningnew.me/cert.pem
+waningnew.me/cert.pem: OK
+Chain:
+depth=0: CN = waningnew.me (untrusted)
+depth=1: C = US, O = Let's Encrypt, CN = R3 (untrusted)
+depth=2: C = US, O = Internet Security Research Group, CN = ISRG Root X1
