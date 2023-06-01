@@ -1,12 +1,12 @@
 # Equipo-AAR-ATDI-BME-DAAV-LMAM
 
-| Integrante                     | Número de Cuenta | Usuario de GitLab   |
-|:------------------------------:|:----------------:|:-------------------:|
-| Acosta Arzate Rubén            | 317205776        | `rubenAcostaArzate` |
-| Alvarado Torres David Ignacio  | 316167613        | `ddalt`             |
-| Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     |
-| Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
-| López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
+| Integrante                     | Número de Cuenta | Usuario de GitLab   | Usuario de Docker
+|:------------------------------:|:----------------:|:-------------------:|:----------:|
+| Acosta Arzate Rubén            | 317205776        | `rubenAcostaArzate` | rubencompu
+| Alvarado Torres David Ignacio  | 316167613        | `ddalt`             | 
+| Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     | erick954
+| Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        | valeriadeloya13
+| López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  | 
 
 
 ## Explicación del proceso de creación de las imagenes de contenedor
@@ -946,6 +946,8 @@ Bitácoras utilizando [HTTP y HTTPS](http-https.txt)
 ## Archivos
 
 * Archivos de configuración
+  - [Archivo tar.gz del contenido del directorio /etc/letsencrypt](files/configuracion/letsencrypt.tar)
+  - [Archivo tar.gz del contenido del directorio /etc/rancher](files/configuracion/rancher.tar)
 
 * Archivos de bitácora
   - [Preparación de la máqina virtual de Azure (reducción de uso de CPU y RAM)](files/bitacoras/preparacion.txt)
@@ -958,9 +960,12 @@ Bitácoras utilizando [HTTP y HTTPS](http-https.txt)
   - [Bitácira de conexión a los sitios web hospedados utilizando HTTP y HTTPS](http-https.txt)
 
 * Archivos de datos
+
   - [linux-doc/docker](files/datos/linux-doc/Dockerfile)
   - [tareas-redes/docker](files/datos/tareas-redes/Dockerfile)
-  - [Directorio tar.gz] (falta)
+  - [Archivo tar.gz el contenido del directorio /var/www/html de la máquina virual de Azure](files/datos/html.tar.gz)
   - [Archivo cert.txt](files/bitacoras/cert.txt)
 
 * Recursos kubernetes
+  - [recursos-ingress](files/kubernetes/recurso-ingress.yaml)
+  - [archivo.neat campos incesesarios](files/kubernetes/archivo.neat.yaml)
