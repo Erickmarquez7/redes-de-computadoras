@@ -721,3 +721,18 @@ pod/tareas-redes-54856f9d4c-r69nt   1/1     Running   0          3m46s
 ```
 
 ## Explicación de la configuración de SSL/TLS en el ingress controller
+
+La configuración _SSL_, entre otras cosas, nos permite hacer un redireccionamiento seguro hacia _HTTPS_, mostraremos que las paginas funcionan antes de hacer su configuración.
+
+| ![](img/default.png)
+|:-------------------------:|
+| Pagina default
+
+| ![](img/kernel.png)
+|:-------------------------:|
+| Pagina del kernel
+
+| ![](img/tareas.png)
+|:-------------------------:|
+| Pagina de tareas
+
