@@ -573,8 +573,151 @@ Revisamos nuestra pagina para verificar la petición
 
 ## Explicación del proceso de despliegue de los sitios web en el cluster de Kubernetes
 
-Craremos un sitio web por default para manejar todo el trafico
+Craremos un sitio web por default para manejar todo el trafico, para esto crearemos un archivo _index.html_ con el nombre de nuestro equipo y dominio
 
+Posteriormente creamos un _configmap_ para guardar el archivo _index.html_
 
+```
+usuario@laptop:~$ kubectl create configmap index-equipo-aar-atdi-bme-daav-lmam --from-file=index.html
+configmap/index-equipo-aar-atdi-bme-daav-lmam created
+```
 
-## Explicación de la configuración de SSL/TLS en el ingress controlle
+(Sí, con minúsculas)
+
+Editamos el deployment __root-nginx__ para agregar las líneas donde se monta el _configmap_ que contiene el archivo __index.html__
+
+```
+---
+apiVersion: apps/v1
+kind: Deployment
+...
+spec:
+...
+  template:
+...
+    spec:  # Agregamos la sección "volumes" entre "spec" y "containers"
+      volumes:
+      - name: index-equipo-aar-atdi-bme-daav-lmam
+        configMap:
+          name: index-equipo-aar-atdi-bme-daav-lmam
+      containers:  # Esta línea es donde empieza la sección "containers"
+      - name: nginx
+...
+        terminationMessagePolicy: File  # Agrega la sección "volumeMounts" después de esta línea
+        volumeMounts:
+        - name: index-equipo-aar-atdi-bme-daav-lmam
+          mountPath: /usr/share/nginx/html/index.html
+          subPath: index.html
+```
+
+Esperamos mientras se lanza el _pod_ de la configuración
+```
+usuario@laptop:~$  kubectl get pods -l app=root-nginx
+NAME                          READY   STATUS    RESTARTS   AGE
+root-nginx-5cdf4b58db-nxg96   1/1     Running   0          2m34s
+```
+
+Hacemos una redirreción de puertos de kubernetes para visualizar la pagina recién creada
+
+```
+usuario@laptop:~$ kubectl port-forward deployment/root-nginx 8080:80
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+```
+
+Dejamos este comando corriendo y en otra terminal revisamos que el puerto este abierto
+
+```
+usuario@laptop:~$ nc -vz localhost 8080
+Connection to localhost (127.0.0.1) 8080 port [tcp/http-alt] succeeded!
+```
+
+Revisamos que el puerto responda con __curl__
+
+```
+usuario@laptop:~$ curl -vk# 'http://localhost:8080/'
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+> GET / HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+```
+
+Revisamos la pagina
+
+| ![](img/localhost.png)
+|:-------------------------:|
+| Pagina default en localhost
+
+Para las página de la documentación de linux haremos lo siguiente
+
+Creamos un deployment donde se ejecute la imágen de contenedor que contiene el sitio web de la documentación del _kernel Linux_
+
+```
+usuario@laptop:~$ CONTAINER_IMAGE="docker.io/erick954/linux-doc:latest"
+
+usuario@laptop:~$ kubectl create deployment linux-doc --image="${CONTAINER_IMAGE}" --port=80
+deployment.apps/linux-doc created
+```
+
+Verificamos que el pod asociado al deployment linux-doc se está ejecutando
+
+```
+usuario@laptop:~$ kubectl get pods -l app=linux-doc
+NAME                         READY   STATUS    RESTARTS   AGE
+linux-doc-55845bc798-jhrw6   1/1     Running   0          19s
+```
+
+Verificamos que podamos acceder al sitio web con _kubectl_ port-forward en el puerto 8081:80
+
+```
+usuario@laptop:~$ kubectl port-forward deployment/linux-doc 8081:80
+Forwarding from 127.0.0.1:8081 -> 80
+Forwarding from [::1]:8081 -> 80
+```
+
+En otra terminal comprobamos que el puerto esté abierto y que responda con curl
+
+```
+usuario@laptop:~$ nc -vz localhost 8081
+Connection to localhost (127.0.0.1) 8081 port [tcp/tproxy] succeeded!
+
+usuario@laptop:~$ curl -vk# 'http://localhost:8081/' | egrep '</?title>'
+*   Trying 127.0.0.1:8081...
+* Connected to localhost (127.0.0.1) port 8081 (#0)
+> GET / HTTP/1.1
+> Host: localhost:8081
+> User-Agent: curl/7.81.0
+> Accept: */*
+> 
+```
+
+Además de visitar _localhost:8081_
+
+| ![](img/linux-doc-8081.png)
+|:-------------------------:|
+| Pagina de la documentación de linux en localhost
+
+Análogo para las tareas, solo que en esta ocasión pondremos el puerto 8082:80
+
+| ![](img/tareas-redes-8082.png)
+|:-------------------------:|
+| Pagina de tareas-redes en localhost
+
+Verificamos la configuración
+
+```
+usuario@laptop:~$ kubectl get deployments,pods
+NAME                           READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/root-nginx     1/1     1            1           73m
+deployment.apps/linux-doc      1/1     1            1           16m
+deployment.apps/tareas-redes   1/1     1            1           3m46s
+
+NAME                                READY   STATUS    RESTARTS   AGE
+pod/root-nginx-5cdf4b58db-nxg96     1/1     Running   0          44m
+pod/linux-doc-55845bc798-jhrw6      1/1     Running   0          16m
+pod/tareas-redes-54856f9d4c-r69nt   1/1     Running   0          3m46s
+```
+
+## Explicación de la configuración de SSL/TLS en el ingress controller
