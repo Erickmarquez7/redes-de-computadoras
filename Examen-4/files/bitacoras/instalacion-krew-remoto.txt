@@ -1,0 +1,77 @@
+redes@waningnew:~$ KREW_VERSION=v0.4.3
+redes@waningnew:~$ KREW_TMP_DIR=/tmp/krew
+
+redes@waningnew:~$ mkdir -vp ${KREW_TMP_DIR}
+mkdir: created directory '/tmp/krew'
+
+redes@waningnew:~$ wget -c -nv -O "${KREW_TMP_DIR}/krew-${KREW_VERSION}.tar.gz" \
+  "https://github.com/kubernetes-sigs/krew/releases/download/${KREW_VERSION}/krew-linux_amd64.tar.gz"
+
+redes@waningnew:~$ ls -la "${KREW_TMP_DIR}/krew-${KREW_VERSION}.tar.gz"
+-rw-r--r-- 1 redes users 4128657 Feb  4  2022 /tmp/krew/krew-v0.4.3.tar.gz
+
+redes@waningnew:~$ tar -xvvzf ${KREW_TMP_DIR}/krew-${KREW_VERSION}.tar.gz -C ${KREW_TMP_DIR}
+-rw-r--r-- runner/docker    11358 1999-12-31 18:00 ./LICENSE
+-rwxr-xr-x runner/docker 11836580 1999-12-31 18:00 ./krew-linux_amd64
+
+redes@waningnew:~$ ls -la ${KREW_TMP_DIR}/krew-linux_amd64
+-rwxr-xr-x 1 redes users 11836580 Dec 31  1999 /tmp/krew/krew-linux_amd64
+
+redes@waningnew:~$ ${KREW_TMP_DIR}/krew-linux_amd64 install krew
+WARNING: To be able to run kubectl plugins, you need to add
+the following to your ~/.bash_profile or ~/.bashrc:
+
+    export PATH="${PATH}:${HOME}/.krew/bin"
+
+and restart your shell.
+
+Adding "default" plugin index from https://github.com/kubernetes-sigs/krew-index.git.
+Updated the local copy of plugin index.
+Installing plugin: krew
+Installed plugin: krew
+\
+ | Use this plugin:
+ |  kubectl krew
+ | Documentation:
+ |  https://krew.sigs.k8s.io/
+ | Caveats:
+ | \
+ |  | krew is now installed! To start using kubectl plugins, you need to add
+ |  | krew's installation directory to your PATH:
+ |  |
+ |  |   * macOS/Linux:
+ |  |     - Add the following to your ~/.bashrc or ~/.zshrc:
+ |  |         export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+ |  |     - Restart your shell.
+ |  |
+ |  |   * Windows: Add %USERPROFILE%\.krew\bin to your PATH environment variable
+ |  |
+ |  | To list krew commands and to get help, run:
+ |  |   $ kubectl krew
+ |  | For a full list of available plugins, run:
+ |  |   $ kubectl krew search
+ |  |
+ |  | You can find documentation at
+ |  |   https://krew.sigs.k8s.io/docs/user-guide/quickstart/.
+ | /
+/
+
+redes@waningnew:~$ rm -vrf ${KREW_TMP_DIR}
+removed '/tmp/krew/krew-v0.4.3.tar.gz'
+removed '/tmp/krew/krew-linux_amd64'
+removed '/tmp/krew/LICENSE'
+removed directory '/tmp/krew'
+
+redes@waningnew:~$ echo ${PATH}
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/redes/.krew/bin
+
+redes@waningnew:~$ kubectl krew version
+OPTION            VALUE
+GitTag            v0.4.3
+GitCommit         dbfefa5
+IndexURI          https://github.com/kubernetes-sigs/krew-index.git
+BasePath          /home/redes/.krew
+IndexPath         /home/redes/.krew/index/default
+InstallPath       /home/redes/.krew/store
+BinPath           /home/redes/.krew/bin
+DetectedPlatform  linux/amd64

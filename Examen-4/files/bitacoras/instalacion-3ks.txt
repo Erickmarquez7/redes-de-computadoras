@@ -1,0 +1,28 @@
+root@waningnew:~# wget -c -nv -O ~/get-k3s-io.sh 'https://get.k3s.io/'
+2023-05-22 13:04:24 URL:https://get.k3s.io/ [30463/30463] -> "/root/get-k3s-io.sh" [1]
+
+root@waningnew:~# chmod -c +x ./get-k3s-io.sh
+mode of './get-k3s-io.sh' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x)
+
+root@waningnew:~# export INSTALL_K3S_SKIP_START="true"
+
+root@waningnew:~# export INSTALL_K3S_EXEC="--tls-san='k3s.[dominio.com]' --tls-san='[mi.ip.publica.x]' --disable-cloud-controller --disable=metrics-server --disable=servicelb --disable=traefik"
+
+root@waningnew:~# ~/get-k3s-io.sh
+[INFO]  Finding release for channel stable
+[INFO]  Using v1.26.4+k3s1 as release
+[INFO]  Downloading hash https://github.com/k3s-io/k3s/releases/download/v1.26.4+k3s1/sha256sum-amd64.txt
+[INFO]  Downloading binary https://github.com/k3s-io/k3s/releases/download/v1.26.4+k3s1/k3s
+[INFO]  Verifying binary download
+[INFO]  Installing k3s to /usr/local/bin/k3s
+[INFO]  Finding available k3s-selinux versions
+/root/get-k3s-io.sh: 407: [: k3s-selinux-1.2-2.el8.noarch.rpm: unexpected operator
+[INFO]  Creating /usr/local/bin/kubectl symlink to k3s
+[INFO]  Creating /usr/local/bin/crictl symlink to k3s
+[INFO]  Creating /usr/local/bin/ctr symlink to k3s
+[INFO]  Creating killall script /usr/local/bin/k3s-killall.sh
+[INFO]  Creating uninstall script /usr/local/bin/k3s-uninstall.sh
+[INFO]  env: Creating environment file /etc/systemd/system/k3s.service.env
+[INFO]  systemd: Creating service file /etc/systemd/system/k3s.service
+[INFO]  systemd: Enabling k3s unit
+Created symlink /etc/systemd/system/multi-user.target.wants/k3s.service → /etc/systemd/system/k3s.service.

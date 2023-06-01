@@ -284,7 +284,7 @@ Abrimos el puerto 6443 en azure en el grupo de seguridad con el nombre de _kube-
 |:-------------------------:|
 | Portal de Azure
 
-Instalamos __kubectl__ tanto en la maquina local como la virtual para crear los recursos en el cluster de kubernetes, descargamos el binario.
+Instalamos __kubectl__ en la maquina local para crear los recursos en el cluster de kubernetes, descargamos el binario.
 
 ```
 usuario@laptop:~$ KUBECTL_VERSION=v1.26.4
@@ -307,7 +307,7 @@ usuario@laptop:~$ ls -la /usr/local/bin/kubectl
 -rwxr-xr-x 1 root root 48037888 May 22 13:18 /usr/local/bin/kubectl
 ```
 
-Instalamos __krew__ en el equipo local para manejar los _plugins_ de __kubectl__, para esto crearemos un directorio temporal
+Instalamos __krew__ tanto en el equipo local como en la remota para manejar los _plugins_ de __kubectl__, para esto crearemos un directorio temporal
 
 ```
 redes@example:~$ KREW_VERSION=v0.4.3
@@ -743,9 +743,19 @@ La configuración _SSL_, entre otras cosas, nos permite hacer un redireccionamie
 * Archivos de configuración
 
 * Archivos de bitácora
+  - [Preparación de la máqina virtual de Azure (reducción de uso de CPU y RAM)](files/bitacoras/preparacion.txt)
+  - [Instalación de __3ks__ en Debian 11](files/bitacoras/instalacion-3ks.txt)
+  - [Instalación de __kubectl__ y __krew__ en el equipo local](files/bitacoras/instalacion-kubectl-krew-local.txt)
+  - [Instalación de __krew__ en el equipo remoto](files/bitacoras/instalacion-krew-remoto.txt)
+  - [Bitácora de conexión a los puertos __80__ y __443__ del cluster de Kubernetes](files/bitacoras/conexion-80-443.txt)
+  - [Bitácora de conexión al puerto 443 utilizando __openssl s_client__] (falta)
+  - [Bitácora de comprobación de la validez del certificado SSL emitido por Let's Encrypt] (falta)
+  - [Bitácira de conexión a los sitios web hospedados utilizando HTTP y HTTPS] (falta)
 
 * Archivos de datos
-
-  - [cert.txt](files/bitacoras/cert.txt)
+  - [linux-doc/docker](files/datos/linux-doc/Dockerfile)
+  - [tareas-redes/docker](files/datos/tareas-redes/Dockerfile)
+  - [Directorio tar.gz] (falta)
+  - [Archivo cert.txt](files/bitacoras/cert.txt)
 
 * Recursos kubernetes

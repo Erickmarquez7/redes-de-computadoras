@@ -1,0 +1,5 @@
+usuario@laptop:~$ nc -vz waningnew.me 80
+Connection to waningnew.me (68.218.33.216) 80 port [tcp/http] succeeded!
+
+usuario@laptop:~$ nc -vz waningnew.me 443 
+Connection to waningnew.me (68.218.33.216) 443 port [tcp/https] succeeded!
