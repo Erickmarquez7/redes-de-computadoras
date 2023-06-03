@@ -1,4 +1,4 @@
-# Equipo-AAR-ATDI-BME-DAAV-LMAM
+# Configuración de switches administrables
 
 | Integrantes                    | Número de Cuenta | Usuario de GitLab   |
 |:------------------------------:|:----------------:|:-------------------:|
@@ -6,7 +6,6 @@
 | Alvarado Torres David Ignacio  | 316167613        | `ddalt`             |
 | Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     |
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
-| López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
 En este enlace se encuentra el archivo `.pkt` de la práctica: [practica2.pkt](files/practica2.pkt)
 

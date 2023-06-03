@@ -1,7 +1,8 @@
-# Erick Bernal Márquez
+# Laboratorio virtual de redes
 
-- Número de cuenta: `317042522`
-- Usuario de GitLab: `@Erickmarquez7`
+ Erick Bernal Márquez
+   - Número de cuenta: `317042522`
+   - Usuario de GitLab: `@Erickmarquez7`
 
 ## Debian 11
 
@@ -11,7 +12,7 @@
 erickdebi@debian-11:~$ neofetch
        _,met$$$$$gg.          erickdebi@debian-11
     ,g$$$$$$$$$$$$$$$P.       -------------------
-  ,g$$P"     """Y$$.".        OS: Debian GNU/Linux 11 (bullseye) x86_64
+  ,g$$P"       "Y$$.".        OS: Debian GNU/Linux 11 (bullseye) x86_64
  ,$$P'              `$$$.     Host: VirtualBox 1.2
 ',$$P       ,ggs.     `$$b:   Kernel: 5.10.0-21-amd64
 `d$$'     ,$P"'   .    $$$    Uptime: 7 mins
@@ -25,7 +26,7 @@ erickdebi@debian-11:~$ neofetch
      `$$b.
        `Y$$b.
           `"Y$b._
-              `"""
+              `
 
 
 erickdebi@debian-11:~$ uname -a

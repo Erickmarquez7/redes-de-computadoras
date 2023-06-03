@@ -1,4 +1,4 @@
-# Equipo-AAR-ATDI-BME-DAAV-LMAM
+# Configuración de un firewall de red con pfSense
 
 | Integrante                     | Número de Cuenta | Usuario de GitLab   |
 |:------------------------------:|:----------------:|:-------------------:|
@@ -6,7 +6,6 @@
 | Alvarado Torres David Ignacio  | 316167613        | `ddalt`             |
 | Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     |
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
-| López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
 ## Topología de Red 
 

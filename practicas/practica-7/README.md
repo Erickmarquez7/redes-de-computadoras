@@ -1,4 +1,4 @@
-# Equipo-AAR-ATDI-BME-DAAV-LMAM
+# Implementación de un servidor de archivos con NFS y Samba
 
 | Integrante                     | Número de Cuenta | Usuario de GitLab   |
 |:------------------------------:|:----------------:|:-------------------:|
@@ -6,7 +6,6 @@
 | Alvarado Torres David Ignacio  | 316167613        | `ddalt`             |
 | Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     |
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
-| López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
 # Topología de Red 
 A nivel físico es Topología de Árbol, siendo la máquina física la raíz del árbol a la que se conecta lo demás. Lo mismo ocurre a nivel lógico pues no ponemos ninguna restricción. Otra forma en que podemos ver la Topología es 1 a 1, viéndola de Computadora a Router.

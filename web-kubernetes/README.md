@@ -796,7 +796,7 @@ Veamos que la pagina funcione
 
 Revisamos la validez de nuestro certificado emitido por __Let's Encrypt__ de la práctica 9, dicha validez las tenemos en nuestras bitácoras
 
-- [openssl x509 -in waningnew.me/cert.pem -noout -text](files/bitacoras/cert.txt)
+- [openssl x509 -in waningnew.me/cert.pem -noout -text](files/datos/cert.txt)
 - [openssl x509 -in waningnew.me/cert.pem -noout -issuer -subject -dates -ext subjectAltName](files/bitacoras/opensslx509.txt)
 - [ openssl verify -show_chain -CApath /etc/ssl/certs -untrusted waningnew.me/chain.pem waningnew.me/cert.pem](files/bitacoras/opensslverify.txt)
 
@@ -967,5 +967,22 @@ Bitácoras utilizando [HTTP y HTTPS](http-https.txt)
   - [Archivo cert.txt](files/datos/cert.txt)
 
 * Recursos kubernetes
-  - [recursos-ingress](files/kubernetes/recurso-ingress.yaml)
-  - [archivo.neat campos incesesarios](files/kubernetes/archivo.neat.yaml)
+  - [recursos-kubernetes.log](files/kubernetes/recursos-kubernetes.log)
+  - [recursos-kubernetes.yaml](files/kubernetes/recursos-kubernetes.yaml)
+  - [recursos-kubernetes.neat.yaml](files/kubernetes/recursos-kubernetes.neat.yaml)
+  - [nodes.yaml](files/kubernetes/nodes.yaml)
+  - [nodes.neat.yaml](files/kubernetes/nodes.neat.yaml)
+  - [configmap.yaml](files/kubernetes/configmap.yaml)
+  - [configmap.neat.yaml](files/kubernetes/configmap.neat.yaml)
+  - [deployment-root-nginx.yaml](files/kubernetes/deployment-root-nginx.yaml)
+  - [deployment-root-nginx.neat.yaml](files/kubernetes/deployment-root-nginx.neat.yaml)
+  - [deployment-linux-doc.yaml](files/kubernetes/deployment-linux-doc.yaml)
+  - [deployment-linux-doc.neat.yaml](files/kubernetes/deployment-linux-doc.neat.yaml)
+  - [deployment-tareas-redes.yaml](files/kubernetes/deployment-tareas-redes.yaml)
+  - [deployment-tareas-redes.neat.yaml](files/kubernetes/deployment-tareas-redes.neat.yaml)
+  - [secret-nginx-ingress-tls.yaml](files/kubernetes/secret-nginx-ingress-tls.yaml)
+  - [secret-nginx-ingress-tls.neat.yaml](files/kubernetes/secret-nginx-ingress-tls.neat.yaml)
+  - [ingress-nginx.yaml](files/kubernetes/ingress-nginx.yaml)
+  - [ingress-nginx.neat.yaml](files/kubernetes/ingress-nginx.neat.yaml)
+  - [deployment-ingress-nginx-controller.yaml](files/kubernetes/deployment-ingress-nginx-controller.yaml)
+  - [deployment-ingress-nginx-controller.neat.yaml](files/kubernetes/deployment-ingress-nginx-controller.neat.yaml)

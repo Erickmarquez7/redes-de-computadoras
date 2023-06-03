@@ -1,4 +1,4 @@
-# Equipo-AAR-ATDI-BME-DAAV-LMAM
+# Proyecto web
 
 | Integrante                     | Número de Cuenta | Usuario de GitLab   |
 |:------------------------------:|:----------------:|:-------------------:|
@@ -6,7 +6,6 @@
 | Alvarado Torres David Ignacio  | 316167613        | `ddalt`             |
 | Bernal Marquez Erick           | 317042522        | `Erickmarquez7`     |
 | Deloya Andrade Ana Valeria     | 317277582        | `avdeloya13`        |
-| López Miranda Angel Mauricio   | 317034808        | `MauricioLMiranda`  |
 
 ## Explicación breve de la instalación del stack web en la máquina virtual de la nube
 
