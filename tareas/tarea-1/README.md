@@ -1,8 +1,7 @@
-# Erick Bernal
+# Flujo de trabajo en GitLab o github. Documentación
 
 - Número de cuenta: `317042522`
 - Usuario de GitLab: `@Erickmarquez7`
-- [Tarea-1][liga-tarea-1]
 
 Estas son las caracteristicas de mi computadora:
 
@@ -21,7 +20,6 @@ Capturas de pantalla:
 |:----------------------:|
 | Esta es la pantalla que muestra los detalles de mi sistema
 
-[liga-tarea-1]: https://redes-ciencias-unam.gitlab.io/2023-2/tareas-redes/tareas/tarea-1/
 
 - ¿Qué tan útil te pareció este ejercicio?
 

@@ -1,8 +1,7 @@
-# Erick Bernal Márquez
+# Instalación de Cisco Packet Tracer
 
 - Número de cuenta: `317042522`
 - Usuario de GitLab: `@Erickmarquez7`
-- [Tarea-3][liga-tarea-3]
 
 ## Cisco Packet Tracer
 
@@ -55,5 +54,3 @@ A continuación se muestran la configuración de las direcciones IP de los dispo
 | Estado exitoso (_successfull_) de las pruebas de conectividad.
 
 Hay 4 pruebas de conexión en total; la primera muestra el enlace entre dos celulares diferentes, la segunda entre la computadora de escritorio con la laptop, la tercera laptop con un celular y por último la computadora con otro celular, siendo todas estas conexiones exitosas.
-
-[liga-tarea-3]: https://redes-ciencias-unam.gitlab.io/2023-2/tareas-redes/tareas/tarea-3/

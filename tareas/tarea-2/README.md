@@ -1,8 +1,7 @@
-# Erick Bernal Márquez
+# Curso de nivelación de GNU/Linux
 
 - Número de cuenta: `317042522`
 - Usuario de GitLab: `@Erickmarquez7`
-- [Tarea-2][liga-tarea-2]
 
 ## Comentario del curso
 
@@ -22,5 +21,3 @@ Capturas de pantalla:
 | ![](img/captura3.png)
 |:----------------------:|
 | Muestra los últimos 5.
-
-[liga-tarea-2]: https://redes-ciencias-unam.gitlab.io/2023-2/tareas-redes/tareas/tarea-2/
