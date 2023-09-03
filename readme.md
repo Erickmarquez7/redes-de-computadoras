@@ -1,4 +1,4 @@
-# Redes de computadaras
+# Redes de computadoras
 
 Tareas, prácticas y proyectos hechos en la materia de redes de computadoras
 
